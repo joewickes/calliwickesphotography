@@ -19,7 +19,7 @@ const Header = ({ isHome = false }: HeaderProps) => {
         <div className={`flex-1 py-[10px] z-30`}>
           <Link href="/" legacyBehavior passHref>
             <p
-              className={`tracking-widest text-[20px] w-full ${
+              className={`tracking-[.35em] text-[20px] w-full ${
                 isMenuOpen || !isHome ? "text-black" : "text-white"
               }`}
             >
