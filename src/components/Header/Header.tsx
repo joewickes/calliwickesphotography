@@ -23,7 +23,7 @@ const Header = ({ isHome = false }: HeaderProps) => {
                 isMenuOpen || !isHome ? "text-black" : "text-white"
               }`}
             >
-              CALLI WICKES PHOTOGRAPHY
+              {`CALLI WICKES PHOTOGRAPHY`}
             </p>
           </Link>
         </div>

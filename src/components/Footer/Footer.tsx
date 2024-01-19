@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <footer className="flex flex-col justify-center items-center mt-[60px]">
       <div className="flex flex-col justify-center items-center">
-        <p className="font-thin my-[60px]">© 2021 Calli Wickes Photography</p>
+        <p className="font-thin my-[60px]">{`© 2021 Calli Wickes Photography`}</p>
         <div className="flex mb-[60px]">
           <FacebookLogo size={23} className="mr-[35px]" />
           <InstagramLogo size={23} />

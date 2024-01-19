@@ -73,15 +73,15 @@ const ContactPage = () => {
       <Header />
       <section className="mt-[20dvh] bg-black px-[30px] text-white mb-[30px]">
         <h1 className="text-[40px] leading-1 flex flex-col text-white pt-[60px]">
-          Start saving these moments
+          {`Start saving these moments`}
         </h1>
         <p className="font-thin text-right py-[200px]">
-          Tampa | family + senior photography
+          {`Tampa | family + senior photography`}
         </p>
       </section>
 
       <section className="px-[30px] mb-[60px]">
-        <h2 className="text-[45px] leading-1 mb-[30px]">Let's get in touch!</h2>
+        <h2 className="text-[45px] leading-1 mb-[30px]">{`Let's get in touch!`}</h2>
         <p className="font-thin whitespace-pre-line">{contactBlurb}</p>
       </section>
 
@@ -89,7 +89,7 @@ const ContactPage = () => {
         {/* Image */}
         <form>
           <label className="flex flex-col">
-            Name *
+            {`Name *`}
             <input
               value={name}
               required
@@ -100,7 +100,7 @@ const ContactPage = () => {
             />
           </label>
           <label className="flex flex-col">
-            Email Address *
+            {`Email Address *`}
             <input
               value={email}
               required
@@ -111,7 +111,7 @@ const ContactPage = () => {
             />
           </label>
           <label className="flex flex-col">
-            Phone Number *
+            {`Phone Number *`}
             <input
               value={phone}
               onChange={formatPhoneNumber}
@@ -124,7 +124,7 @@ const ContactPage = () => {
             />
           </label>
           <label className="flex flex-col">
-            Message *
+            {`Message *`}
             <textarea
               value={message}
               required
@@ -138,7 +138,7 @@ const ContactPage = () => {
               type="submit"
               className="text-[16px] mb-[60px] tracking-widest border border-black py-[20px] px-[30px]"
             >
-              SEND MESSAGE
+              {`SEND MESSAGE`}
             </button>
           </div>
         </form>

@@ -38,18 +38,18 @@ const PricingPage = () => {
       <section className="mt-[20dvh] px-[30px]">
         {/* <Image /> */}
         <p className="text-[30px] leading-1 font-thin flex flex-col mb-[60px] text-center">
-          Beautiful moments. Perfectly captured.
+          {`Beautiful moments. Perfectly captured.`}
         </p>
       </section>
 
       <section className="mt-[60px] px-[30px]">
         <h1 className="text-[40px] leading-1 flex flex-col mb-[20px] text-center">
-          Pricing Packages
+          {`Pricing Packages`}
         </h1>
         <ul>
-          {packages.map((pkg) => {
+          {packages.map((pkg, idx) => {
             return (
-              <li>
+              <li key={idx}>
                 {/* <Image /> */}
                 <h2 className="text-[40px] leading-1 flex flex-col mb-[20px] text-center">
                   {pkg.name}
@@ -61,8 +61,10 @@ const PricingPage = () => {
                   </p>
                 ) : null}
                 <ul className="mb-[60px]">
-                  {pkg.description.split(";").map((desc) => (
-                    <li className="font-thin text-center">{desc}</li>
+                  {pkg.description.split(";").map((desc, idx) => (
+                    <li key={idx} className="font-thin text-center">
+                      {desc}
+                    </li>
                   ))}
                 </ul>
               </li>
@@ -73,12 +75,12 @@ const PricingPage = () => {
 
       <section className="px-[30px] bg-black mb-[60px]">
         <h2 className="text-[40px] leading-1 flex flex-col mb-[20px] font-thin text-white pt-[60px]">
-          Let's Document Your Story
+          {`Let's Document Your Story`}
         </h2>
         <div className="flex justify-center mt-[300px]">
           <Link href="/contact" legacyBehavior passHref>
             <button className="text-[16px] text-white mb-[60px] tracking-widest border border-white py-[20px] px-[30px]">
-              GET IN TOUCH
+              {`GET IN TOUCH`}
             </button>
           </Link>
         </div>
@@ -86,10 +88,10 @@ const PricingPage = () => {
 
       <section className="px-[30px]">
         <p className="text-center mb-[60px] font-thin">
-          Family portraits framed in time
+          {`Family portraits framed in time`}
         </p>
         <h2 className="text-center text-[30px] leading-1 flex flex-col mb-[60px]">
-          Get in touch and let's doument life
+          {`Get in touch and let's doument life`}
         </h2>
         <div className="flex justify-center">
           <CaretRight size={30} className="mb-[30px]" />
