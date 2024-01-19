@@ -70,12 +70,84 @@ export default function Home() {
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="px-[30px]"></section>
+      <section id="portfolio" className="px-[30px]">
+        <div className="w-full mb-[15px]">
+          <Image
+            src="/images/Home/familyportraittampa.webp"
+            height={684}
+            width={456}
+            alt="Cherished family portrait surrounded by the beauty of Tampa's greenery and Spanish moss."
+            className="object-cover"
+          />
+        </div>
+        <div className="w-full mb-[15px]">
+          <Image
+            src="/images/Home/smilingcoupleoutdoor.webp"
+            height={304}
+            width={506}
+            className="object-cover"
+            alt="Smiling couple embraces amidst the vibrant green landscape of Tampa's outdoors."
+          />
+        </div>
+        <div className="w-full mb-[15px]">
+          <Image
+            src="/images/Home/adorablefamilyofthree.webp"
+            height={684}
+            width={456}
+            className="object-cover"
+            alt="Adorable family of three, including a 3-month-old little boy, against the backdrop of a rustic barn in Tampa"
+          />
+        </div>
+        <div>
+          <Image
+            src="/images/Home/familyofthreeintampa.webp"
+            height={684}
+            width={456}
+            className="object-cover"
+            alt="Joyful family of three amidst lush greenery and Spanish moss in scenic Tampa, Fl."
+          />
+        </div>
+        <div className="w-full mb-[15px]">
+          <Image
+            src="/images/Home/couplebrickwallbackground.webp"
+            height={684}
+            width={456}
+            className="object-cover"
+            alt="A love story unfolds as a couple poses against an urban wall in Tampa"
+          />
+        </div>
+        <div className="w-full mb-[15px]">
+          <Image
+            src="/images/Home/tampafamilyofthree.webp"
+            height={684}
+            width={456}
+            className="object-cover"
+            alt="Capturing love in the heart of Tampa's nature with a beautiful family of three"
+          />
+        </div>
+        <div className="w-full mb-[120px]">
+          <Image
+            src="/images/Home/middleagecoupleintampa.webp"
+            height={456}
+            width={304}
+            className="object-cover w-full"
+            alt="Middle-aged couple smiling by a white fence, capturing the essence of family joy in Tampa's picturesque setting"
+          />
+        </div>
+      </section>
 
       {/* Contact Section */}
       <section id="contact" className="px-[30px]">
-        {/* <Image /> */}
-        <h2 className="text-[30px] mb-[60px]">
+        <div className="w-full mb-[50px]">
+          <Image
+            src="/images/Home/youngcouplehugging.webp"
+            height={484}
+            width={323}
+            className="object-cover w-full"
+            alt="Young couple sharing an embrace while surrounded by the rustic charm of Tampa's countryside."
+          />
+        </div>
+        <h2 className="text-[35px] mb-[50px]">
           {`Family photography for you to treasure forever`}
         </h2>
         <p className="font-thin leading-8 mb-[60px]">
