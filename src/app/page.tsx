@@ -17,17 +17,17 @@ export default function Home() {
         {/* Hero Section */}
         <section
           id="home"
-          className="h-dvh w-dvw flex flex-col items-center justify-center"
+          className="h-dvh w-dvw flex flex-col items-center justify-center pt-[100px]"
         >
           <p className="text-center text-[12px] mb-[20px] tracking-wide text-white z-10">
             PHOTOS THAT CAPTURE YOUR BEST MOMENTS
           </p>
-          <h1 className="text-center text-[40px] leading-10 flex flex-col mb-[80px] text-white z-10 tracking-wide">
+          <h1 className="text-center text-[45px] leading-[3.5rem] flex flex-col mb-[80px] text-white z-10 tracking-wide">
             <span>I'm Calli! Your</span> <span>Tampa family</span>{" "}
             <span>photographer!</span>
           </h1>
           <Link href="/portfolio" legacyBehavior passHref>
-            <button className="z-10 text-[16px] mb-[60px] tracking-widest border border-white py-[20px] px-[30px] text-white">
+            <button className="z-10  mb-[60px] border border-white py-[15px] text-[13px] tracking-[.35em] mt-[30px] px-[30px] text-white">
               VIEW PORTFOLIO
             </button>
           </Link>
@@ -36,8 +36,18 @@ export default function Home() {
 
       {/* About Section */}
       <section id="about" className="px-[30px]">
-        {/* <Image /> */}
-        <h2 className="text-[30px] mb-[60px]">
+        <div className="flex justify-center mb-[60px]">
+          <div className="mt-[120px] h-[90dvw] w-[90dvw] overflow-hidden">
+            <Image
+              src="/images/Home/tampaphotographerportrait.webp"
+              alt="Tampa photographer in downtown portrait."
+              height={840}
+              width={560}
+              className="object-cover mt-[-10dvw]"
+            />
+          </div>
+        </div>
+        <h2 className="text-[35px] mb-[60px]">
           Hi! I'm Calli, a family photographer.
         </h2>
         <h3 className="text-[15px] mb-[60px]">
@@ -53,7 +63,7 @@ export default function Home() {
           create timeless memories together!
         </p>
         <Link href="/about" legacyBehavior passHref>
-          <button className="text-[16px] mb-[60px] tracking-widest border border-white py-[20px] px-[30px]">
+          <button className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
             MORE ABOUT ME
           </button>
         </Link>
@@ -75,7 +85,7 @@ export default function Home() {
           destined for your walls!
         </p>
         <Link href="/contact" legacyBehavior passHref>
-          <button className="text-[16px] mb-[60px] tracking-widest border border-white py-[20px] px-[30px]">
+          <button className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
             LET'S CONNECT
           </button>
         </Link>
