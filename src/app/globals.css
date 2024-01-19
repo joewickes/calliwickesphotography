@@ -13,3 +13,11 @@ html {
   background-position: center;
   top: 0;
 }
+
+#kideatingfruit {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/images/Contact/babyboywithwatermelon.webp");
+  background-size: cover;
+  background-position: center;
+  top: 0;
+}

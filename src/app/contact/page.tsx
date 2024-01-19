@@ -18,6 +18,7 @@ const ContactPage = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const formatPhoneNumber = (e: any) => {
     const currNum = e.target.value;
@@ -42,8 +43,10 @@ const ContactPage = () => {
     }
   };
 
-  const onSubmit = (e: any) => {
+  const onSubmit = async (e: any) => {
     e.preventDefault();
+    toast.info("Sending your message...");
+    setIsDisabled(true);
 
     const data = {
       name,
@@ -52,13 +55,19 @@ const ContactPage = () => {
       message,
     };
 
-    console.log("data", data);
+    const res = await fetch("/api/email", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
 
-    // setName("");
-    // setEmail("");
-    // setPhone("");
-    // setMessage("");
-    toast.info("Your message was sent! Thanks!");
+    if (res.status === 200) {
+      setName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
+      toast.info("Your message was sent! Thanks!");
+      setIsDisabled(false);
+    }
   };
 
   return (
@@ -71,11 +80,14 @@ const ContactPage = () => {
         transition={Slide}
       />
       <Header />
-      <section className="mt-[20dvh] bg-black px-[30px] text-white mb-[30px]">
+      <section
+        id="kideatingfruit"
+        className="mt-[10dvh] px-[30px] text-white mb-[30px]"
+      >
         <h1 className="text-[40px] leading-1 flex flex-col text-white pt-[60px]">
           {`Start saving these moments`}
         </h1>
-        <p className="font-thin text-right py-[200px]">
+        <p className="font-thin text-right pt-[200px] pb-[250px]">
           {`Tampa | family + senior photography`}
         </p>
       </section>
@@ -91,6 +103,7 @@ const ContactPage = () => {
           <label className="flex flex-col">
             {`Name *`}
             <input
+              disabled={isDisabled}
               value={name}
               required
               onChange={(e) => setName(e.target.value)}
@@ -102,6 +115,7 @@ const ContactPage = () => {
           <label className="flex flex-col">
             {`Email Address *`}
             <input
+              disabled={isDisabled}
               value={email}
               required
               onChange={(e) => setEmail(e.target.value)}
@@ -113,19 +127,20 @@ const ContactPage = () => {
           <label className="flex flex-col">
             {`Phone Number *`}
             <input
+              disabled={isDisabled}
               value={phone}
               onChange={formatPhoneNumber}
               className="border border-[#cdcdcd] px-[16px] py-[14px] mt-[10px] mb-[50px] h-[40px]"
               type="tel"
               id="phone"
               name="phone"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               required
             />
           </label>
           <label className="flex flex-col">
             {`Message *`}
             <textarea
+              disabled={isDisabled}
               value={message}
               required
               onChange={(e) => setMessage(e.target.value)}
@@ -135,8 +150,9 @@ const ContactPage = () => {
           </label>
           <div>
             <button
+              disabled={isDisabled}
               type="submit"
-              className="text-[16px] mb-[60px] tracking-widest border border-black py-[20px] px-[30px]"
+              className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]"
             >
               {`SEND MESSAGE`}
             </button>

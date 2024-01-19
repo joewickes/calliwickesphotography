@@ -32,7 +32,7 @@ const PortfolioPage = () => {
       </section>
 
       <section className="px-[30px] mt-[60px]">
-        <h2 className="text-[15px] font-bold leading-1 flex flex-col mb-[20px] text-center mb-[30px]">
+        <h2 className="text-[15px] font-bold leading-1 flex flex-col text-center mb-[30px]">
           {`YOUR TAMPA PHOTOGRAPHER`}
         </h2>
         <p className="text-center mb-[60px] font-thin">
