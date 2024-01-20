@@ -1,29 +1,42 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import {
-  ArrowUp,
-  FacebookLogo,
-  InstagramLogo,
-  Dot,
-} from "@phosphor-icons/react";
+import { ArrowUp, FacebookLogo, InstagramLogo } from "@phosphor-icons/react";
 
 const Footer = () => {
-  const [isInfoOpen, setIsInfoOpen] = useState(false);
+  const [path, setPath] = useState("#");
+
+  useEffect(() => {
+    if (window) {
+      setPath(window.location.pathname);
+    }
+  }, []);
 
   return (
     <footer className="flex flex-col justify-center items-center mt-[60px]">
       <div className="flex flex-col justify-center items-center">
-        <p className="font-thin my-[60px]">{`© 2021 Calli Wickes Photography`}</p>
         <div className="flex mb-[60px]">
-          <FacebookLogo size={23} className="mr-[35px]" />
-          <InstagramLogo size={23} />
+          <Link
+            href="https://www.facebook.com/CalliWickesPhotography/"
+            legacyBehavior
+            passHref
+          >
+            <FacebookLogo size={23} className="mr-[35px] cursor-pointer" />
+          </Link>
+          <Link
+            href="https://www.instagram.com/calliwickesphotography/"
+            legacyBehavior
+            passHref
+          >
+            <InstagramLogo size={23} className="cursor-pointer" />
+          </Link>
         </div>
-        <Link href="#" legacyBehavior passHref>
-          <ArrowUp size={30} className="mb-[30px]" />
+        <Link href={path} legacyBehavior passHref>
+          <ArrowUp size={30} className="cursor-pointer" />
         </Link>
+        <p className="font-thin my-[50px]">{`© 2024 Calli Wickes Photography`}</p>
       </div>
     </footer>
   );

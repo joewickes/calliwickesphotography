@@ -15,19 +15,37 @@ const PricingPage = () => {
       price: 350,
       target: "*For families, Couples, Engagement Photots",
       description:
-        "45-60 minute session;final gallery of high resulition digital downloads (30+) delivered via online gallery;On location, within 1 hour of Tampa",
+        "45-60 minute session;Final gallery of high resulition digital downloads (30+) delivered via online gallery;On location, within 1 hour of Tampa",
+      image: {
+        src: "/images/Pricing/familyportraittampa.webp",
+        height: 1029,
+        width: 686,
+        alt: "Photography in Tampa, FL",
+      },
     },
     {
       name: "Extended Family Session",
       price: 550,
       description:
         "60-90 minute session;Up to 12 people - $10/person after;Final gallery of high resolution digital downloads (50+) delivered via online gallery;Separate family groupings;On location, within 1 hour of Tampa",
+      image: {
+        src: "/images/Pricing/extendedfamilyportraittampa.webp",
+        height: 457,
+        width: 686,
+        alt: "Photography in Tampa, FL",
+      },
     },
     {
       name: "Senior Session",
       price: 450,
       description:
         "up to 2 hours session;Final gallery of high resolution digital downloads (40+) delivered via online gallery;Up to 3 outfit changes;2 locations within 10 mi on the same day (location ranges within 1 hour of Tampa);*please contact for additional options",
+      image: {
+        src: "/images/Pricing/seniorportraittampa.webp",
+        height: 1029,
+        width: 686,
+        alt: "Photography in Tampa, FL",
+      },
     },
   ];
 
@@ -35,70 +53,139 @@ const PricingPage = () => {
     <main>
       <Header />
 
-      <section className="mt-[20dvh] px-[30px]">
-        {/* <Image /> */}
-        <p className="text-[30px] leading-1 font-thin flex flex-col mb-[60px] text-center">
+      <Image
+        className="mt-[10dvh] md:mt-[20dvh]"
+        src="/images/Pricing/couplekissingtheirdaughter.webp"
+        priority
+        height={1149}
+        width={1724}
+        alt="Dad and mom kiss daughter cheeks, surrounded by beautiful Florida scenery"
+      />
+      <section className="mt-[60px] md:mt-0 px-[30px]">
+        <p className="text-[30px] leading-1 font-thin flex flex-col mb-[60px] md:mb-0 text-center md:translate-y-[-75dvh] md:font-normal md:text-white md:text-[50px]">
           {`Beautiful moments. Perfectly captured.`}
         </p>
       </section>
 
-      <section className="mt-[60px] px-[30px]">
-        <h1 className="text-[40px] leading-1 flex flex-col mb-[20px] text-center">
+      <section className="mt-[60px] md:mt-0 px-[30px]">
+        <h1 className="text-[40px] leading-1 flex flex-col mb-[50px] text-center md:text-[70px]">
           {`Pricing Packages`}
         </h1>
+
         <ul>
           {packages.map((pkg, idx) => {
             return (
-              <li key={idx}>
-                {/* <Image /> */}
-                <h2 className="text-[40px] leading-1 flex flex-col mb-[20px] text-center">
-                  {pkg.name}
-                </h2>
-                <p className="font-bold text-center mb-[30px]">{`$${pkg.price}`}</p>
-                {pkg.target ? (
-                  <p className="text-center mb-[30px] font-thin">
-                    {pkg.target}
-                  </p>
-                ) : null}
-                <ul className="mb-[60px]">
-                  {pkg.description.split(";").map((desc, idx) => (
-                    <li key={idx} className="font-thin text-center">
-                      {desc}
-                    </li>
-                  ))}
-                </ul>
+              <li
+                key={idx}
+                className={`md:py-[50px] ${
+                  idx === Math.floor(packages.length / 2)
+                    ? "md:border md:border-x-0 md:border-y-1 md:border-[#f2f2f2]"
+                    : ""
+                } md:flex ${idx % 2 === 0 ? "" : " md:flex-row-reverse"}`}
+              >
+                <div className="md:flex-1 md:flex md:items-center md:justify-center">
+                  <Image
+                    src={pkg?.image?.src || ""}
+                    height={pkg?.image?.height}
+                    width={pkg?.image?.width}
+                    alt={pkg?.image?.alt || ""}
+                    className="mb-[30px] md:max-w-[457px]"
+                  />
+                </div>
+                <div className="md:flex-1 md:flex md:flex-col md:items-center md:justify-center">
+                  <h2
+                    className={`text-[40px] leading-1 flex flex-col mb-[20px] text-center md:self-start ${
+                      idx === Math.floor(packages.length / 2)
+                        ? "md:self-end"
+                        : ""
+                    }`}
+                  >
+                    {pkg.name}
+                  </h2>
+                  <p
+                    className={`font-bold text-center mb-[30px] md:self-start ${
+                      idx === Math.floor(packages.length / 2)
+                        ? "md:self-end"
+                        : ""
+                    }`}
+                  >{`$${pkg.price}`}</p>
+                  {pkg.target ? (
+                    <p
+                      className={`text-center mb-[30px] font-thin md:self-start ${
+                        idx === Math.floor(packages.length / 2)
+                          ? "md:self-end"
+                          : ""
+                      }`}
+                    >
+                      {pkg.target}
+                    </p>
+                  ) : null}
+
+                  <ul
+                    className={`mb-[60px] md:self-start ${
+                      idx === Math.floor(packages.length / 2)
+                        ? "md:self-end"
+                        : ""
+                    } md:flex md:flex-col`}
+                  >
+                    {pkg.description.split(";").map((desc, idx2) => (
+                      <li
+                        key={idx2}
+                        className={`font-thin text-center md:self-start ${
+                          idx === Math.floor(packages.length / 2)
+                            ? "md:self-end md:text-right"
+                            : ""
+                        }`}
+                      >
+                        {desc}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </li>
             );
           })}
         </ul>
       </section>
 
-      <section className="px-[30px] bg-black mb-[60px]">
-        <h2 className="text-[40px] leading-1 flex flex-col mb-[20px] font-thin text-white pt-[60px]">
-          {`Let's Document Your Story`}
+      <section className="px-[30px] bg-black mb-[60px]" id="storyholdinghands">
+        <h2 className="text-[40px] leading-1 md:flex md:flex-col mb-[20px] font-thin text-white pt-[60px] md:text-[70px] md:pt-[200px] md:pl-[100px]">
+          <span>{`Let's Document`}</span> <span>{`Your Story`}</span>
         </h2>
         <div className="flex justify-center mt-[300px]">
           <Link href="/contact" legacyBehavior passHref>
-            <button className="text-[16px] text-white mb-[60px] tracking-widest border border-white py-[20px] px-[30px]">
+            <button className="mb-[60px] border border-white text-white py-[15px] text-[13px] tracking-[.35em] px-[30px] md:translate-x-[200px] md:translate-y-[-150px]">
               {`GET IN TOUCH`}
             </button>
           </Link>
         </div>
       </section>
 
-      <section className="px-[30px]">
-        <p className="text-center mb-[60px] font-thin">
-          {`Family portraits framed in time`}
-        </p>
-        <h2 className="text-center text-[30px] leading-1 flex flex-col mb-[60px]">
-          {`Get in touch and let's doument life`}
-        </h2>
-        <div className="flex justify-center">
-          <CaretRight size={30} className="mb-[30px]" />
+      <section className="px-[30px] md:flex md:mt-[100px] md:mb-[200px]">
+        <div className="md:flex md:flex-col md:justify-center md:pl-[100px] md:flex-1">
+          <p className="text-center mb-[50px] font-thin md:text-left">
+            {`Family portraits framed in time`}
+          </p>
+          <h2 className="text-center text-[30px] leading-1 flex flex-col mb-[60px] md:text-left md:pr-[100px] md:text-[50px]">
+            {`Get in touch and let's document life`}
+          </h2>
+          <div className="flex justify-center md:justify-start">
+            <Link href="/contact" legacyBehavior passHref>
+              <CaretRight size={30} className="mb-[30px]" />
+            </Link>
+          </div>
         </div>
-
-        {/* <Image /> */}
+        <div className="md:flex md:justify-center md:flex-1">
+          <Image
+            src="/images/Pricing/grandparentswithgrandkidsonhalloweenintampa.webp"
+            height={1206}
+            width={804}
+            alt="family photographer - Tampa, Wesley Chapel, Dade City, San Antonio - Florida, FL"
+            className="md:max-w-[456px]"
+          />
+        </div>
       </section>
+
       <Footer />
     </main>
   );

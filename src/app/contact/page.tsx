@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
@@ -82,24 +83,37 @@ const ContactPage = () => {
       <Header />
       <section
         id="kideatingfruit"
-        className="mt-[10dvh] px-[30px] text-white mb-[30px]"
+        className="mt-[10dvh] md:mt-[20dvh] px-[30px] text-white mb-[30px] md:flex md:h-[75dvh] md:items-center"
       >
-        <h1 className="text-[40px] leading-1 flex flex-col text-white pt-[60px]">
+        <h2 className="text-[40px] leading-1 flex flex-col text-white pt-[60px] md:text-[70px] md:font-thin md:pl-[100px] md:flex-1 md:pt-0 md:pb-[60px]">
           {`Start saving these moments`}
-        </h1>
-        <p className="font-thin text-right pt-[200px] pb-[250px]">
+        </h2>
+        <p className="font-thin text-right pt-[200px] pb-[250px] md:pr-[100px] md:flex-1 md:pt-[250px] md:pb-[10px]">
           {`Tampa | family + senior photography`}
         </p>
       </section>
 
-      <section className="px-[30px] mb-[60px]">
-        <h2 className="text-[45px] leading-1 mb-[30px]">{`Let's get in touch!`}</h2>
+      <section className="px-[30px] mb-[60px] md:pl-[100px] md:pt-[100px]">
+        <h1 className="text-[45px] leading-1 mb-[30px]">{`Let's get in touch!`}</h1>
         <p className="font-thin whitespace-pre-line">{contactBlurb}</p>
       </section>
 
-      <section className="px-[30px] text-black" onSubmit={onSubmit}>
-        {/* Image */}
-        <form>
+      <section
+        className="px-[30px] text-black md:pl-[100px] md:flex"
+        onSubmit={onSubmit}
+      >
+        <div className="flex justify-center mb-[60px] md:flex-1 md:justify-start">
+          <div className="mt-[30px] h-[90dvw] w-[90dvw] md:h-auto md:w-auto overflow-hidden">
+            <Image
+              src="/images/Home/tampaphotographerportrait.webp"
+              alt="Tampa photographer in downtown portrait."
+              height={840}
+              width={560}
+              className="object-cover mt-[-10dvw] md:mt-[-100px]"
+            />
+          </div>
+        </div>
+        <form className="md:flex-1 md:mr-[100px] md:mt-[50px]">
           <label className="flex flex-col">
             {`Name *`}
             <input

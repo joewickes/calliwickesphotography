@@ -17,20 +17,21 @@ const Header = ({ isHome = false }: HeaderProps) => {
     <header>
       <div className={`${isMenuOpen ? "fixed top-0" : ""} z-30`}>
         <div className="w-dvw flex px-[20px] absolute top-0 left-0">
-          <div className={`flex-1 py-[10px] z-30`}>
+          <div className={`flex-1 py-[10px] z-30 md:ml-[100px] md:mt-[50px]`}>
             <Link href="/" legacyBehavior passHref>
               <p
-                className={`tracking-[.35em] text-[20px] w-full ${
+                className={`tracking-[.35em] text-[20px] w-full md:flex md:flex-col md:text-[25px] cursor-pointer ${
                   isMenuOpen || !isHome ? "text-black" : "text-white"
                 }`}
               >
-                {`CALLI WICKES PHOTOGRAPHY`}
+                <span>{`CALLI WICKES `}</span>
+                <span>{`PHOTOGRAPHY`}</span>
               </p>
             </Link>
           </div>
 
-          <div className="flex flex-1 justify-end items-center">
-            <div className={`z-30`}>
+          <div className="flex flex-1 justify-end items-center md:mr-[100px] md:mt-[50px]">
+            <div className={`z-30 cursor-pointer`}>
               {!isMenuOpen ? (
                 <List
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -48,7 +49,7 @@ const Header = ({ isHome = false }: HeaderProps) => {
           </div>
         </div>
         <nav
-          className={`fixed h-full w-dvw bg-white z-20 flex justify-center pt-[15dvh] ${
+          className={`fixed h-full w-dvw bg-white z-20 flex justify-center pt-[15dvh] md:pt-[35dvh] md:text-[20px] ${
             !isMenuOpen
               ? "invisible overflow-y-auto"
               : "visible overflow-y-hidden"
@@ -61,9 +62,9 @@ const Header = ({ isHome = false }: HeaderProps) => {
               {
                 name: "Info",
                 subMenu: [
-                  { name: "Testimonials", link: "testimonials" },
+                  // { name: "Testimonials", link: "testimonials" },
                   { name: "Pricing", link: "pricing" },
-                  { name: "FAQ", link: "faq" },
+                  { name: "Experience", link: "experience" },
                 ],
               },
               { name: "Portfolio", link: "portfolio" },
@@ -71,12 +72,12 @@ const Header = ({ isHome = false }: HeaderProps) => {
             ].map((item, idx) => {
               return idx !== 2 ? (
                 <Link href={`/${item.link}`} key={idx} legacyBehavior passHref>
-                  <li className="mb-[40px]">{item.name}</li>
+                  <li className="mb-[40px] cursor-pointer">{item.name}</li>
                 </Link>
               ) : (
                 <li
                   key={idx}
-                  className="mb-[40px] flex flex-col justify-center items-center"
+                  className="mb-[40px] flex flex-col justify-center items-center cursor-pointer"
                 >
                   <div key={idx} onClick={() => setIsInfoOpen(!isInfoOpen)}>
                     <div className="flex items-center justify-center">
@@ -93,9 +94,9 @@ const Header = ({ isHome = false }: HeaderProps) => {
                                 passHref
                               >
                                 <li
-                                  className={` ${
+                                  className={`cursor-pointer ${
                                     idx === 0
-                                      ? "mt-[20px] mb-[40px]"
+                                      ? "mt-[30px] mb-[40px]"
                                       : idx === item?.subMenu?.length - 1
                                       ? "mb-[0px]"
                                       : "mb-[40px]"
