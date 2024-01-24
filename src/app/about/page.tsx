@@ -17,7 +17,7 @@ const AboutPage = () => {
   return (
     <main>
       <Header />
-      <section className="mt-[20dvh] px-[30px] mb-[60px]">
+      <section className="md:mt-[20dvh] px-[30px] mb-[60px]">
         <h1 className="text-[40px] leading-1 font-thin flex flex-col mb-[80px] md:text-[75px] md:ml-[100px] md:pt-[100px]">
           <span>
             <span>{`Hi! I'm Calli + I`}</span> <span>{`love capturing`}</span>{" "}
@@ -50,7 +50,7 @@ const AboutPage = () => {
 
       <section id="about" className="px-[30px] md:flex md:py-[100px]">
         <div className="flex justify-center mb-[60px] md:flex-1">
-          <div className="mt-[120px] md:mt-0 h-[90dvw] w-[90dvw] md:h-auto md:w-auto overflow-hidden md:pl-[100px]">
+          <div className="md:mt-[120px] md:mt-0 h-[90dvw] w-[90dvw] md:h-auto md:w-auto overflow-hidden md:pl-[100px]">
             <Image
               src="/images/Home/tampaphotographerportrait.webp"
               alt="Tampa photographer in downtown portrait."

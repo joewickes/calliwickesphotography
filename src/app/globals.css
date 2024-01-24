@@ -89,3 +89,12 @@ html {
   top: 0;
   cursor: pointer;
 }
+
+#couplewithdaughter {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/images/Pricing/couplekissingtheirdaughter.webp");
+  background-size: cover;
+  background-position: center;
+  top: 0;
+  cursor: pointer;
+}

@@ -19,7 +19,7 @@ const FamilyGalleryPage = () => {
         <h2 className="text-white text-[38px] font-thin leading-1 flex flex-col pt-[60px] md:text-[70px] md:pt-[20%]">{`Families + Couples`}</h2>
         <p className="text-white text-[15px] font-thin px-[40px] py-[150px]">{`Family photos made into timeless memories.`}</p>
       </section>
-      <section className="px-[30px] mb-[60px] md:flex md:items-center md:px-[100px] md:mb-[150px]">
+      <section className="px-[30px] mb-[60px] md:flex md:items-center md:px-[100px] md:mb-[150px] md:mt-[100px]">
         <h1 className="text-[40px] leading-1 mb-[30px] md:flex-1 md:text-[50px]">{`Family Photography`}</h1>
         <p className="font-thin md:flex-1">{`Every Tampa family is uniquely beautiful. I specialize in capturing the relaxed and joyful interactions that make your family extraordinary. Whether it's the warmth of big family gatherings or the intimacy of shoots with you and your fur baby, each family photography session in Tampa is tailored to create an experience you'll truly adore. Let's capture portraits that authentically reflect your family's story, offering you cherished memories that reflect your family. Images that you’ll want to print, frame, and hold close forever.`}</p>
       </section>
