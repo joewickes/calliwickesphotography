@@ -51,23 +51,26 @@ const PricingPage = () => {
 
   return (
     <main>
-      <Header />
+      <Header isHome />
 
-      <Image
+      {/* <Image
         className="mt-[10dvh] md:mt-[20dvh]"
         src="/images/Pricing/couplekissingtheirdaughter.webp"
         priority
         height={1149}
         width={1724}
         alt="Dad and mom kiss daughter cheeks, surrounded by beautiful Florida scenery"
-      />
-      <section className="mt-[60px] md:mt-0 px-[30px]">
-        <p className="text-[30px] leading-1 font-thin flex flex-col mb-[60px] md:mb-0 text-center md:translate-y-[-75dvh] md:font-normal md:text-white md:text-[50px]">
+      /> */}
+      <section
+        className="px-[30px] h-[100dvh] flex items-center"
+        id="couplewithdaughter"
+      >
+        <p className="text-[30px] leading-1 font-thin flex flex-col mb-[60px] md:mb-0 text-center md:font-normal md:ml-[100px] text-white md:text-[50px]">
           {`Beautiful moments. Perfectly captured.`}
         </p>
       </section>
 
-      <section className="mt-[60px] md:mt-0 px-[30px]">
+      <section className="mt-[60px] md:mt-0 px-[30px] md:mt-[100px]">
         <h1 className="text-[40px] leading-1 flex flex-col mb-[50px] text-center md:text-[70px]">
           {`Pricing Packages`}
         </h1>
@@ -158,31 +161,6 @@ const PricingPage = () => {
               {`GET IN TOUCH`}
             </button>
           </Link>
-        </div>
-      </section>
-
-      <section className="px-[30px] md:flex md:mt-[100px] md:mb-[200px]">
-        <div className="md:flex md:flex-col md:justify-center md:pl-[100px] md:flex-1">
-          <p className="text-center mb-[50px] font-thin md:text-left">
-            {`Family portraits framed in time`}
-          </p>
-          <h2 className="text-center text-[30px] leading-1 flex flex-col mb-[60px] md:text-left md:pr-[100px] md:text-[50px]">
-            {`Get in touch and let's document life`}
-          </h2>
-          <div className="flex justify-center md:justify-start">
-            <Link href="/contact" legacyBehavior passHref>
-              <CaretRight size={30} className="mb-[30px]" />
-            </Link>
-          </div>
-        </div>
-        <div className="md:flex md:justify-center md:flex-1">
-          <Image
-            src="/images/Pricing/grandparentswithgrandkidsonhalloweenintampa.webp"
-            height={1206}
-            width={804}
-            alt="family photographer - Tampa, Wesley Chapel, Dade City, San Antonio - Florida, FL"
-            className="md:max-w-[456px]"
-          />
         </div>
       </section>
 

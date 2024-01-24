@@ -20,7 +20,7 @@ const SeniorGalleryPage = () => {
         <p className="md:pl-0 text-white text-[15px] font-thin px-[40px] py-[150px]">{`Senior photos to capture this short season of life`}</p>
       </section>
       <section className="md:mt-[100px] px-[30px] mb-[60px] md:flex md:items-center md:px-[100px] md:mb-[150px]">
-        <h1 className="text-[40px] leading-1 mb-[30px] md:flex-1 md:text-[50px]">{`High School Senior Photography in Tampa`}</h1>
+        <h1 className="text-[40px] leading-1 mb-[30px] md:flex-1 md:text-[50px] md:pr-[75px]">{`High School Senior Photography in Tampa`}</h1>
         <p className="font-thin md:flex-1">{`Get ready to embark on a journey back in time, reliving the best moments of your high school years through our laid-back senior portraits in Tampa. It's not just about preserving memories; it's about capturing the real you, showcasing the essence of your unique personality. These portraits are more than images; they're a time capsule of laughter, friendships, and the spirit of your high school experience. Share the love with your crew and family, creating memories that stand the test of time! Imagine these portraits gracing the walls, telling a story of joy, accomplishment, and the relaxed charm of your Tampa journey. Let's create a truly remarkable chapter, effortlessly captured in every frame, ensuring that each portrait is a vivid celebration of your high school years in Tampa!`}</p>
       </section>
 

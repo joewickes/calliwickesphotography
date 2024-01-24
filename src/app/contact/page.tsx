@@ -80,10 +80,10 @@ const ContactPage = () => {
         pauseOnHover
         transition={Slide}
       />
-      <Header />
+      <Header isHome />
       <section
         id="kideatingfruit"
-        className="mt-[10dvh] md:mt-[20dvh] px-[30px] text-white mb-[30px] md:flex md:h-[75dvh] md:items-center"
+        className="pt-[15dvh] px-[30px] h-[100dvh] text-white mb-[30px] md:flex md:items-center"
       >
         <h2 className="text-[40px] leading-1 flex flex-col text-white pt-[60px] md:text-[70px] md:font-thin md:pl-[100px] md:flex-1 md:pt-0 md:pb-[60px]">
           {`Start saving these moments`}
