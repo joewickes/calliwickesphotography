@@ -41,6 +41,7 @@ export default function Home() {
           <div className="mt-[120px] md:mt-0 h-[90dvw] w-[90dvw] md:h-auto md:w-auto overflow-hidden md:pl-[100px]">
             <Image
               src="/images/Home/tampaphotographerportrait.webp"
+              priority
               alt="Tampa photographer in downtown portrait."
               height={840}
               width={560}

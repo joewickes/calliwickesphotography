@@ -50,7 +50,7 @@ const AboutPage = () => {
 
       <section id="about" className="px-[30px] md:flex md:py-[100px]">
         <div className="flex justify-center mb-[60px] md:flex-1">
-          <div className="md:mt-[120px] md:mt-0 h-[90dvw] w-[90dvw] md:h-auto md:w-auto overflow-hidden md:pl-[100px]">
+          <div className="md:mt-[120px] h-[90dvw] w-[90dvw] md:h-auto md:w-auto overflow-hidden md:pl-[100px]">
             <Image
               src="/images/Home/tampaphotographerportrait.webp"
               alt="Tampa photographer in downtown portrait."

@@ -1,8 +1,5 @@
-import GoogleAnalytics from "@/app/GoogleAnalytics";
-
 import { Raleway } from "next/font/google";
 import "./globals.css";
-
 const raleway = Raleway({ subsets: ["latin"] });
 
 import type { Metadata } from "next";
@@ -19,7 +16,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <GoogleAnalytics />
       <body className={raleway.className}>{children}</body>
     </html>
   );
