@@ -21,22 +21,22 @@ const Footer = () => {
       <div className="flex flex-col justify-center items-center">
         <div className="flex mb-[60px]">
           <Link href="https://www.facebook.com/CalliWickesPhotography/" legacyBehavior passHref>
-            <a>
+            <a aria-label="Facebook">
               <FacebookLogo size={23} className="mr-[35px] cursor-pointer" />
             </a>
           </Link>
           <Link href="https://www.instagram.com/calliwickesphotography/" legacyBehavior passHref>
-            <a>
+            <a aria-label="Instagram">
               <InstagramLogo size={23} className="mr-[35px] cursor-pointer" />
             </a>
           </Link>
           <Link href="https://www.pinterest.com/calliwickes/" legacyBehavior passHref>
-            <a>
+            <a aria-label="Pinterest">
               <PinterestLogo size={23} className="mr-[35px] cursor-pointer" />
             </a>
           </Link>
           <Link href="https://www.yelp.com/biz/calli-wickes-photography-wesley-chapel" legacyBehavior passHref>
-            <a>
+            <a aria-label="Yelp">
               <FontAwesomeIcon icon={faYelp} className="cursor-pointer" />
             </a>
           </Link>
