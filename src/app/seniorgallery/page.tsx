@@ -1,11 +1,15 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import dynamic from 'next/dynamic';
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
 import Header from '@/components/Header/Header';
+
+export const metadata: Metadata = {
+  title: 'Senior Snapshots | Calli Wickes Photography Senior Gallery',
+  description: 'A sample of the senior photography work of Calli Wickes Photography.',
+};
 
 const SeniorGalleryPage = () => {
   return (

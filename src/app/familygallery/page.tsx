@@ -1,10 +1,15 @@
-'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import type { Metadata } from 'next';
 
 import dynamic from 'next/dynamic';
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
 import Header from '@/components/Header/Header';
-import Image from 'next/image';
-import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Family Snapshots | Calli Wickes Photography Family Gallery',
+  description: 'A sample of the family photography work of Calli Wickes Photography.',
+};
 
 const FamilyGalleryPage = () => {
   return (

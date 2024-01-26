@@ -1,18 +1,19 @@
-'use client';
-
-import { useState } from 'react';
+import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 
 import dynamic from 'next/dynamic';
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
 import Header from '@/components/Header/Header';
-import Image from 'next/image';
-import Link from 'next/link';
+import FAQs from '@/app/experience/FAQs';
 
-import { Plus, Minus } from '@phosphor-icons/react';
+export const metadata: Metadata = {
+  title: 'Capture Your Moments | Calli Wickes Photography Experience',
+  description:
+    'Discover the seamless and personalized experience at Calli Wickes Photography. From initial consultation to the final delivery, the process is designed to capture your moments with creativity and precision. Explore the steps involved in creating stunning visual stories, including personalized planning, expert photo sessions, and meticulous post-production. Trust Calli Wickes to turn your vision into timeless memories.',
+};
 
 const ExperiencePage = () => {
-  const [openId, setOpenId] = useState<number | null>(null);
-
   const steps = [
     {
       title: `Fill out the form`,
@@ -109,41 +110,7 @@ const ExperiencePage = () => {
         <h2 className="text-[13px] font-bold tracking-wider my-[50px]">{`FAQ`}</h2>
         <ul className=" md:grid md:grid-rows-2 md:grid-flow-col">
           {faqs.map((faq, index) => {
-            return (
-              <li key={index} className="flex flex-col pb-[30px] md:m-[25px] cursor-pointer md:h-[200px]">
-                <div
-                  className="flex items-center justify-between md:items-start"
-                  onClick={() => {
-                    if (openId === null) {
-                      setOpenId(index);
-                    } else {
-                      setOpenId(null);
-                    }
-                  }}
-                >
-                  <p className="text-[18px] pr-[30px] flex-4 md:text-[25px]">{faq.question}</p>
-                  <div className=" flex justify-end">
-                    {openId === index ? (
-                      <div className="w-30px">
-                        <Minus size={30} />
-                      </div>
-                    ) : (
-                      <div className="w-30px">
-                        <Plus size={30} />
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                <p
-                  className={`h-[200px] w-full text-[15px] pt-[20px] font-thin md:w-full ${
-                    openId === index ? 'visible' : 'hidden'
-                  }`}
-                >
-                  {faq.answer}
-                </p>
-              </li>
-            );
+            return <FAQs key={index} index={index} faq={faq} />;
           })}
         </ul>
       </section>
