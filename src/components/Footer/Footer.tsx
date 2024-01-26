@@ -17,8 +17,8 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="flex flex-col justify-center items-center mt-[60px]">
-      <div className="flex flex-col justify-center items-center">
+    <footer className="flex flex-col justify-center items-center mt-[60px] w-full">
+      <div className="flex flex-col justify-center items-center w-full">
         <div className="flex mb-[60px]">
           <Link href="https://www.facebook.com/CalliWickesPhotography/" legacyBehavior passHref>
             <a aria-label="Facebook">
@@ -41,10 +41,23 @@ const Footer = () => {
             </a>
           </Link>
         </div>
-        <Link href={path} legacyBehavior passHref>
-          <ArrowUp size={30} className="cursor-pointer" />
-        </Link>
-        <p className="font-thin my-[50px]">{`© 2024 Calli Wickes Photography`}</p>
+        <div>
+          <Link href={path} legacyBehavior passHref>
+            <ArrowUp size={30} className="cursor-pointer" />
+          </Link>
+        </div>
+        <div className="flex flex-col-reverse md:flex-row items-center justify-center w-full">
+          <div className="md:flex-1 w-full"></div>
+          <p className="md:flex-1 w-full font-thin mt-[25px] mb-[50px] md:my-[50px] text-center">{`© 2024 Calli Wickes Photography`}</p>
+          <div className="md:flex-1 w-full flex mt-[25px] md:my-[50px] items-center text-center justify-center">
+            <Link passHref legacyBehavior href="/privacypolicy">
+              <a className="underline font-thin mr-[35px]">{`Privacy Policy`}</a>
+            </Link>
+            <Link passHref legacyBehavior href="/termsandconditions">
+              <a className="underline font-thin ">{`Terms and Conditions`}</a>
+            </Link>
+          </div>
+        </div>
       </div>
     </footer>
   );
