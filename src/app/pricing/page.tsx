@@ -58,7 +58,7 @@ const PricingPage = () => {
       <Header isHome />
 
       {/* <Image
-placeholder="blur"
+
         className="mt-[10dvh] md:mt-[20dvh]"
         src="/images/Pricing/couplekissingtheirdaughter.webp"
         priority
@@ -90,7 +90,6 @@ placeholder="blur"
               >
                 <div className="md:flex-1 md:flex md:items-center md:justify-center">
                   <Image
-                    placeholder="blur"
                     src={pkg?.image?.src || ''}
                     height={pkg?.image?.height}
                     width={pkg?.image?.width}

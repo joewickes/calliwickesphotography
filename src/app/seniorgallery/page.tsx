@@ -32,7 +32,6 @@ const SeniorGalleryPage = () => {
       <section className="px-[30px] md:columns-3 md:w-[80%] md:px-[100px]">
         <div className="w-full mb-[15px]">
           <Image
-            placeholder="blur"
             src="/images/Senior Gallery/soccerseniorphoto.webp"
             height={575}
             width={383}
@@ -42,7 +41,6 @@ const SeniorGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
-            placeholder="blur"
             src="/images/Senior Gallery/seniorladytampa.webp"
             height={574}
             width={383}
@@ -52,7 +50,6 @@ const SeniorGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
-            placeholder="blur"
             src="/images/Senior Gallery/seniorguyagainstwhitebrickwall.webp"
             height={575}
             width={862}
@@ -62,7 +59,6 @@ const SeniorGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
-            placeholder="blur"
             src="/images/Senior Gallery/seniorgirlinthecountryside.webp"
             height={575}
             width={862}
@@ -72,7 +68,6 @@ const SeniorGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
-            placeholder="blur"
             src="/images/Senior Gallery/seniorgirlinstairwell.webp"
             height={575}
             width={383}
@@ -82,7 +77,6 @@ const SeniorGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
-            placeholder="blur"
             src="/images/Senior Gallery/seniorguybaseballphoto.webp"
             height={575}
             width={383}
@@ -92,7 +86,6 @@ const SeniorGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
-            placeholder="blur"
             src="/images/Senior Gallery/seniorgirlwithwaterbackground.webp"
             height={575}
             width={862}
@@ -102,7 +95,6 @@ const SeniorGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
-            placeholder="blur"
             src="/images/Senior Gallery/seniorphotoinlettermanjacket.webp"
             height={575}
             width={383}
@@ -112,7 +104,6 @@ const SeniorGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
-            placeholder="blur"
             src="/images/Senior Gallery/seniormaleinflannel.webp"
             height={575}
             width={862}
@@ -122,7 +113,6 @@ const SeniorGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
-            placeholder="blur"
             src="/images/Senior Gallery/seniorportrait.webp"
             height={575}
             width={862}
@@ -132,7 +122,6 @@ const SeniorGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px] md:hidden">
           <Image
-            placeholder="blur"
             src="/images/Senior Gallery/softballseniorphoto.webp"
             height={575}
             width={862}
@@ -145,7 +134,6 @@ const SeniorGalleryPage = () => {
       <section className="px-[30px] mt-[100px] mb-[60px] md:w-full md:px-[100px] md:flex md:flex-row-reverse md:mt-[200px]">
         <div className="md:flex md:justify-center md:flex-1">
           <Image
-            placeholder="blur"
             src="/images/Senior Gallery/seniorphotostampa.webp"
             height={574}
             width={383}

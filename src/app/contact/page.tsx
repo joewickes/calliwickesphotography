@@ -50,7 +50,6 @@ const ContactPage = () => {
         <div className="flex justify-center mb-[60px] md:flex-1 md:justify-start">
           <div className="mt-[30px] h-[90dvw] w-[90dvw] md:h-auto md:w-auto overflow-hidden">
             <Image
-              placeholder="blur"
               src="/images/Home/tampaphotographerportrait.webp"
               alt="Tampa photographer in downtown portrait."
               height={840}

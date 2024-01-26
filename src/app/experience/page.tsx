@@ -67,7 +67,6 @@ const ExperiencePage = () => {
         </div>
         <div className="md:flex md:flex-col md:items-center md:flex-1 md:pr-[100px]">
           <Image
-            placeholder="blur"
             src="/images/Experience/happyfloridafamily.webp"
             height={989}
             width={659}
