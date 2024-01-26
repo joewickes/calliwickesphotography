@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 import dynamic from 'next/dynamic';
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
@@ -16,10 +17,6 @@ export const metadata: Metadata = {
 };
 
 const ContactPage = () => {
-  const contactBlurb = `I can't wait to connect with you!\n\n
-  Thanks for exploring my site. I’m excited to get to know you and possibly capture some incredible images you'll treasure forever! Reach out using the form below or shoot me an email at calliwickesphotography@gmail.com for any questions or to schedule a session! While I respond to your inquiry, feel free to browse my latest work on Facebook and Instagram!\n\n
-  I am based in Tampa, FL, and I proudly serve the Tampa Bay Area, including Clearwater and St Petersburg.`;
-
   const setToast = async (message: string) => {
     'use server';
     toast.info(message);
@@ -43,7 +40,23 @@ const ContactPage = () => {
 
       <section className="px-[30px] mb-[60px] md:pl-[100px] md:pt-[100px]">
         <h1 className="text-[45px] leading-1 mb-[30px]">{`Let's get in touch!`}</h1>
-        <p className="font-thin whitespace-pre-line">{contactBlurb}</p>
+        <p className="font-thin whitespace-pre-line">
+          {`I can't wait to connect with you!\n\n
+  Thanks for exploring my site. I’m excited to get to know you and possibly capture some incredible images you'll treasure forever! Reach out using the form below or shoot me an email at calliwickesphotography@gmail.com for any questions or to schedule a session! While I respond to your inquiry, feel free to browse my latest work on`}{' '}
+          <Link passHref legacyBehavior href="https://www.facebook.com/CalliWickesPhotography/">
+            <a aria-label="Facebook" className="font-semibold">
+              Facebook
+            </a>
+          </Link>{' '}
+          {`and`}{' '}
+          <Link passHref legacyBehavior href="https://www.instagram.com/calliwickesphotography/">
+            <a aria-label="Instagram" className="font-semibold">
+              Instagram
+            </a>
+          </Link>
+          {`!`}
+          {`\n\nI am based in Tampa, FL, and I proudly serve the Tampa Bay Area, including Clearwater and St Petersburg.`}
+        </p>
       </section>
 
       <section className="px-[30px] text-black md:pl-[100px] md:flex">
