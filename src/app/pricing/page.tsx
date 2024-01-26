@@ -157,9 +157,9 @@ const PricingPage = () => {
         </h2>
         <div className="flex justify-center mt-[300px]">
           <Link href="/contact" legacyBehavior passHref>
-            <button className="mb-[60px] border border-white text-white py-[15px] text-[13px] tracking-[.35em] px-[30px] md:translate-x-[200px] md:translate-y-[-150px]">
+            <a className="mb-[60px] border border-white text-white py-[15px] text-[13px] tracking-[.35em] px-[30px] md:translate-x-[200px] md:translate-y-[-150px]">
               {`GET IN TOUCH`}
-            </button>
+            </a>
           </Link>
         </div>
       </section>

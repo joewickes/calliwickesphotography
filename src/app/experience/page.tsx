@@ -103,9 +103,9 @@ const ExperiencePage = () => {
             See more of my work
           </p>
           <Link href="/portfolio" legacyBehavior passHref>
-            <button className="border border-white py-[15px] text-white text-[13px] tracking-[.35em] px-[30px]">
+            <a className="border border-white py-[15px] text-white text-[13px] tracking-[.35em] px-[30px]">
               {`VIEW MY PORTFOLIO`}
-            </button>
+            </a>
           </Link>
         </div>
       </section>
@@ -169,9 +169,9 @@ const ExperiencePage = () => {
           <p className="text-white font-thin px-[35px] pt-[100px] md:mt-[50px] md:pl-0">{`I can’t wait for us to meet and capture your story together.`}</p>
           <div className="flex justify-center mt-[125px] md:justify-start md:mt-[50px]">
             <Link href="/contact" legacyBehavior passHref>
-              <button className="border border-white py-[15px] text-white text-[13px] tracking-[.35em] px-[30px]">
+              <a className="border border-white py-[15px] text-white text-[13px] tracking-[.35em] px-[30px]">
                 {`LET'S CONNECT`}
-              </button>
+              </a>
             </Link>
           </div>
         </div>

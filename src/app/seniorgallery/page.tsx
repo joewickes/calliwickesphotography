@@ -142,9 +142,9 @@ const SeniorGalleryPage = () => {
 
           <div>
             <Link href="/contact" legacyBehavior passHref>
-              <button className="mb-[60px] mt-[30px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
+              <a className="mb-[60px] mt-[30px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
                 {`GET IN TOUCH`}
-              </button>
+              </a>
             </Link>
           </div>
         </div>

@@ -28,9 +28,9 @@ export default function Home() {
             <span>{`photographer!`}</span>
           </h1>
           <Link href="/portfolio" legacyBehavior passHref>
-            <button className="z-10  mb-[60px] border border-white py-[15px] text-[13px] tracking-[.35em] mt-[30px] px-[30px] text-white md:self-start md:ml-[100px]">
+            <a className="z-10  mb-[60px] border border-white py-[15px] text-[13px] tracking-[.35em] mt-[30px] px-[30px] text-white md:self-start md:ml-[100px]">
               {`VIEW PORTFOLIO`}
-            </button>
+            </a>
           </Link>
         </section>
       </div>
@@ -61,15 +61,17 @@ export default function Home() {
           is my passion. With two little girls of my own, I specialize in
           stress-free sessions, capturing natural smiles and unique stories.
           Tailoring each session to your family, I strike a balance between
-          posed and playful pictures for a casual, comfortable vibe. Explore the
+          posed and playful pictures for a casual, comfortable vibe. 
+          
+          Explore the
           gallery below and get ready to capture your family's story. Let's
           create timeless memories together!`}
           </p>
           <div>
             <Link href="/about" legacyBehavior passHref>
-              <button className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
+              <a className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
                 {`MORE ABOUT ME`}
-              </button>
+              </a>
             </Link>
           </div>
         </div>
@@ -174,9 +176,9 @@ export default function Home() {
           </p>
           <div>
             <Link href="/contact" legacyBehavior passHref>
-              <button className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
+              <a className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
                 {`LET'S CONNECT`}
-              </button>
+              </a>
             </Link>
           </div>
         </div>

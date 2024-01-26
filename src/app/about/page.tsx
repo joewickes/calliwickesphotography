@@ -42,9 +42,9 @@ const AboutPage = () => {
           family's best moments for you to cherish forever.`}
         </p>
         <Link href="/contact" legacyBehavior passHref>
-          <button className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
+          <a className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
             {`LET'S CONNECT`}
-          </button>
+          </a>
         </Link>
       </section>
 
@@ -72,9 +72,9 @@ const AboutPage = () => {
           </p>
           <div>
             <Link href="/portfolio" legacyBehavior passHref>
-              <button className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
+              <a className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
                 {`VIEW PORTFOLIO`}
-              </button>
+              </a>
             </Link>
           </div>
         </div>
@@ -108,9 +108,9 @@ const AboutPage = () => {
           </p>
           <div className="md:self-start md:pl-[50px]">
             <Link href="/contact" legacyBehavior passHref>
-              <button className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
+              <a className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
                 {`LET'S CONNECT`}
-              </button>
+              </a>
             </Link>
           </div>
         </div>

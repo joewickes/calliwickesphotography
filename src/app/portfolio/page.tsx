@@ -28,9 +28,9 @@ const PortfolioPage = () => {
         <div className="flex justify-center mt-[50px] md:self-start md:ml-[100px]">
           <div>
             <Link href="/contact" legacyBehavior passHref>
-              <button className="z-10  mb-[60px] border border-white py-[15px] text-[13px] tracking-[.35em] mt-[30px] px-[30px] text-white">
+              <a className="z-10  mb-[60px] border border-white py-[15px] text-[13px] tracking-[.35em] mt-[30px] px-[30px] text-white">
                 {`LET'S CONNECT`}
-              </button>
+              </a>
             </Link>
           </div>
         </div>
@@ -70,9 +70,9 @@ const PortfolioPage = () => {
                 >
                   {/* Image */}
 
-                  <button className="z-10 border border-white py-[15px] text-[13px] tracking-[.35em] my-[240px] px-[30px] text-white md:mx-[40px]">
+                  <a className="z-10 border border-white py-[15px] text-[13px] tracking-[.35em] my-[240px] px-[30px] text-white md:mx-[40px]">
                     {gallery.name}
-                  </button>
+                  </a>
                 </li>
               </Link>
             );

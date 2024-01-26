@@ -186,9 +186,9 @@ const FamilyGalleryPage = () => {
           <p className="font-thin mb-[15px]">{`Your Tampa + Wesley Chapel Family Photographer`}</p>
 
           <Link href="/contact" legacyBehavior passHref>
-            <button className="mb-[60px] mt-[30px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
+            <a className="mb-[60px] mt-[30px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
               {`GET IN TOUCH`}
-            </button>
+            </a>
           </Link>
         </div>
       </section>
