@@ -20,26 +20,18 @@ const Footer = () => {
     <footer className="flex flex-col justify-center items-center mt-[60px] w-full">
       <div className="flex flex-col justify-center items-center w-full">
         <div className="flex mb-[60px]">
-          <Link href="https://www.facebook.com/CalliWickesPhotography/" legacyBehavior passHref>
-            <a aria-label="Facebook">
-              <FacebookLogo size={23} className="mr-[35px] cursor-pointer" />
-            </a>
-          </Link>
-          <Link href="https://www.instagram.com/calliwickesphotography/" legacyBehavior passHref>
-            <a aria-label="Instagram">
-              <InstagramLogo size={23} className="mr-[35px] cursor-pointer" />
-            </a>
-          </Link>
-          <Link href="https://www.pinterest.com/calliwickes/" legacyBehavior passHref>
-            <a aria-label="Pinterest">
-              <PinterestLogo size={23} className="mr-[35px] cursor-pointer" />
-            </a>
-          </Link>
-          <Link href="https://www.yelp.com/biz/calli-wickes-photography-wesley-chapel" legacyBehavior passHref>
-            <a aria-label="Yelp">
-              <FontAwesomeIcon icon={faYelp} className="cursor-pointer" />
-            </a>
-          </Link>
+          <a target="_blank" aria-label="Facebook" href="https://www.facebook.com/CalliWickesPhotography/">
+            <FacebookLogo size={23} className="mr-[35px] cursor-pointer" />
+          </a>
+          <a target="_blank" aria-label="Instagram" href="https://www.instagram.com/calliwickesphotography/">
+            <InstagramLogo size={23} className="mr-[35px] cursor-pointer" />
+          </a>
+          <a target="_blank" aria-label="Pinterest" href="https://www.pinterest.com/calliwickes/">
+            <PinterestLogo size={23} className="mr-[35px] cursor-pointer" />
+          </a>
+          <a target="_blank" aria-label="Yelp" href="https://www.yelp.com/biz/calli-wickes-photography-wesley-chapel">
+            <FontAwesomeIcon icon={faYelp} className="cursor-pointer" />
+          </a>
         </div>
         <div>
           <Link href={path} legacyBehavior passHref>
