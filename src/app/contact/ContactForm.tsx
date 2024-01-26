@@ -135,19 +135,34 @@ const ContactForm = () => {
         <p className="mt-[50px]">{`I’m looking forward to chatting with you and will be in touch shortly!`}</p>
         <p className="mt-[25px]">
           {`While you wait… find me on`}
-          <a href="https://www.facebook.com/CalliWickesPhotography/" className="font-semibold" aria-label="Facebook">
+          <a
+            target="_blank"
+            href="https://www.facebook.com/CalliWickesPhotography/"
+            className="font-semibold"
+            aria-label="Facebook"
+          >
             {` `}
             Facebook
           </a>
           {` `}
           {`or `}
-          <a href="https://www.instagram.com/calliwickesphotography/" className="font-semibold" aria-label="Instagram">
+          <a
+            target="_blank"
+            href="https://www.instagram.com/calliwickesphotography/"
+            className="font-semibold"
+            aria-label="Instagram"
+          >
             Instagram
           </a>
         </p>
         <p className="mt-[25px]">
           {`You can also check out my`}{' '}
-          <a href="https://www.pinterest.com/calliwickes/" className="font-semibold" aria-label="Pinterest">
+          <a
+            target="_blank"
+            href="https://www.pinterest.com/calliwickes/"
+            className="font-semibold"
+            aria-label="Pinterest"
+          >
             Pinterest
           </a>{' '}
           {`page for outfit inspiration for your upcoming session!`}
