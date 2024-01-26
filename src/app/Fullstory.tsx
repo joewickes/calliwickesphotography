@@ -3,7 +3,7 @@ import Script from 'next/script';
 
 const Fullstory = () => {
   return (
-    <Script>
+    <Script id="fullstory">
       {`
         window['_fs_host'] = 'fullstory.com';
         window['_fs_script'] = 'edge.fullstory.com/s/fs.js';

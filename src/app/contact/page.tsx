@@ -20,6 +20,11 @@ const ContactPage = () => {
   Thanks for exploring my site. I’m excited to get to know you and possibly capture some incredible images you'll treasure forever! Reach out using the form below or shoot me an email at calliwickesphotography@gmail.com for any questions or to schedule a session! While I respond to your inquiry, feel free to browse my latest work on Facebook and Instagram!\n\n
   I am based in Tampa, FL, and I proudly serve the Tampa Bay Area, including Clearwater and St Petersburg.`;
 
+  const setToast = async (message: string) => {
+    'use server';
+    toast.info(message);
+  };
+
   return (
     <main>
       <ToastContainer position="top-right" closeOnClick autoClose={5000} pauseOnHover transition={Slide} />
@@ -54,7 +59,7 @@ const ContactPage = () => {
             />
           </div>
         </div>
-        <ContactForm setToast={(e: string) => toast.info(e)} />
+        <ContactForm setToast={setToast} />
       </section>
       <Footer />
     </main>
