@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { ArrowUp, FacebookLogo, InstagramLogo } from "@phosphor-icons/react";
+import { ArrowUp, FacebookLogo, InstagramLogo } from '@phosphor-icons/react';
 
-import Header from "@/components/Header/Header";
-import dynamic from "next/dynamic";
-const Footer = dynamic(() => import("@/components/Footer/Footer"));
+import Header from '@/components/Header/Header';
+import dynamic from 'next/dynamic';
+const Footer = dynamic(() => import('@/components/Footer/Footer'));
 
 export default function Home() {
   return (
@@ -16,16 +16,12 @@ export default function Home() {
         <Header isHome />
 
         {/* Hero Section */}
-        <section
-          id="home"
-          className="h-dvh w-dvw flex flex-col items-center justify-center pt-[100px]"
-        >
+        <section id="home" className="h-dvh w-dvw flex flex-col items-center justify-center pt-[100px]">
           <p className="text-center md:text-left text-[12px] mb-[20px] tracking-wide text-white z-10 md:w-[150px] md:self-end md:mr-[200px] md:mt-[50px]">
             {`PHOTOS THAT CAPTURE YOUR BEST MOMENTS`}
           </p>
           <h1 className="text-center text-[45px] md:text-[84px] leading-[3.5rem] md:leading-[5.5rem] flex flex-col mb-[80px] md:mt-[100px] text-white z-10 tracking-wide md:self-start md:ml-[100px] md:flex md:flex-row md:flex-wrap md:text-left">
-            <span>{`I'm Calli! Your`}</span>{" "}
-            <span className="md:pl-[20px]">{`Tampa family`}</span>{" "}
+            <span>{`I'm Calli! Your`}</span> <span className="md:pl-[20px]">{`Tampa family`}</span>{' '}
             <span>{`photographer!`}</span>
           </h1>
           <Link href="/portfolio" legacyBehavior passHref>
@@ -52,12 +48,8 @@ export default function Home() {
           </div>
         </div>
         <div className="md:flex-1 md:flex md:flex-col md:justify-center md:pr-[100px]">
-          <h2 className="text-[35px] mb-[60px]">
-            {`Hi! I'm Calli, a family photographer.`}
-          </h2>
-          <h3 className="text-[15px] mb-[60px]">
-            {`SPECIALIZING IN FAMILY PHOTOGRAPHY IN TAMPA, FL`}
-          </h3>
+          <h2 className="text-[35px] mb-[60px]">{`Hi! I'm Calli, a family photographer.`}</h2>
+          <h3 className="text-[15px] mb-[60px]">{`SPECIALIZING IN FAMILY PHOTOGRAPHY IN TAMPA, FL`}</h3>
           <p className="font-thin leading-8 mb-[60px]">
             {`Capturing cherished family moments through upbeat and fun photography
           is my passion. With two little girls of my own, I specialize in
@@ -160,10 +152,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section
-        id="contact"
-        className="px-[30px] md:flex md:flex-row-reverse md:py-[100px]"
-      >
+      <section id="contact" className="px-[30px] md:flex md:flex-row-reverse md:py-[100px]">
         <div className="w-full mb-[50px] md:flex-1 md:flex md:justify-center md:pr-[100px]">
           <Image
             placeholder="blur"
@@ -175,9 +164,7 @@ export default function Home() {
           />
         </div>
         <div className="md:flex md:flex-col md:flex-1 md:align-center md:pl-[100px] md:justify-center md:align-center">
-          <h2 className="text-[35px] mb-[50px]">
-            {`Family photography for you to treasure forever`}
-          </h2>
+          <h2 className="text-[35px] mb-[50px]">{`Family photography for you to treasure forever`}</h2>
           <p className="font-thin leading-8 mb-[60px]">
             {`Whether you seek stunning beach snapshots, enchanting Florida nature
           images, or a lively urban atmosphere with your loved ones, I would

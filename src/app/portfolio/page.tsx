@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import Link from "next/link";
+import Link from 'next/link';
 
-import dynamic from "next/dynamic";
-const Footer = dynamic(() => import("@/components/Footer/Footer"));
-import Header from "@/components/Header/Header";
+import dynamic from 'next/dynamic';
+const Footer = dynamic(() => import('@/components/Footer/Footer'));
+import Header from '@/components/Header/Header';
 
 const PortfolioPage = () => {
   const galleryInfo = [
-    { name: "FAMILY GALLERY", link: "familygallery", id: "familygallerylink" },
-    { name: "SENIOR GALLERY", link: "seniorgallery", id: "seniorgallerylink" },
+    { name: 'FAMILY GALLERY', link: 'familygallery', id: 'familygallerylink' },
+    { name: 'SENIOR GALLERY', link: 'seniorgallery', id: 'seniorgallerylink' },
   ];
 
   return (
@@ -58,17 +58,8 @@ const PortfolioPage = () => {
         <ul className="md:flex md:mx-[100px] md:justify-evenly">
           {galleryInfo.map((gallery, index) => {
             return (
-              <Link
-                key={index}
-                href={`/${gallery.link}`}
-                legacyBehavior
-                passHref
-              >
-                <li
-                  key={index}
-                  className="mb-[60px] flex justify-center items-center md:min-w-[385px]"
-                  id={gallery.id}
-                >
+              <Link key={index} href={`/${gallery.link}`} legacyBehavior passHref>
+                <li key={index} className="mb-[60px] flex justify-center items-center md:min-w-[385px]" id={gallery.id}>
                   {/* Image */}
 
                   <a className="z-10 border border-white py-[15px] text-[13px] tracking-[.35em] my-[240px] px-[30px] text-white md:mx-[40px]">

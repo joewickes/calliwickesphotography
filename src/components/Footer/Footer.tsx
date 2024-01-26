@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
-import { ArrowUp, FacebookLogo, InstagramLogo } from "@phosphor-icons/react";
+import { ArrowUp, FacebookLogo, InstagramLogo } from '@phosphor-icons/react';
 
 const Footer = () => {
-  const [path, setPath] = useState("#");
+  const [path, setPath] = useState('#');
 
   useEffect(() => {
     if (window) {
@@ -18,20 +18,12 @@ const Footer = () => {
     <footer className="flex flex-col justify-center items-center mt-[60px]">
       <div className="flex flex-col justify-center items-center">
         <div className="flex mb-[60px]">
-          <Link
-            href="https://www.facebook.com/CalliWickesPhotography/"
-            legacyBehavior
-            passHref
-          >
+          <Link href="https://www.facebook.com/CalliWickesPhotography/" legacyBehavior passHref>
             <a>
               <FacebookLogo size={23} className="mr-[35px] cursor-pointer" />
             </a>
           </Link>
-          <Link
-            href="https://www.instagram.com/calliwickesphotography/"
-            legacyBehavior
-            passHref
-          >
+          <Link href="https://www.instagram.com/calliwickesphotography/" legacyBehavior passHref>
             <a>
               <InstagramLogo size={23} className="cursor-pointer" />
             </a>

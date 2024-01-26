@@ -1,4 +1,4 @@
-import { sendEmail } from "@/lib/sendgrid";
+import { sendEmail } from '@/lib/sendgrid';
 // import sgMail from "@/lib/sendgrid";
 
 // export default async function handler(
@@ -17,12 +17,9 @@ export async function POST(req: Request) {
 
   try {
     await sendEmail(email);
-    return Response.json(
-      { message: "Email sent successfully" },
-      { status: 200 }
-    );
+    return Response.json({ message: 'Email sent successfully' }, { status: 200 });
   } catch (error) {
     console.error(error);
-    return Response.json({ message: "Internal Server Error" });
+    return Response.json({ message: 'Internal Server Error' });
   }
 }

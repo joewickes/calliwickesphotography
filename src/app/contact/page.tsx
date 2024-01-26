@@ -1,32 +1,32 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Image from "next/image";
+import { useState } from 'react';
+import Image from 'next/image';
 
-import dynamic from "next/dynamic";
-const Footer = dynamic(() => import("@/components/Footer/Footer"));
-import Header from "@/components/Header/Header";
-import { Slide, ToastContainer, toast } from "react-toastify";
+import dynamic from 'next/dynamic';
+const Footer = dynamic(() => import('@/components/Footer/Footer'));
+import Header from '@/components/Header/Header';
+import { Slide, ToastContainer, toast } from 'react-toastify';
 
-import "react-toastify/dist/ReactToastify.css";
-import { format } from "path";
+import 'react-toastify/dist/ReactToastify.css';
+import { format } from 'path';
 
 const ContactPage = () => {
   const contactBlurb = `I can't wait to connect with you!\n\n
   Thanks for exploring my site. I’m excited to get to know you and possibly capture some incredible images you'll treasure forever! Reach out using the form below or shoot me an email at calliwickesphotography@gmail.com for any questions or to schedule a session! While I respond to your inquiry, feel free to browse my latest work on Facebook and Instagram!\n\n
   I am based in Tampa, FL, and I proudly serve the Tampa Bay Area, including Clearwater and St Petersburg.`;
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
   const [isDisabled, setIsDisabled] = useState(false);
 
   const formatPhoneNumber = (e: any) => {
     const currNum = e.target.value;
     const len = currNum.length;
     const lastLen = phone.length;
-    console.log(isNaN(parseInt(currNum[currNum.length - 1])), "vs", "number");
+    console.log(isNaN(parseInt(currNum[currNum.length - 1])), 'vs', 'number');
 
     if (len < lastLen) {
       setPhone(currNum);
@@ -35,9 +35,9 @@ const ContactPage = () => {
     } else if (len === 1) {
       setPhone(`(${currNum}`);
     } else if (len === 4) {
-      setPhone(currNum + ") ");
+      setPhone(currNum + ') ');
     } else if (len === 9) {
-      setPhone(currNum + "-");
+      setPhone(currNum + '-');
     } else if (len > 14) {
       return;
     } else {
@@ -47,7 +47,7 @@ const ContactPage = () => {
 
   const onSubmit = async (e: any) => {
     e.preventDefault();
-    toast.info("Sending your message...");
+    toast.info('Sending your message...');
     setIsDisabled(true);
 
     const data = {
@@ -57,30 +57,24 @@ const ContactPage = () => {
       message,
     };
 
-    const res = await fetch("/api/email", {
-      method: "POST",
+    const res = await fetch('/api/email', {
+      method: 'POST',
       body: JSON.stringify(data),
     });
 
     if (res.status === 200) {
-      setName("");
-      setEmail("");
-      setPhone("");
-      setMessage("");
-      toast.info("Your message was sent! Thanks!");
+      setName('');
+      setEmail('');
+      setPhone('');
+      setMessage('');
+      toast.info('Your message was sent! Thanks!');
       setIsDisabled(false);
     }
   };
 
   return (
     <main>
-      <ToastContainer
-        position="top-right"
-        closeOnClick
-        autoClose={5000}
-        pauseOnHover
-        transition={Slide}
-      />
+      <ToastContainer position="top-right" closeOnClick autoClose={5000} pauseOnHover transition={Slide} />
       <Header isHome />
       <section
         id="kideatingfruit"
@@ -99,10 +93,7 @@ const ContactPage = () => {
         <p className="font-thin whitespace-pre-line">{contactBlurb}</p>
       </section>
 
-      <section
-        className="px-[30px] text-black md:pl-[100px] md:flex"
-        onSubmit={onSubmit}
-      >
+      <section className="px-[30px] text-black md:pl-[100px] md:flex" onSubmit={onSubmit}>
         <div className="flex justify-center mb-[60px] md:flex-1 md:justify-start">
           <div className="mt-[30px] h-[90dvw] w-[90dvw] md:h-auto md:w-auto overflow-hidden">
             <Image

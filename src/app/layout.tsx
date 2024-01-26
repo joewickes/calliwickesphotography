@@ -1,26 +1,22 @@
-import GoogleAnalytics from "@/app/GoogleAnalytics";
+import { GoogleAnalytics } from '@next/third-parties/google';
 
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Calli Wickes Photography",
-  description: "Calli Wickes Photography - Family and Senior Photographer",
+  title: 'Calli Wickes Photography',
+  description: 'Calli Wickes Photography - Family and Senior Photographer',
 };
 
-import { Raleway } from "next/font/google";
-import "./globals.css";
+import { Raleway } from 'next/font/google';
+import './globals.css';
 
-const raleway = Raleway({ subsets: ["latin"] });
+const raleway = Raleway({ subsets: ['latin'] });
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <GoogleAnalytics />
       <body className={raleway.className}>{children}</body>
+      <GoogleAnalytics gaId="G-DR6QE7KKZ3" />
     </html>
   );
 }

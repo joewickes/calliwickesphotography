@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import dynamic from "next/dynamic";
-const Footer = dynamic(() => import("@/components/Footer/Footer"));
-import Header from "@/components/Header/Header";
-import Image from "next/image";
-import Link from "next/link";
+import dynamic from 'next/dynamic';
+const Footer = dynamic(() => import('@/components/Footer/Footer'));
+import Header from '@/components/Header/Header';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const FamilyGalleryPage = () => {
   return (

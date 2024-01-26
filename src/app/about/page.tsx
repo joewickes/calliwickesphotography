@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
-import dynamic from "next/dynamic";
-const Footer = dynamic(() => import("@/components/Footer/Footer"));
-import Header from "@/components/Header/Header";
+import dynamic from 'next/dynamic';
+const Footer = dynamic(() => import('@/components/Footer/Footer'));
+import Header from '@/components/Header/Header';
 
 const AboutPage = () => {
   const facts = [
-    "My husband (Joe) and I were married in 2016. He is my best friend + biggest supporter. When I first started out in photography, he would often tag along for photo sessions to help bring out those smiles!",
-    "I have two beautiful + hilarious little girls, Mia (3) + Harper (1.5). They are obsessed with all things Bluey + Pokemon, and love seeing what trouble they can get into together.",
+    'My husband (Joe) and I were married in 2016. He is my best friend + biggest supporter. When I first started out in photography, he would often tag along for photo sessions to help bring out those smiles!',
+    'I have two beautiful + hilarious little girls, Mia (3) + Harper (1.5). They are obsessed with all things Bluey + Pokemon, and love seeing what trouble they can get into together.',
     "I keep a calendar updated like it's an obsessive hobby - which it probably is! It's something my friends like to (and I can admit - justly) mock me about!",
     "We moved to Tampa in 2020 and it is one of the best decisions we've ever made. We love all things Tampa. Our absolute favorite restaurant is a wing place downtown called Hattrick's.",
   ];
@@ -21,9 +21,8 @@ const AboutPage = () => {
       <section className="md:mt-[20dvh] px-[30px] mb-[60px]">
         <h1 className="text-[40px] leading-1 font-thin flex flex-col mb-[80px] md:text-[75px] md:ml-[100px] md:pt-[100px]">
           <span>
-            <span>{`Hi! I'm Calli + I`}</span> <span>{`love capturing`}</span>{" "}
-            <span>{`moments`}</span>
-          </span>{" "}
+            <span>{`Hi! I'm Calli + I`}</span> <span>{`love capturing`}</span> <span>{`moments`}</span>
+          </span>{' '}
           <span>{`through a lens.`}</span>
         </h1>
       </section>
@@ -64,9 +63,7 @@ const AboutPage = () => {
           </div>
         </div>
         <div className="md:flex-1 md:flex md:flex-col md:justify-center md:pr-[100px]">
-          <h2 className="text-[35px] mb-[60px]">
-            {`I’m Calli, a Florida family photographer!`}
-          </h2>
+          <h2 className="text-[35px] mb-[60px]">{`I’m Calli, a Florida family photographer!`}</h2>
           <h3 className="text-[15px] mb-[60px]">
             {`I CURRENTLY SERVE TAMPA, WESLEY CHAPEL AND THE SURROUNDING AREAS`}
           </h3>
