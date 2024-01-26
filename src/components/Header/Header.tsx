@@ -71,40 +71,45 @@ const Header = ({ isHome = false }: HeaderProps) => {
               { name: "Contact", link: "contact" },
             ].map((item, idx) => {
               return idx !== 2 ? (
-                <Link href={`/${item.link}`} key={idx} legacyBehavior passHref>
-                  <li className="mb-[40px] cursor-pointer">{item.name}</li>
-                </Link>
+                <li key={idx} className="mb-[40px] cursor-pointer">
+                  <Link href={`/${item.link}`} legacyBehavior passHref>
+                    <a>{item.name}</a>
+                  </Link>
+                </li>
               ) : (
                 <li
                   key={idx}
                   className="mb-[40px] flex flex-col justify-center items-center cursor-pointer"
                 >
-                  <div key={idx} onClick={() => setIsInfoOpen(!isInfoOpen)}>
-                    <div className="flex items-center justify-center">
+                  <div>
+                    <div
+                      onClick={() => setIsInfoOpen(!isInfoOpen)}
+                      className="flex items-center justify-center"
+                    >
                       {item.name} <Dot size={20} />
                     </div>
                     <ul className="font-thin flex flex-col justify-center items-center">
                       {isInfoOpen
                         ? item?.subMenu?.map((subItem, idx) => {
                             return (
-                              <Link
-                                href={`/${subItem.link}`}
+                              <li
                                 key={idx}
-                                legacyBehavior
-                                passHref
+                                className={`cursor-pointer ${
+                                  idx === 0
+                                    ? "mt-[30px] mb-[40px]"
+                                    : idx === item?.subMenu?.length - 1
+                                    ? "mb-[0px]"
+                                    : "mb-[40px]"
+                                }`}
                               >
-                                <li
-                                  className={`cursor-pointer ${
-                                    idx === 0
-                                      ? "mt-[30px] mb-[40px]"
-                                      : idx === item?.subMenu?.length - 1
-                                      ? "mb-[0px]"
-                                      : "mb-[40px]"
-                                  }`}
+                                <Link
+                                  href={`/${subItem.link}`}
+                                  legacyBehavior
+                                  passHref
                                 >
-                                  {subItem.name}
-                                </li>
-                              </Link>
+                                  <a>{subItem.name}</a>
+                                </Link>
+                              </li>
                             );
                           })
                         : null}
