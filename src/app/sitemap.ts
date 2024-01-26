@@ -50,17 +50,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
-    // {
-    //   url: 'https://www.calliwickesphotography.com/privacypolicy',
-    //   lastModified: new Date(),
-    //   changeFrequency: 'yearly',
-    //   priority: 0.2,
-    // },
-    // {
-    //   url: 'https://www.calliwickesphotography.com/termsandconditions',
-    //   lastModified: new Date(),
-    //   changeFrequency: 'yearly',
-    //   priority: 0.2,
-    // },
+    {
+      url: 'https://www.calliwickesphotography.com/privacypolicy',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    },
+    {
+      url: 'https://www.calliwickesphotography.com/termsandconditions',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    },
   ];
 }

@@ -3,8 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { ArrowUp, FacebookLogo, InstagramLogo } from '@phosphor-icons/react';
-
+import Share from '@/components/Share/Share';
 import Header from '@/components/Header/Header';
 import dynamic from 'next/dynamic';
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
@@ -12,6 +11,7 @@ const Footer = dynamic(() => import('@/components/Footer/Footer'));
 export default function Home() {
   return (
     <main>
+      <Share />
       <div id="familyofthree">
         <Header isHome />
 
@@ -24,9 +24,9 @@ export default function Home() {
             <span>{`I'm Calli! Your`}</span> <span className="md:pl-[20px]">{`Tampa family`}</span>{' '}
             <span>{`photographer!`}</span>
           </h1>
-          <Link href="/portfolio" legacyBehavior passHref>
+          <Link href="/contact" legacyBehavior passHref>
             <a className="z-10  mb-[60px] border border-white py-[15px] text-[13px] tracking-[.35em] mt-[30px] px-[30px] text-white md:self-start md:ml-[100px]">
-              {`VIEW PORTFOLIO`}
+              {`LET'S CHAT`}
             </a>
           </Link>
         </section>
@@ -46,23 +46,23 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="md:flex-1 md:flex md:flex-col md:justify-center md:pr-[100px]">
-          <h2 className="text-[35px] mb-[60px]">{`Hi! I'm Calli, a family photographer.`}</h2>
-          <h3 className="text-[15px] mb-[60px]">{`SPECIALIZING IN FAMILY PHOTOGRAPHY IN TAMPA, FL`}</h3>
-          <p className="font-thin leading-8 mb-[60px]">
-            {`Capturing cherished family moments through upbeat and fun photography
-          is my passion. With two little girls of my own, I specialize in
-          stress-free sessions, capturing natural smiles and unique stories.
-          Tailoring each session to your family, I strike a balance between
-          posed and playful pictures for a casual, comfortable vibe. 
-          
-          Explore the
-          gallery below and get ready to capture your family's story. Let's
-          create timeless memories together!`}
+        <div className="md:flex-1 md:flex md:flex-col md:justify-center md:pr-[100px] md:mb-[100px]">
+          <h2 className="text-[35px] mb-[60px]">{`Family Photography in Tampa, FL`}</h2>
+          <h3 className="text-[15px] mb-[40px]">{`WHAT MAKES CALLI SO DIFFERENT?`}</h3>
+          <p className="font-thin leading-8 whitespace-pre-wrap">
+            {`I love capturing photos that showcase you with your favorite people. Pressing pause on the busyness of life so that you can have images that you will forever cherish. When you book with me you will receive images that you love and can’t wait to print + frame throughout your home. I love capturing cherished moments with your favorite people. With two little girls of my own, I specialize in stress-free sessions, capturing natural smiles and unique stories. Tailoring each session to your unique family, I love finding a balance between posed and playful pictures for a casual, comfortable vibe. Giving you photographs that you will love every time you see them proudly displayed in your home!`}
           </p>
-          <div>
+          <p className="font-thin leading-8 mb-[60px] whitespace-pre-wrap">
+            {`
+I can’t wait to capture some of your best memories together. You can explore the gallery below and get ready to capture your family's story. Let's create timeless memories together in Tampa.`}{' '}
+            <Link href="/contact" passHref legacyBehavior>
+              <a className="font-normal">{`Contact me`}</a>
+            </Link>{' '}
+            {`to book your family photo session today!`}
+          </p>
+          <div className="pb-[80px] md:pb-[0px]">
             <Link href="/about" legacyBehavior passHref>
-              <a className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
+              <a className="mb-[100px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
                 {`MORE ABOUT ME`}
               </a>
             </Link>
@@ -163,9 +163,9 @@ export default function Home() {
           destined for your walls!`}
           </p>
           <div>
-            <Link href="/contact" legacyBehavior passHref>
+            <Link href="/portfolio" legacyBehavior passHref>
               <a className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
-                {`LET'S CONNECT`}
+                {`VIEW MY WORK`}
               </a>
             </Link>
           </div>

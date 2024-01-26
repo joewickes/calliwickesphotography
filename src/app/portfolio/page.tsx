@@ -4,6 +4,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
 import Header from '@/components/Header/Header';
+import Share from '@/components/Share/Share';
 
 export const metadata: Metadata = {
   title: 'Visual Stories Unveiled | Calli Wickes Photography Portfolio',
@@ -19,6 +20,7 @@ const PortfolioPage = () => {
 
   return (
     <>
+      <Share />
       <Header isHome />
       <section
         className="pt-[20dvh] px-[30px] bg-black text-white md:h-[100dvh] flex flex-col"

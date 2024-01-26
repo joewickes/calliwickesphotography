@@ -5,6 +5,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
 import Header from '@/components/Header/Header';
+import Share from '@/components/Share/Share';
 
 export const metadata: Metadata = {
   title: 'Senior Snapshots | Calli Wickes Photography Senior Gallery',
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 const SeniorGalleryPage = () => {
   return (
     <main className="md:flex md:flex-col md:items-center">
+      <Share />
       <div className="md:w-full">
         <Header />
       </div>

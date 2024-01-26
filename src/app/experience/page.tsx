@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
 import Header from '@/components/Header/Header';
 import FAQs from '@/app/experience/FAQs';
+import Share from '@/components/Share/Share';
 
 export const metadata: Metadata = {
   title: 'Capture Your Moments | Calli Wickes Photography Experience',
@@ -59,6 +60,7 @@ const ExperiencePage = () => {
 
   return (
     <>
+      <Share />
       <Header />
       <section className="mt-[20dvh] px-[30px] md:flex">
         <div className="md:flex md:flex-col md:items-start md:justify-center md:flex-1 md:px-[100px]">

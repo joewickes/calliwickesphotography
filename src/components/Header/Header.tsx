@@ -19,14 +19,15 @@ const Header = ({ isHome = false }: HeaderProps) => {
         <div className="w-dvw flex px-[20px] absolute top-0 left-0">
           <div className={`flex-1 py-[10px] z-30 md:ml-[100px] md:mt-[50px]`}>
             <Link href="/" legacyBehavior passHref>
-              <p
+              <a
+                aria-label="Calli Wickes Photography Home Page"
                 className={`tracking-[.35em] text-[20px] w-full md:flex md:flex-col md:text-[25px] cursor-pointer ${
                   isMenuOpen || !isHome ? 'text-black' : 'text-white'
                 }`}
               >
                 <span>{`CALLI WICKES `}</span>
                 <span>{`PHOTOGRAPHY`}</span>
-              </p>
+              </a>
             </Link>
           </div>
 

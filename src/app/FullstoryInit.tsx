@@ -1,9 +1,8 @@
-'use client';
 import Script from 'next/script';
 
-const Fullstory = () => {
+const FullStoryInit = () => {
   return (
-    <Script id="fullstory">
+    <Script id="fs-init">
       {`
         window['_fs_host'] = 'fullstory.com';
         window['_fs_script'] = 'edge.fullstory.com/s/fs.js';
@@ -29,4 +28,4 @@ const Fullstory = () => {
   );
 };
 
-export default Fullstory;
+export default FullStoryInit;

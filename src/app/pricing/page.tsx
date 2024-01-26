@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
 import Header from '@/components/Header/Header';
+import Share from '@/components/Share/Share';
 
 export const metadata: Metadata = {
   title: 'Professional Photography Packages | Calli Wickes Photography Pricing',
@@ -55,6 +56,7 @@ const PricingPage = () => {
 
   return (
     <main>
+      <Share />
       <Header isHome />
 
       {/* <Image

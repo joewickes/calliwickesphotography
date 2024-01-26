@@ -9,6 +9,7 @@ import Header from '@/components/Header/Header';
 import ContactForm from '@/app/contact/ContactForm';
 
 import 'react-toastify/dist/ReactToastify.css';
+import Share from '@/components/Share/Share';
 
 export const metadata: Metadata = {
   title: 'Contact Calli Wickes Photography | Get in Touch for Professional Photography Services',
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
 const ContactPage = () => {
   return (
     <main>
+      <Share />
       <Header isHome />
       <section
         id="kideatingfruit"

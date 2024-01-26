@@ -6,6 +6,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
 import Header from '@/components/Header/Header';
+import Share from '@/components/Share/Share';
 
 export const metadata: Metadata = {
   title: 'Meet the Artist: About Calli Wickes Photography',
@@ -23,6 +24,7 @@ const AboutPage = () => {
 
   return (
     <main>
+      <Share />
       <Header />
       <section className="md:mt-[20dvh] px-[30px] mb-[60px]">
         <h1 className="text-[40px] leading-1 font-thin flex flex-col mb-[80px] md:text-[75px] md:ml-[100px] md:pt-[100px]">

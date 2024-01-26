@@ -128,7 +128,7 @@ const ContactForm = () => {
     </form>
   ) : (
     <>
-      <div className="flex-1 mt-[30px]">
+      <div className="flex-1 mt-[30px] flex flex-col justify-center mb-[100px]">
         <h2 className="text-[35px] leading-1 mb-[30px] whitespace-pre-line">
           {`Thank you so much for contacting me!`}
         </h2>

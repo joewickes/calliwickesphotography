@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
 import Header from '@/components/Header/Header';
+import Share from '@/components/Share/Share';
 
 export const metadata: Metadata = {
   title: 'Your Agreement with Excellence | Calli Wickes Photography Terms and Conditions',
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 const PrivacyPolicy = () => {
   return (
     <main>
+      <Share />
       <Header />
       <section className="mt-[20dvh] px-[30px] md:px-[100px]">
         <div className="mb-[50px]">
