@@ -36,34 +36,38 @@ const PrivacyPolicy = () => {
         </div>
         <div className="mb-[50px]">
           <h2 className="font-semibold mb-[10px]">Information We Collect</h2>
-          <ol>
-            <li>
-              Personal Information We may collect personally identifiable information, such as your name, email address,
-              phone number, and postal address when you voluntarily submit it through our contact forms or other
-              communication methods.
+          <ol className="list-inside list-decimal">
+            <li className="mb-[15px]">
+              Personal Information: We may collect personally identifiable information, such as your name, email
+              address, phone number, and postal address when you voluntarily submit it through our contact forms or
+              other communication methods.
             </li>
-            <li>
-              2. Non-Personal Information We may also collect non-personal information, such as browser type, IP
-              address, and device information, to enhance your experience on our Site and for analytics purposes.
+            <li className="mb-[15px]">
+              Non-Personal Information: We may also collect non-personal information, such as browser type, IP address,
+              and device information, to enhance your experience on our Site and for analytics purposes.
             </li>
           </ol>
         </div>
         <div className="mb-[50px]">
           <h2 className="font-semibold mb-[10px]">How We Use Your Information</h2>
-          <p>We may use the information we collect for the following purposes:</p>
-          <ul>
-            <li>To respond to your inquiries and provide the services you request.</li>
-            <li>To send periodic emails regarding our services, promotions, or other relevant information.</li>
-            <li>To improve our website and services based on your feedback.</li>
+          <p className="mb-[10px]">We may use the information we collect for the following purposes:</p>
+          <ul className="list-inside list-disc">
+            <li className="mb-[15px]">To respond to your inquiries and provide the services you request.</li>
+            <li className="mb-[15px]">
+              To send periodic emails regarding our services, promotions, or other relevant information.
+            </li>
+            <li className="mb-[15px]">To improve our website and services based on your feedback.</li>
           </ul>
         </div>
-        <h2 className="font-semibold mb-[10px]">Information Sharing</h2>
-        <p>
-          We do not sell, trade, or otherwise transfer your personally identifiable information to third parties unless
-          we provide you with advance notice. This does not include trusted third parties who assist us in operating our
-          website, conducting our business, or servicing you, as long as those parties agree to keep this information
-          confidential.
-        </p>
+        <div className="mb-[50px]">
+          <h2 className="font-semibold mb-[10px]">Information Sharing</h2>
+          <p>
+            We do not sell, trade, or otherwise transfer your personally identifiable information to third parties
+            unless we provide you with advance notice. This does not include trusted third parties who assist us in
+            operating our website, conducting our business, or servicing you, as long as those parties agree to keep
+            this information confidential.
+          </p>
+        </div>
         <div className="mb-[50px]">
           <h2 className="font-semibold mb-[10px]">Data Security</h2>
           <p>
@@ -73,11 +77,11 @@ const PrivacyPolicy = () => {
         </div>
         <div className="mb-[50px]">
           <h2 className="font-semibold mb-[10px]">Your Rights</h2>
-          <p>You have the right to:</p>
-          <ul>
-            <li>Access the personal information we hold about you.</li>
-            <li>Correct any inaccuracies in your personal information.</li>
-            <li>Request the deletion of your personal information.</li>
+          <p className="mb-[10px]">You have the right to:</p>
+          <ul className="list-inside list-disc">
+            <li className="mb-[15px]">Access the personal information we hold about you.</li>
+            <li className="mb-[15px]">Correct any inaccuracies in your personal information.</li>
+            <li className="mb-[15px]">Request the deletion of your personal information.</li>
           </ul>
         </div>
         <div className="mb-[50px]">
