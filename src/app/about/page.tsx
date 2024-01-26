@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import Footer from "@/components/Footer/Footer";
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import("@/components/Footer/Footer"));
 import Header from "@/components/Header/Header";
 
 const AboutPage = () => {
@@ -30,6 +31,7 @@ const AboutPage = () => {
       <section className="px-[30px] pt-[60px] flex flex-col items-center bg-[#f2f2f2] mb-[60px]">
         <div className="min-h-[225px] w-full overflow-hidden">
           <Image
+            placeholder="blur"
             src="/images/About/familyoffoursmiling.webp"
             height={867}
             width={1664}
@@ -52,6 +54,7 @@ const AboutPage = () => {
         <div className="flex justify-center mb-[60px] md:flex-1">
           <div className="md:mt-[120px] h-[90dvw] w-[90dvw] md:h-auto md:w-auto overflow-hidden md:pl-[100px]">
             <Image
+              placeholder="blur"
               src="/images/Home/tampaphotographerportrait.webp"
               alt="Tampa photographer in downtown portrait."
               height={840}

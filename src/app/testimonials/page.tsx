@@ -1,6 +1,7 @@
 "use client";
 
-import Footer from "@/components/Footer/Footer";
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import("@/components/Footer/Footer"));
 import Header from "@/components/Header/Header";
 
 const TestimonialsPage = () => {

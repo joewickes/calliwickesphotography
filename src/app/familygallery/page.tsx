@@ -1,6 +1,7 @@
 "use client";
 
-import Footer from "@/components/Footer/Footer";
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import("@/components/Footer/Footer"));
 import Header from "@/components/Header/Header";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,6 +28,7 @@ const FamilyGalleryPage = () => {
       <section className="px-[30px] md:columns-3 md:w-[80%] md:px-[100px]">
         <div className="w-full mb-[15px]">
           <Image
+            placeholder="blur"
             src="/images/Family Gallery/veryelderlycoupleinloveintampafl.webp"
             height={684}
             width={456}
@@ -36,6 +38,7 @@ const FamilyGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
+            placeholder="blur"
             src="/images/Family Gallery/happycoupletampa.webp"
             height={304}
             width={456}
@@ -45,6 +48,7 @@ const FamilyGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
+            placeholder="blur"
             src="/images/Family Gallery/youngdadandhisbabyboyinflorida.webp"
             height={684}
             width={456}
@@ -54,6 +58,7 @@ const FamilyGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
+            placeholder="blur"
             src="/images/Family Gallery/twolittlecousinstampa.webp"
             height={684}
             width={456}
@@ -63,6 +68,7 @@ const FamilyGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
+            placeholder="blur"
             src="/images/Family Gallery/newlyengagedcouple.webp"
             height={684}
             width={456}
@@ -72,6 +78,7 @@ const FamilyGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
+            placeholder="blur"
             src="/images/Family Gallery/businesscoupledowntowntampa.webp"
             height={684}
             width={456}
@@ -81,6 +88,7 @@ const FamilyGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
+            placeholder="blur"
             src="/images/Family Gallery/youngfamilyinlovetampa.webp"
             height={684}
             width={456}
@@ -90,6 +98,7 @@ const FamilyGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
+            placeholder="blur"
             src="/images/Family Gallery/largefamilyportraitinflorida.webp"
             height={304}
             width={456}
@@ -99,6 +108,7 @@ const FamilyGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
+            placeholder="blur"
             src="/images/Family Gallery/dadwithbabygirl.webp"
             height={304}
             width={456}
@@ -108,6 +118,7 @@ const FamilyGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
+            placeholder="blur"
             src="/images/Family Gallery/sisterlylovetampafl.webp"
             height={684}
             width={456}
@@ -117,6 +128,7 @@ const FamilyGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
+            placeholder="blur"
             src="/images/Family Gallery/parentswiththeirnewbornintampa.webp"
             height={304}
             width={456}
@@ -126,6 +138,7 @@ const FamilyGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
+            placeholder="blur"
             src="/images/Family Gallery/newfamilyofthreeintampanursery.webp"
             height={684}
             width={456}
@@ -135,6 +148,7 @@ const FamilyGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
+            placeholder="blur"
             src="/images/Family Gallery/husbandkissingwifeoncheek.webp"
             height={684}
             width={456}
@@ -144,6 +158,7 @@ const FamilyGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
+            placeholder="blur"
             src="/images/Family Gallery/littlegirlcountrysidetampa.webp"
             height={684}
             width={456}
@@ -153,6 +168,7 @@ const FamilyGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
+            placeholder="blur"
             src="/images/Family Gallery/multigenerationfamilytampa.webp"
             height={684}
             width={456}
@@ -162,6 +178,7 @@ const FamilyGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px]">
           <Image
+            placeholder="blur"
             src="/images/Family Gallery/familyofthreeinthefall.webp"
             height={304}
             width={456}
@@ -174,6 +191,7 @@ const FamilyGalleryPage = () => {
       <section className="px-[30px] mt-[100px] mb-[60px] md:w-full md:px-[100px] md:flex md:flex-row-reverse md:mt-[200px]">
         <div className="md:flex md:justify-center md:flex-1">
           <Image
+            placeholder="blur"
             src="/images/Family Gallery/happylittlefamilyinflorida.webp"
             height={684}
             width={456}

@@ -6,7 +6,8 @@ import Link from "next/link";
 import { ArrowUp, FacebookLogo, InstagramLogo } from "@phosphor-icons/react";
 
 import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import("@/components/Footer/Footer"));
 
 export default function Home() {
   return (
@@ -40,6 +41,7 @@ export default function Home() {
         <div className="flex justify-center mb-[60px] md:flex-1">
           <div className="mt-[120px] md:mt-0 h-[90dvw] w-[90dvw] md:h-auto md:w-auto overflow-hidden md:pl-[100px]">
             <Image
+              placeholder="blur"
               src="/images/Home/tampaphotographerportrait.webp"
               priority
               alt="Tampa photographer in downtown portrait."
@@ -82,6 +84,7 @@ export default function Home() {
         <div className="md:ml-[50px] md:max-w-[456px] md:flex md:flex-col md:justify-start md:items-end md:flex-1 md:mr-[15px]">
           <div className="w-full mb-[15px] ">
             <Image
+              placeholder="blur"
               src="/images/Home/familyportraittampa.webp"
               height={684}
               width={456}
@@ -91,6 +94,7 @@ export default function Home() {
           </div>
           <div className="w-full mb-[15px]">
             <Image
+              placeholder="blur"
               src="/images/Home/couplebrickwallbackground.webp"
               height={684}
               width={456}
@@ -102,6 +106,7 @@ export default function Home() {
         <div className="md:flex md:flex-col md:justify-start md:items-end md:flex-1 md:max-w-[456px]">
           <div className="w-full h-auto mb-[15px]">
             <Image
+              placeholder="blur"
               src="/images/Home/smilingcoupleoutdoor.webp"
               height={304}
               width={456}
@@ -111,6 +116,7 @@ export default function Home() {
           </div>
           <div className="w-full mb-[15px]">
             <Image
+              placeholder="blur"
               src="/images/Home/familyofthreeintampa.webp"
               height={684}
               width={456}
@@ -120,6 +126,7 @@ export default function Home() {
           </div>
           <div className="w-full mb-[15px]">
             <Image
+              placeholder="blur"
               src="/images/Home/middleagecoupleintampa.webp"
               height={456}
               width={304}
@@ -131,6 +138,7 @@ export default function Home() {
         <div className="md:ml-[15px] md:max-w-[456px] md:flex md:flex-col md:justify-start md:items-end md:flex-1 md:mr-[50px] mb-[120px]">
           <div className="w-full mb-[15px]">
             <Image
+              placeholder="blur"
               src="/images/Home/adorablefamilyofthree.webp"
               height={684}
               width={456}
@@ -140,6 +148,7 @@ export default function Home() {
           </div>
           <div className="w-full mb-[15px]">
             <Image
+              placeholder="blur"
               src="/images/Home/tampafamilyofthree.webp"
               height={684}
               width={456}
@@ -157,6 +166,7 @@ export default function Home() {
       >
         <div className="w-full mb-[50px] md:flex-1 md:flex md:justify-center md:pr-[100px]">
           <Image
+            placeholder="blur"
             src="/images/Home/youngcouplehugging.webp"
             height={484}
             width={323}

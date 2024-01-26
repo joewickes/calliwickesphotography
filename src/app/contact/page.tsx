@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 
-import Footer from "@/components/Footer/Footer";
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import("@/components/Footer/Footer"));
 import Header from "@/components/Header/Header";
 import { Slide, ToastContainer, toast } from "react-toastify";
 
@@ -105,6 +106,7 @@ const ContactPage = () => {
         <div className="flex justify-center mb-[60px] md:flex-1 md:justify-start">
           <div className="mt-[30px] h-[90dvw] w-[90dvw] md:h-auto md:w-auto overflow-hidden">
             <Image
+              placeholder="blur"
               src="/images/Home/tampaphotographerportrait.webp"
               alt="Tampa photographer in downtown portrait."
               height={840}

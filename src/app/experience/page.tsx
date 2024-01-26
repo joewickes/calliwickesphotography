@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 
-import Footer from "@/components/Footer/Footer";
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import("@/components/Footer/Footer"));
 import Header from "@/components/Header/Header";
 import Image from "next/image";
 import Link from "next/link";
@@ -65,6 +66,7 @@ const ExperiencePage = () => {
         </div>
         <div className="md:flex md:flex-col md:items-center md:flex-1 md:pr-[100px]">
           <Image
+            placeholder="blur"
             src="/images/Experience/happyfloridafamily.webp"
             height={989}
             width={659}

@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import Footer from "@/components/Footer/Footer";
+import dynamic from "next/dynamic";
+const Footer = dynamic(() => import("@/components/Footer/Footer"));
 import Header from "@/components/Header/Header";
 
 import { CaretRight } from "@phosphor-icons/react";
@@ -54,6 +55,7 @@ const PricingPage = () => {
       <Header isHome />
 
       {/* <Image
+placeholder="blur"
         className="mt-[10dvh] md:mt-[20dvh]"
         src="/images/Pricing/couplekissingtheirdaughter.webp"
         priority
@@ -88,6 +90,7 @@ const PricingPage = () => {
               >
                 <div className="md:flex-1 md:flex md:items-center md:justify-center">
                   <Image
+                    placeholder="blur"
                     src={pkg?.image?.src || ""}
                     height={pkg?.image?.height}
                     width={pkg?.image?.width}
