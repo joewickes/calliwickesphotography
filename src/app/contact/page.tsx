@@ -5,7 +5,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
 import Header from '@/components/Header/Header';
-import { Slide, ToastContainer, toast } from 'react-toastify';
+
 import ContactForm from '@/app/contact/ContactForm';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -13,18 +13,12 @@ import 'react-toastify/dist/ReactToastify.css';
 export const metadata: Metadata = {
   title: 'Contact Calli Wickes Photography | Get in Touch for Professional Photography Services',
   description:
-    'Contact Calli Wickes Photography to inquire about my professional photography services. Reach out for booking information, collaboration opportunities, or any inquiries you may have. We are here to capture your special moments with expertise and creativity. Use the provided contact form, email, or phone to connect with Calli Wickes, your dedicated photographer for memorable visual experiences.',
+    'Contact Calli Wickes Photography to inquire about our professional photography services. Reach out for booking information, collaboration opportunities, or any inquiries you may have. We are here to capture your special moments with expertise and creativity. Use the provided contact form, email, or phone to connect with Calli Wickes, your dedicated photographer for memorable visual experiences.',
 };
 
 const ContactPage = () => {
-  const setToast = async (message: string) => {
-    'use server';
-    toast.info(message);
-  };
-
   return (
     <main>
-      <ToastContainer position="top-right" closeOnClick autoClose={5000} pauseOnHover transition={Slide} />
       <Header isHome />
       <section
         id="kideatingfruit"
@@ -71,7 +65,7 @@ const ContactPage = () => {
             />
           </div>
         </div>
-        <ContactForm setToast={setToast} />
+        <ContactForm />
       </section>
       <Footer />
     </main>
