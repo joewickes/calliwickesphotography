@@ -23,14 +23,18 @@ const Footer = () => {
             legacyBehavior
             passHref
           >
-            <FacebookLogo size={23} className="mr-[35px] cursor-pointer" />
+            <a>
+              <FacebookLogo size={23} className="mr-[35px] cursor-pointer" />
+            </a>
           </Link>
           <Link
             href="https://www.instagram.com/calliwickesphotography/"
             legacyBehavior
             passHref
           >
-            <InstagramLogo size={23} className="cursor-pointer" />
+            <a>
+              <InstagramLogo size={23} className="cursor-pointer" />
+            </a>
           </Link>
         </div>
         <Link href={path} legacyBehavior passHref>
