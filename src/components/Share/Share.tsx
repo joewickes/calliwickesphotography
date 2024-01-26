@@ -53,7 +53,11 @@ const Share = () => {
           </WhatsappShareButton>
         </li>
       </ul>
-      <button className="rounded-full bg-white p-[10px] shadow-lg" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <button
+        className="rounded-full bg-white p-[10px] shadow-lg"
+        aria-label="Share this website"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
         <ShareNetwork color="black" size={30} />
       </button>
     </div>
