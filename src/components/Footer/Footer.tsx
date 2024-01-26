@@ -3,7 +3,9 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-import { ArrowUp, FacebookLogo, InstagramLogo } from '@phosphor-icons/react';
+import { ArrowUp, FacebookLogo, InstagramLogo, PinterestLogo } from '@phosphor-icons/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faYelp } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   const [path, setPath] = useState('#');
@@ -25,7 +27,17 @@ const Footer = () => {
           </Link>
           <Link href="https://www.instagram.com/calliwickesphotography/" legacyBehavior passHref>
             <a>
-              <InstagramLogo size={23} className="cursor-pointer" />
+              <InstagramLogo size={23} className="mr-[35px] cursor-pointer" />
+            </a>
+          </Link>
+          <Link href="https://www.pinterest.com/calliwickes/" legacyBehavior passHref>
+            <a>
+              <PinterestLogo size={23} className="mr-[35px] cursor-pointer" />
+            </a>
+          </Link>
+          <Link href="https://www.yelp.com/biz/calli-wickes-photography-wesley-chapel" legacyBehavior passHref>
+            <a>
+              <FontAwesomeIcon icon={faYelp} className="cursor-pointer" />
             </a>
           </Link>
         </div>
