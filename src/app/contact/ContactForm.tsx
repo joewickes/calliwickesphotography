@@ -9,6 +9,7 @@ const ContactForm = () => {
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const [isDisabled, setIsDisabled] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const setToast = (message: string) => {
     toast.info(message);
@@ -60,11 +61,11 @@ const ContactForm = () => {
       setMessage('');
 
       setToast('Your message was sent! Thanks!');
-      setIsDisabled(false);
+      setSubmitted(true);
     }
   };
 
-  return (
+  return !submitted ? (
     <form className="md:flex-1 md:mr-[100px] md:mt-[50px]" onSubmit={onSubmit}>
       <ToastContainer position="top-right" closeOnClick autoClose={5000} pauseOnHover transition={Slide} />
       <label className="flex flex-col">
@@ -125,6 +126,34 @@ const ContactForm = () => {
         </button>
       </div>
     </form>
+  ) : (
+    <>
+      <div className="flex-1 mt-[30px]">
+        <h2 className="text-[35px] leading-1 mb-[30px] whitespace-pre-line">
+          {`Thank you so much for contacting me!`}
+        </h2>
+        <p className="mt-[50px]">{`I’m looking forward to chatting with you and will be in touch shortly!`}</p>
+        <p className="mt-[25px]">
+          {`While you wait… find me on`}
+          <a href="https://www.facebook.com/CalliWickesPhotography/" className="font-semibold" aria-label="Facebook">
+            {` `}
+            Facebook
+          </a>
+          {` `}
+          {`or `}
+          <a href="https://www.instagram.com/calliwickesphotography/" className="font-semibold" aria-label="Instagram">
+            Instagram
+          </a>
+        </p>
+        <p className="mt-[25px]">
+          {`You can also check out my`}{' '}
+          <a href="https://www.pinterest.com/calliwickes/" className="font-semibold" aria-label="Pinterest">
+            Pinterest
+          </a>{' '}
+          {`page for outfit inspiration for your upcoming session!`}
+        </p>
+      </div>
+    </>
   );
 };
 export default ContactForm;

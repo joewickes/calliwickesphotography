@@ -72,7 +72,7 @@ const PricingPage = () => {
         </p>
       </section>
 
-      <section className="mt-[60px] md:mt-0 px-[30px] md:mt-[100px]">
+      <section className="mt-[60px] px-[30px] md:mt-[100px]">
         <h1 className="text-[40px] leading-1 flex flex-col mb-[50px] text-center md:text-[70px]">
           {`Pricing Packages`}
         </h1>
