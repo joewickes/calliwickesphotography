@@ -56,15 +56,15 @@ export default function Home() {
           <h2 className="text-[15px] mb-[60px]">{`FAMILY PHOTOGRAPHY IN TAMPA, FL`}</h2>
           <h3 className="text-[35px] mb-[40px]">{`What Makes Calli So Different?`}</h3>
           <p className="font-thin leading-8 mb-[30px]">
-            {`I’m Calli - your Tampa family photographer! I love capturing photos that showcase you with your absolute favorite people. Take a moment with me to take a brief pause on the busyness of life so that you can have photographs that you will forever cherish. With two little girls of my own, I understand how hard it is to take a moment aside from all the chaos that life brings. But I promise - you will never regret getting those family photos with your crew.
+            {`I’m Calli - your local Tampa family photographer! I love capturing photos that showcase you with your absolute favorite people. Take a moment with me to take a brief pause on the busyness of life so that you can have photographs that you will forever cherish. With two little girls of my own, I understand how hard it is to take a moment aside from all the chaos that life brings. But I promise - you will never regret getting those family photos with your crew.
 
               `}
           </p>
           <p className="font-thin leading-8 mb-[30px]">
-            {`I specialize in stress-free sessions, capturing natural smiles and unique stories. When you book with me you will receive images that you love and can’t wait to print, frame, and proudly display throughout your home. I love capturing these beautiful moments with your favorite people. I tailor each session to your unique family and love finding a balance between posed and playful pictures for a casual, comfortable vibe. Giving you photographs that you will have such joy seeing every time you walk past them in your home.`}
+            {`I specialize in stress-free sessions, capturing your natural smiles and laughter. When you book with me you will receive images that you love and can’t wait to print, frame, and proudly display throughout your home. I tailor each session to your unique family and love finding a balance between posed and playful pictures for a casual, comfortable vibe. Giving you photographs that you will have such joy seeing every time you walk past them in your home.`}
           </p>
           <p className="font-thin leading-8 mb-[60px]">
-            {`I can’t wait to capture some of your best memories together. Let's create timeless memories together in Tampa. You can explore the photo gallery below and get ready to capture your family's story.`}{' '}
+            {`I can’t wait to capture some of your best moments together in Tampa, FL. You can explore the photo gallery below and let's get ready to capture your family's story. If you’re searching for a Tampa Family Photographer -`}{' '}
             <Link href="/contact" passHref legacyBehavior>
               <a className="font-normal">{`Contact me`}</a>
             </Link>{' '}
