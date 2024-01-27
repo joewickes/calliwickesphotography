@@ -8,7 +8,7 @@ import Header from '@/components/Header/Header';
 import Share from '@/components/Share/Share';
 
 export const metadata: Metadata = {
-  title: 'Professional Photography Packages | Calli Wickes Photography Pricing',
+  title: 'Photography Packages | Calli Wickes Photography Pricing',
   description:
     'Explore professional photography packages at Calli Wickes Photography. Discover transparent pricing for high-quality photo sessions tailored to your needs. Choose the perfect package for your special moments and capture memories that last a lifetime. View affordable rates and book your session with Calli Wickes, an experienced photographer dedicated to creating stunning visual stories.',
 };
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
 const PricingPage = () => {
   const packages = [
     {
-      name: 'Standard Photo Session',
+      name: 'Standard Session',
       price: 350,
-      target: '*For families, Couples, Engagement Photots',
+      target: '*For families, Couples, Engagement Photos',
       description:
         '45-60 minute session;Final gallery of high resulition digital downloads (30+) delivered via online gallery;On location, within 1 hour of Tampa',
       image: {
@@ -147,7 +147,7 @@ const PricingPage = () => {
 
       <section className="px-[30px] bg-black mb-[60px]" id="storyholdinghands">
         <h2 className="text-[40px] leading-1 md:flex md:flex-col mb-[20px] font-thin text-white pt-[60px] md:text-[70px] md:pt-[200px] md:pl-[100px]">
-          <span>{`Let's Document`}</span> <span>{`Your Story`}</span>
+          <span>{`Make the most`}</span> <span>{`of today`}</span>
         </h2>
         <div className="flex justify-center mt-[300px]">
           <Link href="/contact" legacyBehavior passHref>
