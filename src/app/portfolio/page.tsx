@@ -7,9 +7,9 @@ import Header from '@/components/Header/Header';
 import Share from '@/components/Share/Share';
 
 export const metadata: Metadata = {
-  title: 'Visual Stories Unveiled | Calli Wickes Photography Portfolio',
+  title: 'View the Work | Calli Wickes Photography Portfolio',
   description:
-    'Immerse yourself in the artistry of Calli Wickes Photography through a diverse portfolio. Explore a collection of visually stunning stories captured with creativity and precision. From family or senior portraits to special events, each image reflects the unique essence of the moment. Check out the work and imagine how we can transform your memories into timeless visual narratives.',
+    'Explore a collection of the beautiful family and senior portraits captures by Calli Wickes Photography. Each image reflects the unique essence of the moment. Check out the work and imagine how we can transform your memories into timeless keepsake images.',
 };
 
 const PortfolioPage = () => {
