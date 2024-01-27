@@ -9,7 +9,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Tampa Family Photographer  | Calli Wickes Photography',
-  description: 'Calli is a Tampa Family Photographer serving Tampa + surrounding areas | Capturing beautiful photos of you with your favorite people | Family Photography in Tampa, FL',
+  description: 'Calli is a Tampa Family Photographer serving Tampa + surrounding areas | Capturing beautiful photos of you with your favorite people in Tampa, FL',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
