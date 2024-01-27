@@ -8,8 +8,8 @@ const raleway = Raleway({ subsets: ['latin'] });
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Calli Wickes Photography',
-  description: 'Calli Wickes Photography | Family and Senior Photographer',
+  title: 'Tampa Family Photographer  | Calli Wickes Photography',
+  description: 'Calli Wickes Photography is a Family Photographer in Tampa, Florida | I love capturing photos of you with your favorite people | Family and Senior Photography in Tampa, FL',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
