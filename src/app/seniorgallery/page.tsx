@@ -147,11 +147,9 @@ const SeniorGalleryPage = () => {
           <h2 className="text-[40px] leading-1 my-[30px] md:text-[60px]">{`Senior Photography`}</h2>
           <p className="font-thin mb-[15px]">{`Your Tampa + Wesley Chapel Senior Photographer`}</p>
 
-          <div>
+          <div className="md:mt-[150px] mt-[60px] mb-[150px]">
             <Link href="/contact" legacyBehavior passHref>
-              <a className="mb-[60px] mt-[30px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
-                {`GET IN TOUCH`}
-              </a>
+              <a className="border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">{`GET IN TOUCH`}</a>
             </Link>
           </div>
         </div>

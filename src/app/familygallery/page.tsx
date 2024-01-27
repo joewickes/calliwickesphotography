@@ -193,11 +193,11 @@ const FamilyGalleryPage = () => {
           <h2 className="text-[40px] leading-1 my-[30px] md:text-[60px]">{`Time to capture your family's happiest moments`}</h2>
           <p className="font-thin mb-[15px]">{`Your Tampa + Wesley Chapel Family Photographer`}</p>
 
-          <Link href="/contact" legacyBehavior passHref>
-            <a className="mb-[60px] mt-[30px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
-              {`GET IN TOUCH`}
-            </a>
-          </Link>
+          <div className="md:mt-[150px] mt-[60px] mb-[150px]">
+            <Link href="/contact" legacyBehavior passHref>
+              <a className="border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">{`GET IN TOUCH`}</a>
+            </Link>
+          </div>
         </div>
       </section>
       <Footer />
