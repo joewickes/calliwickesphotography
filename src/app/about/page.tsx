@@ -9,9 +9,9 @@ import Header from '@/components/Header/Header';
 import Share from '@/components/Share/Share';
 
 export const metadata: Metadata = {
-  title: 'Meet the Artist: About Calli Wickes Photography',
+  title: 'Meet Calli | About Calli Wickes Photography',
   description:
-    'Learn the story behind Calli Wickes Photography and the passionate artist behind the lens. The About page delves into the journey, inspiration, and commitment of Calli Wickes in capturing timeless moments. Discover the unique approach to photography, the personal connection with clients, and the dedication to transforming ordinary moments into extraordinary memories. Explore the artistic vision and experience that sets Calli Wickes Photography apart in the world of visual storytelling.',
+    'Learn the story behind Calli Wickes Photography and the passionate photographer behind the lens. The About page delves into the journey, inspiration, and commitment of Calli Wickes in capturing timeless moments. Discover the unique approach to photography, the personal connection with clients, and the dedication to transforming ordinary moments into extraordinary memories. Learn about the experience that sets Calli Wickes Photography apart in the world of visual storytelling.',
 };
 
 const AboutPage = () => {
