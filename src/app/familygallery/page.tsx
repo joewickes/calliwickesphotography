@@ -8,7 +8,7 @@ import Header from '@/components/Header/Header';
 import Share from '@/components/Share/Share';
 
 export const metadata: Metadata = {
-  title: 'Family Snapshots | Calli Wickes Photography Family Gallery',
+  title: 'Family Photography | Calli Wickes Photography Family Gallery',
   description: 'A sample of the family photography work of Calli Wickes Photography.',
 };
 
