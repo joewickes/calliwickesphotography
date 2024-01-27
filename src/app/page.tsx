@@ -39,7 +39,7 @@ export default function Home() {
             <Image
               src="/images/Home/tampaphotographerportrait.webp"
               priority
-              alt="Tampa photographer in downtown portrait."
+              alt="Tampa Family Photography | Self Portrait of Photographer in downtown Tampa taken by Family Photographer Calli Wickes."
               height={840}
               width={560}
               className="object-cover mt-[-10dvw] md:mt-[-100px]"
@@ -82,7 +82,7 @@ export default function Home() {
               src="/images/Home/familyportraittampa.webp"
               height={684}
               width={456}
-              alt="Cherished family portrait surrounded by the beauty of Tampa's greenery and Spanish moss."
+              alt="Tampa Family Photography | Family portrait surrounded by the beauty of Tampa's greenery and Spanish moss taken by Tampa Family Photographer Calli Wickes."
               className="object-cover"
             />
           </div>
@@ -92,7 +92,7 @@ export default function Home() {
               height={684}
               width={456}
               className="object-cover"
-              alt="A love story unfolds as a couple poses against an urban wall in Tampa"
+              alt="Tampa Family Photography | A love story unfolds as a couple poses against an urban wall in downtown Tampa taken by Family Photographer Calli Wickes."
             />
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function Home() {
               height={304}
               width={456}
               className="object-cover"
-              alt="Smiling couple embraces amidst the vibrant green landscape of Tampa's outdoors."
+              alt="Tampa Family Photography | Smiling couple embraces amidst the vibrant green landscape of Tampa's outdoors taken by Tampa Family Photographer Calli Wickes."
             />
           </div>
           <div className="w-full mb-[15px]">
@@ -112,7 +112,7 @@ export default function Home() {
               height={684}
               width={456}
               className="object-cover"
-              alt="Joyful family of three amidst lush greenery and Spanish moss in scenic Tampa, Fl."
+              alt="Tampa Family Photography | Joyful family of three amidst lush greenery and Spanish moss in scenic Tampa, Fl taken by Tampa, Florida Family Photographer Calli Wickes."
             />
           </div>
           <div className="w-full mb-[15px]">
@@ -121,7 +121,7 @@ export default function Home() {
               height={456}
               width={304}
               className="object-cover w-full"
-              alt="Middle-aged couple smiling by a white fence, capturing the essence of family joy in Tampa's picturesque setting"
+              alt="Tampa Family Photography | Middle-aged couple smiling by a white fence in a Tampa's picturesque countryside setting taken by Tampa, FL Family Photographer Calli Wickes."
             />
           </div>
         </div>
@@ -132,7 +132,7 @@ export default function Home() {
               height={684}
               width={456}
               className="object-cover"
-              alt="Adorable family of three, including a 3-month-old little boy, against the backdrop of a rustic barn in Tampa"
+              alt="Tampa Family Photography | Adorable family of three, including a 3-month-old little boy, against the backdrop of a rustic barn in northern Tampa taken by Tampa Photographer Calli Wickes."
             />
           </div>
           <div className="w-full mb-[15px]">
@@ -141,7 +141,7 @@ export default function Home() {
               height={684}
               width={456}
               className="object-cover"
-              alt="Capturing love in the heart of Tampa's nature with a beautiful family of three"
+              alt="Tampa Family Photography | Capturing love in the heart of Tampa's nature with a beautiful family of three taken by Tampa, FL Photographer Calli Wickes."
             />
           </div>
         </div>
@@ -155,7 +155,7 @@ export default function Home() {
             height={484}
             width={323}
             className="object-cover w-full md:max-h-[484px] md:max-w-[323px]"
-            alt="Young couple sharing an embrace while surrounded by the rustic charm of Tampa's countryside."
+            alt="Tampa Family Photography | Young couple sharing an embrace while surrounded by the rustic charm of Tampa's countryside taken by Tampa Photographer Calli Wickes."
           />
         </div>
         <div className="md:flex md:flex-col md:flex-1 md:align-center md:pl-[100px] md:justify-center md:align-center">
