@@ -26,7 +26,9 @@ const Share = () => {
 
   return (
     <div className="fixed bottom-0 right-0 mb-[3dvh] mr-[3dvh] ">
-      <ul className={`${isMenuOpen ? 'visible' : 'hidden'} flex flex-col justify-center items-center`}>
+      <ul
+        className={`${isMenuOpen ? 'visible h-auto w-auto' : 'invisible h-0 w-0'} flex flex-col justify-center items-center`}
+      >
         <li className="mb-[10px]">
           <EmailShareButton url={url} subject={quote} blankTarget>
             <EmailIcon size={36} round />

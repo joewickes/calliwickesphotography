@@ -97,3 +97,8 @@ html {
   top: 0;
   cursor: pointer;
 }
+
+.vertical-rl {
+  writing-mode: vertical-rl;
+  transform: scale(-1);
+}

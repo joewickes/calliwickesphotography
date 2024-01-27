@@ -17,13 +17,13 @@ export default function Home() {
 
         {/* Hero Section */}
         <section id="home" className="h-dvh w-dvw flex flex-col items-center justify-center pt-[100px]">
-          <p className="text-center md:text-left text-[12px] mb-[20px] tracking-wide text-white z-10 md:w-[150px] md:self-end md:mr-[200px] md:mt-[50px]">
-            {`PHOTOS THAT CAPTURE YOUR BEST MOMENTS`}
-          </p>
-          <h1 className="text-center text-[45px] md:text-[84px] leading-[3.5rem] md:leading-[5.5rem] flex flex-col mb-[80px] md:mt-[100px] text-white z-10 tracking-wide md:self-start md:ml-[100px] md:flex md:flex-row md:flex-wrap md:text-left">
-            <span>{`I'm Calli! Your`}</span> <span className="md:pl-[20px]">{`Tampa family`}</span>{' '}
-            <span>{`photographer!`}</span>
+          <h1 className="text-nowrap text-center md:text-left text-[12px] mb-[20px] tracking-wide text-white z-10 md:w-[150px] md:self-start md:ml-[125px] md:mt-[150px]">
+            {`TAMPA FAMILY PHOTOGRAPHER`}
           </h1>
+          <p className="text-center text-[45px] md:text-[84px] leading-[3.5rem] md:leading-[5.5rem] flex flex-col mb-[80px] md:mt-[0px] text-white z-10 tracking-wide md:self-start md:ml-[100px] md:flex md:flex-row md:flex-wrap md:text-left">
+            <span>{`Capture those beautiful moments`}</span> <span className="md:pl-[20px]">{`with your`}</span>
+            <span className="md:pl-[20px]">{`favorite people`}</span>
+          </p>
           <Link href="/contact" legacyBehavior passHref>
             <a className="z-10  mb-[60px] border border-white py-[15px] text-[13px] tracking-[.35em] mt-[30px] px-[30px] text-white md:self-start md:ml-[100px]">
               {`LET'S CHAT`}
@@ -35,7 +35,10 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="px-[30px] md:flex md:py-[100px]">
         <div className="flex justify-center mb-[60px] md:flex-1">
-          <div className="mt-[120px] md:mt-0 h-[90dvw] w-[90dvw] md:h-auto md:w-auto overflow-hidden md:pl-[100px]">
+          <p className="vertical-rl md:pr-[100px] w-0 h-0 md:w-auto md:h-auto mt-[120px] md:mb-[50px] md:mt-0 self-end text-[12px] font-thin invisible md:visible">
+            {`Family Photographer in Tampa, Florida`}
+          </p>
+          <div className="mt-[120px] md:mt-0 h-[90dvw] w-[90dvw] md:h-auto md:w-auto overflow-hidden md:pl-[5px] pr-[5px]">
             <Image
               src="/images/Home/tampaphotographerportrait.webp"
               priority
@@ -45,10 +48,13 @@ export default function Home() {
               className="object-cover mt-[-10dvw] md:mt-[-100px]"
             />
           </div>
+          <p className="vertical-rl md:pr-[100px] mt-[120px] md:mb-[50px] md:mt-0 self-end text-[12px] font-thin md:hidden visible">
+            {`Family Photographer in Tampa, Florida`}
+          </p>
         </div>
         <div className="md:flex-1 md:flex md:flex-col md:justify-center md:pr-[100px] md:mb-[100px]">
-          <h2 className="text-[35px] mb-[60px]">{`Family Photography in Tampa, FL`}</h2>
-          <h3 className="text-[15px] mb-[40px]">{`WHAT MAKES CALLI SO DIFFERENT?`}</h3>
+          <h2 className="text-[15px] mb-[60px]">{`FAMILY PHOTOGRAPHY IN TAMPA, FL`}</h2>
+          <h3 className="text-[35px] mb-[40px]">{`What Makes Calli So Different?`}</h3>
           <p className="font-thin leading-8 mb-[30px]">
             {`I’m Calli - your Tampa family photographer! I love capturing photos that showcase you with your absolute favorite people. Take a moment with me to take a brief pause on the busyness of life so that you can have photographs that you will forever cherish. With two little girls of my own, I understand how hard it is to take a moment aside from all the chaos that life brings. But I promise - you will never regret getting those family photos with your crew.
 
@@ -149,14 +155,19 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="px-[30px] md:flex md:flex-row-reverse md:py-[100px]">
-        <div className="w-full mb-[50px] md:flex-1 md:flex md:justify-center md:pr-[100px]">
-          <Image
-            src="/images/Home/youngcouplehugging.webp"
-            height={484}
-            width={323}
-            className="object-cover w-full md:max-h-[484px] md:max-w-[323px]"
-            alt="Tampa Family Photography | Young couple sharing an embrace while surrounded by the rustic charm of Tampa's countryside taken by Tampa Photographer Calli Wickes."
-          />
+        <div className="w-full mb-[50px] md:flex-1">
+          <div className="w-full  flex justify-center items-end md:pr-[100px]">
+            <Image
+              src="/images/Home/youngcouplehugging.webp"
+              height={484}
+              width={323}
+              className="object-cover w-full md:max-h-[484px] md:max-w-[323px] pr-[5px]"
+              alt="Tampa Family Photography | Young couple sharing an embrace while surrounded by the rustic charm of Tampa's countryside taken by Tampa Photographer Calli Wickes."
+            />
+            <p className="vertical-rl md:pl-[100px] md:mb-[2px] md:mt-0 justify-self-end text-[12px] font-thin">
+              {`Tampa, FL Family Photography`}
+            </p>
+          </div>
         </div>
         <div className="md:flex md:flex-col md:flex-1 md:align-center md:pl-[100px] md:justify-center md:align-center">
           <h2 className="text-[35px] mb-[50px]">{`Family photography for you to treasure forever`}</h2>
