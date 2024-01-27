@@ -7,9 +7,9 @@ import Header from '@/components/Header/Header';
 import Share from '@/components/Share/Share';
 
 export const metadata: Metadata = {
-  title: 'Your Agreement with Excellence | Calli Wickes Photography Terms and Conditions',
+  title: 'Privacy Policy | Your Agreement with Calli Wickes Photography',
   description:
-    'Review the terms and conditions that govern your engagement with Calli Wickes Photography. Our comprehensive Terms and Conditions outline the agreements and expectations for using our photography services. From usage rights to payment policies, understand the terms that ensure a clear and fair collaboration. By choosing Calli Wickes Photography, you are entering into a partnership committed to professionalism, creativity, and mutual respect.',
+    'Review the Privacy Policy that govern your engagement with Calli Wickes Photography. Our comprehensive Privacy Policy outlines the agreements and expectations for using our photography services. From usage rights to payment policies, understand the terms that ensure a clear and fair collaboration. By choosing Calli Wickes Photography, you are entering into a partnership committed to professionalism, creativity, and mutual respect.',
 };
 
 const PrivacyPolicy = () => {
