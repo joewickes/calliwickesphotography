@@ -39,17 +39,21 @@ const Footer = () => {
           </Link>
         </div>
         <div className="flex flex-col-reverse md:flex-row items-center justify-center w-full">
-          <div className="md:flex-1 w-full flex-col font-thin md:flex-1 w-full flex mt-[25px] md:my-[50px] items-center text-center justify-center">
-            <p>{`Our website is listed in photographerlistings.org -`}</p> <a className="underline" href="https://www.photographerlistings.org/United-States/Florida/C5-84-1-0.htm">{`Florida Photographer Listings`}</a>
-          </div>
-          <p className="md:flex-1 w-full font-thin mt-[25px] mb-[50px] md:my-[50px] text-center">{`© 2024 Calli Wickes Photography`}</p>
-          <div className="md:flex-1 w-full flex mt-[25px] md:my-[50px] items-center text-center justify-center">
+          <div className="md:flex-1 w-full flex mb-[25px] md:my-[50px] items-center text-center justify-center">
             <Link passHref legacyBehavior href="/privacypolicy">
               <a className="underline font-thin mr-[35px]">{`Privacy Policy`}</a>
             </Link>
             <Link passHref legacyBehavior href="/termsandconditions">
               <a className="underline font-thin ">{`Terms and Conditions`}</a>
             </Link>
+          </div>
+          <p className="md:flex-1 w-full font-thin my-[25px] md:my-[50px] text-center">{`© 2024 Calli Wickes Photography`}</p>
+          <div className="md:flex-1 w-full flex-col font-thin flex mt-[25px] md:my-[50px] items-center text-center justify-center">
+            <p>{`Our website is listed in photographerlistings.org -`}</p>{' '}
+            <a
+              className="underline"
+              href="https://www.photographerlistings.org/United-States/Florida/C5-84-1-0.htm"
+            >{`Florida Photographer Listings`}</a>
           </div>
         </div>
       </div>
