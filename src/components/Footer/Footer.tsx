@@ -39,8 +39,8 @@ const Footer = () => {
           </Link>
         </div>
         <div className="flex flex-col-reverse md:flex-row items-center justify-center w-full">
-          <div className="md:flex-1 w-full md:flex-1 w-full flex mt-[25px] md:my-[50px] items-center text-center justify-center">
-            <p>{`Our website is listed in photographerlistings.org -`}</p> <a href="https://www.photographerlistings.org/United-States/Florida/C5-84-1-0.htm">{`Florida Photographer Listings`}</a>
+          <div className="md:flex-1 w-full flex-col font-thin md:flex-1 w-full flex mt-[25px] md:my-[50px] items-center text-center justify-center">
+            <p>{`Our website is listed in photographerlistings.org -`}</p> <a className="underline" href="https://www.photographerlistings.org/United-States/Florida/C5-84-1-0.htm">{`Florida Photographer Listings`}</a>
           </div>
           <p className="md:flex-1 w-full font-thin mt-[25px] mb-[50px] md:my-[50px] text-center">{`© 2024 Calli Wickes Photography`}</p>
           <div className="md:flex-1 w-full flex mt-[25px] md:my-[50px] items-center text-center justify-center">
