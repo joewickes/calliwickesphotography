@@ -54,7 +54,7 @@ const ReviewCarousel = () => {
   ];
 
   return (
-    <div id="review-carousel">
+    <div id="review-carousel" className="py-[30px]">
       <Carousel
         swipeable={true}
         draggable={true}
