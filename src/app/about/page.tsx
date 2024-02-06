@@ -27,7 +27,7 @@ const AboutPage = () => {
       <Share />
       <Header />
       <section className="mt-[20dvh] px-[30px] mb-[60px]">
-        <h1 className="text-[40px] leading-1 font-thin flex flex-col mb-[80px] md:text-[75px] md:ml-[100px] md:pt-[100px]">
+        <h1 className="text-[40px] leading-1 font-thin flex flex-col mb-[80px] xl:text-[75px] xl:ml-[100px] xl:pt-[100px]">
           <span>
             <span>{`Hi! I'm Calli + I`}</span> <span>{`love capturing`}</span> <span>{`moments`}</span>
           </span>{' '}
@@ -45,7 +45,7 @@ const AboutPage = () => {
             alt="Photographer in Tampa"
           />
         </div>
-        <p className="font-thin leading-8 mb-[60px] md:mt-[100px] md:text-[25px] md:w-[60dvw] md:text-center md:md:leading-[3rem]">
+        <p className="font-thin leading-8 mb-[60px] xl:mt-[100px] xl:text-[25px] xl:w-[60dvw] xl:text-center xl:xl:leading-[3rem]">
           {`I love capturing moments through a lens. Let's document some of your
           family's best moments for you to cherish forever.`}
         </p>
@@ -56,19 +56,19 @@ const AboutPage = () => {
         </Link>
       </section>
 
-      <section id="about" className="px-[30px] md:flex md:py-[100px]">
-        <div className="flex justify-center mb-[60px] md:flex-1">
-          <div className="md:mt-[120px] h-[90dvw] w-[90dvw] md:h-auto md:w-auto overflow-hidden md:pl-[100px]">
+      <section id="about" className="px-[30px] xl:flex xl:py-[100px]">
+        <div className="flex justify-center mb-[60px] xl:flex-1">
+          <div className="xl:mt-[120px] h-[90dvw] w-[90dvw] xl:h-auto xl:w-auto overflow-hidden xl:pl-[100px]">
             <Image
               src="/images/Home/tampaphotographerportrait.webp"
               alt="Tampa photographer in downtown portrait."
               height={840}
               width={560}
-              className="object-cover mt-[-10dvw] md:mt-[-100px]"
+              className="object-cover mt-[-10dvw] xl:mt-[-100px]"
             />
           </div>
         </div>
-        <div className="md:flex-1 md:flex md:flex-col md:justify-center md:pr-[100px]">
+        <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pr-[100px]">
           <h2 className="text-[35px] mb-[60px]">{`I’m Calli, a Florida family photographer!`}</h2>
           <h3 className="text-[15px] mb-[60px]">
             {`I CURRENTLY SERVE TAMPA, WESLEY CHAPEL AND THE SURROUNDING AREAS`}
@@ -86,11 +86,11 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="px-[30px] mt-[60px] md:mt-0">
-        <ol className="md:flex">
+      <section className="px-[30px] mt-[60px] xl:mt-0">
+        <ol className="xl:flex">
           {facts.map((fact, index) => {
             return (
-              <li key={index} className="md:px-[50px]">
+              <li key={index} className="xl:px-[50px]">
                 <p className="mb-[30px] font-thin">{`${
                   (index + 1).toString().length ? `0${index + 1}` : index + 1
                 }.`}</p>
@@ -102,17 +102,17 @@ const AboutPage = () => {
         </ol>
       </section>
 
-      <section className="px-[30px] pb-[60px] bg-[#f2f2f2] pt-[30px] md:my-[100px] md:flex md:justify-center">
+      <section className="px-[30px] pb-[60px] bg-[#f2f2f2] pt-[30px] xl:my-[100px] xl:flex xl:justify-center">
         <div
           id="seniorphotomoment"
-          className="bg-white flex flex-col items-center justify-center px-[30px] py-[30px] md:w-[60dvh] md:h-[60dvh] md:my-[100px]"
+          className="bg-white flex flex-col items-center justify-center px-[30px] py-[30px] xl:w-[60dvh] xl:h-[60dvh] xl:my-[100px]"
         >
-          <h2 className="mb-[40px] text-[25px] md:self-start md:text-[35px] md:pl-[50px]">{`The moment is now`}</h2>
-          <p className="font-thin leading-8 mb-[40px] text-center md:text-left md:pl-[50px] md:mt-[20%]">
+          <h2 className="mb-[40px] text-[25px] xl:self-start xl:text-[35px] xl:pl-[50px]">{`The moment is now`}</h2>
+          <p className="font-thin leading-8 mb-[40px] text-center xl:text-left xl:pl-[50px] xl:mt-[20%]">
             {`Don't let another day pass you by without scheduling your family's
             photo session!`}
           </p>
-          <div className="md:self-start md:pl-[50px]">
+          <div className="xl:self-start xl:pl-[50px]">
             <Link href="/contact" legacyBehavior passHref>
               <a className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
                 {`LET'S CONNECT`}

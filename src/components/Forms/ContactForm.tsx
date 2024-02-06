@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { Slide, ToastContainer, toast } from 'react-toastify';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -10,10 +9,6 @@ const ContactForm = () => {
   const [message, setMessage] = useState('');
   const [isDisabled, setIsDisabled] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-
-  const setToast = (message: string) => {
-    toast.info(message);
-  };
 
   const formatPhoneNumber = (e: any) => {
     const currNum = e.target.value;
@@ -39,7 +34,6 @@ const ContactForm = () => {
 
   const onSubmit = async (e: any) => {
     e.preventDefault();
-    setToast('Sending your message...');
     setIsDisabled(true);
 
     const data = {
@@ -60,14 +54,12 @@ const ContactForm = () => {
       setPhone('');
       setMessage('');
 
-      setToast('Your message was sent! Thanks!');
       setSubmitted(true);
     }
   };
 
   return !submitted ? (
-    <form className="md:flex-1 md:mr-[100px] md:mt-[50px]" onSubmit={onSubmit}>
-      <ToastContainer position="top-right" closeOnClick autoClose={5000} pauseOnHover transition={Slide} />
+    <form className="xl:flex-1 xl:mr-[100px] xl:mt-[50px]" onSubmit={onSubmit}>
       <label className="flex flex-col">
         {`Name *`}
         <input

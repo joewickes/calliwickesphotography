@@ -10,7 +10,7 @@ import 'react-multi-carousel/lib/styles.css';
 const ReviewCarousel = () => {
   const responsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 3280, min: 1024 },
       items: 1,
       slidesToSlide: 1, // optional, default to 1.
     },
@@ -54,7 +54,7 @@ const ReviewCarousel = () => {
   ];
 
   return (
-    <div id="review-carousel" className="py-[30px]">
+    <div id="review-carousel" className="py-[30px] w-full">
       <Carousel
         swipeable={true}
         draggable={true}
@@ -66,13 +66,13 @@ const ReviewCarousel = () => {
         autoPlay={false}
         keyBoardControl={true}
         transitionDuration={1000}
-        containerClass=""
-        itemClass="bg-[#faf9f7] px-[70px] md:px-[250px] flex items-center"
+        containerClass="w-full"
+        itemClass="bg-[#faf9f7] px-[70px] sm:px-[200px] xl:px-[250px] flex items-center"
       >
         {reviews.map(({ image, imageHeight, imageWidth, imageAlt, text, name }, idx) => (
-          <div className="flex flex-col" key={idx}>
+          <div className="flex flex-col w-full" key={idx}>
             {/* Top */}
-            <div>
+            <div className="w-full">
               {/* Left */}
               {image ? (
                 <div>
@@ -81,12 +81,12 @@ const ReviewCarousel = () => {
               ) : null}
               {/* Right */}
               <div>
-                <p className="text-[15px] md:text-[35px] font-thin md:my-[40px]">{text}</p>
+                <p className="text-[15px] xl:text-[35px] font-thin xl:my-[40px]">{text}</p>
               </div>
             </div>
             {/* Bottom */}
             <div>
-              <p className="text-[15px] md:text-[30px] mt-[20px] md:mb-[40px] text-right">
+              <p className="text-[15px] xl:text-[30px] mt-[20px] xl:mb-[40px] text-right">
                 {`- `}
                 {name}
               </p>
