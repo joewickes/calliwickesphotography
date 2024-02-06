@@ -26,7 +26,7 @@ const AboutPage = () => {
     <main>
       <Share />
       <Header />
-      <section className="md:mt-[20dvh] px-[30px] mb-[60px]">
+      <section className="mt-[20dvh] px-[30px] mb-[60px]">
         <h1 className="text-[40px] leading-1 font-thin flex flex-col mb-[80px] md:text-[75px] md:ml-[100px] md:pt-[100px]">
           <span>
             <span>{`Hi! I'm Calli + I`}</span> <span>{`love capturing`}</span> <span>{`moments`}</span>
@@ -86,7 +86,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="px-[30px]">
+      <section className="px-[30px] mt-[60px] md:mt-0">
         <ol className="md:flex">
           {facts.map((fact, index) => {
             return (
