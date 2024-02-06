@@ -50,101 +50,30 @@ export default function Home() {
 
         {/* Hero Section */}
         <section id="home" className="h-dvh w-dvw flex flex-col items-center justify-center pt-[100px]">
-          <h1 className="text-nowrap text-center md:text-left text-[12px] mb-[20px] tracking-wide text-white z-10 md:w-[150px] md:self-start md:ml-[125px] mt-30px] md:mt-[150px]">
+          <h1 className="text-nowrap text-center xl:text-left text-[12px] mb-[20px] tracking-wide text-white z-10 xl:w-[150px] xl:self-start xl:ml-[125px] mt-30px] xl:mt-[150px]">
             {`TAMPA FAMILY PHOTOGRAPHER`}
           </h1>
-          <p className="text-center text-[45px] md:text-[84px] leading-[3.5rem] md:leading-[5.5rem] flex flex-col mb-[80px] md:mt-[0px] text-white z-10 tracking-wide md:self-start md:ml-[100px] md:flex md:flex-row md:flex-wrap md:text-left">
-            <span>{`Capture those beautiful moments`}</span> <span className="md:pl-[20px]">{`with your`}</span>
-            <span className="md:pl-[20px]">{`favorite people`}</span>
+          <p className="text-center text-[45px] xl:text-[84px] leading-[3.5rem] xl:leading-[5.5rem] flex flex-col mb-[80px] xl:mt-[0px] text-white z-10 tracking-wide xl:self-start xl:ml-[100px] xl:flex xl:flex-row xl:flex-wrap xl:text-left">
+            <span>{`Capture those beautiful moments`}</span> <span className="xl:pl-[20px]">{`with your`}</span>
+            <span className="xl:pl-[20px]">{`favorite people`}</span>
           </p>
           <Link href="/contact" legacyBehavior passHref>
-            <a className="z-10  mb-[60px] border border-white py-[15px] text-[13px] tracking-[.35em] mt-[30px] px-[30px] text-white md:self-start md:ml-[100px]">
+            <a className="z-10  mb-[60px] border border-white py-[15px] text-[13px] tracking-[.35em] mt-[30px] px-[30px] text-white xl:self-start xl:ml-[100px]">
               {`LET'S CHAT`}
             </a>
           </Link>
         </section>
       </div>
 
-      {/* Experience Section */}
-      <section
-        id="home-experience"
-        className="md:pl-[100px] px-[30px] pr-[30px] md:flex md:flex-row-reverse md:pt-[100px] max-w-[100dw]"
-      >
-        <div className="flex mb-[60px] md:flex-1 flex-col items-center">
-          <div className="mt-[120px] md:mt-0 h-[90dvw] w-[90dvw] md:h-auto md:w-auto overflow-hidden md:pl-[5px] pr-[5px]">
-            <Image
-              src="/images/Home Updated/MommyandmePhoto.webp"
-              priority
-              alt=""
-              height={684}
-              width={456}
-              className="object-cover  mt-[-30dvw] md:mt-0"
-            />
-          </div>
-          <p className="w-0 h-0 md:w-auto md:h-auto md:mb-[50px] mt-[10px] text-[12px] font-thin invisible md:visible">
-            {`Family photos for you to always remember`}
-          </p>
-        </div>
-        <div className="md:flex-1 md:flex md:flex-col md:justify-center md:pr-[100px] md:mb-[100px]">
-          <h2 className="text-[35px] text-right mb-[40px]">{`Just relax + let’s take some pictures`}</h2>
-          <p className="font-thin leading-8 text-right mb-[60px]">
-            {`This isn't about making sure you pick out the perfect outfit + stand just the right way. This is about capturing you - the real you. Yes, take the time to pick out an outfit you love. Then just show up. I'll take care of all the logistics so you just get to enjoy yourself as I capture all your best moments. `}
-          </p>
-        </div>
-      </section>
-
-      {/* Experience Process Section */}
-      <section
-        id="experience-process"
-        className="px-[30px] md:px-[50px] md:pr-[30px] md:flex md:flex-row md:pt-[100px] max-w-[100dw] md:justify-evenly"
-      >
-        <div className="flex flex-col justify-start items-start flex-1 max-w-[456px] mb-[60px] md:mb-0">
-          <Image
-            src="/images/Home Updated/youngdadandhisbabyboyinflorida.webp"
-            height={684}
-            width={456}
-            alt=""
-            className="object-cover"
-          />
-          <h2 className="text-[35px] my-[40px]">{`Getting Started`}</h2>
-          <p className="font-thin">{`Booking your session is as easy as paying a session fee to reserve a space on my calendar. We will work out the date/time info and I take care of finding the perfect location! All you will need to do is find the right outfit for you + your crew. If you need any styling help, just let me know!`}</p>
-        </div>
-        <div className="flex flex-col justify-start items-start flex-1 md:mx-[30px] max-w-[456px] mb-[60px] md:mb-0">
-          <Image
-            src="/images/Home Updated/tampafamilyofthree.webp"
-            height={684}
-            width={456}
-            alt=""
-            className="object-cover"
-          />
-          <h2 className="text-[35px] my-[40px]">{`Today's the day!`}</h2>
-          <p className="font-thin">{`Time to meet, talk, connect, and get to know each other. I will take care of all the logistics, posing + helping you feel like a natural! My goal is to keep everyone feeling relaxed and having fun, allowing your kids to be kids, so I can capture genuine interactions of your special family.`}</p>
-        </div>
-        <div className="flex flex-col justify-start items-start flex-1 max-w-[456px] mb-[60px] md:mb-0">
-          <Image
-            src="/images/Home Updated/newlyengagedcouple.webp"
-            height={684}
-            width={456}
-            alt=""
-            className="object-cover"
-          />
-          <h2 className="text-[35px] my-[40px]">{`What's Next?`}</h2>
-          <p className="font-thin">{`Within two weeks of your session, you will be able to view your edited images from the comfort of home in a beautiful online gallery - ready for you to download, print, + proudly display in your home!`}</p>
-        </div>
-      </section>
-
-      {/* Reviews */}
-      <section id="reviews" className="md:px-[100px] md:py-[100px] mt-[100px] bg-[#faf9f7]">
-        <Reviews />
-      </section>
-
       {/* About Section */}
-      <section id="about" className="px-[30px] md:flex md:py-[100px]">
-        <div className="flex justify-center mb-[60px] md:flex-1">
-          <p className="vertical-rl md:pr-[100px] w-0 h-0 md:w-auto md:h-auto mt-[120px] md:mt-0 self-end text-[12px] font-thin invisible md:visible">
-            {`Family Photographer in Tampa, Florida`}
-          </p>
-          <div className="mt-[120px] md:mt-0 h-[90dvw] w-[90dvw] md:h-auto md:w-auto overflow-hidden md:pl-[5px] pr-[5px]">
+      <section id="about" className="px-[30px] sm:px-[75px] xl:flex xl:py-[100px]">
+        <div className="flex justify-center xl:items-center 2xl:items-end mb-[60px] xl:flex-1">
+          <div className="flex">
+            <p className="vertical-rl  xl:pr-[100px] w-0 h-0 xl:w-auto xl:h-auto mt-[120px] xl:mt-0 self-end text-[12px] font-thin invisible xl:visible">
+              {`Family Photographer in Tampa, Florida`}
+            </p>
+          </div>
+          <div className="mt-[120px] xl:mt-0 h-[90dvw] w-[90dvw] max-w-[560px] max-h-[840px] xl:h-auto xl:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
             <Image
               src="/images/Home/tampaphotographerportrait.webp"
               alt="Tampa Family Photography | Self Portrait of Photographer in downtown Tampa taken by Family Photographer Calli Wickes."
@@ -153,11 +82,13 @@ export default function Home() {
               className="object-cover"
             />
           </div>
-          <p className="vertical-rl md:pr-[100px] mt-[120px] md:mt-0 self-end text-[12px] font-thin md:hidden visible">
-            {`Family Photographer in Tampa, Florida`}
-          </p>
+          <div>
+            <p className="vertical-rl xl:pr-[100px] mt-[120px] xl:mt-0 text-[12px] font-thin xl:hidden visible">
+              {`Family Photographer in Tampa, Florida`}
+            </p>
+          </div>
         </div>
-        <div className="md:flex-1 md:flex md:flex-col md:justify-center md:pr-[100px] md:mb-[100px]">
+        <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pl-[30px] xl:pr-[70px] xl:mb-[100px]">
           <h2 className="text-[15px] mt-[60px]">{`FAMILY PHOTOGRAPHY IN TAMPA, FL`}</h2>
           <h3 className="text-[35px] mb-[40px]">{`What Makes Calli So Different?`}</h3>
           <p className="font-thin leading-8 mb-[30px]">
@@ -175,7 +106,7 @@ export default function Home() {
             </Link>{' '}
             {`to book your family photo session today!`}
           </p>
-          <div className="pb-[80px] md:pb-[0px]">
+          <div className="pb-[80px] xl:pb-[0px]">
             <Link href="/about" legacyBehavior passHref>
               <a className="mb-[100px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
                 {`MORE ABOUT ME`}
@@ -185,31 +116,104 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Carousel Section */}
-      <section id="carousel" className="">
-        <Carousel />
+      {/* Reviews */}
+      <section id="reviews" className="xl:px-[100px] xl:py-[100px] mt-[100px] bg-[#faf9f7]">
+        <Reviews />
+      </section>
+
+      {/* Experience Section */}
+      <section
+        id="home-experience"
+        className="xl:pl-[100px] px-[30px] pr-[30px] xl:flex xl:flex-row-reverse xl:pt-[100px] max-w-[100dw]"
+      >
+        <div className="flex mb-[60px] xl:flex-1 flex-col items-center">
+          <div className="mt-[120px] xl:mt-0 h-[90dvw] w-[90dvw] sm:h-auto sm:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
+            <Image
+              src="/images/Home Updated/MommyandmePhoto.webp"
+              priority
+              alt=""
+              height={684}
+              width={456}
+              className="object-cover  mt-[-30dvw] sm:mt-0"
+            />
+          </div>
+          <p className="w-0 h-0 xl:w-auto xl:h-auto xl:mb-[50px] mt-[10px] text-[12px] font-thin invisible xl:visible">
+            {`Family photos for you to always remember`}
+          </p>
+        </div>
+        <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pr-[100px] xl:mb-[100px] md:px-[75px]">
+          <h2 className="text-[35px] text-right mb-[40px]">{`Just relax + let’s take some pictures`}</h2>
+          <p className="font-thin leading-8 text-right mb-[60px]">
+            {`This isn't about making sure you pick out the perfect outfit + stand just the right way. This is about capturing you - the real you. Yes, take the time to pick out an outfit you love. Then just show up. I'll take care of all the logistics so you just get to enjoy yourself as I capture all your best moments. `}
+          </p>
+        </div>
+      </section>
+
+      {/* Experience Process Section */}
+      <section
+        id="experience-process"
+        className="px-[30px] xl:px-[50px] xl:pr-[30px] sm:flex sm:flex-col sm:items-center xl:flex-row xl:pt-[100px] max-w-[100dw] xl:justify-evenly"
+      >
+        <div className="flex flex-col justify-start sm:items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
+          <Image
+            src="/images/Home Updated/youngdadandhisbabyboyinflorida.webp"
+            height={684}
+            width={456}
+            alt=""
+            className="object-cover"
+          />
+          <h2 className="text-[35px] my-[40px]">{`Getting Started`}</h2>
+          <p className="font-thin">{`Booking your session is as easy as paying a session fee to reserve a space on my calendar. We will work out the date/time info and I take care of finding the perfect location! All you will need to do is find the right outfit for you + your crew. If you need any styling help, just let me know!`}</p>
+        </div>
+        <div className="flex flex-col justify-start items-start flex-1 xl:mx-[30px] max-w-[456px] mb-[60px] xl:mb-0">
+          <Image
+            src="/images/Home Updated/tampafamilyofthree.webp"
+            height={684}
+            width={456}
+            alt=""
+            className="object-cover"
+          />
+          <h2 className="text-[35px] my-[40px]">{`Today's the day!`}</h2>
+          <p className="font-thin">{`Time to meet, talk, connect, and get to know each other. I will take care of all the logistics, posing + helping you feel like a natural! My goal is to keep everyone feeling relaxed and having fun, allowing your kids to be kids, so I can capture genuine interactions of your special family.`}</p>
+        </div>
+        <div className="flex flex-col justify-start items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
+          <Image
+            src="/images/Home Updated/newlyengagedcouple.webp"
+            height={684}
+            width={456}
+            alt=""
+            className="object-cover"
+          />
+          <h2 className="text-[35px] my-[40px]">{`What's Next?`}</h2>
+          <p className="font-thin">{`Within two weeks of your session, you will be able to view your edited images from the comfort of home in a beautiful online gallery - ready for you to download, print, + proudly display in your home!`}</p>
+        </div>
       </section>
 
       {/* Newsletter Section */}
       <section
         id="newsletter"
-        className="md:px-[50px] px-[30px] md:flex md:justify-center mt-[100px] bg-[#faf9f7] pt-[100px]"
+        className="xl:px-[50px] px-[30px] sm:flex sm:flex-col md:flex-row xl:justify-center sm:items-center mt-[100px] bg-[#faf9f7] pt-[100px] lg:px-[75px]"
       >
-        <div className="flex flex-col w-full flex-1 md:pl-[100px]">
+        <div className="flex flex-col w-full flex-1 xl:pl-[100px] 2xl:items-end 2xl:justify-start md:pr-[100px]">
           <h2 className="text-[15px]">{`JOIN MY NEWSLETTER`}</h2>
           <h3 className="text-[35px] mb-[40px]">{`BECOME A VIP`}</h3>
           <p className="font-thin leading-8 mb-[60px] text-wrap">{`
 Join our email list and be the first to know about our special offers, receive early access to mini sessions + more. Get in the know so you don't miss a thing!`}</p>
         </div>
-        <div className="flex-1 flex justify-end items-start">
+        <div className="flex-1 flex justify-end 2xl:justify-center items-start w-full">
           <NewsletterForm />
         </div>
       </section>
 
+      {/* Carousel Section */}
+      <section id="carousel" className="">
+        <Carousel />
+      </section>
+
       {/* FAQ Section */}
-      <section id="home-faq" className="px-[30px] md:px-[100px] mt-[100px]">
+      <section id="home-faq" className="px-[30px] xl:px-[100px] mt-[100px]">
         <h2 className="text-[13px] font-bold tracking-wider my-[50px]">{`FAQ`}</h2>
-        <ul className=" md:grid md:grid-rows-2 md:grid-flow-col pb-[60px] md:pb-0">
+        <ul className=" xl:grid xl:grid-rows-2 xl:grid-flow-col pb-[60px] xl:pb-0">
           {faqs.map((faq, index) => {
             return <FAQs key={index} index={index} faq={faq} />;
           })}
@@ -217,22 +221,24 @@ Join our email list and be the first to know about our special offers, receive e
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="px-[30px] md:flex md:flex-row-reverse md:py-[100px]">
-        <div className="w-full mb-[50px] md:flex-1">
-          <div className="w-full  flex justify-center items-end md:pr-[100px]">
-            <Image
-              src="/images/Home/youngcouplehugging.webp"
-              height={484}
-              width={323}
-              className="object-cover w-full md:max-h-[484px] md:max-w-[323px] pr-[5px]"
-              alt="Tampa Family Photography | Young couple sharing an embrace while surrounded by the rustic charm of Tampa's countryside taken by Tampa Photographer Calli Wickes."
-            />
-            <p className="vertical-rl md:pl-[100px] md:mb-[2px] md:mt-0 justify-self-end text-[12px] font-thin">
+      <section id="contact" className="px-[30px] xl:flex xl:flex-row-reverse xl:py-[100px]">
+        <div className="w-full mb-[50px] xl:flex-1">
+          <div className="w-full flex justify-center items-end xl:pr-[100px] ">
+            <div className="max-w-[323px] max-h-[484px] w-full xl:max-h-[484px] xl:max-w-[323px] pr-[5px]">
+              <Image
+                src="/images/Home/youngcouplehugging.webp"
+                height={484}
+                width={323}
+                className="object-cover "
+                alt="Tampa Family Photography | Young couple sharing an embrace while surrounded by the rustic charm of Tampa's countryside taken by Tampa Photographer Calli Wickes."
+              />
+            </div>
+            <p className="vertical-rl xl:pl-[100px] xl:mb-[2px] xl:mt-0 justify-self-end text-[12px] font-thin">
               {`Tampa, FL Family Photography`}
             </p>
           </div>
         </div>
-        <div className="md:flex md:flex-col md:flex-1 md:align-center md:pl-[100px] md:justify-center md:align-center">
+        <div className="xl:flex xl:flex-col xl:flex-1 xl:align-center xl:pl-[100px] xl:justify-center xl:align-center">
           <h2 className="text-[35px] mb-[50px]">{`Family photography for you to treasure forever`}</h2>
           <p className="font-thin leading-8 mb-[60px]">
             {`Whether you seek stunning beach snapshots, enchanting Florida nature

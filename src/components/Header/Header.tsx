@@ -17,11 +17,11 @@ const Header = ({ isHome = false }: HeaderProps) => {
     <header>
       <div className={`${isMenuOpen ? 'fixed top-0' : ''} z-30`}>
         <div className="w-dvw flex px-[20px] absolute top-0 left-0">
-          <div className={`flex-1 py-[10px] z-30 md:ml-[100px] md:mt-[50px]`}>
+          <div className={`flex-1 py-[10px] z-30 xl:ml-[100px] xl:mt-[50px]`}>
             <Link href="/" legacyBehavior passHref>
               <a
                 aria-label="Calli Wickes Photography Home Page"
-                className={`tracking-[.35em] text-[20px] w-full md:flex md:flex-col md:text-[25px] cursor-pointer ${
+                className={`tracking-[.35em] text-[20px] w-full xl:flex xl:flex-col xl:text-[25px] cursor-pointer ${
                   isMenuOpen || !isHome ? 'text-black' : 'text-white'
                 }`}
               >
@@ -31,7 +31,7 @@ const Header = ({ isHome = false }: HeaderProps) => {
             </Link>
           </div>
 
-          <div className="flex flex-1 justify-end items-center md:mr-[100px] md:mt-[50px]">
+          <div className="flex flex-1 justify-end items-center xl:mr-[100px] xl:mt-[50px]">
             <div className={`z-30 cursor-pointer`}>
               {!isMenuOpen ? (
                 <List onClick={() => setIsMenuOpen(!isMenuOpen)} size={40} color={isHome ? 'white' : 'black'} />
@@ -42,7 +42,7 @@ const Header = ({ isHome = false }: HeaderProps) => {
           </div>
         </div>
         <nav
-          className={`fixed h-full w-dvw bg-white z-20 flex justify-center pt-[15dvh] md:pt-[35dvh] md:text-[20px] ${
+          className={`fixed h-full w-dvw bg-white z-20 flex justify-center pt-[15dvh] xl:pt-[35dvh] xl:text-[20px] ${
             !isMenuOpen ? 'invisible overflow-y-auto' : 'visible overflow-y-hidden'
           }`}
         >

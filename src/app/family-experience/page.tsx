@@ -42,25 +42,25 @@ const FamilyGalleryPage = () => {
   ];
 
   return (
-    <main className="md:flex md:flex-col md:items-center">
+    <main className="xl:flex xl:flex-col xl:items-center">
       <Share />
-      <div className="md:w-full">
+      <div className="xl:w-full">
         <Header />
       </div>
 
       <section
-        className="mt-[10dvh] md:mt-[20dvh] px-[30px] pb-[100px] mb-[50px] md:h-[80dvh] top-0 md:w-full"
+        className="mt-[10dvh] xl:mt-[20dvh] px-[30px] pb-[100px] mb-[50px] xl:h-[80dvh] top-0 xl:w-full"
         id="familygallerytop"
       >
-        <h2 className="text-white text-[38px] font-thin leading-1 flex flex-col pt-[60px] md:text-[70px] md:pt-[20%]">{`Families + Couples`}</h2>
+        <h2 className="text-white text-[38px] font-thin leading-1 flex flex-col pt-[60px] xl:text-[70px] xl:pt-[20%]">{`Families + Couples`}</h2>
         <p className="text-white text-[15px] font-thin px-[40px] py-[150px]">{`Family photos made into timeless memories.`}</p>
       </section>
-      <section className="px-[30px] mb-[60px] md:flex md:items-center md:px-[100px] md:mb-[150px] md:mt-[100px]">
-        <h1 className="text-[40px] leading-1 mb-[30px] md:flex-1 md:text-[50px]">{`Family Photography`}</h1>
-        <p className="font-thin md:flex-1">{`Every Tampa family is uniquely beautiful. I specialize in capturing the relaxed and joyful interactions that make your family extraordinary. Whether it's the warmth of big family gatherings or the intimacy of shoots with you and your fur baby, each family photography session in Tampa is tailored to create an experience you'll truly adore. Let's capture portraits that authentically reflect your family's story, offering you cherished memories that reflect your family. Images that you’ll want to print, frame, and hold close forever.`}</p>
+      <section className="px-[30px] mb-[60px] xl:flex xl:items-center xl:px-[100px] xl:mb-[150px] xl:mt-[100px]">
+        <h1 className="text-[40px] leading-1 mb-[30px] xl:flex-1 xl:text-[50px]">{`Family Photography`}</h1>
+        <p className="font-thin xl:flex-1">{`Every Tampa family is uniquely beautiful. I specialize in capturing the relaxed and joyful interactions that make your family extraordinary. Whether it's the warmth of big family gatherings or the intimacy of shoots with you and your fur baby, each family photography session in Tampa is tailored to create an experience you'll truly adore. Let's capture portraits that authentically reflect your family's story, offering you cherished memories that reflect your family. Images that you’ll want to print, frame, and hold close forever.`}</p>
       </section>
 
-      <section className="px-[30px] md:columns-3 md:w-[80%] md:px-[100px]">
+      <section className="px-[30px] xl:columns-3 xl:w-[80%] xl:px-[100px]">
         <div className="w-full mb-[15px]">
           <Image
             src="/images/Family Gallery/veryelderlycoupleinloveintampafl.webp"
@@ -207,8 +207,8 @@ const FamilyGalleryPage = () => {
         </div>
       </section>
 
-      <section className="mt-[60px] px-[30px] md:mt-[100px] w-full">
-        <h1 className="text-[40px] leading-1 flex flex-col mb-[50px] text-center md:text-[70px]">
+      <section className="mt-[60px] px-[30px] xl:mt-[100px] w-full">
+        <h1 className="text-[40px] leading-1 flex flex-col mb-[50px] text-center xl:text-[70px]">
           {`Pricing Packages`}
         </h1>
 
@@ -217,36 +217,36 @@ const FamilyGalleryPage = () => {
             return (
               <li
                 key={idx}
-                className={`md:py-[50px] ${
-                  idx === 1 ? 'md:border md:border-x-0 md:border-b-0 md:border-t-1 md:border-[#f2f2f2]' : ''
-                } md:flex ${idx % 2 === 0 ? '' : ' md:flex-row-reverse'}`}
+                className={`xl:py-[50px] ${
+                  idx === 1 ? 'xl:border xl:border-x-0 xl:border-b-0 xl:border-t-1 xl:border-[#f2f2f2]' : ''
+                } xl:flex ${idx % 2 === 0 ? '' : ' xl:flex-row-reverse'}`}
               >
-                <div className="md:flex-1 md:flex md:items-center md:justify-center">
+                <div className="xl:flex-1 xl:flex xl:items-center xl:justify-center">
                   <Image
                     src={pkg?.image?.src || ''}
                     height={pkg?.image?.height}
                     width={pkg?.image?.width}
                     alt={pkg?.image?.alt || ''}
-                    className="mb-[30px] md:max-w-[457px]"
+                    className="mb-[30px] xl:max-w-[457px]"
                   />
                 </div>
-                <div className="md:flex-1 md:flex md:flex-col md:items-center md:justify-center">
+                <div className="xl:flex-1 xl:flex xl:flex-col xl:items-center xl:justify-center">
                   <h2
-                    className={`text-[40px] leading-1 flex flex-col mb-[20px] text-center md:self-start ${
-                      idx === Math.floor(packages.length / 2) ? 'md:self-end' : ''
+                    className={`text-[40px] leading-1 flex flex-col mb-[20px] text-center xl:self-start ${
+                      idx === Math.floor(packages.length / 2) ? 'xl:self-end' : ''
                     }`}
                   >
                     {pkg.name}
                   </h2>
                   <p
-                    className={`font-bold text-center mb-[30px] md:self-start ${
-                      idx === Math.floor(packages.length / 2) ? 'md:self-end' : ''
+                    className={`font-bold text-center mb-[30px] xl:self-start ${
+                      idx === Math.floor(packages.length / 2) ? 'xl:self-end' : ''
                     }`}
                   >{`$${pkg.price}`}</p>
                   {pkg.target ? (
                     <p
-                      className={`text-center mb-[30px] font-thin md:self-start ${
-                        idx === Math.floor(packages.length / 2) ? 'md:self-end' : ''
+                      className={`text-center mb-[30px] font-thin xl:self-start ${
+                        idx === Math.floor(packages.length / 2) ? 'xl:self-end' : ''
                       }`}
                     >
                       {pkg.target}
@@ -254,15 +254,15 @@ const FamilyGalleryPage = () => {
                   ) : null}
 
                   <ul
-                    className={`mb-[60px] md:self-start ${
-                      idx === Math.floor(packages.length / 2) ? 'md:self-end' : ''
-                    } md:flex md:flex-col`}
+                    className={`mb-[60px] xl:self-start ${
+                      idx === Math.floor(packages.length / 2) ? 'xl:self-end' : ''
+                    } xl:flex xl:flex-col`}
                   >
                     {pkg.description.split(';').map((desc, idx2) => (
                       <li
                         key={idx2}
-                        className={`font-thin text-center md:self-start ${
-                          idx === Math.floor(packages.length / 2) ? 'md:self-end md:text-right' : ''
+                        className={`font-thin text-center xl:self-start ${
+                          idx === Math.floor(packages.length / 2) ? 'xl:self-end xl:text-right' : ''
                         }`}
                       >
                         {desc}
@@ -276,8 +276,8 @@ const FamilyGalleryPage = () => {
         </ul>
       </section>
 
-      <section className="px-[30px] mt-[100px] mb-[60px] md:w-full md:px-[100px] md:flex md:flex-row-reverse md:mt-[200px]">
-        <div className="md:flex md:justify-center md:flex-1">
+      <section className="px-[30px] mt-[100px] mb-[60px] xl:w-full xl:px-[100px] xl:flex xl:flex-row-reverse xl:mt-[200px]">
+        <div className="xl:flex xl:justify-center xl:flex-1">
           <Image
             src="/images/Family Gallery/happylittlefamilyinflorida.webp"
             height={684}
@@ -286,11 +286,11 @@ const FamilyGalleryPage = () => {
             alt="Family bliss captured in the serene setting of Florida's nature with green grass and Spanish moss."
           />
         </div>
-        <div className="w-full mb-[15px] md:flex-1">
-          <h2 className="text-[40px] leading-1 my-[30px] md:text-[60px]">{`Time to capture your family's happiest moments`}</h2>
+        <div className="w-full mb-[15px] xl:flex-1">
+          <h2 className="text-[40px] leading-1 my-[30px] xl:text-[60px]">{`Time to capture your family's happiest moments`}</h2>
           <p className="font-thin mb-[15px]">{`Your Tampa + Wesley Chapel Family Photographer`}</p>
 
-          <div className="md:mt-[150px] mt-[60px] mb-[150px]">
+          <div className="xl:mt-[150px] mt-[60px] mb-[150px]">
             <Link href="/contact" legacyBehavior passHref>
               <a className="border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">{`GET IN TOUCH`}</a>
             </Link>

@@ -38,8 +38,8 @@ const Footer = () => {
             <ArrowUp size={30} className="cursor-pointer" />
           </Link>
         </div>
-        <div className="flex flex-col-reverse md:flex-row items-center justify-center w-full">
-          <div className="md:flex-1 w-full flex mb-[25px] md:my-[50px] items-center text-center justify-center">
+        <div className="flex flex-col-reverse xl:flex-row items-center justify-center w-full">
+          <div className="xl:flex-1 w-full flex mb-[25px] xl:my-[50px] items-center text-center justify-center">
             <Link passHref legacyBehavior href="/privacypolicy">
               <a className="underline font-thin mr-[35px]">{`Privacy Policy`}</a>
             </Link>
@@ -47,8 +47,8 @@ const Footer = () => {
               <a className="underline font-thin ">{`Terms and Conditions`}</a>
             </Link>
           </div>
-          <p className="md:flex-1 w-full font-thin my-[25px] md:my-[50px] text-center">{`© 2024 Calli Wickes Photography`}</p>
-          <div className="md:flex-1 w-full flex-col font-thin flex mt-[25px] md:my-[50px] items-center text-center justify-center">
+          <p className="xl:flex-1 w-full font-thin my-[25px] xl:my-[50px] text-center">{`© 2024 Calli Wickes Photography`}</p>
+          <div className="xl:flex-1 w-full flex-col font-thin flex mt-[25px] xl:my-[50px] items-center text-center justify-center">
             <p>{`Our website is listed in photographerlistings.org -`}</p>{' '}
             <a
               className="underline"

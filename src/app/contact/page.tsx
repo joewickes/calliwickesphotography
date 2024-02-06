@@ -24,17 +24,17 @@ const ContactPage = () => {
       <Header isHome />
       <section
         id="kideatingfruit"
-        className="pt-[15dvh] px-[30px] h-[100dvh] text-white mb-[30px] md:flex md:items-center"
+        className="pt-[15dvh] px-[30px] h-[100dvh] text-white mb-[30px] xl:flex xl:items-center"
       >
-        <h2 className="text-[40px] leading-1 flex flex-col text-white pt-[60px] md:text-[70px] md:font-thin md:pl-[100px] md:flex-1 md:pt-0 md:pb-[60px]">
+        <h2 className="text-[40px] leading-1 flex flex-col text-white pt-[60px] xl:text-[70px] xl:font-thin xl:pl-[100px] xl:flex-1 xl:pt-0 xl:pb-[60px]">
           {`Start saving these moments`}
         </h2>
-        <p className="font-thin text-right pt-[200px] pb-[250px] md:pr-[100px] md:flex-1 md:pt-[250px] md:pb-[10px]">
+        <p className="font-thin text-right pt-[200px] pb-[250px] xl:pr-[100px] xl:flex-1 xl:pt-[250px] xl:pb-[10px]">
           {`Tampa | family + senior photography`}
         </p>
       </section>
 
-      <section className="px-[30px] mb-[60px] md:pl-[100px] md:pt-[100px]">
+      <section className="px-[30px] mb-[60px] xl:pl-[100px] xl:pt-[100px]">
         <h1 className="text-[45px] leading-1 mb-[30px]">{`Let's get in touch!`}</h1>
         <p className="font-thin whitespace-pre-line">
           {`I can't wait to connect with you!\n\n
@@ -55,15 +55,15 @@ const ContactPage = () => {
         </p>
       </section>
 
-      <section className="px-[30px] text-black md:pl-[100px] md:flex">
-        <div className="flex justify-center mb-[60px] md:flex-1 md:justify-start">
-          <div className="mt-[30px] h-[90dvw] w-[90dvw] md:h-auto md:w-auto overflow-hidden">
+      <section className="px-[30px] text-black xl:pl-[100px] xl:flex">
+        <div className="flex justify-center mb-[60px] xl:flex-1 xl:justify-start">
+          <div className="mt-[30px] h-[90dvw] w-[90dvw] xl:h-auto xl:w-auto overflow-hidden">
             <Image
               src="/images/Home/tampaphotographerportrait.webp"
               alt="Tampa photographer in downtown portrait."
               height={840}
               width={560}
-              className="object-cover mt-[-10dvw] md:mt-[-100px]"
+              className="object-cover mt-[-10dvw] xl:mt-[-100px]"
             />
           </div>
         </div>

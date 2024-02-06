@@ -98,8 +98,8 @@ export default CarouselComponent;
 /* Portfolio Section */
 
 {
-  /* <section id="portfolio" className="px-[30px] md:flex md:justify-center">
-        <div className="md:ml-[50px] md:max-w-[456px] md:flex md:flex-col md:justify-start md:items-end md:flex-1 md:mr-[15px]">
+  /* <section id="portfolio" className="px-[30px] xl:flex xl:justify-center">
+        <div className="xl:ml-[50px] xl:max-w-[456px] xl:flex xl:flex-col xl:justify-start xl:items-end xl:flex-1 xl:mr-[15px]">
           <div className="w-full mb-[15px] ">
             <Image
               src="/images/Home/familyportraittampa.webp"
@@ -119,7 +119,7 @@ export default CarouselComponent;
             />
           </div>
         </div>
-        <div className="md:flex md:flex-col md:justify-start md:items-end md:flex-1 md:max-w-[456px]">
+        <div className="xl:flex xl:flex-col xl:justify-start xl:items-end xl:flex-1 xl:max-w-[456px]">
           <div className="w-full h-auto mb-[15px]">
             <Image
               src="/images/Home/smilingcoupleoutdoor.webp"
@@ -148,7 +148,7 @@ export default CarouselComponent;
             />
           </div>
         </div>
-        <div className="md:ml-[15px] md:max-w-[456px] md:flex md:flex-col md:justify-start md:items-end md:flex-1 md:mr-[50px] mb-[120px]">
+        <div className="xl:ml-[15px] xl:max-w-[456px] xl:flex xl:flex-col xl:justify-start xl:items-end xl:flex-1 xl:mr-[50px] mb-[120px]">
           <div className="w-full mb-[15px]">
             <Image
               src="/images/Home/adorablefamilyofthree.webp"

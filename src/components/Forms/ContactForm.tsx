@@ -66,7 +66,7 @@ const ContactForm = () => {
   };
 
   return !submitted ? (
-    <form className="md:flex-1 md:mr-[100px] md:mt-[50px]" onSubmit={onSubmit}>
+    <form className="xl:flex-1 xl:mr-[100px] xl:mt-[50px]" onSubmit={onSubmit}>
       <ToastContainer position="top-right" closeOnClick autoClose={5000} pauseOnHover transition={Slide} />
       <label className="flex flex-col">
         {`Name *`}

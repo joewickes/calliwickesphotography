@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
     <main>
       <Share />
       <Header />
-      <section className="mt-[20dvh] px-[30px] md:px-[100px]">
+      <section className="mt-[20dvh] px-[30px] xl:px-[100px]">
         <div className="mb-[50px]">
           <h1 className="font-bold mb-[10px]">{`Privacy Policy`}</h1>
           <p>{`Last Updated: 1/25/2024`}</p>

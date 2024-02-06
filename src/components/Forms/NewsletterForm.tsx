@@ -40,7 +40,7 @@ const ContactForm = () => {
 
   return !submitted ? (
     <form
-      className="md:flex-1 md:mr-[50px] md:pl-[50px] flex flex-col justify-end items-end max-w-[500px] w-full"
+      className="xl:flex-1 xl:mr-[50px] xl:pl-[50px] flex flex-col justify-end items-end max-w-[500px] w-full"
       onSubmit={onSubmit}
     >
       <ToastContainer position="top-right" closeOnClick autoClose={5000} pauseOnHover transition={Slide} />
