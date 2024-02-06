@@ -21,7 +21,7 @@ const ContactForm = () => {
     const data = {
       name,
       email,
-      newletter: true,
+      newsletter: true,
     };
 
     const res = await fetch('/api/email', {
@@ -38,7 +38,7 @@ const ContactForm = () => {
     }
   };
 
-  return !submitted ? (
+  return false ? (
     <form
       className="md:flex-1 md:mr-[50px] md:pl-[50px] flex flex-col justify-end items-end max-w-[500px] w-full"
       onSubmit={onSubmit}
@@ -80,43 +80,8 @@ const ContactForm = () => {
     </form>
   ) : (
     <>
-      <div className="flex-1 mt-[30px] flex flex-col justify-center mb-[100px]">
+      <div className="flex-1 mt-[30px] flex flex-col justify-center mb-[100px] pl-[50px]">
         <h2 className="text-[35px] leading-1 mb-[30px] whitespace-pre-line">{`Thank you so much for signing up!`}</h2>
-        <p className="mt-[50px]">{`I’m looking forward to adding you to the list and will be in touch shortly!`}</p>
-        <p className="mt-[25px]">
-          {`While you wait… find me on`}
-          <a
-            target="_blank"
-            href="https://www.facebook.com/CalliWickesPhotography/"
-            className="font-semibold"
-            aria-label="Facebook"
-          >
-            {` `}
-            Facebook
-          </a>
-          {` `}
-          {`or `}
-          <a
-            target="_blank"
-            href="https://www.instagram.com/calliwickesphotography/"
-            className="font-semibold"
-            aria-label="Instagram"
-          >
-            Instagram
-          </a>
-        </p>
-        <p className="mt-[25px]">
-          {`You can also check out my`}{' '}
-          <a
-            target="_blank"
-            href="https://www.pinterest.com/calliwickes/"
-            className="font-semibold"
-            aria-label="Pinterest"
-          >
-            Pinterest
-          </a>{' '}
-          {`page for outfit inspiration for your upcoming session!`}
-        </p>
       </div>
     </>
   );

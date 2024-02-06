@@ -209,7 +209,7 @@ Join our email list and be the first to know about our special offers, receive e
       {/* FAQ Section */}
       <section id="home-faq" className="px-[30px] md:px-[100px] mt-[100px]">
         <h2 className="text-[13px] font-bold tracking-wider my-[50px]">{`FAQ`}</h2>
-        <ul className=" md:grid md:grid-rows-2 md:grid-flow-col">
+        <ul className=" md:grid md:grid-rows-2 md:grid-flow-col pb-[60px] md:pb-0">
           {faqs.map((faq, index) => {
             return <FAQs key={index} index={index} faq={faq} />;
           })}
