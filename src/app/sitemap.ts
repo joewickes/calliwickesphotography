@@ -21,31 +21,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: 'https://www.calliwickesphotography.com/experience',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.calliwickesphotography.com/familygallery',
+      url: 'https://www.calliwickesphotography.com/family-experience',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
-      url: 'https://www.calliwickesphotography.com/portfolio',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.6,
-    },
-    {
-      url: 'https://www.calliwickesphotography.com/pricing',
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.4,
-    },
-    {
-      url: 'https://www.calliwickesphotography.com/seniorgallery',
+      url: 'https://www.calliwickesphotography.com/senior-experience',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.6,
