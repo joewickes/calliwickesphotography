@@ -42,7 +42,7 @@ const FAQs = ({ index, faq }: FAQsProps) => {
 
       <p
         className={`h-[200px] w-full text-[15px] pt-[20px] font-thin md:w-full ${
-          openId === index ? 'visible' : 'hidden'
+          openId === index ? 'visible' : 'invisible'
         }`}
       >
         {faq.answer}

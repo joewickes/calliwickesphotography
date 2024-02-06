@@ -13,6 +13,34 @@ export const metadata: Metadata = {
 };
 
 const FamilyGalleryPage = () => {
+  const packages = [
+    {
+      name: 'Standard Session',
+      price: 350,
+      target: '*For families, Couples, Engagement Photos',
+      description:
+        '45-60 minute session;Final gallery of high resulition digital downloads (30+) delivered via online gallery;On location, within 1 hour of Tampa',
+      image: {
+        src: '/images/Pricing/familyportraittampa.webp',
+        height: 1029,
+        width: 686,
+        alt: 'Photography in Tampa, FL',
+      },
+    },
+    {
+      name: 'Extended Family Session',
+      price: 550,
+      description:
+        '60-90 minute session;Up to 12 people - $10/person after;Final gallery of high resolution digital downloads (50+) delivered via online gallery;Separate family groupings;On location, within 1 hour of Tampa',
+      image: {
+        src: '/images/Pricing/extendedfamilyportraittampa.webp',
+        height: 457,
+        width: 686,
+        alt: 'Photography in Tampa, FL',
+      },
+    },
+  ];
+
   return (
     <main className="md:flex md:flex-col md:items-center">
       <Share />
@@ -177,6 +205,75 @@ const FamilyGalleryPage = () => {
             alt="Family of three poses against a rustic fence during the fall in Tampa, Fl."
           />
         </div>
+      </section>
+
+      <section className="mt-[60px] px-[30px] md:mt-[100px] w-full">
+        <h1 className="text-[40px] leading-1 flex flex-col mb-[50px] text-center md:text-[70px]">
+          {`Pricing Packages`}
+        </h1>
+
+        <ul>
+          {packages.map((pkg, idx) => {
+            return (
+              <li
+                key={idx}
+                className={`md:py-[50px] ${
+                  idx === 1 ? 'md:border md:border-x-0 md:border-b-0 md:border-t-1 md:border-[#f2f2f2]' : ''
+                } md:flex ${idx % 2 === 0 ? '' : ' md:flex-row-reverse'}`}
+              >
+                <div className="md:flex-1 md:flex md:items-center md:justify-center">
+                  <Image
+                    src={pkg?.image?.src || ''}
+                    height={pkg?.image?.height}
+                    width={pkg?.image?.width}
+                    alt={pkg?.image?.alt || ''}
+                    className="mb-[30px] md:max-w-[457px]"
+                  />
+                </div>
+                <div className="md:flex-1 md:flex md:flex-col md:items-center md:justify-center">
+                  <h2
+                    className={`text-[40px] leading-1 flex flex-col mb-[20px] text-center md:self-start ${
+                      idx === Math.floor(packages.length / 2) ? 'md:self-end' : ''
+                    }`}
+                  >
+                    {pkg.name}
+                  </h2>
+                  <p
+                    className={`font-bold text-center mb-[30px] md:self-start ${
+                      idx === Math.floor(packages.length / 2) ? 'md:self-end' : ''
+                    }`}
+                  >{`$${pkg.price}`}</p>
+                  {pkg.target ? (
+                    <p
+                      className={`text-center mb-[30px] font-thin md:self-start ${
+                        idx === Math.floor(packages.length / 2) ? 'md:self-end' : ''
+                      }`}
+                    >
+                      {pkg.target}
+                    </p>
+                  ) : null}
+
+                  <ul
+                    className={`mb-[60px] md:self-start ${
+                      idx === Math.floor(packages.length / 2) ? 'md:self-end' : ''
+                    } md:flex md:flex-col`}
+                  >
+                    {pkg.description.split(';').map((desc, idx2) => (
+                      <li
+                        key={idx2}
+                        className={`font-thin text-center md:self-start ${
+                          idx === Math.floor(packages.length / 2) ? 'md:self-end md:text-right' : ''
+                        }`}
+                      >
+                        {desc}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
       </section>
 
       <section className="px-[30px] mt-[100px] mb-[60px] md:w-full md:px-[100px] md:flex md:flex-row-reverse md:mt-[200px]">

@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
 import Header from '@/components/Header/Header';
 
-import ContactForm from '@/app/contact/ContactForm';
+import ContactForm from '@/components/Forms/ContactForm';
 
 import 'react-toastify/dist/ReactToastify.css';
 import Share from '@/components/Share/Share';

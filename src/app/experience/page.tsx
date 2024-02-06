@@ -5,7 +5,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
 import Header from '@/components/Header/Header';
-import FAQs from '@/app/experience/FAQs';
+import FAQs from '@/components/FAQs/FAQs';
 import Share from '@/components/Share/Share';
 
 export const metadata: Metadata = {
@@ -27,34 +27,6 @@ const ExperiencePage = () => {
     {
       title: `Delivering photos`,
       description: `One or two weeks after your session, you will receive your edited pictures, ready to be printed and proudly displayed.`,
-    },
-  ];
-
-  const faqs = [
-    {
-      question: 'This is my first photoshoot, what should I expect?',
-      answer:
-        "We'll meet up and get to know each other a bit as I capture some photos of you + your family. I'll direct you when you aren't sure what to do, where to put your hands, or where to look! It's a casual process where I want you to feel as comfortable as possible!",
-    },
-    {
-      question: 'What should I wear?',
-      answer:
-        'Pinterest has some great ideas if you are needing inspiration + you are more than welcome to send me a pic of your ideas for me to help. The general rule is to have all of your outfits have a little variety: one wearing a solid shirt, one wearing a pattern, a dress, one with a jacket. A little variety goes a long way!',
-    },
-    {
-      question: 'How many pictures will I receive?',
-      answer:
-        "I will take lots of photos while we are together. Then I'll sort through them all to pick out the best of the best! The amount various on the type of session booked (mini, standard, extended). I'll edit those + upload them to be delivered to you via online gallery.",
-    },
-    {
-      question: 'Are you available outside of Tampa?',
-      answer:
-        'I am located just north of Tampa. Typically my sessions are within 1 hour of downtown Tampa. If you are interesting in a session that involves further travel, we can discuss what that would look like!',
-    },
-    {
-      question: 'How do I schedule a session?',
-      answer:
-        "You can contact me via phone, email or my contact page on my website. You can also find me on Facebook and Instagram! But it's hard to keep up with all those different sources so I highly recommend using my number or email for a quicker response!",
     },
   ];
 
@@ -105,15 +77,6 @@ const ExperiencePage = () => {
             </a>
           </Link>
         </div>
-      </section>
-
-      <section className="px-[30px] md:px-[100px]">
-        <h2 className="text-[13px] font-bold tracking-wider my-[50px]">{`FAQ`}</h2>
-        <ul className=" md:grid md:grid-rows-2 md:grid-flow-col">
-          {faqs.map((faq, index) => {
-            return <FAQs key={index} index={index} faq={faq} />;
-          })}
-        </ul>
       </section>
 
       <section

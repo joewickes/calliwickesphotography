@@ -4,6 +4,8 @@
 
 html {
   scroll-behavior: smooth !important;
+  height: 100dvh;
+  width: 100dvw;
 }
 
 #familyofthree {
@@ -101,4 +103,13 @@ html {
 .vertical-rl {
   writing-mode: vertical-rl;
   transform: scale(-1);
+}
+
+#review-carousel .react-multiple-carousel__arrow {
+  background: transparent !important;
+}
+
+#review-carousel .react-multiple-carousel__arrow--left::before,
+#review-carousel .react-multiple-carousel__arrow--right::before {
+  color: black !important;
 }
