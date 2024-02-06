@@ -38,7 +38,7 @@ const ContactForm = () => {
     }
   };
 
-  return false ? (
+  return !submitted ? (
     <form
       className="md:flex-1 md:mr-[50px] md:pl-[50px] flex flex-col justify-end items-end max-w-[500px] w-full"
       onSubmit={onSubmit}
