@@ -50,7 +50,7 @@ export default function Home() {
 
         {/* Hero Section */}
         <section id="home" className="h-dvh w-dvw flex flex-col items-center justify-center pt-[100px]">
-          <h1 className="text-nowrap text-center md:text-left text-[12px] mb-[20px] tracking-wide text-white z-10 md:w-[150px] md:self-start md:ml-[125px] md:mt-[150px]">
+          <h1 className="text-nowrap text-center md:text-left text-[12px] mb-[20px] tracking-wide text-white z-10 md:w-[150px] md:self-start md:ml-[125px] mt-30px] md:mt-[150px]">
             {`TAMPA FAMILY PHOTOGRAPHER`}
           </h1>
           <p className="text-center text-[45px] md:text-[84px] leading-[3.5rem] md:leading-[5.5rem] flex flex-col mb-[80px] md:mt-[0px] text-white z-10 tracking-wide md:self-start md:ml-[100px] md:flex md:flex-row md:flex-wrap md:text-left">
