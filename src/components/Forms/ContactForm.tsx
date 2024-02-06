@@ -54,7 +54,6 @@ const ContactForm = () => {
       setPhone('');
       setMessage('');
 
-      setToast('Your message was sent! Thanks!');
       setSubmitted(true);
     }
   };
