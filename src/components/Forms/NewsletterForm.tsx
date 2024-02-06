@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { Slide, ToastContainer, toast } from 'react-toastify';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -9,13 +8,8 @@ const ContactForm = () => {
   const [isDisabled, setIsDisabled] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const setToast = (message: string) => {
-    toast.info(message);
-  };
-
   const onSubmit = async (e: any) => {
     e.preventDefault();
-    setToast('Submitting your info...');
     setIsDisabled(true);
 
     const data = {
@@ -33,7 +27,6 @@ const ContactForm = () => {
       setName('');
       setEmail('');
 
-      setToast('Your request was submitted! Thanks!');
       setSubmitted(true);
     }
   };
@@ -43,7 +36,6 @@ const ContactForm = () => {
       className="xl:flex-1 xl:mr-[50px] xl:pl-[50px] flex flex-col justify-end items-end max-w-[500px] w-full"
       onSubmit={onSubmit}
     >
-      <ToastContainer position="top-right" closeOnClick autoClose={5000} pauseOnHover transition={Slide} />
       <label className="flex flex-col w-full">
         {`Name *`}
         <input
