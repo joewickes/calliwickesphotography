@@ -25,7 +25,7 @@ const Share = () => {
   const hashtag = '#calliwickesphotography';
 
   return (
-    <div className="fixed bottom-0 right-0 mb-[3dvh] mr-[3dvh] ">
+    <div className="fixed bottom-0 right-0 mb-[3dvh] mr-[3dvh] z-10 ">
       <ul
         className={`${isMenuOpen ? 'visible h-auto w-auto' : 'invisible h-0 w-0'} flex flex-col justify-center items-center`}
       >

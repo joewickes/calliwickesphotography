@@ -13,6 +13,21 @@ export const metadata: Metadata = {
 };
 
 const SeniorGalleryPage = () => {
+  const packages = [
+    {
+      name: 'Senior Session',
+      price: 450,
+      description:
+        'up to 2 hours session;Final gallery of high resolution digital downloads (40+) delivered via online gallery;Up to 3 outfit changes;2 locations within 10 mi on the same day (location ranges within 1 hour of Tampa);*please contact for additional options',
+      image: {
+        src: '/images/Pricing/seniorportraittampa.webp',
+        height: 1029,
+        width: 686,
+        alt: 'Photography in Tampa, FL',
+      },
+    },
+  ];
+
   return (
     <main className="md:flex md:flex-col md:items-center">
       <Share />
@@ -131,6 +146,61 @@ const SeniorGalleryPage = () => {
             alt="High school senior softball star in Tampa, donning red school colors."
           />
         </div>
+      </section>
+
+      <section className="mt-[60px] px-[30px] md:mt-[100px] w-full">
+        <h1 className="text-[40px] leading-1 flex flex-col mb-[50px] text-center md:text-[70px]">
+          {`Pricing Packages`}
+        </h1>
+
+        <ul>
+          {packages.map((pkg, idx) => {
+            return (
+              <li key={idx} className={`md:py-[50px]  md:flex ${idx % 2 === 0 ? '' : ' md:flex-row-reverse'}`}>
+                <div className="md:flex-1 md:flex md:items-center md:justify-center">
+                  <Image
+                    src={pkg?.image?.src || ''}
+                    height={pkg?.image?.height}
+                    width={pkg?.image?.width}
+                    alt={pkg?.image?.alt || ''}
+                    className="mb-[30px] md:max-w-[457px]"
+                  />
+                </div>
+                <div className="md:flex-1 md:flex md:flex-col md:items-center md:justify-center">
+                  <h2
+                    className={`text-[40px] leading-1 flex flex-col mb-[20px] text-center md:self-start ${
+                      idx === Math.floor(packages.length / 2) ? 'md:self-end' : ''
+                    }`}
+                  >
+                    {pkg.name}
+                  </h2>
+                  <p
+                    className={`font-bold text-center mb-[30px] md:self-start ${
+                      idx === Math.floor(packages.length / 2) ? 'md:self-end' : ''
+                    }`}
+                  >{`$${pkg.price}`}</p>
+
+                  <ul
+                    className={`mb-[60px] md:self-start ${
+                      idx === Math.floor(packages.length / 2) ? 'md:self-end' : ''
+                    } md:flex md:flex-col`}
+                  >
+                    {pkg.description.split(';').map((desc, idx2) => (
+                      <li
+                        key={idx2}
+                        className={`font-thin text-center md:self-start ${
+                          idx === Math.floor(packages.length / 2) ? 'md:self-end md:text-right' : ''
+                        }`}
+                      >
+                        {desc}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
       </section>
 
       <section className="px-[30px] mt-[100px] mb-[60px] md:w-full md:px-[100px] md:flex md:flex-row-reverse md:mt-[200px]">

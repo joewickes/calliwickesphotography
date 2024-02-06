@@ -41,8 +41,8 @@ const FAQs = ({ index, faq }: FAQsProps) => {
       </div>
 
       <p
-        className={`h-[200px] w-full text-[15px] pt-[20px] font-thin md:w-full ${
-          openId === index ? 'visible' : 'hidden'
+        className={`md:h-[200px] w-full text-[15px] pt-[20px] font-thin md:w-full ${
+          openId === index ? 'visible' : 'invisible h-0'
         }`}
       >
         {faq.answer}
