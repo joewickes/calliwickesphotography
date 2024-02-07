@@ -28,17 +28,17 @@ export default function Home() {
     {
       question: 'How many pictures will I receive?',
       answer:
-        "I will take lots of photos while we are together. Then I'll sort through them all to pick out the best of the best! The amount various on the type of session booked (mini, standard, extended). I'll edit those + upload them to be delivered to you via online gallery.",
+        "I will take lots of photos while we are together, then I'll sort through them all to pick out the best of the best! The amount various on the type of session booked (mini session, standard family session, extended family session, etc.). I'll edit those + upload them to be delivered to you via online gallery.",
     },
     {
       question: 'Are you available outside of Tampa?',
       answer:
-        'I am located just north of Tampa. Typically my sessions are within 1 hour of downtown Tampa. If you are interesting in a session that involves further travel, we can discuss what that would look like!',
+        'I am located just north of Tampa, Florida. My sessions are typically within 1 hour of downtown Tampa. If you are interested in a family photo session that involves further travel, we can discuss what that would look like!',
     },
     {
       question: 'How do I schedule a session?',
       answer:
-        "You can contact me via phone, email or my contact page on my website. You can also find me on Facebook and Instagram! But it's hard to keep up with all those different sources so I highly recommend using my number or email for a quicker response!",
+        "You can contact me via phone (813-406-0558), email (calliwickesphotography@gmail.com) or my contact page on my website. You can also find me on Facebook and Instagram! But it's hard to keep up with all those different sources so I highly recommend using my number or email for a quicker response!",
     },
   ];
 
@@ -92,15 +92,15 @@ export default function Home() {
           <h2 className="text-[15px] mt-[60px]">{`FAMILY PHOTOGRAPHY IN TAMPA, FL`}</h2>
           <h3 className="text-[35px] mb-[40px]">{`What Makes Calli So Different?`}</h3>
           <p className="font-thin leading-8 mb-[30px]">
-            {`I’m Calli - your local Tampa family photographer! I love capturing photos that showcase you with your absolute favorite people. Take a moment with me to take a brief pause on the busyness of life so that you can have photographs that you will forever cherish. With two little girls of my own, I understand how hard it is to take a moment aside from all the chaos that life brings. But I promise - you will never regret getting those family photos with your crew.
+            {`I’m Calli - your local Tampa family photographer! I’ve heard so many stories lately of kids who grew up with no family photos of them included. I never realized as the youngest of four kids, how blessed I was to be in a home where family portraits were valued. That is a legacy I want to continue with my own family and help you do the same for yours.
 
               `}
           </p>
           <p className="font-thin leading-8 mb-[30px]">
-            {`I specialize in stress-free sessions, capturing your natural smiles and laughter. When you book with me you will receive images that you love and can’t wait to print, frame, and proudly display throughout your home. I tailor each session to your unique family and love finding a balance between posed and playful pictures for a casual, comfortable vibe. Giving you photographs that you will have such joy seeing every time you walk past them in your home.`}
+            {`I have two little girls of my own so I understand the stress of having a family photo session when you have little ones who want to do everything but cooperate. I want to help take that pressure off of you! My clients want to capture those moments with their favorite people in Tampa. They want a beautiful and relaxed outdoor family portrait and also all the silly moments it took to capture that one. Because it’s about the journey. And I’d love to help you along your way.`}
           </p>
           <p className="font-thin leading-8 mb-[60px]">
-            {`I can’t wait to capture some of your best moments together in Tampa, FL. You can explore the photo gallery below and let's get ready to capture your family's story. If you’re searching for a Tampa Family Photographer -`}{' '}
+            {`I can’t wait to capture some of your best moments together in Tampa, FL. If you’re searching for a Tampa Family Photographer -`}{' '}
             <Link href="/contact" passHref legacyBehavior>
               <a className="font-normal">{`Contact me`}</a>
             </Link>{' '}
@@ -131,20 +131,20 @@ export default function Home() {
             <Image
               src="/images/Home Updated/MommyandmePhoto.webp"
               priority
-              alt=""
+              alt="Tampa Family Photography | Photo of a mom holding her little boy taken by Tampa Photographer Calli Wickes."
               height={684}
               width={456}
               className="object-cover  mt-[-30dvw] sm:mt-0"
             />
           </div>
           <p className="w-0 h-0 xl:w-auto xl:h-auto xl:mb-[50px] mt-[10px] text-[12px] font-thin invisible xl:visible">
-            {`Family photos for you to always remember`}
+            {`Tampa Family Photography - for you to always remember`}
           </p>
         </div>
         <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pr-[100px] xl:mb-[100px] md:px-[75px]">
-          <h2 className="text-[35px] text-right mb-[40px]">{`Just relax + let’s take some pictures`}</h2>
+          <h2 className="text-[35px] text-right mb-[40px]">{`Honest, Playful & Relaxed - Family Photography for those who just want to remember these moments.`}</h2>
           <p className="font-thin leading-8 text-right mb-[60px]">
-            {`This isn't about making sure you pick out the perfect outfit + stand just the right way. This is about capturing you - the real you. Yes, take the time to pick out an outfit you love. Then just show up. I'll take care of all the logistics so you just get to enjoy yourself as I capture all your best moments. `}
+            {`This isn't about making sure you pick out the perfect outfit + stand just the right way. This is about capturing you - the real you. Yes, take the time to pick out an outfit you love. Then just show up. I'll take care of all the logistics so you just get to enjoy yourself as I capture all your best moments in Tampa, FL. `}
           </p>
         </div>
       </section>
@@ -162,30 +162,30 @@ export default function Home() {
             alt=""
             className="object-cover"
           />
-          <h2 className="text-[35px] my-[40px]">{`Getting Started`}</h2>
-          <p className="font-thin">{`Booking your session is as easy as paying a session fee to reserve a space on my calendar. We will work out the date/time info and I take care of finding the perfect location! All you will need to do is find the right outfit for you + your crew. If you need any styling help, just let me know!`}</p>
+          <h2 className="text-[35px] my-[40px]">{`1. Getting Started`}</h2>
+          <p className="font-thin">{`Booking your session is as easy as paying a session fee to reserve a space on my calendar. We will work out the date & time info and I take care of finding the perfect Tampa Bay location! All you will need to do is find the right outfit for you + your crew. If you need any styling help, just let me know!`}</p>
         </div>
         <div className="flex flex-col justify-start items-start flex-1 xl:mx-[30px] max-w-[456px] mb-[60px] xl:mb-0">
           <Image
             src="/images/Home Updated/tampafamilyofthree.webp"
             height={684}
             width={456}
-            alt=""
+            alt="Tampa Family Photography | Family of three portrait with beautiful Florida greenery in the background taken by Tampa Photographer Calli Wickes."
             className="object-cover"
           />
-          <h2 className="text-[35px] my-[40px]">{`Today's the day!`}</h2>
-          <p className="font-thin">{`Time to meet, talk, connect, and get to know each other. I will take care of all the logistics, posing + helping you feel like a natural! My goal is to keep everyone feeling relaxed and having fun, allowing your kids to be kids, so I can capture genuine interactions of your special family.`}</p>
+          <h2 className="text-[35px] my-[40px]">{`2. Today's the day!`}</h2>
+          <p className="font-thin">{`Time to meet, talk, connect, and get to know each other. I will take care of all the logistics, posing + helping you feel like a natural! My goal is to keep everyone feeling relaxed and having fun, allowing your kids to be kids, so I can capture genuine interactions of your family during your Tampa Family Photography session.`}</p>
         </div>
         <div className="flex flex-col justify-start items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
           <Image
             src="/images/Home Updated/newlyengagedcouple.webp"
             height={684}
             width={456}
-            alt=""
+            alt="Tampa Family Photography | Young, newly engaged couple."
             className="object-cover"
           />
-          <h2 className="text-[35px] my-[40px]">{`What's Next?`}</h2>
-          <p className="font-thin">{`Within two weeks of your session, you will be able to view your edited images from the comfort of home in a beautiful online gallery - ready for you to download, print, + proudly display in your home!`}</p>
+          <h2 className="text-[35px] my-[40px]">{`3. What's Next?`}</h2>
+          <p className="font-thin">{`Within two weeks of your family session, you will be able to view your edited images from the comfort of home in a beautiful online gallery - ready for you to download, print, + proudly display!`}</p>
         </div>
       </section>
 
