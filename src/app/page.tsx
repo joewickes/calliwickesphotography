@@ -75,10 +75,10 @@ export default function Home() {
           </div>
           <div className="mt-[120px] xl:mt-0 h-[90dvw] w-[90dvw] max-w-[560px] max-h-[840px] xl:h-auto xl:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
             <Image
-              src="/images/Home Updated/tampaphotographerportrait.webp"
+              src="/images/Home Updated/TampaPhotographerPortrait.webp"
               alt="Tampa Family Photography | Self Portrait of Photographer in downtown Tampa taken by Family Photographer Calli Wickes."
-              height={840}
-              width={560}
+              height={5808}
+              width={3873}
               className="object-cover"
             />
           </div>
@@ -127,13 +127,13 @@ export default function Home() {
         className="xl:pl-[100px] px-[30px] pr-[30px] xl:flex xl:flex-row-reverse xl:pt-[100px] max-w-[100dw]"
       >
         <div className="flex mb-[60px] xl:flex-1 flex-col items-center">
-          <div className="mt-[120px] xl:mt-0 h-[90dvw] w-[90dvw] sm:h-auto sm:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
+          <div className="mt-[120px] xl:mt-0 h-[90dvw] w-[90dvw] max-w-[560px] max-h-[840px] xl:h-auto xl:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
             <Image
-              src="/images/Home Updated/MommyandmePhoto.webp"
+              src="/images/Home Updated/MommyAndMePhoto.webp"
               priority
               alt="Tampa Family Photography | Photo of a mom holding her little boy taken by Tampa Photographer Calli Wickes."
-              height={684}
-              width={456}
+              height={6000}
+              width={4000}
               className="object-cover  mt-[-30dvw] sm:mt-0"
             />
           </div>
@@ -152,13 +152,13 @@ export default function Home() {
       {/* Experience Process Section */}
       <section
         id="experience-process"
-        className="px-[30px] xl:px-[50px] xl:pr-[30px] sm:flex sm:flex-col sm:items-center xl:flex-row xl:pt-[100px] max-w-[100dw] xl:justify-evenly"
+        className="px-[30px] xl:px-[50px] xl:pr-[30px] flex flex-col xl:items-start items-center justify-center xl:flex-row xl:pt-[100px] max-w-[100dw] xl:justify-evenly"
       >
         <div className="flex flex-col justify-start sm:items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
           <Image
             src="/images/Home Updated/youngdadandhisbabyboyinflorida.webp"
-            height={684}
-            width={456}
+            height={5887}
+            width={3925}
             alt=""
             className="object-cover"
           />
@@ -168,8 +168,8 @@ export default function Home() {
         <div className="flex flex-col justify-start items-start flex-1 xl:mx-[30px] max-w-[456px] mb-[60px] xl:mb-0">
           <Image
             src="/images/Home Updated/tampafamilyofthree.webp"
-            height={684}
-            width={456}
+            height={6000}
+            width={4000}
             alt="Tampa Family Photography | Family of three portrait with beautiful Florida greenery in the background taken by Tampa Photographer Calli Wickes."
             className="object-cover"
           />
@@ -178,9 +178,9 @@ export default function Home() {
         </div>
         <div className="flex flex-col justify-start items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
           <Image
-            src="/images/Home Updated/newlyengagedcouple.webp"
-            height={684}
-            width={456}
+            src="/images/Home Updated/NewlyEngagedCouple.webp"
+            height={3456}
+            width={2304}
             alt="Tampa Family Photography | Young, newly engaged couple."
             className="object-cover"
           />
@@ -197,7 +197,7 @@ export default function Home() {
         <div className="flex flex-col w-full flex-1 xl:pl-[100px] 2xl:items-end 2xl:justify-start md:pr-[100px]">
           <h2 className="text-[15px]">{`JOIN MY NEWSLETTER`}</h2>
           <h3 className="text-[35px] mb-[40px]">{`BECOME A VIP`}</h3>
-          <p className="font-thin leading-8 mb-[60px] text-wrap">{`
+          <p className="font-thin leading-8 mb-[60px] text-wrap text-left 2xl:text-right">{`
 Join our email list and be the first to know about our special Tampa family photography offers, receive early access to family mini sessions + more. Get in the know so you don't miss a thing!`}</p>
         </div>
         <div className="flex-1 flex justify-end 2xl:justify-center items-start w-full">
@@ -226,9 +226,9 @@ Join our email list and be the first to know about our special Tampa family phot
           <div className="w-full flex justify-center items-end xl:pr-[100px] ">
             <div className="max-w-[323px] max-h-[484px] w-full xl:max-h-[484px] xl:max-w-[323px] pr-[5px]">
               <Image
-                src="/images/Home Updated/youngcouplehugging.webp"
-                height={484}
-                width={323}
+                src="/images/Home Updated/YoungCoupleHugging.webp"
+                height={6000}
+                width={4000}
                 className="object-cover "
                 alt="Tampa Family Photography | Young couple sharing an embrace while surrounded by the rustic charm of Tampa's countryside taken by Tampa Photographer Calli Wickes."
               />
