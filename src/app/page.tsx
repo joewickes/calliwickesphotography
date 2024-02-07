@@ -142,9 +142,11 @@ export default function Home() {
           </p>
         </div>
         <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pr-[100px] xl:mb-[100px] md:px-[75px]">
-          <h2 className="text-[35px] text-right mb-[40px]">{`Honest, Playful & Relaxed - Family Photography for those who just want to remember these moments.`}</h2>
+          <h2 className="text-[35px] text-right mb-[40px]">{`Tampa Family Photography for those who just want to remember these moments.`}</h2>
           <p className="font-thin leading-8 text-right mb-[60px]">
-            {`This isn't about making sure you pick out the perfect outfit + stand just the right way. This is about capturing you - the real you. Yes, take the time to pick out an outfit you love. Then just show up. I'll take care of all the logistics so you just get to enjoy yourself as I capture all your best moments in Tampa, FL. `}
+            {`This isn't about making sure you pick out the perfect outfit + stand just the right way. This is about capturing photos of you with your absolute favorite people. Taking a brief pause on the busyness of life so that you can have photographs that you will forever cherish. I promise - you will never regret getting those family photos with your crew.
+ Yes, take the time to pick out an outfit you love. Then just show up. I specialize in stress-free sessions, capturing your natural smiles and laughter. I'll take care of all the logistics so you just get to enjoy yourself as I capture all your best moments in Tampa, FL.If you’re searching for a Tampa Family Photographer - I hope you’ve found what you’ve been looking for!
+`}
           </p>
         </div>
       </section>
