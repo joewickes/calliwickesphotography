@@ -60,7 +60,7 @@ const AboutPage = () => {
         <div className="flex justify-center mb-[60px] xl:flex-1">
           <div className="xl:mt-[120px] h-[90dvw] w-[90dvw] xl:h-auto xl:w-auto overflow-hidden xl:pl-[100px]">
             <Image
-              src="/images/Home/tampaphotographerportrait.webp"
+              src="/images/Home Updated/TampaPhotographerPortrait.webp"
               alt="Tampa photographer in downtown portrait."
               height={840}
               width={560}

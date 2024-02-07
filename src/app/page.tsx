@@ -129,7 +129,7 @@ export default function Home() {
         <div className="flex mb-[60px] xl:flex-1 flex-col items-center">
           <div className="mt-[120px] xl:mt-0 h-[90dvw] w-[90dvw] max-w-[560px] max-h-[840px] xl:h-auto xl:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
             <Image
-              src="/images/Home Updated/MommyAndMePhoto.webp"
+              src="/images/Home Updated/MommyandmePhoto.webp"
               priority
               alt="Tampa Family Photography | Photo of a mom holding her little boy taken by Tampa Photographer Calli Wickes."
               height={6000}
@@ -180,7 +180,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col justify-start items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
           <Image
-            src="/images/Home Updated/NewlyEngagedCouple.webp"
+            src="/images/Home Updated/newlyengagedcouple.webp"
             height={3456}
             width={2304}
             alt="Tampa Family Photography | Young, newly engaged couple."
