@@ -75,7 +75,7 @@ export default function Home() {
           </div>
           <div className="mt-[120px] xl:mt-0 h-[90dvw] w-[90dvw] max-w-[560px] max-h-[840px] xl:h-auto xl:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
             <Image
-              src="/images/Home/tampaphotographerportrait.webp"
+              src="/images/Home Updated/tampaphotographerportrait.webp"
               alt="Tampa Family Photography | Self Portrait of Photographer in downtown Tampa taken by Family Photographer Calli Wickes."
               height={840}
               width={560}
@@ -226,7 +226,7 @@ Join our email list and be the first to know about our special offers, receive e
           <div className="w-full flex justify-center items-end xl:pr-[100px] ">
             <div className="max-w-[323px] max-h-[484px] w-full xl:max-h-[484px] xl:max-w-[323px] pr-[5px]">
               <Image
-                src="/images/Home/youngcouplehugging.webp"
+                src="/images/Home Updated/youngcouplehugging.webp"
                 height={484}
                 width={323}
                 className="object-cover "
