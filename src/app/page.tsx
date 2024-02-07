@@ -33,7 +33,7 @@ export default function Home() {
     {
       question: 'Are you available outside of Tampa?',
       answer:
-        'I am located just north of Tampa, Florida. My sessions are typically within 1 hour of downtown Tampa. If you are interested in a family photo session that involves further travel, we can discuss what that would look like!',
+        'As a local Tampa Family Photographer, my sessions are typically within 1 hour of downtown Tampa. If you are interested in a family photo session that involves further travel, we can discuss what that would look like!',
     },
     {
       question: 'How do I schedule a session?',
@@ -174,7 +174,7 @@ export default function Home() {
             className="object-cover"
           />
           <h2 className="text-[35px] my-[40px]">{`2. Today's the day!`}</h2>
-          <p className="font-thin">{`Time to meet, talk, connect, and get to know each other. I will take care of all the logistics, posing + helping you feel like a natural! My goal is to keep everyone feeling relaxed and having fun, allowing your kids to be kids, so I can capture genuine interactions of your family during your Tampa Family Photography session.`}</p>
+          <p className="font-thin">{`Time to meet, talk, connect, and get to know each other. I will take care of all the logistics, posing + helping you feel like a natural during your family session! My goal is to keep everyone feeling relaxed and having fun, allowing your kids to be kids, so I can capture genuine interactions of your family during your Tampa Family Photography session.`}</p>
         </div>
         <div className="flex flex-col justify-start items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
           <Image
@@ -185,7 +185,7 @@ export default function Home() {
             className="object-cover"
           />
           <h2 className="text-[35px] my-[40px]">{`3. What's Next?`}</h2>
-          <p className="font-thin">{`Within two weeks of your family session, you will be able to view your edited images from the comfort of home in a beautiful online gallery - ready for you to download, print, + proudly display!`}</p>
+          <p className="font-thin">{`Within two weeks of your Tampa family photography session, you will be able to view your edited images from the comfort of home in a beautiful online gallery - ready for you to download, print, + proudly display!`}</p>
         </div>
       </section>
 
@@ -198,7 +198,7 @@ export default function Home() {
           <h2 className="text-[15px]">{`JOIN MY NEWSLETTER`}</h2>
           <h3 className="text-[35px] mb-[40px]">{`BECOME A VIP`}</h3>
           <p className="font-thin leading-8 mb-[60px] text-wrap">{`
-Join our email list and be the first to know about our special offers, receive early access to mini sessions + more. Get in the know so you don't miss a thing!`}</p>
+Join our email list and be the first to know about our special Tampa family photography offers, receive early access to family mini sessions + more. Get in the know so you don't miss a thing!`}</p>
         </div>
         <div className="flex-1 flex justify-end 2xl:justify-center items-start w-full">
           <NewsletterForm />
