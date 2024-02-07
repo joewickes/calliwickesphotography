@@ -2,8 +2,6 @@
 
 import Image from 'next/image';
 
-import * as rdd from 'react-device-detect';
-
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
@@ -49,45 +47,13 @@ const CarouselComponent = () => {
         // className="h-[350px]"
         itemClass="flex justify-center px-[10px] w-auto"
       >
-        {/* <Image
-          src="/images/Home Updated/tampafamilyphoto.webp"
-          height={575}
-          width={862.31}
-          alt=""
-          className="object-contain"
-        /> */}
-
-        <Image
-          src="/images/Home Updated/businesscoupledowntowntampa.webp"
-          height={575}
-          width={383.33}
-          alt=""
-          className="object-contain"
-        />
-
-        {/* <Image
-          src="/images/Home Updated/middleagecoupleintampa.webp"
-          height={575}
-          width={862.31}
-          alt=""
-          className="object-contain"
-        /> */}
-
-        <Image
-          src="/images/Home Updated/tampafamilywalkingphoto.webp"
-          height={575}
-          width={383.33}
-          alt=""
-          className="object-contain"
-        />
-
-        <Image
-          src="/images/Home Updated/veryelderlycoupleinloveintampafl.webp"
-          height={575}
-          width={383.33}
-          alt=""
-          className="object-contain"
-        />
+        <Image src="/images/Carousel/Carousel1.webp" width={3751} height={5627} alt="" />
+        <Image src="/images/Carousel/Carousel2.webp" width={3276} height={4914} alt="" />
+        <Image src="/images/Carousel/Carousel3.webp" width={3845} height={5767} alt="" />
+        <Image src="/images/Carousel/Carousel4.webp" width={4000} height={6000} alt="" />
+        <Image src="/images/Carousel/Carousel5.webp" width={3909} height={5863} alt="" />
+        <Image src="/images/Carousel/Carousel6.webp" width={3439} height={5158} alt="" />
+        <Image src="/images/Carousel/Carousel7.webp" width={4000} height={6000} alt="" />
       </Carousel>
     </div>
   );
