@@ -161,7 +161,7 @@ export default function Home() {
             src="/images/Home Updated/youngdadandhisbabyboyinflorida.webp"
             height={5887}
             width={3925}
-            alt=""
+            alt="Tampa Family Photography | Young dad holding his baby boy in his arms taken by Calli Wickes"
             className="object-cover"
           />
           <h2 className="text-[35px] my-[40px]">{`1. Getting Started`}</h2>
