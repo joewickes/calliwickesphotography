@@ -77,9 +77,9 @@ const AboutPage = () => {
             {`I am a family portrait photographer specializing in natural + candid photos. In the past decade plus, I have loved getting to capture more and more family's special moments. I started primarily in senior photos and now focus on family + senior photos in Florida. I would love to capture the joyful moments for you and your family! Check out some of the fun facts below to get to know me more!`}
           </p>
           <div>
-            <Link href="/portfolio" legacyBehavior passHref>
+            <Link href="/contact" legacyBehavior passHref>
               <a className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
-                {`VIEW PORTFOLIO`}
+                {`GET IN TOUCH`}
               </a>
             </Link>
           </div>
