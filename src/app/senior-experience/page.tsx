@@ -47,7 +47,7 @@ const SeniorGalleryPage = () => {
       </section>
 
       <section className="px-[30px] xl:columns-3 xl:w-[80%] xl:px-[100px]">
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Senior Gallery/soccerseniorphoto.webp"
             height={575}
@@ -56,7 +56,7 @@ const SeniorGalleryPage = () => {
             alt="Soccer enthusiast senior guy in Tampa, soccer ball at his side."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Senior Gallery/seniorladytampa.webp"
             height={574}
@@ -65,25 +65,25 @@ const SeniorGalleryPage = () => {
             alt="Captivating high school senior amidst Tampa's picturesque backdrop."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Senior Gallery/seniorguyagainstwhitebrickwall.webp"
-            height={575}
-            width={862}
+            height={95}
+            width={383}
             className="object-cover"
             alt="Urban charm: Senior male against white brick wall in Tampa."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Senior Gallery/seniorgirlinthecountryside.webp"
-            height={575}
-            width={862}
+            height={95}
+            width={383}
             className="object-cover"
             alt="Rural love: Couple shares a sweet moment in Florida."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Senior Gallery/seniorgirlinstairwell.webp"
             height={575}
@@ -92,7 +92,7 @@ const SeniorGalleryPage = () => {
             alt="Graceful senior girl in a pretty Tampa location, creating beautiful memories."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Senior Gallery/seniorguybaseballphoto.webp"
             height={575}
@@ -101,16 +101,16 @@ const SeniorGalleryPage = () => {
             alt="Senior guy in a baseball uniform, posing with his baseball glove in Tampa."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Senior Gallery/seniorgirlwithwaterbackground.webp"
-            height={575}
-            width={862}
+            height={95}
+            width={383}
             className="object-cover"
             alt="Feminine charm in a Tampa outdoor setting, perfect for senior photos."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Senior Gallery/seniorphotoinlettermanjacket.webp"
             height={575}
@@ -119,29 +119,29 @@ const SeniorGalleryPage = () => {
             alt="Dapper male in Tampa, showcasing senior style in a letterman jacket"
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Senior Gallery/seniormaleinflannel.webp"
-            height={575}
-            width={862}
+            height={95}
+            width={383}
             className="object-cover"
             alt="Stylish high school senior guy outside a barn with Tampa's rural charm."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Senior Gallery/seniorportrait.webp"
-            height={575}
-            width={862}
+            height={95}
+            width={383}
             className="object-cover"
             alt="Beautiful high school senior girl"
           />
         </div>
-        <div className="w-full mb-[15px] xl:hidden">
+        <div className="flex justify-center xl:justify-normal mb-[15px] xl:hidden">
           <Image
             src="/images/Senior Gallery/softballseniorphoto.webp"
-            height={575}
-            width={862}
+            height={95}
+            width={383}
             className="object-cover"
             alt="High school senior softball star in Tampa, donning red school colors."
           />
@@ -157,7 +157,7 @@ const SeniorGalleryPage = () => {
           {packages.map((pkg, idx) => {
             return (
               <li key={idx} className={`xl:py-[50px]  xl:flex ${idx % 2 === 0 ? '' : ' xl:flex-row-reverse'}`}>
-                <div className="xl:flex-1 xl:flex xl:items-center xl:justify-center">
+                <div className="xl:flex-1 flex flex-col xl:flex-row lg:items-center lg:justify-center mb-[50px]">
                   <Image
                     src={pkg?.image?.src || ''}
                     height={pkg?.image?.height}
@@ -166,32 +166,15 @@ const SeniorGalleryPage = () => {
                     className="mb-[30px] xl:max-w-[457px]"
                   />
                 </div>
-                <div className="xl:flex-1 xl:flex xl:flex-col xl:items-center xl:justify-center">
-                  <h2
-                    className={`text-[40px] leading-1 flex flex-col mb-[20px] text-center xl:self-start ${
-                      idx === Math.floor(packages.length / 2) ? 'xl:self-end' : ''
-                    }`}
-                  >
+                <div className="xl:flex-1 xl:flex xl:flex-col xl:items-center xl:justify-center pb-[50px]">
+                  <h2 className={`text-[40px] leading-1 flex flex-col mb-[20px] text-center xl:self-start`}>
                     {pkg.name}
                   </h2>
-                  <p
-                    className={`font-bold text-center mb-[30px] xl:self-start ${
-                      idx === Math.floor(packages.length / 2) ? 'xl:self-end' : ''
-                    }`}
-                  >{`$${pkg.price}`}</p>
+                  <p className={`font-bold text-center mb-[30px] xl:self-start`}>{`$${pkg.price}`}</p>
 
-                  <ul
-                    className={`mb-[60px] xl:self-start ${
-                      idx === Math.floor(packages.length / 2) ? 'xl:self-end' : ''
-                    } xl:flex xl:flex-col`}
-                  >
+                  <ul className={`mb-[60px] xl:self-start xl:flex xl:flex-col`}>
                     {pkg.description.split(';').map((desc, idx2) => (
-                      <li
-                        key={idx2}
-                        className={`font-thin text-center xl:self-start ${
-                          idx === Math.floor(packages.length / 2) ? 'xl:self-end xl:text-right' : ''
-                        }`}
-                      >
+                      <li key={idx2} className={`font-thin text-center xl:self-start`}>
                         {desc}
                       </li>
                     ))}
@@ -203,7 +186,7 @@ const SeniorGalleryPage = () => {
         </ul>
       </section>
 
-      <section className="px-[30px] mt-[100px] mb-[60px] xl:w-full xl:px-[100px] xl:flex xl:flex-row-reverse xl:mt-[200px]">
+      <section className="px-[30px] mt-[100px] mb-[60px] xl:w-full xl:px-[100px] flex flex-col xl:flex-row-reverse xl:mt-[200px] justify-center items-center">
         <div className="xl:flex xl:justify-center xl:flex-1">
           <Image
             src="/images/Senior Gallery/seniorphotostampa.webp"
@@ -213,7 +196,7 @@ const SeniorGalleryPage = () => {
             alt="Elegant senior girl in Tampa's scenic beauty, capturing timeless moments."
           />
         </div>
-        <div className="w-full mb-[15px] xl:flex-1">
+        <div className="w-full mb-[15px] xl:flex-1 flex flex-col items-center">
           <h2 className="text-[40px] leading-1 my-[30px] xl:text-[60px]">{`Senior Photography`}</h2>
           <p className="font-thin mb-[15px]">{`Your Tampa + Wesley Chapel Senior Photographer`}</p>
 

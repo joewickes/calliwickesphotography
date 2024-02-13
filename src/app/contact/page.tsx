@@ -56,8 +56,8 @@ const ContactPage = () => {
       </section>
 
       <section className="px-[30px] text-black xl:pl-[100px] xl:flex">
-        <div className="flex justify-center mb-[60px] xl:flex-1 xl:justify-start">
-          <div className="mt-[30px] h-[90dvw] w-[90dvw] xl:h-auto xl:w-auto overflow-hidden">
+        <div className="flex justify-center mb-[60px] xl:flex-1 xl:justify-start md:pr-[50px]">
+          <div className="mt-[30px] h-[90dvw] w-[90dvw] lg:h-auto lg:w-auto overflow-hidden">
             <Image
               src="/images/Home Updated/TampaPhotographerPortrait.webp"
               alt="Tampa photographer in downtown portrait."

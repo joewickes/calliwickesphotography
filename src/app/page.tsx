@@ -43,223 +43,225 @@ export default function Home() {
   ];
 
   return (
-    <main>
-      <Share />
-      <div id="familyofthree">
-        <Header isHome />
+    <>
+      <main>
+        <Share />
+        <div id="familyofthree">
+          <Header isHome />
 
-        {/* Hero Section */}
-        <section id="home" className="h-dvh w-dvw flex flex-col items-center justify-center pt-[100px]">
-          <h1 className="text-nowrap text-center xl:text-left text-[12px] mb-[20px] tracking-wide text-white z-10 xl:w-[150px] xl:self-start xl:ml-[125px] mt-30px] xl:mt-[150px]">
-            {`TAMPA FAMILY PHOTOGRAPHER`}
-          </h1>
-          <p className="text-center text-[45px] xl:text-[84px] leading-[3.5rem] xl:leading-[5.5rem] flex flex-col mb-[80px] xl:mt-[0px] text-white z-10 tracking-wide xl:self-start xl:ml-[100px] xl:flex xl:flex-row xl:flex-wrap xl:text-left">
-            <span>{`Capture those beautiful moments`}</span> <span className="xl:pl-[20px]">{`with your`}</span>
-            <span className="xl:pl-[20px]">{`favorite people`}</span>
-          </p>
-          <Link href="/contact" legacyBehavior passHref>
-            <a className="z-10  mb-[60px] border border-white py-[15px] text-[13px] tracking-[.35em] mt-[30px] px-[30px] text-white xl:self-start xl:ml-[100px]">
-              {`LET'S CHAT`}
-            </a>
-          </Link>
-        </section>
-      </div>
-
-      {/* About Section */}
-      <section id="about" className="px-[30px] sm:px-[75px] xl:flex xl:py-[100px]">
-        <div className="flex justify-center xl:items-center 2xl:items-end mb-[60px] xl:flex-1">
-          <div className="flex">
-            <p className="vertical-rl  xl:pr-[100px] w-0 h-0 xl:w-auto xl:h-auto mt-[120px] xl:mt-0 self-end text-[12px] font-thin invisible xl:visible">
-              {`Family Photographer in Tampa, Florida`}
+          {/* Hero Section */}
+          <section id="home" className="h-dvh w-dvw flex flex-col items-center justify-center pt-[100px]">
+            <h1 className="text-nowrap text-center xl:text-left text-[12px] mb-[20px] tracking-wide text-white z-10 xl:w-[150px] xl:self-start xl:ml-[125px] mt-30px] xl:mt-[150px]">
+              {`TAMPA FAMILY PHOTOGRAPHER`}
+            </h1>
+            <p className="text-center text-[45px] xl:text-[84px] leading-[3.5rem] xl:leading-[5.5rem] flex flex-col mb-[80px] xl:mt-[0px] text-white z-10 tracking-wide xl:self-start xl:ml-[100px] xl:flex xl:flex-row xl:flex-wrap xl:text-left">
+              <span>{`Capture those beautiful moments`}</span> <span className="xl:pl-[20px]">{`with your`}</span>
+              <span className="xl:pl-[20px]">{`favorite people`}</span>
             </p>
-          </div>
-          <div className="mt-[120px] xl:mt-0 h-[90dvw] w-[90dvw] max-w-[560px] max-h-[840px] xl:h-auto xl:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
-            <Image
-              src="/images/Home Updated/TampaPhotographerPortrait.webp"
-              alt="Tampa Family Photography | Self Portrait of Photographer in downtown Tampa taken by Family Photographer Calli Wickes."
-              height={5808}
-              width={3873}
-              className="object-cover"
-            />
-          </div>
-          <div>
-            <p className="vertical-rl xl:pr-[100px] mt-[120px] xl:mt-0 text-[12px] font-thin xl:hidden visible">
-              {`Family Photographer in Tampa, Florida`}
-            </p>
-          </div>
-        </div>
-        <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pl-[30px] xl:pr-[70px] xl:mb-[100px]">
-          <h2 className="text-[15px] mt-[60px]">{`FAMILY PHOTOGRAPHY IN TAMPA, FL`}</h2>
-          <h3 className="text-[35px] mb-[40px]">{`What Makes Calli So Different?`}</h3>
-          <p className="font-thin leading-8 mb-[30px]">
-            {`I’m Calli - your local Tampa family photographer! I’ve heard so many stories lately of kids who grew up with no family photos of them included. I never realized as the youngest of four kids, how blessed I was to be in a home where family portraits were valued. That is a legacy I want to continue with my own family and help you do the same for yours.
-
-              `}
-          </p>
-          <p className="font-thin leading-8 mb-[30px]">
-            {`I have two little girls of my own so I understand the stress of having a family photo session when you have little ones who want to do everything but cooperate. I want to help take that pressure off of you! My clients want to capture those moments with their favorite people in Tampa. They want a beautiful and relaxed outdoor family portrait and also all the silly moments it took to capture that one. Because it’s about the journey. And I’d love to help you along your way.`}
-          </p>
-          <p className="font-thin leading-8 mb-[60px]">
-            {`I can’t wait to capture some of your best moments together in Tampa, FL. If you’re searching for a Tampa Family Photographer -`}{' '}
-            <Link href="/contact" passHref legacyBehavior>
-              <a className="font-normal">{`Contact me`}</a>
-            </Link>{' '}
-            {`to book your family photo session today!`}
-          </p>
-          <div className="pb-[80px] xl:pb-[0px]">
-            <Link href="/about" legacyBehavior passHref>
-              <a className="mb-[100px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
-                {`MORE ABOUT ME`}
+            <Link href="/contact" legacyBehavior passHref>
+              <a className="z-10  mb-[60px] border border-white py-[15px] text-[13px] tracking-[.35em] mt-[30px] px-[30px] text-white xl:self-start xl:ml-[100px]">
+                {`LET'S CHAT`}
               </a>
             </Link>
-          </div>
+          </section>
         </div>
-      </section>
 
-      {/* Reviews */}
-      <section id="reviews" className="xl:px-[100px] xl:py-[100px] mt-[100px] bg-[#faf9f7]">
-        <Reviews />
-      </section>
-
-      {/* Experience Section */}
-      <section
-        id="home-experience"
-        className="xl:pl-[100px] px-[30px] pr-[30px] xl:flex xl:flex-row-reverse xl:pt-[100px] max-w-[100dw]"
-      >
-        <div className="flex mb-[60px] xl:flex-1 flex-col items-center">
-          <div className="mt-[120px] xl:mt-0 h-[90dvw] w-[90dvw] max-w-[560px] max-h-[840px] xl:h-auto xl:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
-            <Image
-              src="/images/Home Updated/MommyandmePhoto.webp"
-              priority
-              alt="Tampa Family Photography | Photo of a mom holding her little boy taken by Tampa Photographer Calli Wickes."
-              height={6000}
-              width={4000}
-              className="object-cover  mt-[-30dvw] sm:mt-0"
-            />
-          </div>
-          <p className="w-0 h-0 xl:w-auto xl:h-auto xl:mb-[50px] mt-[10px] text-[12px] font-thin invisible xl:visible">
-            {`Tampa Family Photography - for you to always remember`}
-          </p>
-        </div>
-        <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pr-[100px] xl:mb-[100px] md:px-[75px]">
-          <h2 className="text-[35px] text-right mb-[40px]">{`Tampa Family Photography for those who just want to remember these moments.`}</h2>
-          <p className="font-thin leading-8 text-right mb-[60px]">
-            {`This isn't about making sure you pick out the perfect outfit + stand just the right way. This is about capturing photos of you with your absolute favorite people. Taking a brief pause on the busyness of life so that you can have photographs that you will forever cherish. I promise - you will never regret getting those family photos with your crew.
- Yes, take the time to pick out an outfit you love. Then just show up. I specialize in stress-free sessions, capturing your natural smiles and laughter. I'll take care of all the logistics so you just get to enjoy yourself as I capture all your best moments in Tampa, FL.If you’re searching for a Tampa Family Photographer - I hope you’ve found what you’ve been looking for!
-`}
-          </p>
-        </div>
-      </section>
-
-      {/* Experience Process Section */}
-      <section
-        id="experience-process"
-        className="px-[30px] xl:px-[50px] xl:pr-[30px] flex flex-col xl:items-start items-center justify-center xl:flex-row xl:pt-[100px] max-w-[100dw] xl:justify-evenly"
-      >
-        <div className="flex flex-col justify-start sm:items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
-          <Image
-            src="/images/Home Updated/youngdadandhisbabyboyinflorida.webp"
-            height={5887}
-            width={3925}
-            alt=""
-            className="object-cover"
-          />
-          <h2 className="text-[35px] my-[40px]">{`1. Getting Started`}</h2>
-          <p className="font-thin">{`Booking your session is as easy as paying a session fee to reserve a space on my calendar. We will work out the date & time info and I take care of finding the perfect Tampa Bay location! All you will need to do is find the right outfit for you + your crew. If you need any styling help, just let me know!`}</p>
-        </div>
-        <div className="flex flex-col justify-start items-start flex-1 xl:mx-[30px] max-w-[456px] mb-[60px] xl:mb-0">
-          <Image
-            src="/images/Home Updated/tampafamilyofthree.webp"
-            height={6000}
-            width={4000}
-            alt="Tampa Family Photography | Family of three portrait with beautiful Florida greenery in the background taken by Tampa Photographer Calli Wickes."
-            className="object-cover"
-          />
-          <h2 className="text-[35px] my-[40px]">{`2. Today's the day!`}</h2>
-          <p className="font-thin">{`Time to meet, talk, connect, and get to know each other. I will take care of all the logistics, posing + helping you feel like a natural during your family session! My goal is to keep everyone feeling relaxed and having fun, allowing your kids to be kids, so I can capture genuine interactions of your family during your Tampa Family Photography session.`}</p>
-        </div>
-        <div className="flex flex-col justify-start items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
-          <Image
-            src="/images/Home Updated/newlyengagedcouple.webp"
-            height={3456}
-            width={2304}
-            alt="Tampa Family Photography | Young, newly engaged couple."
-            className="object-cover"
-          />
-          <h2 className="text-[35px] my-[40px]">{`3. What's Next?`}</h2>
-          <p className="font-thin">{`Within two weeks of your Tampa family photography session, you will be able to view your edited images from the comfort of home in a beautiful online gallery - ready for you to download, print, + proudly display!`}</p>
-        </div>
-      </section>
-
-      {/* Newsletter Section */}
-      <section
-        id="newsletter"
-        className="xl:px-[50px] px-[30px] sm:flex sm:flex-col md:flex-row xl:justify-center sm:items-center mt-[100px] bg-[#faf9f7] pt-[100px] lg:px-[75px]"
-      >
-        <div className="flex flex-col w-full flex-1 xl:pl-[100px] 2xl:items-end 2xl:justify-start md:pr-[100px]">
-          <h2 className="text-[15px]">{`JOIN MY NEWSLETTER`}</h2>
-          <h3 className="text-[35px] mb-[40px]">{`BECOME A VIP`}</h3>
-          <p className="font-thin leading-8 mb-[60px] text-wrap text-left 2xl:text-right">{`
-Join our email list and be the first to know about our special Tampa family photography offers, receive early access to family mini sessions + more. Get in the know so you don't miss a thing!`}</p>
-        </div>
-        <div className="flex-1 flex justify-end 2xl:justify-center items-start w-full">
-          <NewsletterForm />
-        </div>
-      </section>
-
-      {/* Carousel Section */}
-      <section id="carousel" className="">
-        <Carousel />
-      </section>
-
-      {/* FAQ Section */}
-      <section id="home-faq" className="px-[30px] xl:px-[100px] mt-[100px]">
-        <h2 className="text-[13px] font-bold tracking-wider my-[50px]">{`FAQ`}</h2>
-        <ul className=" xl:grid xl:grid-rows-2 xl:grid-flow-col pb-[60px] xl:pb-0">
-          {faqs.map((faq, index) => {
-            return <FAQs key={index} index={index} faq={faq} />;
-          })}
-        </ul>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="px-[30px] xl:flex xl:flex-row-reverse xl:py-[100px]">
-        <div className="w-full mb-[50px] xl:flex-1">
-          <div className="w-full flex justify-center items-end xl:pr-[100px] ">
-            <div className="max-w-[323px] max-h-[484px] w-full xl:max-h-[484px] xl:max-w-[323px] pr-[5px]">
+        {/* About Section */}
+        <section id="about" className="px-[30px] sm:px-[75px] xl:flex xl:py-[100px]">
+          <div className="flex justify-center xl:items-center 2xl:items-end mb-[60px] xl:flex-1">
+            <div className="flex">
+              <p className="vertical-rl  xl:pr-[100px] w-0 h-0 xl:w-auto xl:h-auto mt-[120px] xl:mt-0 self-end text-[12px] font-thin invisible xl:visible">
+                {`Family Photographer in Tampa, Florida`}
+              </p>
+            </div>
+            <div className="mt-[120px] xl:mt-0 h-[90dvw] w-[90dvw] max-w-[560px] max-h-[840px] xl:h-auto xl:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
               <Image
-                src="/images/Home Updated/YoungCoupleHugging.webp"
-                height={6000}
-                width={4000}
-                className="object-cover "
-                alt="Tampa Family Photography | Young couple sharing an embrace while surrounded by the rustic charm of Tampa's countryside taken by Tampa Photographer Calli Wickes."
+                src="/images/Home Updated/TampaPhotographerPortrait.webp"
+                alt="Tampa Family Photography | Self Portrait of Photographer in downtown Tampa taken by Family Photographer Calli Wickes."
+                height={5808}
+                width={3873}
+                className="object-cover"
               />
             </div>
-            <p className="vertical-rl xl:pl-[100px] xl:mb-[2px] xl:mt-0 justify-self-end text-[12px] font-thin">
-              {`Tampa, FL Family Photography`}
+            <div>
+              <p className="vertical-rl xl:pr-[100px] mt-[120px] xl:mt-0 text-[12px] font-thin xl:hidden visible">
+                {`Family Photographer in Tampa, Florida`}
+              </p>
+            </div>
+          </div>
+          <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pl-[30px] xl:pr-[70px] xl:mb-[100px]">
+            <h2 className="text-[15px] mt-[60px]">{`FAMILY PHOTOGRAPHY IN TAMPA, FL`}</h2>
+            <h3 className="text-[35px] mb-[40px]">{`What Makes Calli So Different?`}</h3>
+            <p className="font-thin leading-8 mb-[30px]">
+              {`I’m Calli - your local Tampa family photographer! I’ve heard so many stories lately of kids who grew up with no family photos of them included. I never realized as the youngest of four kids, how blessed I was to be in a home where family portraits were valued. That is a legacy I want to continue with my own family and help you do the same for yours.
+
+              `}
+            </p>
+            <p className="font-thin leading-8 mb-[30px]">
+              {`I have two little girls of my own so I understand the stress of having a family photo session when you have little ones who want to do everything but cooperate. I want to help take that pressure off of you! My clients want to capture those moments with their favorite people in Tampa. They want a beautiful and relaxed outdoor family portrait and also all the silly moments it took to capture that one. Because it’s about the journey. And I’d love to help you along your way.`}
+            </p>
+            <p className="font-thin leading-8 mb-[60px]">
+              {`I can’t wait to capture some of your best moments together in Tampa, FL. If you’re searching for a Tampa Family Photographer -`}{' '}
+              <Link href="/contact" passHref legacyBehavior>
+                <a className="font-normal">{`Contact me`}</a>
+              </Link>{' '}
+              {`to book your family photo session today!`}
+            </p>
+            <div className="pb-[80px] xl:pb-[0px]">
+              <Link href="/about" legacyBehavior passHref>
+                <a className="mb-[100px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
+                  {`MORE ABOUT ME`}
+                </a>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Reviews */}
+        <section id="reviews" className="xl:px-[100px] xl:py-[100px] mt-[100px] bg-[#faf9f7]">
+          <Reviews />
+        </section>
+
+        {/* Experience Section */}
+        <section
+          id="home-experience"
+          className="xl:pl-[100px] px-[30px] pr-[30px] xl:flex xl:flex-row-reverse xl:pt-[100px] max-w-[100dw]"
+        >
+          <div className="flex mb-[60px] xl:flex-1 flex-col items-center">
+            <div className="mt-[120px] xl:mt-0 h-[90dvw] w-[90dvw] max-w-[560px] max-h-[840px] xl:h-auto xl:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
+              <Image
+                src="/images/Home Updated/MommyandmePhoto.webp"
+                priority
+                alt="Tampa Family Photography | Photo of a mom holding her little boy taken by Tampa Photographer Calli Wickes."
+                height={6000}
+                width={4000}
+                className="object-cover  mt-[-30dvw] sm:mt-0"
+              />
+            </div>
+            <p className="w-0 h-0 xl:w-auto xl:h-auto xl:mb-[50px] mt-[10px] text-[12px] font-thin invisible xl:visible">
+              {`Tampa Family Photography - for you to always remember`}
             </p>
           </div>
-        </div>
-        <div className="xl:flex xl:flex-col xl:flex-1 xl:align-center xl:pl-[100px] xl:justify-center xl:align-center">
-          <h2 className="text-[35px] mb-[50px]">{`Family photography for you to treasure forever`}</h2>
-          <p className="font-thin leading-8 mb-[60px]">
-            {`Whether you seek stunning beach snapshots, enchanting Florida nature
+          <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pr-[100px] xl:mb-[100px] md:px-[75px]">
+            <h2 className="text-[35px] text-right mb-[40px]">{`Tampa Family Photography for those who just want to remember these moments.`}</h2>
+            <p className="font-thin leading-8 text-right mb-[60px]">
+              {`This isn't about making sure you pick out the perfect outfit + stand just the right way. This is about capturing photos of you with your absolute favorite people. Taking a brief pause on the busyness of life so that you can have photographs that you will forever cherish. I promise - you will never regret getting those family photos with your crew.
+ Yes, take the time to pick out an outfit you love. Then just show up. I specialize in stress-free sessions, capturing your natural smiles and laughter. I'll take care of all the logistics so you just get to enjoy yourself as I capture all your best moments in Tampa, FL.If you’re searching for a Tampa Family Photographer - I hope you’ve found what you’ve been looking for!
+`}
+            </p>
+          </div>
+        </section>
+
+        {/* Experience Process Section */}
+        <section
+          id="experience-process"
+          className="px-[30px] xl:px-[50px] xl:pr-[30px] flex flex-col xl:items-start items-center justify-center xl:flex-row xl:pt-[100px] max-w-[100dw] xl:justify-evenly"
+        >
+          <div className="flex flex-col justify-start sm:items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
+            <Image
+              src="/images/Home Updated/youngdadandhisbabyboyinflorida.webp"
+              height={5887}
+              width={3925}
+              alt=""
+              className="object-cover"
+            />
+            <h2 className="text-[35px] my-[40px]">{`1. Getting Started`}</h2>
+            <p className="font-thin">{`Booking your session is as easy as paying a session fee to reserve a space on my calendar. We will work out the date & time info and I take care of finding the perfect Tampa Bay location! All you will need to do is find the right outfit for you + your crew. If you need any styling help, just let me know!`}</p>
+          </div>
+          <div className="flex flex-col justify-start items-start flex-1 xl:mx-[30px] max-w-[456px] mb-[60px] xl:mb-0">
+            <Image
+              src="/images/Home Updated/tampafamilyofthree.webp"
+              height={6000}
+              width={4000}
+              alt="Tampa Family Photography | Family of three portrait with beautiful Florida greenery in the background taken by Tampa Photographer Calli Wickes."
+              className="object-cover"
+            />
+            <h2 className="text-[35px] my-[40px]">{`2. Today's the day!`}</h2>
+            <p className="font-thin">{`Time to meet, talk, connect, and get to know each other. I will take care of all the logistics, posing + helping you feel like a natural during your family session! My goal is to keep everyone feeling relaxed and having fun, allowing your kids to be kids, so I can capture genuine interactions of your family during your Tampa Family Photography session.`}</p>
+          </div>
+          <div className="flex flex-col justify-start items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
+            <Image
+              src="/images/Home Updated/newlyengagedcouple.webp"
+              height={3456}
+              width={2304}
+              alt="Tampa Family Photography | Young, newly engaged couple."
+              className="object-cover"
+            />
+            <h2 className="text-[35px] my-[40px]">{`3. What's Next?`}</h2>
+            <p className="font-thin">{`Within two weeks of your Tampa family photography session, you will be able to view your edited images from the comfort of home in a beautiful online gallery - ready for you to download, print, + proudly display!`}</p>
+          </div>
+        </section>
+
+        {/* Newsletter Section */}
+        <section
+          id="newsletter"
+          className="xl:px-[50px] px-[30px] sm:flex sm:flex-col md:flex-row xl:justify-center sm:items-center mt-[100px] bg-[#faf9f7] pt-[100px] lg:px-[75px]"
+        >
+          <div className="flex flex-col w-full flex-1 xl:pl-[100px] 2xl:items-end 2xl:justify-start md:pr-[100px]">
+            <h2 className="text-[15px]">{`JOIN MY NEWSLETTER`}</h2>
+            <h3 className="text-[35px] mb-[40px]">{`BECOME A VIP`}</h3>
+            <p className="font-thin leading-8 mb-[60px] text-wrap text-left 2xl:text-right">{`
+Join our email list and be the first to know about our special Tampa family photography offers, receive early access to family mini sessions + more. Get in the know so you don't miss a thing!`}</p>
+          </div>
+          <div className="flex-1 flex justify-end 2xl:justify-center items-start w-full">
+            <NewsletterForm />
+          </div>
+        </section>
+
+        {/* Carousel Section */}
+        <section id="carousel" className="">
+          <Carousel />
+        </section>
+
+        {/* FAQ Section */}
+        <section id="home-faq" className="px-[30px] xl:px-[100px] mt-[100px]">
+          <h2 className="text-[13px] font-bold tracking-wider my-[50px]">{`FAQ`}</h2>
+          <ul className=" xl:grid xl:grid-rows-2 xl:grid-flow-col pb-[60px] xl:pb-0">
+            {faqs.map((faq, index) => {
+              return <FAQs key={index} index={index} faq={faq} />;
+            })}
+          </ul>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="px-[30px] xl:flex xl:flex-row-reverse xl:py-[100px]">
+          <div className="w-full mb-[50px] xl:flex-1">
+            <div className="w-full flex justify-center items-end xl:pr-[100px] ">
+              <div className="max-w-[323px] max-h-[484px] w-full xl:max-h-[484px] xl:max-w-[323px] pr-[5px]">
+                <Image
+                  src="/images/Home Updated/YoungCoupleHugging.webp"
+                  height={6000}
+                  width={4000}
+                  className="object-cover "
+                  alt="Tampa Family Photography | Young couple sharing an embrace while surrounded by the rustic charm of Tampa's countryside taken by Tampa Photographer Calli Wickes."
+                />
+              </div>
+              <p className="vertical-rl xl:pl-[100px] xl:mb-[2px] xl:mt-0 justify-self-end text-[12px] font-thin">
+                {`Tampa, FL Family Photography`}
+              </p>
+            </div>
+          </div>
+          <div className="xl:flex xl:flex-col xl:flex-1 xl:align-center xl:pl-[100px] xl:justify-center xl:align-center">
+            <h2 className="text-[35px] mb-[50px]">{`Family photography for you to treasure forever`}</h2>
+            <p className="font-thin leading-8 mb-[60px]">
+              {`Whether you seek stunning beach snapshots, enchanting Florida nature
           images, or a lively urban atmosphere with your loved ones, I would
           love to capture your family portrait, creating cherished family photos
           destined for your walls!`}
-          </p>
-          <div>
-            <Link href="/contact" legacyBehavior passHref>
-              <a className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
-                {`LET'S CONNECT`}
-              </a>
-            </Link>
+            </p>
+            <div>
+              <Link href="/contact" legacyBehavior passHref>
+                <a className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
+                  {`LET'S CONNECT`}
+                </a>
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Footer */}
-      <Footer />
-    </main>
+        {/* Footer */}
+        <Footer />
+      </main>
+    </>
   );
 }

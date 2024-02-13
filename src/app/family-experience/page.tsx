@@ -61,7 +61,7 @@ const FamilyGalleryPage = () => {
       </section>
 
       <section className="px-[30px] xl:columns-3 xl:w-[80%] xl:px-[100px]">
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Family Gallery/veryelderlycoupleinloveintampafl.webp"
             height={684}
@@ -70,7 +70,7 @@ const FamilyGalleryPage = () => {
             alt="Elderly couple shares a tender moment in Tampa's rural setting."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Family Gallery/happycoupletampa.webp"
             height={304}
@@ -79,7 +79,7 @@ const FamilyGalleryPage = () => {
             alt="Couple embraces in Tampa's rustic charm."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Family Gallery/youngdadandhisbabyboyinflorida.webp"
             height={684}
@@ -88,7 +88,7 @@ const FamilyGalleryPage = () => {
             alt="Elderly couple shares a tender moment in Tampa's rural setting."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Family Gallery/twolittlecousinstampa.webp"
             height={684}
@@ -97,7 +97,7 @@ const FamilyGalleryPage = () => {
             alt="Cousins in Tampa - older girl with her newborn rainbow baby cousin, a heartwarming bond"
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Family Gallery/newlyengagedcouple.webp"
             height={684}
@@ -106,7 +106,7 @@ const FamilyGalleryPage = () => {
             alt="Rural love: Couple shares a sweet moment in Florida."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Family Gallery/businesscoupledowntowntampa.webp"
             height={684}
@@ -115,7 +115,7 @@ const FamilyGalleryPage = () => {
             alt="Urban wall moment - Young couple, Tampa style"
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Family Gallery/youngfamilyinlovetampa.webp"
             height={684}
@@ -124,7 +124,7 @@ const FamilyGalleryPage = () => {
             alt="Tampa Family Photography"
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Family Gallery/largefamilyportraitinflorida.webp"
             height={304}
@@ -133,7 +133,7 @@ const FamilyGalleryPage = () => {
             alt="Generations unite in a Tampa family portrait amidst the beauty of rural surroundings."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Family Gallery/dadwithbabygirl.webp"
             height={304}
@@ -142,7 +142,7 @@ const FamilyGalleryPage = () => {
             alt="New dad cradling his baby girl in a sweet nursery moment filled with love and tenderness."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Family Gallery/sisterlylovetampafl.webp"
             height={684}
@@ -151,7 +151,7 @@ const FamilyGalleryPage = () => {
             alt="Teen sisters hug - Sisterly love in Tampa."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Family Gallery/parentswiththeirnewbornintampa.webp"
             height={304}
@@ -160,7 +160,7 @@ const FamilyGalleryPage = () => {
             alt="Joyful new parents cradle their precious rainbow baby boy in a heartwarming Tampa moment."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Family Gallery/newfamilyofthreeintampanursery.webp"
             height={684}
@@ -169,7 +169,7 @@ const FamilyGalleryPage = () => {
             alt="New mom and dad holding their baby girl in a tender nursery moment filled with love and joy."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Family Gallery/husbandkissingwifeoncheek.webp"
             height={684}
@@ -178,7 +178,7 @@ const FamilyGalleryPage = () => {
             alt="Couple kiss, rural Tampa backdrop."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Family Gallery/littlegirlcountrysidetampa.webp"
             height={684}
@@ -187,7 +187,7 @@ const FamilyGalleryPage = () => {
             alt="Sweet little girl in Tampa's countryside, hands on hips, exuding charm and playfulness."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Family Gallery/multigenerationfamilytampa.webp"
             height={684}
@@ -196,7 +196,7 @@ const FamilyGalleryPage = () => {
             alt="Three generations of love at Tampa sunset - Grandma, daughters-in-law, and granddaughter share a special moment."
           />
         </div>
-        <div className="w-full mb-[15px]">
+        <div className="flex justify-center xl:justify-normal mb-[15px]">
           <Image
             src="/images/Family Gallery/familyofthreeinthefall.webp"
             height={304}
@@ -207,7 +207,7 @@ const FamilyGalleryPage = () => {
         </div>
       </section>
 
-      <section className="mt-[60px] px-[30px] xl:mt-[100px] w-full">
+      <section className="mt-[100px] px-[30px] xl:mt-[100px] w-full">
         <h1 className="text-[40px] leading-1 flex flex-col mb-[50px] text-center xl:text-[70px]">
           {`Pricing Packages`}
         </h1>
@@ -221,7 +221,7 @@ const FamilyGalleryPage = () => {
                   idx === 1 ? 'xl:border xl:border-x-0 xl:border-b-0 xl:border-t-1 xl:border-[#f2f2f2]' : ''
                 } xl:flex ${idx % 2 === 0 ? '' : ' xl:flex-row-reverse'}`}
               >
-                <div className="xl:flex-1 xl:flex xl:items-center xl:justify-center">
+                <div className="xl:flex-1 flex items-center justify-center">
                   <Image
                     src={pkg?.image?.src || ''}
                     height={pkg?.image?.height}
@@ -230,7 +230,7 @@ const FamilyGalleryPage = () => {
                     className="mb-[30px] xl:max-w-[457px]"
                   />
                 </div>
-                <div className="xl:flex-1 xl:flex xl:flex-col xl:items-center xl:justify-center">
+                <div className="xl:flex-1 xl:flex xl:flex-col xl:items-center xl:justify-center pt-[25px] pb-[50px]">
                   <h2
                     className={`text-[40px] leading-1 flex flex-col mb-[20px] text-center xl:self-start ${
                       idx === Math.floor(packages.length / 2) ? 'xl:self-end' : ''
@@ -277,7 +277,7 @@ const FamilyGalleryPage = () => {
       </section>
 
       <section className="px-[30px] mt-[100px] mb-[60px] xl:w-full xl:px-[100px] xl:flex xl:flex-row-reverse xl:mt-[200px]">
-        <div className="xl:flex xl:justify-center xl:flex-1">
+        <div className="flex justify-center xl:flex-1">
           <Image
             src="/images/Family Gallery/happylittlefamilyinflorida.webp"
             height={684}
@@ -286,7 +286,7 @@ const FamilyGalleryPage = () => {
             alt="Family bliss captured in the serene setting of Florida's nature with green grass and Spanish moss."
           />
         </div>
-        <div className="w-full mb-[15px] xl:flex-1">
+        <div className="flex justify-center xl:justify-normal mb-[15px] xl:flex-1 flex-col xl:items-left items-center">
           <h2 className="text-[40px] leading-1 my-[30px] xl:text-[60px]">{`Time to capture your family's happiest moments`}</h2>
           <p className="font-thin mb-[15px]">{`Your Tampa + Wesley Chapel Family Photographer`}</p>
 
