@@ -4,6 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
+import { Lora } from 'next/font/google';
+const lora = Lora({ subsets: ['latin'] });
+
 import Share from '@/components/Share/Share';
 import Header from '@/components/Header/Header';
 import Carousel from '@/components/Carousels/ImageCarousel';
@@ -54,9 +57,11 @@ export default function Home() {
             <h1 className="text-nowrap text-center xl:text-left text-[12px] mb-[20px] tracking-wide text-white z-10 xl:w-[150px] xl:self-start xl:ml-[125px] mt-30px] xl:mt-[150px]">
               {`TAMPA FAMILY PHOTOGRAPHER`}
             </h1>
-            <p className="text-center text-[45px] xl:text-[84px] leading-[3.5rem] xl:leading-[5.5rem] flex flex-col mb-[80px] xl:mt-[0px] text-white z-10 tracking-wide xl:self-start xl:ml-[100px] xl:flex xl:flex-row xl:flex-wrap xl:text-left">
-              <span>{`Capture those beautiful moments`}</span> <span className="xl:pl-[20px]">{`with your`}</span>
-              <span className="xl:pl-[20px]">{`favorite people`}</span>
+            <p
+              className={`${lora.className} text-center text-[40px] xl:text-[55px] leading-[3.5rem] xl:leading-[5.5rem] flex flex-col mb-[80px] xl:mt-[0px] text-white z-10 tracking-wide xl:self-start xl:ml-[100px] xl:flex xl:flex-row xl:flex-wrap xl:text-left`}
+            >
+              <span>{`Capture those beautiful moments`}</span>{' '}
+              <span className="xl:pl-[20px]">{`with your favorite people`}</span>
             </p>
             <Link href="/contact" legacyBehavior passHref>
               <a className="z-10  mb-[60px] border border-white py-[15px] text-[13px] tracking-[.35em] mt-[30px] px-[30px] text-white xl:self-start xl:ml-[100px]">
@@ -91,7 +96,7 @@ export default function Home() {
           </div>
           <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pl-[30px] xl:pr-[70px] xl:mb-[100px]">
             <h2 className="text-[15px] mt-[60px]">{`FAMILY PHOTOGRAPHY IN TAMPA, FL`}</h2>
-            <h3 className="text-[35px] mb-[40px]">{`What Makes Calli So Different?`}</h3>
+            <h3 className={`${lora.className} text-[35px] mb-[40px]`}>{`What Makes Calli So Different?`}</h3>
             <p className="font-thin leading-8 mb-[30px]">
               {`I’m Calli - your local Tampa family photographer! I’ve heard so many stories lately of kids who grew up with no family photos of them included. I never realized as the youngest of four kids, how blessed I was to be in a home where family portraits were valued. That is a legacy I want to continue with my own family and help you do the same for yours.
 
@@ -143,7 +148,9 @@ export default function Home() {
             </p>
           </div>
           <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pr-[100px] xl:mb-[100px] md:px-[75px]">
-            <h2 className="text-[35px] text-right mb-[40px]">{`Tampa Family Photography for those who just want to remember these moments.`}</h2>
+            <h2
+              className={`${lora.className} text-[35px] text-right mb-[40px]`}
+            >{`Tampa Family Photography for those who just want to remember these moments.`}</h2>
             <p className="font-thin leading-8 text-right mb-[60px]">
               {`This isn't about making sure you pick out the perfect outfit + stand just the right way. This is about capturing photos of you with your absolute favorite people. Taking a brief pause on the busyness of life so that you can have photographs that you will forever cherish. I promise - you will never regret getting those family photos with your crew.
  Yes, take the time to pick out an outfit you love. Then just show up. I specialize in stress-free sessions, capturing your natural smiles and laughter. I'll take care of all the logistics so you just get to enjoy yourself as I capture all your best moments in Tampa, FL.If you’re searching for a Tampa Family Photographer - I hope you’ve found what you’ve been looking for!
@@ -165,7 +172,7 @@ export default function Home() {
               alt=""
               className="object-cover"
             />
-            <h2 className="text-[35px] my-[40px]">{`1. Getting Started`}</h2>
+            <h2 className={`${lora.className} text-[35px] my-[40px]`}>{`1. Getting Started`}</h2>
             <p className="font-thin">{`Booking your session is as easy as paying a session fee to reserve a space on my calendar. We will work out the date & time info and I take care of finding the perfect Tampa Bay location! All you will need to do is find the right outfit for you + your crew. If you need any styling help, just let me know!`}</p>
           </div>
           <div className="flex flex-col justify-start items-start flex-1 xl:mx-[30px] max-w-[456px] mb-[60px] xl:mb-0">
@@ -176,7 +183,7 @@ export default function Home() {
               alt="Tampa Family Photography | Family of three portrait with beautiful Florida greenery in the background taken by Tampa Photographer Calli Wickes."
               className="object-cover"
             />
-            <h2 className="text-[35px] my-[40px]">{`2. Today's the day!`}</h2>
+            <h2 className={`${lora.className} text-[35px] my-[40px]`}>{`2. Today's the day!`}</h2>
             <p className="font-thin">{`Time to meet, talk, connect, and get to know each other. I will take care of all the logistics, posing + helping you feel like a natural during your family session! My goal is to keep everyone feeling relaxed and having fun, allowing your kids to be kids, so I can capture genuine interactions of your family during your Tampa Family Photography session.`}</p>
           </div>
           <div className="flex flex-col justify-start items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
@@ -187,7 +194,7 @@ export default function Home() {
               alt="Tampa Family Photography | Young, newly engaged couple."
               className="object-cover"
             />
-            <h2 className="text-[35px] my-[40px]">{`3. What's Next?`}</h2>
+            <h2 className={`${lora.className} text-[35px] my-[40px]`}>{`3. What's Next?`}</h2>
             <p className="font-thin">{`Within two weeks of your Tampa family photography session, you will be able to view your edited images from the comfort of home in a beautiful online gallery - ready for you to download, print, + proudly display!`}</p>
           </div>
         </section>
@@ -199,7 +206,7 @@ export default function Home() {
         >
           <div className="flex flex-col w-full flex-1 xl:pl-[100px] 2xl:items-end 2xl:justify-start md:pr-[100px]">
             <h2 className="text-[15px]">{`JOIN MY NEWSLETTER`}</h2>
-            <h3 className="text-[35px] mb-[40px]">{`BECOME A VIP`}</h3>
+            <h3 className={`${lora.className} text-[35px] mb-[40px]`}>{`BECOME A VIP`}</h3>
             <p className="font-thin leading-8 mb-[60px] text-wrap text-left 2xl:text-right">{`
 Join our email list and be the first to know about our special Tampa family photography offers, receive early access to family mini sessions + more. Get in the know so you don't miss a thing!`}</p>
           </div>
@@ -209,7 +216,7 @@ Join our email list and be the first to know about our special Tampa family phot
         </section>
 
         {/* Carousel Section */}
-        <section id="carousel" className="">
+        <section id="carousel" className="mt-[50px]">
           <Carousel />
         </section>
 
@@ -242,7 +249,9 @@ Join our email list and be the first to know about our special Tampa family phot
             </div>
           </div>
           <div className="xl:flex xl:flex-col xl:flex-1 xl:align-center xl:pl-[100px] xl:justify-center xl:align-center">
-            <h2 className="text-[35px] mb-[50px]">{`Family photography for you to treasure forever`}</h2>
+            <h2
+              className={`${lora.className} text-[35px] mb-[50px]`}
+            >{`Family photography for you to treasure forever`}</h2>
             <p className="font-thin leading-8 mb-[60px]">
               {`Whether you seek stunning beach snapshots, enchanting Florida nature
           images, or a lively urban atmosphere with your loved ones, I would

@@ -5,6 +5,9 @@ import Image from 'next/image';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
+import { Lora } from 'next/font/google';
+const lora = Lora({ subsets: ['latin'] });
+
 // import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 
 const ReviewCarousel = () => {
@@ -81,12 +84,12 @@ const ReviewCarousel = () => {
               ) : null}
               {/* Right */}
               <div>
-                <p className="text-[15px] xl:text-[35px] font-thin xl:my-[40px]">{text}</p>
+                <p className={`${lora.className} text-[15px] xl:text-[35px] font-thin xl:my-[40px]`}>{text}</p>
               </div>
             </div>
             {/* Bottom */}
             <div>
-              <p className="text-[15px] xl:text-[30px] mt-[20px] xl:mb-[40px] text-right">
+              <p className="text-[15px] xl:text-[30px] mt-[20px] xl:mb-[40px] font-thin text-right">
                 {`- `}
                 {name}
               </p>

@@ -61,36 +61,36 @@ const ContactForm = () => {
   return !submitted ? (
     <form className="xl:flex-1 xl:mr-[100px] xl:mt-[50px]" onSubmit={onSubmit}>
       <label className="flex flex-col">
-        {`Name *`}
         <input
           disabled={isDisabled}
           value={name}
           required
+          placeholder="Name"
           onChange={(e) => setName(e.target.value)}
-          className="border border-[#cdcdcd] px-[16px] py-[14px] mt-[10px] mb-[50px] h-[40px]"
+          className="border border-[#cdcdcd] px-[16px] py-[14px] mt-[10px] mb-[25px] h-[40px]"
           type="text"
           id="name"
         />
       </label>
       <label className="flex flex-col">
-        {`Email Address *`}
         <input
+          placeholder="Email Address "
           disabled={isDisabled}
           value={email}
           required
           onChange={(e) => setEmail(e.target.value)}
-          className="border border-[#cdcdcd] px-[16px] py-[14px] mt-[10px] mb-[50px] h-[40px]"
+          className="border border-[#cdcdcd] px-[16px] py-[14px] mt-[10px] mb-[25px] h-[40px]"
           type="email"
           id="email"
         />
       </label>
       <label className="flex flex-col">
-        {`Phone Number *`}
         <input
           disabled={isDisabled}
           value={phone}
+          placeholder="Phone Number"
           onChange={formatPhoneNumber}
-          className="border border-[#cdcdcd] px-[16px] py-[14px] mt-[10px] mb-[50px] h-[40px]"
+          className="border border-[#cdcdcd] px-[16px] py-[14px] mt-[10px] mb-[25px] h-[40px]"
           type="tel"
           id="phone"
           name="phone"
@@ -98,9 +98,9 @@ const ContactForm = () => {
         />
       </label>
       <label className="flex flex-col">
-        {`Message *`}
         <textarea
           disabled={isDisabled}
+          placeholder="Message"
           value={message}
           required
           onChange={(e) => setMessage(e.target.value)}

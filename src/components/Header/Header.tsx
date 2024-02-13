@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-import { List, X, Dot } from '@phosphor-icons/react';
+import { List, X } from '@phosphor-icons/react';
 
 type HeaderProps = {
   isHome?: boolean;
@@ -11,7 +11,6 @@ type HeaderProps = {
 
 const Header = ({ isHome = false }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isInfoOpen, setIsInfoOpen] = useState(false);
 
   return (
     <header>
@@ -21,7 +20,7 @@ const Header = ({ isHome = false }: HeaderProps) => {
             <Link href="/" legacyBehavior passHref>
               <a
                 aria-label="Calli Wickes Photography Home Page"
-                className={`tracking-[.35em] text-[20px] w-full xl:flex xl:flex-col xl:text-[25px] cursor-pointer ${
+                className={`tracking-[.35em] text-[20px] w-full flex flex-col xl:text-[25px] cursor-pointer ${
                   isMenuOpen || !isHome ? 'text-black' : 'text-white'
                 }`}
               >
@@ -34,7 +33,14 @@ const Header = ({ isHome = false }: HeaderProps) => {
           <div className="flex flex-1 justify-end items-center xl:mr-[100px] xl:mt-[50px]">
             <div className={`z-30 cursor-pointer`}>
               {!isMenuOpen ? (
-                <List onClick={() => setIsMenuOpen(!isMenuOpen)} size={40} color={isHome ? 'white' : 'black'} />
+                <div className="flex items-center" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                  {!isMenuOpen ? (
+                    <span
+                      className={`text-[20px] text-${isHome ? 'white' : 'black'} invisible xl:visible pr-[20px]`}
+                    >{`MENU`}</span>
+                  ) : null}
+                  <List size={40} color={isHome ? 'white' : 'black'} />
+                </div>
               ) : (
                 <X onClick={() => setIsMenuOpen(!isMenuOpen)} size={40} color={'black'} />
               )}

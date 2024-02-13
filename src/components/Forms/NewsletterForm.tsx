@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+import { ArrowRight } from '@phosphor-icons/react';
+
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -37,36 +39,32 @@ const ContactForm = () => {
       onSubmit={onSubmit}
     >
       <label className="flex flex-col w-full">
-        {`Name *`}
         <input
           disabled={isDisabled}
           value={name}
+          placeholder="Name"
           required
           onChange={(e) => setName(e.target.value)}
-          className="border w-full border-[#cdcdcd] px-[16px] py-[14px] mt-[10px] mb-[50px] h-[40px]"
+          className="border w-full border-[#cdcdcd] px-[16px] py-[14px] mt-[10px] mb-[25px] h-[40px]"
           type="text"
           id="name"
         />
       </label>
       <label className="flex flex-col w-full">
-        {`Email Address *`}
         <input
           disabled={isDisabled}
           value={email}
+          placeholder="Email Address"
           required
           onChange={(e) => setEmail(e.target.value)}
-          className="border border-[#cdcdcd] px-[16px] py-[14px] mt-[10px] mb-[50px] h-[40px] w-full"
+          className="border border-[#cdcdcd] px-[16px] py-[14px] mt-[10px] mb-[25px] h-[40px] w-full"
           type="email"
           id="email"
         />
       </label>
       <div>
-        <button
-          disabled={isDisabled}
-          type="submit"
-          className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]"
-        >
-          {`SUBMIT`}
+        <button disabled={isDisabled} type="submit" className="mb-[25px] py-[15px] px-[30px]">
+          <ArrowRight size={25} />
         </button>
       </div>
     </form>
