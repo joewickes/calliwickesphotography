@@ -82,7 +82,7 @@ export default function Home() {
             <div className="mt-[120px] xl:mt-0 h-[90dvw] w-[90dvw] max-w-[560px] max-h-[840px] xl:h-auto xl:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
               <Image
                 src="/images/Home Updated/TampaPhotographerPortrait.webp"
-                ="Tampa Family Photography | Self Portrait of Photographer in downtown Tampa taken by Family Photographer Calli Wickes."
+                alt="Tampa Family Photography | Self Portrait of Photographer in downtown Tampa taken by Family Photographer Calli Wickes."
                 height={5808}
                 width={3873}
                 className="object-cover"
