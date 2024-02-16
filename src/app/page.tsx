@@ -137,7 +137,7 @@ export default function Home() {
               <Image
                 src="/images/Home Updated/MommyandmePhoto.webp"
                 priority
-                ="Tampa Family Photography | Photo of a mom holding her little boy taken by Tampa Photographer Calli Wickes."
+                alt="Tampa Family Photography | Photo of a mom holding her little boy taken by Tampa Photographer Calli Wickes."
                 height={6000}
                 width={4000}
                 className="object-cover  mt-[-30dvw] sm:mt-0"
