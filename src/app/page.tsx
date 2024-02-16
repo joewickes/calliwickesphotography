@@ -98,7 +98,7 @@ export default function Home() {
             <h2 className="text-[15px] mt-[60px]">{`FAMILY PHOTOGRAPHY IN TAMPA, FL`}</h2>
             <h3 className={`${lora.className} text-[35px] mb-[40px]`}>{`What Makes Calli So Different?`}</h3>
             <p className="font-thin leading-8 mb-[30px]">
-              {`I’m Calli - your local Tampa family photographer! I’ve heard so many stories lately of kids who grew up with no family photos of them included. I never realized as the youngest of four kids, how blessed I was to be in a home where family portraits were valued. That is a legacy I want to continue with my own family and help you do the same for yours.
+              {`I’m Calli - your local Tampa family photographer! I never realized as the youngest of four kids, how blessed I was to be in a home where family portraits were valued. I’ve heard so many stories lately of kids who grew up with no family photos of them included. Setting aside the time and making the investment of having updated family photos taken with each of my own little ones is legacy I want to continue and help you do the same for yours.
 
               `}
             </p>
@@ -144,7 +144,7 @@ export default function Home() {
               />
             </div>
             <p className="w-0 h-0 xl:w-auto xl:h-auto xl:mb-[50px] mt-[10px] text-[12px] font-thin invisible xl:visible">
-              {`Tampa Family Photographers - photos so you can remember these beautiful moments`}
+              {`Photos so you can remember these beautiful moments - Tampa Family Photographers`}
             </p>
           </div>
           <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pr-[100px] xl:mb-[100px] md:px-[75px]">
@@ -180,7 +180,7 @@ export default function Home() {
               src="/images/Home Updated/tampafamilyofthree.webp"
               height={6000}
               width={4000}
-              alt="Tampa Family Photographer | Family of three portrait with beautiful Florida greenery in the background taken by Tampa Photographer Calli Wickes."
+              alt="Tampa Family Photographers | Family of three portrait with beautiful Florida greenery in the background taken by Tampa Photographer Calli Wickes."
               className="object-cover"
             />
             <h2 className={`${lora.className} text-[35px] my-[40px]`}>{`2. Today's the day!`}</h2>
@@ -244,7 +244,7 @@ Join our email list and be the first to know about our special Tampa family phot
                 />
               </div>
               <p className="vertical-rl xl:pl-[100px] xl:mb-[2px] xl:mt-0 justify-self-end text-[12px] font-thin">
-                {`Tampa, FL Family Photography`}
+                {`Tampa Family Photography by Tampa Family Photographers`}
               </p>
             </div>
           </div>
