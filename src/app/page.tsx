@@ -82,7 +82,7 @@ export default function Home() {
             <div className="mt-[120px] xl:mt-0 h-[90dvw] w-[90dvw] max-w-[560px] max-h-[840px] xl:h-auto xl:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
               <Image
                 src="/images/Home Updated/TampaPhotographerPortrait.webp"
-                alt="Tampa Family Photography | Self Portrait of Photographer in downtown Tampa taken by Family Photographer Calli Wickes."
+                ="Tampa Family Photography | Self Portrait of Photographer in downtown Tampa taken by Family Photographer Calli Wickes."
                 height={5808}
                 width={3873}
                 className="object-cover"
@@ -106,9 +106,9 @@ export default function Home() {
               {`I have two little girls of my own so I understand the stress of having a family photo session when you have little ones who want to do everything but cooperate. I want to help take that pressure off of you! My clients want to capture those moments with their favorite people in Tampa. They want a beautiful and relaxed outdoor family portrait and also all the silly moments it took to capture that one. Because it’s about the journey. And I’d love to help you along your way.`}
             </p>
             <p className="font-thin leading-8 mb-[60px]">
-              {`I can’t wait to capture some of your best moments together in Tampa, FL. If you’re searching for a Tampa Family Photographer -`}{' '}
+              {`I can’t wait to capture some of your best moments together in Tampa, FL. If you’re searching for Tampa Family Photographers -`}{' '}
               <Link href="/contact" passHref legacyBehavior>
-                <a className="font-normal">{`Contact me`}</a>
+                <a className="font-normal">{`contact me`}</a>
               </Link>{' '}
               {`to book your family photo session today!`}
             </p>
@@ -137,14 +137,14 @@ export default function Home() {
               <Image
                 src="/images/Home Updated/MommyandmePhoto.webp"
                 priority
-                alt="Tampa Family Photography | Photo of a mom holding her little boy taken by Tampa Photographer Calli Wickes."
+                ="Tampa Family Photography | Photo of a mom holding her little boy taken by Tampa Photographer Calli Wickes."
                 height={6000}
                 width={4000}
                 className="object-cover  mt-[-30dvw] sm:mt-0"
               />
             </div>
             <p className="w-0 h-0 xl:w-auto xl:h-auto xl:mb-[50px] mt-[10px] text-[12px] font-thin invisible xl:visible">
-              {`Tampa Family Photography - for you to always remember`}
+              {`Tampa Family Photographers - photos so you can remember these beautiful moments`}
             </p>
           </div>
           <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pr-[100px] xl:mb-[100px] md:px-[75px]">
@@ -153,7 +153,7 @@ export default function Home() {
             >{`Tampa Family Photography for those who just want to remember these moments.`}</h2>
             <p className="font-thin leading-8 text-right mb-[60px]">
               {`This isn't about making sure you pick out the perfect outfit + stand just the right way. This is about capturing photos of you with your absolute favorite people. Taking a brief pause on the busyness of life so that you can have photographs that you will forever cherish. I promise - you will never regret getting those family photos with your crew.
- Yes, take the time to pick out an outfit you love. Then just show up. I specialize in stress-free sessions, capturing your natural smiles and laughter. I'll take care of all the logistics so you just get to enjoy yourself as I capture all your best moments in Tampa, FL.If you’re searching for a Tampa Family Photographer - I hope you’ve found what you’ve been looking for!
+ Yes, take the time to pick out an outfit you love. Then just show up. I specialize in stress-free sessions, capturing your natural smiles and laughter. I'll take care of all the logistics so you just get to enjoy yourself as I capture all your best moments in Tampa, FL. If you’re searching for a Tampa Family Photographer - I hope you’ve found what you’ve been searching for!
 `}
             </p>
           </div>
@@ -169,7 +169,7 @@ export default function Home() {
               src="/images/Home Updated/youngdadandhisbabyboyinflorida.webp"
               height={5887}
               width={3925}
-              alt=""
+              alt="Young dad holding his three month old baby boy in rural setting near Tampa - Photo taken by Tampa Photographer Calli Wickes"
               className="object-cover"
             />
             <h2 className={`${lora.className} text-[35px] my-[40px]`}>{`1. Getting Started`}</h2>
@@ -180,7 +180,7 @@ export default function Home() {
               src="/images/Home Updated/tampafamilyofthree.webp"
               height={6000}
               width={4000}
-              alt="Tampa Family Photography | Family of three portrait with beautiful Florida greenery in the background taken by Tampa Photographer Calli Wickes."
+              alt="Tampa Family Photographer | Family of three portrait with beautiful Florida greenery in the background taken by Tampa Photographer Calli Wickes."
               className="object-cover"
             />
             <h2 className={`${lora.className} text-[35px] my-[40px]`}>{`2. Today's the day!`}</h2>
@@ -191,7 +191,7 @@ export default function Home() {
               src="/images/Home Updated/newlyengagedcouple.webp"
               height={3456}
               width={2304}
-              alt="Tampa Family Photography | Young, newly engaged couple."
+              alt="Tampa Family Photographers | Young, newly engaged couple."
               className="object-cover"
             />
             <h2 className={`${lora.className} text-[35px] my-[40px]`}>{`3. What's Next?`}</h2>
@@ -240,7 +240,7 @@ Join our email list and be the first to know about our special Tampa family phot
                   height={6000}
                   width={4000}
                   className="object-cover "
-                  alt="Tampa Family Photography | Young couple sharing an embrace while surrounded by the rustic charm of Tampa's countryside taken by Tampa Photographer Calli Wickes."
+                  alt="Tampa Family Photographers | Young couple sharing an embrace while surrounded by the rustic charm of Tampa's countryside taken by Tampa Photographer Calli Wickes."
                 />
               </div>
               <p className="vertical-rl xl:pl-[100px] xl:mb-[2px] xl:mt-0 justify-self-end text-[12px] font-thin">
@@ -255,7 +255,7 @@ Join our email list and be the first to know about our special Tampa family phot
             <p className="font-thin leading-8 mb-[60px]">
               {`Whether you seek stunning beach snapshots, enchanting Florida nature
           images, or a lively urban atmosphere with your loved ones, I would
-          love to capture your family portrait, creating cherished family photos
+          love to capture your family portrait in Tampa, creating cherished family photos
           destined for your walls!`}
             </p>
             <div>
