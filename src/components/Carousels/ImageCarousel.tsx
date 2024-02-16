@@ -47,13 +47,13 @@ const CarouselComponent = () => {
         // className="h-[350px]"
         itemClass="flex justify-center px-[10px] w-auto"
       >
-        <Image src="/images/Carousel/Carousel1.webp" width={3751} height={5627} alt="" />
-        <Image src="/images/Carousel/Carousel2.webp" width={3276} height={4914} alt="" />
-        <Image src="/images/Carousel/Carousel3.webp" width={3845} height={5767} alt="" />
-        <Image src="/images/Carousel/Carousel4.webp" width={4000} height={6000} alt="" />
-        <Image src="/images/Carousel/Carousel5.webp" width={3909} height={5863} alt="" />
-        <Image src="/images/Carousel/Carousel6.webp" width={3439} height={5158} alt="" />
-        <Image src="/images/Carousel/Carousel7.webp" width={4000} height={6000} alt="" />
+        <Image src="/images/Carousel/Carousel1.webp" width={3751} height={5627} alt="Family photo taken by Tampa Family Photographer, Calli Wickes" />
+        <Image src="/images/Carousel/Carousel2.webp" width={3276} height={4914} alt="Family photo taken by Tampa Family Photographer, Calli Wickes" />
+        <Image src="/images/Carousel/Carousel3.webp" width={3845} height={5767} alt="Family photo taken by Tampa Family Photographer, Calli Wickes" />
+        <Image src="/images/Carousel/Carousel4.webp" width={4000} height={6000} alt="Family photo taken by Tampa Family Photographer, Calli Wickes" />
+        <Image src="/images/Carousel/Carousel5.webp" width={3909} height={5863} alt="Family photo taken by Tampa Family Photographer, Calli Wickes" />
+        <Image src="/images/Carousel/Carousel6.webp" width={3439} height={5158} alt="Family photo taken by Tampa Family Photographer, Calli Wickes" />
+        <Image src="/images/Carousel/Carousel7.webp" width={4000} height={6000} alt="Family photo taken by Tampa Family Photographer, Calli Wickes" />
       </Carousel>
     </div>
   );
