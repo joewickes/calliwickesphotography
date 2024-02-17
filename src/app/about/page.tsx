@@ -29,9 +29,9 @@ const AboutPage = () => {
       <section className="mt-[20dvh] px-[30px] mb-[60px]">
         <h1 className="text-[40px] leading-1 font-thin flex flex-col mb-[80px] xl:text-[75px] xl:ml-[100px] xl:pt-[100px]">
           <span>
-            <span>{`Hi! I'm Calli + I`}</span> <span>{`love capturing`}</span> <span>{`moments`}</span>
+            <span>{`Hi! I'm Calli + I`}</span> <span>{`love capturing`}</span> <span>{`images`}</span>
           </span>{' '}
-          <span>{`through a lens.`}</span>
+          <span>{`for cherished memories.`}</span>
         </h1>
       </section>
 
@@ -42,16 +42,16 @@ const AboutPage = () => {
             height={867}
             width={1664}
             className="object-cover h-full"
-            alt="Photographer in Tampa"
+            alt="Family photo of four for a photographer in Tampa"
           />
         </div>
         <p className="font-thin leading-8 mb-[60px] mt-[50px] xl:mt-[100px] text-[25px] w-[60dvw] text-center xl:leading-[3rem]">
-          {`I love capturing moments through a lens. Let's document some of your
-          family's best moments for you to cherish forever.`}
+          {`Catch those sweet moments with your favorite people -  
+          because this time with our little ones goes so fast.`}
         </p>
         <Link href="/contact" legacyBehavior passHref>
           <a className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
-            {`LET'S CONNECT`}
+            {`BOOK YOUR SESSION`}
           </a>
         </Link>
       </section>
@@ -69,17 +69,17 @@ const AboutPage = () => {
           </div>
         </div>
         <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pr-[100px] xl:pl-[50px]">
-          <h2 className="text-[35px] mb-[60px]">{`I’m Calli, a Florida family photographer!`}</h2>
+          <h2 className="text-[35px] mb-[60px]">{`Hi - I'm Calli!`}</h2>
           <h3 className="text-[15px] mb-[60px]">
-            {`I CURRENTLY SERVE TAMPA, WESLEY CHAPEL AND THE SURROUNDING AREAS`}
+            {`SERVING FAMILIES IN TAMPA, WESLEY CHAPEL AND THE SURROUNDING AREAS`}
           </h3>
           <p className="font-thin leading-8 mb-[60px]">
-            {`I am a family portrait photographer specializing in natural + candid photos. In the past decade plus, I have loved getting to capture more and more family's special moments. I started primarily in senior photos and now focus on family + senior photos in Florida. I would love to capture the joyful moments for you and your family! Check out some of the fun facts below to get to know me more!`}
+            {`I met my husband in high school and he is literally my best friend. I'm a mom of two little girls that really are my favorite people. And I am a family + senior portrait photographer specializing in natural + candid photos. For the past decade plus, I have loved getting to capture more and more family's special moments. I started primarily in senior photos and now focus on family + senior photos in Florida. Check out some of the fun facts below to get to know me more!`}
           </p>
           <div>
             <Link href="/contact" legacyBehavior passHref>
               <a className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
-                {`GET IN TOUCH`}
+                {`LET'S CHAT!`}
               </a>
             </Link>
           </div>
