@@ -102,28 +102,30 @@ const AboutPage = () => {
         </ol>
       </section>
 
-      <section className="px-[30px] pb-[60px] bg-[#f2f2f2] pt-[30px] xl:my-[100px] xl:flex xl:justify-center">
-        <div
-          id="seniorphotomoment"
-          className="bg-white flex flex-col items-center justify-center px-[30px] py-[30px] xl:w-[60dvh] xl:h-[60dvh] xl:my-[100px]"
-        >
-          <h2 className="mb-[40px] text-[25px] xl:self-start xl:text-[35px] xl:pl-[50px]">{`The moment is now`}</h2>
-          <p className="font-thin leading-8 mb-[50px] text-center xl:text-left xl:pl-[50px] xl:mt-[10dvh]">
-            {`Don't let another day pass you by without scheduling your family's
-            photo session!`}
-          </p>
-          <div className="xl:self-end xl:pr-[50px]">
+      <section className="px-[30px] mt-[100px] mb-[60px] xl:w-full xl:px-[100px] xl:flex xl:flex-row-reverse xl:mt-[200px]">
+        <div className="flex justify-center xl:flex-1">
+          <Image
+            src="/images/Family Gallery/happylittlefamilyinflorida.webp"
+            height={684}
+            width={456}
+            className="object-cover"
+            alt="Family bliss captured in the serene setting of Florida's nature with green grass and Spanish moss."
+          />
+        </div>
+        <div className="flex justify-center xl:justify-normal mb-[15px] xl:flex-1 flex-col xl:items-left items-center">
+          <h2 className="text-[40px] leading-1 my-[30px] xl:text-[60px]">{`They are only little for a short while`}</h2>
+          <p className="font-thin mb-[15px]">{`Don't let another day pass you by without scheduling your family's photo session!`}</p>
+
+          <div className="xl:mt-[150px] mt-[60px] mb-[150px]">
             <Link href="/contact" legacyBehavior passHref>
-              <a className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
-                {`LET'S CONNECT`}
-              </a>
+              <a className="border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">{`CONNECT WITH ME`}</a>
             </Link>
           </div>
         </div>
       </section>
-
       <Footer />
     </main>
+    
   );
 };
 
