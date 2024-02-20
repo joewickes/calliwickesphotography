@@ -72,7 +72,7 @@ export default function Home() {
         </div>
 
         {/* About Section */}
-        <section id="about" className="px-[30px] sm:px-[75px] xl:flex xl:py-[100px]">
+        <section id="about" className="px-[30px] sm:px-[75px] xl:flex xl:pt-[75px]">
           <div className="flex justify-center xl:items-center 2xl:items-end mb-[60px] xl:flex-1">
             <div className="flex">
               <p className="vertical-rl  xl:pr-[100px] w-0 h-0 xl:w-auto xl:h-auto mt-[120px] xl:mt-0 self-end text-[12px] font-thin invisible xl:visible">
@@ -123,7 +123,7 @@ export default function Home() {
         </section>
 
         {/* Reviews */}
-        <section id="reviews" className="xl:px-[100px] xl:py-[100px] mt-[100px] bg-[#faf9f7]">
+        <section id="reviews" className="xl:px-[100px]  mt-[25px] bg-[#faf9f7]">
           <Reviews />
         </section>
 

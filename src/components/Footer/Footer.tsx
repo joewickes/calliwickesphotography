@@ -29,7 +29,7 @@ const Footer = () => {
         </Link>
       </div>
       <div className="flex flex-col lg:flex-row w-full">
-        <section className="border-gray-200 border border-x-0 xl:border-r-1 py-[20px] px-[30px] lg:flex-1 lg:pl-[100px] flex flex-col justify-normal lg:justify-center">
+        <section className="border-[#faf9f7] border border-x-0 xl:border-r-1 py-[20px] px-[30px] lg:flex-1 lg:pl-[100px] flex flex-col justify-normal lg:justify-center">
           <div>
             <p className="text-[25px] mb-[25px]">{`CALLI WICKES PHOTOGRAPHY`}</p>
           </div>
@@ -47,7 +47,7 @@ const Footer = () => {
           </div>
         </section>
 
-        <section className="border-gray-200 border border-x-0 border-t-0 py-[20px] bg-[#faf9f7] px-[30px] lg:flex-1">
+        <section className="border-[#faf9f7] border border-x-0 border-t-0 py-[20px] bg-[#faf9f7] px-[30px] lg:flex-1">
           <div>
             <div>
               <h3 className={`${lora.className} text-[35px] mb-[5px]`}>{`BECOME A VIP`}</h3>
@@ -88,7 +88,7 @@ const Footer = () => {
       <section className="xl:py-[20px] w-full ">
         <div className="flex flex-col justify-center items-center w-full">
           <div className="flex flex-col xl:flex-row items-center justify-center w-full">
-            <div className="xl:ml-[100px] xl:flex-1 w-full flex flex-col xl:flex-row xl:justify-start items-start text-center justify-center border border-x-0 border-t-0 xl:border-none py-[20px] px-[30px]">
+            <div className="xl:ml-[100px] xl:flex-1 w-full flex flex-col xl:flex-row xl:justify-start border-[#faf9f7] items-start text-center justify-center border border-x-0 border-t-0 xl:border-none py-[20px] px-[30px]">
               <Link passHref legacyBehavior href="/privacypolicy">
                 <a className="underline font-thin mr-[35px]">{`Privacy Policy`}</a>
               </Link>

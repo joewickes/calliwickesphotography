@@ -57,7 +57,7 @@ const ReviewCarousel = () => {
   ];
 
   return (
-    <div id="review-carousel" className="py-[30px] w-full">
+    <div id="review-carousel" className="py-[10px] w-full">
       <Carousel
         swipeable={true}
         draggable={true}
@@ -84,12 +84,12 @@ const ReviewCarousel = () => {
               ) : null}
               {/* Right */}
               <div>
-                <p className={`${lora.className} text-[15px] xl:text-[35px] font-thin xl:my-[40px]`}>{text}</p>
+                <p className={`${lora.className} leading-8 font-thin xl:mt-[40px]`}>{text}</p>
               </div>
             </div>
             {/* Bottom */}
             <div>
-              <p className="text-[15px] xl:text-[30px] mt-[20px] xl:mb-[40px] font-thin text-right">
+              <p className="leading-8 mt-[20px] xl:mb-[40px] font-thin text-right">
                 {`- `}
                 {name}
               </p>
