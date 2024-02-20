@@ -33,7 +33,7 @@ const Footer = () => {
           <div>
             <p className="text-[25px] mb-[25px]">{`CALLI WICKES PHOTOGRAPHY`}</p>
           </div>
-          <p className="font-thin">{`Calli Wickes Photography is a photographer in Tampa, FL specializing in family and senior portraits.`}</p>
+          <p className="font-thin">{`Calli Wickes is a photographer in Tampa, Florida specializing in family and senior portraits.`}</p>
           <div className="flex flex-col mt-[20px] lg:pl-[50px]">
             <div className="flex items-center">
               <EnvelopeSimple size={18} className="mr-[10px]" />

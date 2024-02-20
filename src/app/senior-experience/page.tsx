@@ -8,8 +8,8 @@ import Header from '@/components/Header/Header';
 import Share from '@/components/Share/Share';
 
 export const metadata: Metadata = {
-  title: 'Senior Photography | Calli Wickes Photography Senior Gallery',
-  description: 'A sample of the senior photography work of Calli Wickes Photography.',
+  title: 'Senior Experience',
+  description: 'What does a high school senior photo experience with Calli Wickes Photography look like?',
 };
 
 const SeniorGalleryPage = () => {

@@ -103,7 +103,7 @@ export default function Home() {
               `}
             </p>
             <p className="font-thin leading-8 mb-[30px]">
-              {`I have two little girls of my own so I understand the stress of having a family photo session when you have little ones who want to do everything but cooperate. I want to help take that pressure off of you! My clients want to capture those moments with their favorite people in Tampa. They want a beautiful and relaxed outdoor family portrait and also all the silly moments it took to capture that one. Because it’s about the journey. And I’d love to help you along your way.`}
+              {`I have two little girls of my own so I understand the stress of having family photos taken when you have little ones who want to do everything but cooperate. I want to help take that pressure off of you! My clients want to capture those moments with their favorite people in Tampa. They want a beautiful and relaxed outdoor family photos and also all the silly moments it took to capture that one. Because it’s about the journey. And I’d love to help you along your way.`}
             </p>
             <p className="font-thin leading-8 mb-[60px]">
               {`I can’t wait to capture some of your best moments together in Tampa, FL. If you’re searching for Tampa Family Photographers -`}{' '}
@@ -153,7 +153,7 @@ export default function Home() {
             >{`Tampa Family Photography for those who just want to remember these moments.`}</h2>
             <p className="font-thin leading-8 text-right mb-[60px]">
               {`This isn't about making sure you pick out the perfect outfit + stand just the right way. This is about capturing photos of you with your absolute favorite people. Taking a brief pause on the busyness of life so that you can have photographs that you will forever cherish. I promise - you will never regret getting those family photos with your crew.
- Yes, take the time to pick out an outfit you love. Then just show up. I specialize in stress-free sessions, capturing your natural smiles and laughter. I'll take care of all the logistics so you just get to enjoy yourself as I capture all your best moments in Tampa, FL. If you’re searching for a Tampa Family Photographer - I hope you’ve found what you’ve been searching for!
+ Yes, take the time to pick out an outfit you love. Then just show up. I specialize in stress-free photography sessions, capturing your natural smiles and laughter. As your photographer, I'll take care of all the logistics so you just get to enjoy yourself as I capture all your best moments in Tampa, FL. If you’re searching for a Tampa Family Photographer - I hope you’ve found what you’ve been looking for!
 `}
             </p>
           </div>

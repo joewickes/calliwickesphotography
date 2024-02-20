@@ -35,7 +35,7 @@ const ReviewCarousel = () => {
       imageHeight: 0,
       imageWidth: 0,
       imageAlt: '',
-      text: 'Calli did our first family photo shoot in 2018. She captured such precious photos of us with our baby girl. I still look at these photos almost everyday. She made us feel very comfortable during the session. It was such a positive experience and I can’t wait to have Calli photograph us again next time we are in Florida.',
+      text: 'Calli did our first family photos in 2018. She captured such precious photos of us with our baby girl. I still look at these photos almost everyday. She made us feel very comfortable during the session. It was such a positive experience and I can’t wait to have her photograph us again next time we are in Florida.',
       name: 'Caitlin',
     },
     {
@@ -43,7 +43,7 @@ const ReviewCarousel = () => {
       imageHeight: 0,
       imageWidth: 0,
       imageAlt: '',
-      text: 'You can’t go wrong with Calli! Her style and planning for her shoots makes the whole experience fun and stress free!',
+      text: 'You can’t go wrong with Calli as your photographer! Her style and planning for her photoshoots makes the whole experience fun and stress free!',
       name: 'Andrew',
     },
     {

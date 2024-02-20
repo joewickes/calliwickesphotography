@@ -12,7 +12,8 @@ import Header from '@/components/Header/Header';
 import Share from '@/components/Share/Share';
 
 export const metadata: Metadata = {
-  title: 'Meet Calli | About Calli Wickes Photography',
+  title: 'Meet Calli',
+
   description:
     'Learn the story behind Calli Wickes Photography and the passionate photographer behind the lens. The About page delves into the journey, inspiration, and commitment of Calli Wickes in capturing timeless moments. Discover the unique approach to photography, the personal connection with clients, and the dedication to transforming ordinary moments into extraordinary memories. Learn about the experience that sets Calli Wickes Photography apart in the world of visual storytelling.',
 };
@@ -62,12 +63,12 @@ const AboutPage = () => {
           </div>
         </div>
         <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pr-[100px] xl:pl-[50px]">
-          <h2 className={`${lora.className} text-[35px] mb-[0px]`}>{`Hi, I'm Calli!`}</h2>
-          <h3 className="text-[15px] mb-[30px]">
-            {`SERVING FAMILIES IN TAMPA, WESLEY CHAPEL AND THE SURROUNDING AREAS`}
+          <h2 className="text-[35px] mb-[60px]">{`I’m Calli, a Florida family + senior photographer!`}</h2>
+          <h3 className="text-[15px] mb-[60px]">
+            {`I CURRENTLY SERVE TAMPA, WESLEY CHAPEL AND THE SURROUNDING AREAS`}
           </h3>
           <p className="font-thin leading-8 mb-[60px]">
-            {`I met my husband in high school and he is literally my best friend. I'm a mom of two little girls that really are my favorite people. And I am a family + senior portrait photographer specializing in natural + candid photos. For the past decade plus, I have loved getting to capture more and more family's special moments. I started primarily in senior photos and now focus on family + senior photos in Florida. Check out some of the fun facts below to get to know me more!`}
+            {`I am a family + senior photographer specializing in natural + candid photos. In the past decade plus, I have loved getting to capture more and more family's special moments. I started primarily in senior photos and now focus on family + senior photos in Florida. I would love to capture the joyful moments for you and your family! Check out some of the fun facts below to get to know me more!`}
           </p>
           <div>
             <Link href="/contact" legacyBehavior passHref>
