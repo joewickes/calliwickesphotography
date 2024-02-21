@@ -98,24 +98,24 @@ export default function Home() {
             <h2 className="text-[15px] mt-[60px]">{`FAMILY PHOTOGRAPHY IN TAMPA, FL`}</h2>
             <h3 className={`${lora.className} text-[35px] mb-[40px]`}>{`What Makes Calli So Different?`}</h3>
             <p className="font-thin leading-8 mb-[30px]">
-              {`I’m Calli - your local Tampa family photographer! I never realized as the youngest of four kids, how blessed I was to be in a home where family portraits were valued. I’ve heard so many stories lately of kids who grew up with no family photos of them included. Setting aside the time and making the investment of having updated family photos taken with each of my own little ones is legacy I want to continue and help you do the same for yours.
+              {`I grew up as the youngest of four kids and my home was filled with family portraits (with me included!) It's a treasure I never truly appreciated until now. Because of this, I understand how important it is to set aside the time and make the investment of having updated family photos taken with each of your little ones. 
 
               `}
             </p>
             <p className="font-thin leading-8 mb-[30px]">
-              {`I have two little girls of my own so I understand the stress of having family photos taken when you have little ones who want to do everything but cooperate. I want to help take that pressure off of you! My clients want to capture those moments with their favorite people in Tampa. They want a beautiful and relaxed outdoor family photos and also all the silly moments it took to capture that one. Because it’s about the journey. And I’d love to help you along your way.`}
+              {`As a mom of two little girls, I know the chaos that can accompany a family photoshoot and I'm here to alleviate that stress. My clients want a beautiful family portrait and also all the silly moments it took to capture that one. Because it’s about the journey. And as one of your Tampa Family Photographers, I’d love to help you along your way.`}
             </p>
             <p className="font-thin leading-8 mb-[60px]">
-              {`I can’t wait to capture some of your best moments together in Tampa, FL. If you’re searching for Tampa Family Photographers -`}{' '}
+              {`If you're in search of playful + authentic photography for families in Tampa, you have found your family photographer!`}{' '}
               <Link href="/contact" passHref legacyBehavior>
-                <a className="font-normal">{`contact me`}</a>
+                <a className="font-normal">{`Contact me`}</a>
               </Link>{' '}
-              {`to book your family photo session today!`}
+              {`to schedule your family photos and let's start capturing your family's story!`}
             </p>
             <div className="pb-[80px] xl:pb-[0px]">
-              <Link href="/about" legacyBehavior passHref>
+              <Link href="/family-experience" legacyBehavior passHref>
                 <a className="mb-[100px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
-                  {`MORE ABOUT ME`}
+                  {`FAMILY PHOTOGRAPHY EXPERIENCE`}
                 </a>
               </Link>
             </div>
