@@ -67,21 +67,20 @@ export default function Home() {
             />
           </div>
           <div className="px-[30px]">
-            <h1 className="text-nowrap text-center xl:text-left text-[12px] mt-[40px] mb-[20px] tracking-wide  z-10 xl:w-[150px] xl:self-start xl:ml-[125px] mt-30px] xl:mt-[150px]">
+            <h1 className="text-nowrap text-center text-[12px] mt-[40px] mb-[20px] tracking-wide z-10 mt-30px] ">
               {`TAMPA FAMILY PHOTOGRAPHER`}
             </h1>
             <p
-              className={`${lora.className} text-center text-[35px] xl:text-[55px]  xl:leading-[5.5rem] flex flex-col mb-[20px] xl:mt-[0px]  z-10 tracking-wide xl:self-start xl:ml-[100px] xl:flex xl:flex-row xl:flex-wrap xl:text-left`}
+              className={`${lora.className} text-center text-[35px] xl:text-[55px] flex flex-col mb-[20px] z-10 tracking-wide `}
             >
-              <span>{`Capturing those beautiful moments`}</span>{' '}
-              <span className="xl:pl-[20px]">{`with your favorite people`}</span>
+              <span>{`Capturing those beautiful moments`}</span> <span>{`with your favorite people`}</span>
             </p>
-            <p className="text-center xl:text-left text-[12px] my-[20px] tracking-wide  z-10 xl:w-[150px] xl:self-start xl:ml-[125px] mt-30px] xl:mt-[150px]">{`Natural photography for authentic families seeking the perfect blend of candid and portrait`}</p>
+            <p className="text-center text-[12px] my-[20px] tracking-wide z-10 mt-[30px] ">{`Natural photography for authentic families seeking the perfect blend of candid and portrait`}</p>
           </div>
         </section>
 
         {/* About Section */}
-        <section id="about" className="px-[30px] sm:px-[75px] xl:flex xl:pt-[75px]">
+        <section id="about" className="px-[30px] sm:px-[75px] xl:flex xl:pt-[50px]">
           <div className="flex justify-center xl:items-center 2xl:items-end mb-[60px] xl:flex-1">
             <div className="flex">
               <p className="vertical-rl  xl:pr-[100px] w-0 h-0 xl:w-auto xl:h-auto mt-[120px] xl:mt-0 self-end text-[12px] font-thin invisible xl:visible">
