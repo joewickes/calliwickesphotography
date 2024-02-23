@@ -123,7 +123,7 @@ export default function Home() {
             </p>
             <div className="pb-[80px] xl:pb-[0px]">
               <Link href="/family-experience" legacyBehavior passHref>
-                <a className="mb-[100px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
+                <a className="mb-[100px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px] flex sm:inline justify-center text-center">
                   {`FAMILY PHOTOGRAPHY EXPERIENCE`}
                 </a>
               </Link>
