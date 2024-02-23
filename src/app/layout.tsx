@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   title: 'Tampa Family Photographer | Calli Wickes Photography',
   description:
-    'Calli Wickes is a Tampa Family Photographer serving Tampa, Wesley Chapel, Clearwater + surrounding areas | Natural photography for authentic families seeking the perfect blend of candid and portrait photos | Family and Senior Photography in Tampa, FL',
+    'Calli Wickes is a Tampa Family Photographer serving Tampa, Wesley Chapel, Clearwater + surrounding areas | Natural photography for authentic families seeking the perfect blend of candid and portrait photos',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -16,14 +16,14 @@ const SeniorGalleryPage = () => {
   const packages = [
     {
       name: 'Senior Session',
-      price: 450,
+      price: 'STARTING AT $225',
       description:
-        'up to 2 hours session;Final gallery of high resolution digital downloads (40+) delivered via online gallery;Up to 3 outfit changes;2 locations within 10 mi on the same day (location ranges within 1 hour of Tampa);*please contact for additional options',
+        '$100 non refundable deposit to book (goes towards your session fee); currently offering three different senior photography packages; please contact for detailed pricing information',
       image: {
         src: '/images/Pricing/seniorportraittampa.webp',
         height: 1029,
         width: 686,
-        alt: 'Photography in Tampa, FL',
+        alt: 'Senior Photos in Tampa, FL',
       },
     },
   ];
@@ -170,7 +170,7 @@ const SeniorGalleryPage = () => {
                   <h2 className={`text-[40px] leading-1 flex flex-col mb-[20px] text-center xl:self-start`}>
                     {pkg.name}
                   </h2>
-                  <p className={`font-bold text-center mb-[30px] xl:self-start`}>{`$${pkg.price}`}</p>
+                  <p className={`font-bold text-center mb-[30px] xl:self-start`}>{`${pkg.price}`}</p>
 
                   <ul className={`mb-[60px] xl:self-start xl:flex xl:flex-col`}>
                     {pkg.description.split(';').map((desc, idx2) => (
@@ -198,11 +198,11 @@ const SeniorGalleryPage = () => {
         </div>
         <div className="w-full mb-[15px] xl:flex-1 flex flex-col items-center">
           <h2 className="text-[40px] leading-1 my-[30px] xl:text-[60px]">{`Senior Photography`}</h2>
-          <p className="font-thin mb-[15px]">{`Your Tampa + Wesley Chapel Senior Photographer`}</p>
+          <p className="font-thin mb-[15px]">{`Natural photography for authentic + adventurous seniors who want that perfect mix of candid and portrait`}</p>
 
           <div className="xl:mt-[150px] mt-[60px] mb-[150px]">
             <Link href="/contact" legacyBehavior passHref>
-              <a className="border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">{`GET IN TOUCH`}</a>
+              <a className="border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">{`LET'S CHAT!`}</a>
             </Link>
           </div>
         </div>

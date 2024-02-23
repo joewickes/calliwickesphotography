@@ -16,27 +16,27 @@ const FamilyGalleryPage = () => {
   const packages = [
     {
       name: 'Standard Session',
-      price: 350,
+      price: 'STARTING AT $350',
       target: '*For families, Couples, Engagement Photos',
       description:
-        '45-60 minute session;Final gallery of high resulition digital downloads (30+) delivered via online gallery;On location, within 1 hour of Tampa',
+        '$100 non refundable deposit to book (goes towards your session fee); session up to 1 hour; final gallery of 30 high resolution digital downloads delivered via online gallery includes option to purchase more; one location, within 1 hour of Tampa',
       image: {
         src: '/images/Pricing/familyportraittampa.webp',
         height: 1029,
         width: 686,
-        alt: 'Photography in Tampa, FL',
+        alt: 'Family Photos in Tampa',
       },
     },
     {
       name: 'Extended Family Session',
-      price: 550,
+      price: 'STARTING AT $450',
       description:
-        '60-90 minute session;Up to 12 people - $10/person after;Final gallery of high resolution digital downloads (50+) delivered via online gallery;Separate family groupings;On location, within 1 hour of Tampa',
+        '$100 non refundable deposit to book (goes towards your session fee); session up to 1.5 hours; up to 12 people - $10/person after; separate family groupings; final gallery of 50 high resolution digital downloads delivered via online gallery; includes option to purchase more; one location, within 1 hour of Tampa',
       image: {
         src: '/images/Pricing/extendedfamilyportraittampa.webp',
         height: 457,
         width: 686,
-        alt: 'Photography in Tampa, FL',
+        alt: 'Extended Family Photos in Tampa, FL',
       },
     },
   ];
@@ -242,7 +242,7 @@ const FamilyGalleryPage = () => {
                     className={`font-bold text-center mb-[30px] xl:self-start ${
                       idx === Math.floor(packages.length / 2) ? 'xl:self-end' : ''
                     }`}
-                  >{`$${pkg.price}`}</p>
+                  >{`${pkg.price}`}</p>
                   {pkg.target ? (
                     <p
                       className={`text-center mb-[30px] font-thin xl:self-start ${
@@ -288,7 +288,7 @@ const FamilyGalleryPage = () => {
         </div>
         <div className="flex justify-center xl:justify-normal mb-[15px] xl:flex-1 flex-col xl:items-left items-start">
           <h2 className="text-[40px] leading-1 my-[30px] xl:text-[60px]">{`Time to capture your family's happiest moments`}</h2>
-          <p className="font-thin mb-[15px]">{`Your Tampa + Wesley Chapel Family Photographer`}</p>
+          <p className="font-thin mb-[15px]">{`Natural photography for authentic families seeking the perfect blend of candid and portrait`}</p>
 
           <div className="xl:mt-[150px] mt-[60px] mb-[150px]">
             <Link href="/contact" legacyBehavior passHref>
