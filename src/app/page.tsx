@@ -49,27 +49,36 @@ export default function Home() {
     <>
       <main>
         <Share />
-        <div id="familyofthree">
-          <Header isHome />
+        <Header />
 
-          {/* Hero Section */}
-          <section id="home" className="h-dvh w-dvw flex flex-col items-center justify-center pt-[100px]">
-            <h1 className="text-nowrap text-center xl:text-left text-[12px] mb-[20px] tracking-wide text-white z-10 xl:w-[150px] xl:self-start xl:ml-[125px] mt-30px] xl:mt-[150px]">
+        {/* Hero Section */}
+        <section
+          id="home"
+          className=" flex flex-col items-center justify-center sm:mt-[18dvh] mt-[12dvh] overflow-hidden"
+        >
+          <div className="sm:h-[500px] w-[140dvw] xl:w-full overflow-hidden flex justify-center items-start">
+            <Image
+              src="/images/Home Updated/familyofthree.webp"
+              priority
+              alt="Family of three hugging"
+              className="object-cover sm:mt-[-65px] lg:mt-[-200px] mt-0"
+              height={1149}
+              width={1724}
+            />
+          </div>
+          <div className="px-[30px]">
+            <h1 className="text-nowrap text-center xl:text-left text-[12px] mt-[40px] mb-[20px] tracking-wide  z-10 xl:w-[150px] xl:self-start xl:ml-[125px] mt-30px] xl:mt-[150px]">
               {`TAMPA FAMILY PHOTOGRAPHER`}
             </h1>
             <p
-              className={`${lora.className} text-center text-[40px] xl:text-[55px] leading-[3.5rem] xl:leading-[5.5rem] flex flex-col mb-[80px] xl:mt-[0px] text-white z-10 tracking-wide xl:self-start xl:ml-[100px] xl:flex xl:flex-row xl:flex-wrap xl:text-left`}
+              className={`${lora.className} text-center text-[35px] xl:text-[55px]  xl:leading-[5.5rem] flex flex-col mb-[20px] xl:mt-[0px]  z-10 tracking-wide xl:self-start xl:ml-[100px] xl:flex xl:flex-row xl:flex-wrap xl:text-left`}
             >
-              <span>{`Capture those beautiful moments`}</span>{' '}
+              <span>{`Capturing those beautiful moments`}</span>{' '}
               <span className="xl:pl-[20px]">{`with your favorite people`}</span>
             </p>
-            <Link href="/contact" legacyBehavior passHref>
-              <a className="z-10  mb-[60px] border border-white py-[15px] text-[13px] tracking-[.35em] mt-[30px] px-[30px] text-white xl:self-start xl:ml-[100px]">
-                {`LET'S CHAT`}
-              </a>
-            </Link>
-          </section>
-        </div>
+            <p className="text-center xl:text-left text-[12px] my-[20px] tracking-wide  z-10 xl:w-[150px] xl:self-start xl:ml-[125px] mt-30px] xl:mt-[150px]">{`Natural photography for authentic families seeking the perfect blend of candid and portrait`}</p>
+          </div>
+        </section>
 
         {/* About Section */}
         <section id="about" className="px-[30px] sm:px-[75px] xl:flex xl:pt-[75px]">
@@ -79,8 +88,9 @@ export default function Home() {
                 {`Family Photographer in Tampa, Florida`}
               </p>
             </div>
-            <div className="mt-[120px] xl:mt-0 h-[90dvw] w-[90dvw] max-w-[560px] max-h-[840px] xl:h-auto xl:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
+            <div className="mt-[40px] xl:mt-0 h-[90dvw] w-[90dvw] max-w-[560px] max-h-[840px] xl:h-auto xl:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
               <Image
+                priority
                 src="/images/Home Updated/TampaPhotographerPortrait.webp"
                 alt="Tampa Family Photography | Self Portrait of Photographer in downtown Tampa taken by Family Photographer Calli Wickes."
                 height={5808}
@@ -136,7 +146,6 @@ export default function Home() {
             <div className="mt-[120px] xl:mt-0 h-[90dvw] w-[90dvw] max-w-[560px] max-h-[840px] xl:h-auto xl:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
               <Image
                 src="/images/Home Updated/MommyandmePhoto.webp"
-                priority
                 alt="Tampa Family Photography | Photo of a mom holding her little boy taken by Tampa Photographer Calli Wickes."
                 height={6000}
                 width={4000}

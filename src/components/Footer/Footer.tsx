@@ -75,11 +75,28 @@ const Footer = () => {
               </a>
             </div>
             <div className="xl:flex-1 w-full flex-wrap font-thin flex mt-[20px] xl:mt-[50px] items-start text-center justify-start">
-              <p className="text-left pr-[5px]">{`Our website is listed in photographerlistings.org -`}</p>
+              <p className="text-left pr-[5px]">{`We are listed in -`}</p>
               <a
                 className="underline"
                 href="https://www.photographerlistings.org/United-States/Florida/C5-84-1-0.htm"
               >{`Florida Photographer Listings`}</a>
+              <p className="px-[10px]">{`|`}</p>
+              <a
+                className="underline"
+                href="https://www.listyourservices.com/Design-related/Photography/C3-170-1-0.htm "
+              >{`List Your Services`}</a>
+              <p className="px-[10px]">{`|`}</p>
+              <a
+                className="underline"
+                href="https://www.b2blistings.org/Design-and-Print/Photography/C4-35-1-0.htm "
+              >{`B2B Listings`}</a>
+              <p className="px-[10px]">{`|`}</p>
+              <a
+                className="underline"
+                href="https://www.creativelistings.org/Photography/C42-1-0.htm "
+              >{`Creative Listings`}</a>
+              <p className="px-[10px]">{`|`}</p>
+              <a className="underline" href="https://www.uslistings.org/USA/Florida/C1-9-1-0.htm ">{`US Listings`}</a>
             </div>
           </div>
         </section>

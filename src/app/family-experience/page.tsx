@@ -276,7 +276,7 @@ const FamilyGalleryPage = () => {
         </ul>
       </section>
 
-      <section className="px-[30px] mt-[100px] mb-[60px] xl:w-full xl:px-[100px] xl:flex xl:flex-row-reverse xl:mt-[200px]">
+      <section className="px-[30px] sm:px-[50px]  mt-[100px] mb-[60px] xl:w-full xl:px-[100px] xl:flex xl:flex-row-reverse xl:mt-[200px]">
         <div className="flex justify-center xl:flex-1">
           <Image
             src="/images/Family Gallery/happylittlefamilyinflorida.webp"
@@ -286,7 +286,7 @@ const FamilyGalleryPage = () => {
             alt="Family bliss captured in the serene setting of Florida's nature with green grass and Spanish moss."
           />
         </div>
-        <div className="flex justify-center xl:justify-normal mb-[15px] xl:flex-1 flex-col xl:items-left items-center">
+        <div className="flex justify-center xl:justify-normal mb-[15px] xl:flex-1 flex-col xl:items-left items-start">
           <h2 className="text-[40px] leading-1 my-[30px] xl:text-[60px]">{`Time to capture your family's happiest moments`}</h2>
           <p className="font-thin mb-[15px]">{`Your Tampa + Wesley Chapel Family Photographer`}</p>
 

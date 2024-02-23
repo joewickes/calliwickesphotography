@@ -186,7 +186,7 @@ const SeniorGalleryPage = () => {
         </ul>
       </section>
 
-      <section className="px-[30px] mt-[100px] mb-[60px] xl:w-full xl:px-[100px] flex flex-col xl:flex-row-reverse xl:mt-[200px] justify-center items-center">
+      <section className="px-[30px] sm:px-[50px] mt-[100px] mb-[60px] xl:w-full xl:px-[100px] flex flex-col xl:flex-row-reverse xl:mt-[200px] justify-center items-start">
         <div className="xl:flex xl:justify-center xl:flex-1">
           <Image
             src="/images/Senior Gallery/seniorphotostampa.webp"
