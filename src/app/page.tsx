@@ -160,42 +160,50 @@ export default function Home() {
         </section>
 
         {/* Experience Process Section */}
-        <section
-          id="experience-process"
-          className="px-[30px] xl:px-[50px] xl:pr-[30px] flex flex-col xl:items-start items-center justify-center xl:flex-row xl:pt-[100px] max-w-[100dw] xl:justify-evenly"
-        >
-          <div className="flex flex-col justify-start sm:items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
-            <Image
-              src="/images/Home Updated/youngdadandhisbabyboyinflorida.webp"
-              height={5887}
-              width={3925}
-              alt="Young dad holding his three month old baby boy in rural setting near Tampa - Photo taken by Tampa Photographer Calli Wickes"
-              className="object-cover"
-            />
-            <h2 className={`${lora.className} text-[35px] my-[40px]`}>{`1. Getting Started`}</h2>
-            <p className="font-thin">{`Booking your session is as easy as paying a session fee to reserve a space on my calendar. We will work out the date & time info and I take care of finding the perfect Tampa Bay location! All you will need to do is find the right outfit for you + your crew. If you need any styling help, just let me know!`}</p>
+        <section className="xl:pt-[10px]">
+          <div className="pl-[30px] xl:pl-[50px] flex items-center justify-center mb-[40px]">
+            <h2
+              className={`${lora.className} text-[35px] pr-[30px] text-center xl:text-nowrap text-wrap flex items-center justify-center`}
+            >{`The CWP Experience`}</h2>
+            <hr className="w-full border-[#333333]" />
           </div>
-          <div className="flex flex-col justify-start items-start flex-1 xl:mx-[30px] max-w-[456px] mb-[60px] xl:mb-0">
-            <Image
-              src="/images/Home Updated/tampafamilyofthree.webp"
-              height={6000}
-              width={4000}
-              alt="Tampa Family Photographers | Family of three portrait with beautiful Florida greenery in the background taken by Tampa Photographer Calli Wickes."
-              className="object-cover"
-            />
-            <h2 className={`${lora.className} text-[35px] my-[40px]`}>{`2. Today's the day!`}</h2>
-            <p className="font-thin">{`Time to meet, talk, connect, and get to know each other. I will take care of all the logistics, posing + helping you feel like a natural during your family session! My goal is to keep everyone feeling relaxed and having fun, allowing your kids to be kids, so I can capture genuine interactions of your family during your Tampa Family Photography session.`}</p>
-          </div>
-          <div className="flex flex-col justify-start items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
-            <Image
-              src="/images/Home Updated/newlyengagedcouple.webp"
-              height={3456}
-              width={2304}
-              alt="Tampa Family Photographers | Young, newly engaged couple."
-              className="object-cover"
-            />
-            <h2 className={`${lora.className} text-[35px] my-[40px]`}>{`3. What's Next?`}</h2>
-            <p className="font-thin">{`Within two weeks of your Tampa family photography session, you will be able to view your edited images from the comfort of home in a beautiful online gallery - ready for you to download, print, + proudly display!`}</p>
+          <div
+            id="experience-process"
+            className="px-[30px] xl:px-[50px] xl:pr-[30px] flex flex-col xl:items-start items-center justify-center xl:flex-row  max-w-[100dw] xl:justify-evenly"
+          >
+            <div className="flex flex-col justify-start sm:items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
+              <Image
+                src="/images/Home Updated/youngdadandhisbabyboyinflorida.webp"
+                height={5887}
+                width={3925}
+                alt="Young dad holding his three month old baby boy in rural setting near Tampa - Photo taken by Tampa Photographer Calli Wickes"
+                className="object-cover"
+              />
+              <h3 className={`${lora.className} text-[35px] my-[40px]`}>{`1. Getting Started`}</h3>
+              <p className="font-thin">{`Booking your session is as easy as paying a session fee to reserve a space on my calendar. We will work out the date & time info and I take care of finding the perfect Tampa Bay location! All you will need to do is find the right outfit for you + your crew. If you need any styling help, just let me know!`}</p>
+            </div>
+            <div className="flex flex-col justify-start items-start flex-1 xl:mx-[30px] max-w-[456px] mb-[60px] xl:mb-0">
+              <Image
+                src="/images/Home Updated/tampafamilyofthree.webp"
+                height={6000}
+                width={4000}
+                alt="Tampa Family Photographers | Family of three portrait with beautiful Florida greenery in the background taken by Tampa Photographer Calli Wickes."
+                className="object-cover"
+              />
+              <h3 className={`${lora.className} text-[35px] my-[40px]`}>{`2. Today's the day!`}</h3>
+              <p className="font-thin">{`Time to meet, talk, connect, and get to know each other. I will take care of all the logistics, posing + helping you feel like a natural during your family session! My goal is to keep everyone feeling relaxed and having fun, allowing your kids to be kids, so I can capture genuine interactions of your family during your Tampa Family Photography session.`}</p>
+            </div>
+            <div className="flex flex-col justify-start items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
+              <Image
+                src="/images/Home Updated/newlyengagedcouple.webp"
+                height={3456}
+                width={2304}
+                alt="Tampa Family Photographers | Young, newly engaged couple."
+                className="object-cover"
+              />
+              <h3 className={`${lora.className} text-[35px] my-[40px]`}>{`3. What's Next?`}</h3>
+              <p className="font-thin">{`Within two weeks of your Tampa family photography session, you will be able to view your edited images from the comfort of home in a beautiful online gallery - ready for you to download, print, + proudly display!`}</p>
+            </div>
           </div>
         </section>
 
