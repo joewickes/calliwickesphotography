@@ -9,7 +9,7 @@ import Share from '@/components/Share/Share';
 
 export const metadata: Metadata = {
   title: 'Senior Experience',
-  description: 'What does a high school senior photo experience with Calli Wickes Photography look like?',
+  description: 'For adventurous seniors who want that perfect mix of candid and portrait.',
 };
 
 const SeniorGalleryPage = () => {
@@ -42,8 +42,8 @@ const SeniorGalleryPage = () => {
         <p className="xl:pl-0 text-white text-[15px] font-thin px-[40px] py-[150px]">{`Senior photos to capture this short season of life`}</p>
       </section>
       <section className="xl:mt-[100px] px-[30px] mb-[60px] xl:flex xl:items-center xl:px-[100px] xl:mb-[150px]">
-        <h1 className="text-[40px] leading-1 mb-[30px] xl:flex-1 xl:text-[50px] xl:pr-[75px]">{`High School Senior Photography in Tampa`}</h1>
-        <p className="font-thin xl:flex-1">{`Get ready to embark on a journey back in time, reliving the best moments of your high school years through our laid-back senior portraits in Tampa. It's not just about preserving memories; it's about capturing the real you, showcasing the essence of your unique personality. These portraits are more than images; they're a time capsule of laughter, friendships, and the spirit of your high school experience. Share the love with your crew and family, creating memories that stand the test of time! Imagine these portraits gracing the walls, telling a story of joy, accomplishment, and the relaxed charm of your Tampa journey. Let's create a truly remarkable chapter, effortlessly captured in every frame, ensuring that each portrait is a vivid celebration of your high school years in Tampa!`}</p>
+        <h1 className="text-[40px] leading-1 mb-[30px] xl:flex-1 xl:text-[50px] xl:pr-[75px]">{`The Senior Experience`}</h1>
+        <p className="font-thin xl:flex-1">{`My seniors love my playful and adventurous sessions, my relaxed posing, and the bright warmth of my images. Senior sessions are meant to capture your unique personality - capturing you as you are today! They are a time capsule of laughter, friendships, and the spirit of your school experience.`}</p>
       </section>
 
       <section className="px-[30px] xl:columns-3 xl:w-[80%] xl:px-[100px]">
@@ -150,7 +150,7 @@ const SeniorGalleryPage = () => {
 
       <section className="mt-[60px] px-[30px] xl:mt-[100px] w-full">
         <h1 className="text-[40px] leading-1 flex flex-col mb-[50px] text-center xl:text-[70px]">
-          {`Pricing Packages`}
+          {`Session Info`}
         </h1>
 
         <ul>
@@ -196,9 +196,9 @@ const SeniorGalleryPage = () => {
             alt="Elegant senior girl in Tampa's scenic beauty, capturing timeless moments."
           />
         </div>
-        <div className="w-full mb-[15px] xl:flex-1 flex flex-col items-center">
+          <div className="flex justify-center xl:justify-normal mb-[15px] xl:flex-1 flex-col xl:items-left items-start">
           <h2 className="text-[40px] leading-1 my-[30px] xl:text-[60px]">{`Senior Photography`}</h2>
-          <p className="font-thin mb-[15px]">{`Natural photography for authentic + adventurous seniors who want that perfect mix of candid and portrait`}</p>
+          <p className="font-thin mb-[15px]">{`Natural photography for adventurous seniors who want that perfect mix of candid and portrait`}</p>
 
           <div className="xl:mt-[150px] mt-[60px] mb-[150px]">
             <Link href="/contact" legacyBehavior passHref>

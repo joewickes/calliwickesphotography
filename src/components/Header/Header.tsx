@@ -36,7 +36,7 @@ const Header = ({ isHome = false }: HeaderProps) => {
                 <div className="flex items-center" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                   {!isMenuOpen ? (
                     <span
-                      className={`text-[20px] text-${isHome ? 'white' : 'black'} invisible xl:visible pr-[20px]`}
+                      className={`text-[16px] text-${isHome ? 'white' : 'black'} invisible xl:visible pr-[20px]`}
                     >{`MENU`}</span>
                   ) : null}
                   <List size={40} color={isHome ? 'white' : 'black'} />

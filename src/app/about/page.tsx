@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: 'Meet Calli',
 
   description:
-    'Learn the story behind Calli Wickes Photography and the passionate photographer behind the lens. The About page delves into the journey, inspiration, and commitment of Calli Wickes in capturing timeless moments. Discover the unique approach to photography, the personal connection with clients, and the dedication to transforming ordinary moments into extraordinary memories. Learn about the experience that sets Calli Wickes Photography apart in the world of visual storytelling.',
+    'Hey there, meet Calli! A photographer who loves catching those sweet moments with you + your favorite people!',
 };
 
 const AboutPage = () => {

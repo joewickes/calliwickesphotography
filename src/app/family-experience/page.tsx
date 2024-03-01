@@ -9,7 +9,7 @@ import Share from '@/components/Share/Share';
 
 export const metadata: Metadata = {
   title: 'Family Experience',
-  description: 'What does a family photo experience with Calli Wickes Photography look like?',
+  description: 'For families that want that perfect blend of candid and portrait.',
 };
 
 const FamilyGalleryPage = () => {
@@ -19,7 +19,7 @@ const FamilyGalleryPage = () => {
       price: 'STARTING AT $350',
       target: '*For families, Couples, Engagement Photos',
       description:
-        '$100 non refundable deposit to book (goes towards your session fee); session up to 1 hour; final gallery of 30 high resolution digital downloads delivered via online gallery includes option to purchase more; one location, within 1 hour of Tampa',
+        '$100 non refundable deposit to book (goes towards your session fee); session up to 1 hour; final gallery of 30 high resolution digital downloads delivered via online gallery; includes the option to purchase more; one location, within 1 hour of Tampa',
       image: {
         src: '/images/Pricing/familyportraittampa.webp',
         height: 1029,
@@ -56,8 +56,8 @@ const FamilyGalleryPage = () => {
         <p className="text-white text-[15px] font-thin px-[40px] py-[150px]">{`Family photos made into timeless memories.`}</p>
       </section>
       <section className="px-[30px] mb-[60px] xl:flex xl:items-center xl:px-[100px] xl:mb-[150px] xl:mt-[100px]">
-        <h1 className="text-[40px] leading-1 mb-[30px] xl:flex-1 xl:text-[50px]">{`Family Photography`}</h1>
-        <p className="font-thin xl:flex-1">{`Every Tampa family is uniquely beautiful. I specialize in capturing the relaxed and joyful interactions that make your family extraordinary. Whether it's the warmth of big family gatherings or the intimacy of shoots with you and your fur baby, each family photography session in Tampa is tailored to create an experience you'll truly adore. Let's capture portraits that authentically reflect your family's story, offering you cherished memories that reflect your family. Images that you’ll want to print, frame, and hold close forever.`}</p>
+        <h1 className="text-[40px] leading-1 mb-[30px] xl:flex-1 xl:text-[50px]">{`The Family Experience`}</h1>
+        <p className="font-thin xl:flex-1">{`My clients love my relaxed posing and the bright warmth of my images. My sessions are laid-back, meant to capture your natural smiles + laughter with your crew. My families want a beautiful family portrait and also all the silly moments it took to capture that one. Because it’s about the journey. And as your forever photographer, I’d love to help you along your way.`}</p>
       </section>
 
       <section className="px-[30px] xl:columns-3 xl:w-[80%] xl:px-[100px]">
@@ -209,7 +209,7 @@ const FamilyGalleryPage = () => {
 
       <section className="mt-[100px] px-[30px] xl:mt-[100px] w-full">
         <h1 className="text-[40px] leading-1 flex flex-col mb-[50px] text-center xl:text-[70px]">
-          {`Pricing Packages`}
+          {`Session Info`}
         </h1>
 
         <ul>

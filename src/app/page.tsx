@@ -26,7 +26,7 @@ export default function Home() {
     {
       question: 'What should I wear?',
       answer:
-        'Pinterest has some great ideas if you are needing inspiration + you are more than welcome to send me a pic of your ideas for me to help. The general rule is to have all of your outfits have a little variety: one wearing a solid shirt, one wearing a pattern, a dress, one with a jacket. A little variety goes a long way!',
+        'Pinterest has some great ideas if you are needing inspiration + you are more than welcome to send me a pic of your ideas for me to help. I always recommend airing on the side of neautrals though! Neautral outfits photograph your skin tones better and stand the test of time better. You can always use little pops of color to bring in some fun!',
     },
     {
       question: 'How many pictures will I receive?',
@@ -34,14 +34,14 @@ export default function Home() {
         "I will take lots of photos while we are together, then I'll sort through them all to pick out the best of the best! The amount various on the type of session booked (mini session, standard family session, extended family session, etc.). I'll edit those + upload them to be delivered to you via online gallery.",
     },
     {
-      question: 'Are you available outside of Tampa?',
+      question: 'Do you only photograph in Tampa?',
       answer:
-        'As a local Tampa Family Photographer, my sessions are typically within 1 hour of downtown Tampa. If you are interested in a family photo session that involves further travel, we can discuss what that would look like!',
+        'As a Tampa photographer, my sessions are typically within 1 hour of downtown Tampa. If you are interested in a family photo session that involves further travel, we can discuss what that would look like!',
     },
     {
-      question: 'How do I schedule a session?',
+      question: 'How do I schedule a photo session?',
       answer:
-        "You can contact me via phone (813-406-0558), email (calliwickesphotography@gmail.com) or my contact page on my website. You can also find me on Facebook and Instagram! But it's hard to keep up with all those different sources so I highly recommend using my number or email for a quicker response!",
+        "Since you are already here I'd recommend contacting me via my Contact page. My phone number and email are also listed at the bottom of this page!",
     },
   ];
 
@@ -104,22 +104,13 @@ export default function Home() {
             </div>
           </div>
           <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pl-[30px] xl:pr-[70px] xl:mb-[100px]">
-            <h2 className="text-[15px] mt-[60px]">{`FAMILY PHOTOGRAPHY IN TAMPA, FL`}</h2>
-            <h3 className={`${lora.className} text-[35px] mb-[40px]`}>{`What Makes Calli So Different?`}</h3>
+            <h2 className="text-[15px] mt-[20px]">{`FAMILY PHOTOGRAPHY IN TAMPA, FL`}</h2>
+            <h3 className={`${lora.className} text-[35px] mt-[40px] mb-[20px]`}>{`She beamed with love and joy...`}</h3>
             <p className="font-thin leading-8 mb-[30px]">
-              {`I grew up as the youngest of four kids and my home was filled with family portraits (with me included!) It's a treasure I never truly appreciated until now. Because of this, I understand how important it is to set aside the time and make the investment of having updated family photos taken with each of your little ones. 
-
-              `}
+              {`As she sat next to her husband - her very best friend - playing with their little ones. Her love for her family overflowed as she recognized that time is fleeting and she didn’t want to miss a moment.`}
             </p>
-            <p className="font-thin leading-8 mb-[30px]">
-              {`As a mom of two little girls, I know the chaos that can accompany a family photoshoot and I'm here to alleviate that stress. My clients want a beautiful family portrait and also all the silly moments it took to capture that one. Because it’s about the journey. And as one of your Tampa Family Photographers, I’d love to help you along your way.`}
-            </p>
-            <p className="font-thin leading-8 mb-[60px]">
-              {`If you're in search of playful + authentic photography for families in Tampa, you have found your family photographer!`}{' '}
-              <Link href="/contact" passHref legacyBehavior>
-                <a className="font-normal">{`Contact me`}</a>
-              </Link>{' '}
-              {`to schedule your family photos and let's start capturing your family's story!`}
+            <p className="font-thin leading-8 mb-[80px]">
+              {`With over a decade of experience as a photographer, I’ve created a family photography experience that will leave you at ease and having a blast with your crew. You will leave your family photo session having spent quality time with your favorite people and gain timeless family photos that you will cherish for years to come.`}
             </p>
             <div className="pb-[80px] xl:pb-[0px]">
               <Link href="/family-experience" legacyBehavior passHref>
@@ -152,7 +143,7 @@ export default function Home() {
               />
             </div>
             <p className="w-0 h-0 xl:w-auto xl:h-auto xl:mb-[50px] mt-[10px] text-[12px] font-thin invisible xl:visible">
-              {`Photos so you can remember these beautiful moments - Tampa Family Photographers`}
+              {`Photos to remember these beautiful family moments - Tampa Family Photographers`}
             </p>
           </div>
           <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pr-[100px] xl:mb-[100px] md:px-[75px]">
@@ -160,9 +151,17 @@ export default function Home() {
               className={`${lora.className} text-[35px] text-right mb-[40px]`}
             >{`Tampa Family Photography for those who just want to remember these moments.`}</h2>
             <p className="font-thin leading-8 text-right mb-[60px]">
-              {`This isn't about making sure you pick out the perfect outfit + stand just the right way. This is about capturing photos of you with your absolute favorite people. Taking a brief pause on the busyness of life so that you can have photographs that you will forever cherish. I promise - you will never regret getting those family photos with your crew.
- Yes, take the time to pick out an outfit you love. Then just show up. I specialize in stress-free photography sessions, capturing your natural smiles and laughter. As your photographer, I'll take care of all the logistics so you just get to enjoy yourself as I capture all your best moments in Tampa, FL. If you’re searching for a Tampa Family Photographer - I hope you’ve found what you’ve been looking for!
-`}
+              {`Imagine what your life will look like in 5 years - 10 years - even 20 years down the road. If you are anything like me you can envision your kiddos all grown up and taking the world by storm. You beam with pride. You raised an awesome human.`}
+            </p>
+            <p className="font-thin leading-8 text-right mb-[60px]">
+              {`Now imagine if 20 years from now, when you are missing your babies being babies, that you have family photos that you took the time + investment in capturing. I promise - you will never regret getting those family photos with your crew.`}
+            </p>
+            <p className="font-thin leading-8 text-right mb-[60px]">
+              {`As your Tampa photographer, I'll take care of all the logistics so you just get to enjoy your time with your family as I capture those sweet moments. If you're in search of playful + authentic photography for families in Tampa, you have found your family photographer!`}{' '}
+              <Link href="/contact" passHref legacyBehavior>
+                <a className="font-normal">{`Contact me`}</a>
+              </Link>{' '}
+              {`to schedule your family photos and let's start capturing your family's story!`}
             </p>
           </div>
         </section>
@@ -210,7 +209,7 @@ export default function Home() {
                 className="object-cover"
               />
               <h3 className={`${lora.className} text-[35px] my-[40px]`}>{`3. What's Next?`}</h3>
-              <p className="font-thin">{`Within two weeks of your Tampa family photography session, you will be able to view your edited images from the comfort of home in a beautiful online gallery - ready for you to download, print, + proudly display!`}</p>
+              <p className="font-thin">{`Within two weeks of your photo session, you will be able to view your edited images from the comfort of home in a beautiful online gallery - ready for you to download, print, + proudly display!`}</p>
             </div>
           </div>
         </section>
@@ -269,10 +268,7 @@ Join our email list and be the first to know about our special Tampa family phot
               className={`${lora.className} text-[35px] mb-[50px]`}
             >{`Family photography for you to treasure forever`}</h2>
             <p className="font-thin leading-8 mb-[60px]">
-              {`Whether you seek stunning beach snapshots, enchanting Florida nature
-          images, or a lively urban atmosphere with your loved ones, I would
-          love to capture your family portrait in Tampa, creating cherished family photos
-          destined for your walls!`}
+              {`Whether you want those dreamy beach photos or the cool city vibes of Tampa - I’m here for it! I would love to help you save those beautiful moments with your family + create cherished family photos that are destined for your walls!`}
             </p>
             <div>
               <Link href="/contact" legacyBehavior passHref>

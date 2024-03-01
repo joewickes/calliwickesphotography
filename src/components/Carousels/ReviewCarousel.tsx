@@ -35,7 +35,7 @@ const ReviewCarousel = () => {
       imageHeight: 0,
       imageWidth: 0,
       imageAlt: '',
-      text: 'Calli did our first family photos in 2018. She captured such precious photos of us with our baby girl. I still look at these photos almost everyday. She made us feel very comfortable during the session. It was such a positive experience and I can’t wait to have her photograph us again next time we are in Florida.',
+      text: 'Calli was our first family photographer in 2018. She captured such precious photos of us with our baby girl. I still look at these photos almost everyday. She made us feel very comfortable during the session. It was such a positive experience and I can’t wait to have her photograph us again next time we are in Tampa.',
       name: 'Caitlin',
     },
     {
@@ -43,7 +43,7 @@ const ReviewCarousel = () => {
       imageHeight: 0,
       imageWidth: 0,
       imageAlt: '',
-      text: 'You can’t go wrong with Calli as your photographer! Her style and planning for her photoshoots makes the whole experience fun and stress free!',
+      text: 'You can’t go wrong with Calli as your Tampa photographer! Her style and planning for her photoshoots makes the whole experience fun and stress free!',
       name: 'Andrew',
     },
     {
@@ -51,7 +51,7 @@ const ReviewCarousel = () => {
       imageHeight: 0,
       imageWidth: 0,
       imageAlt: '',
-      text: 'Calli did an amazing job with our family photos! Great personal care and fast turn around on getting us our pictures. Will definitely use her again!!',
+      text: 'Calli did an amazing job with our family photos! Great personal care and fast turn around on getting us our pictures. Will definitely use her as our photographer again!!',
       name: 'Mindy',
     },
   ];
