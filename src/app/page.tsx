@@ -67,15 +67,15 @@ export default function Home() {
             />
           </div>
           <div className="px-[30px]">
-            <h1 className="text-nowrap text-center text-[12px] mt-[40px] mb-[20px] tracking-wide z-10 mt-30px] ">
+            <h1 className="text-nowrap text-center text-[12px] font-thin mt-[50px] mb-[20px] tracking-wide z-10 mt-30px] ">
               {`TAMPA FAMILY PHOTOGRAPHER`}
             </h1>
             <p
               className={`${lora.className} text-center text-[35px] xl:text-[55px] flex flex-col mb-[20px] z-10 tracking-wide `}
             >
-              <span>{`Capturing those beautiful moments`}</span> <span>{`with your favorite people`}</span>
+              <span>{`Natural photography for authentic families`}</span> <span>{``}</span>
             </p>
-            <p className="text-center text-[12px] my-[20px] tracking-wide z-10 mt-[30px] ">{`Natural photography for authentic families seeking the perfect blend of candid and portrait`}</p>
+            <p className="text-center text-[20px] my-[20px] font-thin tracking-wide z-10 mt-[30px] ">{`FOR FAMILIES SEEKING THE PERFECT BLEND OF CANDID + PORTRAIT`}</p>
           </div>
         </section>
 
@@ -105,9 +105,9 @@ export default function Home() {
           </div>
           <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pl-[30px] xl:pr-[70px] xl:mb-[100px]">
             <h2 className="text-[15px] mt-[20px]">{`FAMILY PHOTOGRAPHY IN TAMPA, FL`}</h2>
-            <h3 className={`${lora.className} text-[35px] mt-[40px] mb-[20px]`}>{`She beamed with love and joy...`}</h3>
+            <h3 className={`${lora.className} text-[35px] mt-[40px] mb-[20px]`}>{`Christina beamed with love and joy...`}</h3>
             <p className="font-thin leading-8 mb-[30px]">
-              {`As she sat next to her husband - her very best friend - playing with their little ones. Her love for her family overflowed as she recognized that time is fleeting and she didn’t want to miss a moment.`}
+              {`As she sat next to her husband, Todd - her very best friend - playing with their little girls. This family photography session felt like spending quality time with her family. As I witnessed this family stepping away from day-to-day life to enjoy this time together, I couldn't help but feel the joy eminating from their family. In that moment I realized how much I love what I do: getting to capture these beautiful moments for families.`}
             </p>
             <p className="font-thin leading-8 mb-[80px]">
               {`With over a decade of experience as a photographer, I’ve created a family photography experience that will leave you at ease and having a blast with your crew. You will leave your family photo session having spent quality time with your favorite people and gain timeless family photos that you will cherish for years to come.`}
@@ -148,16 +148,16 @@ export default function Home() {
           </div>
           <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pr-[100px] xl:mb-[100px] md:px-[75px]">
             <h2
-              className={`${lora.className} text-[35px] text-right mb-[40px]`}
-            >{`Tampa Family Photography for those who just want to remember these moments.`}</h2>
-            <p className="font-thin leading-8 text-right mb-[60px]">
-              {`Imagine what your life will look like in 5 years - 10 years - even 20 years down the road. If you are anything like me you can envision your kiddos all grown up and taking the world by storm. You beam with pride. You raised an awesome human.`}
+              className={`${lora.className} text-[35px] text-right mb-[60px]`}
+            >{`What will your family look like 15 years from now?`}</h2>
+            <p className="font-thin leading-8 text-right mb-[30px]">
+              {`If you are anything like me you can envision your kiddos all grown up and taking the world by storm. You beam with pride. You raised some awesome humans.`}
             </p>
-            <p className="font-thin leading-8 text-right mb-[60px]">
-              {`Now imagine if 20 years from now, when you are missing your babies being babies, that you have family photos that you took the time + investment in capturing. I promise - you will never regret getting those family photos with your crew.`}
+            <p className="font-thin leading-8 text-right mb-[30px]">
+              {`Now imagine if 15 years from now, when you are missing your babies being babies, that you have family photos that you took the time + investment in capturing. Because I promise you - you will never regret getting those family photos with your crew.`}
             </p>
-            <p className="font-thin leading-8 text-right mb-[60px]">
-              {`As your Tampa photographer, I'll take care of all the logistics so you just get to enjoy your time with your family as I capture those sweet moments. If you're in search of playful + authentic photography for families in Tampa, you have found your family photographer!`}{' '}
+            <p className="font-thin leading-8 text-right mb-[30px]">
+              {`As your Tampa photographer, I'll take care of all the logistics so you just get to enjoy your time with your family as I capture those sweet moments. If you're in search of playful + authentic photography for families in Tampa, you have found your forever photographer!`}{' '}
               <Link href="/contact" passHref legacyBehavior>
                 <a className="font-normal">{`Contact me`}</a>
               </Link>{' '}
@@ -221,7 +221,7 @@ export default function Home() {
         >
           <div className="flex flex-col w-full flex-1 xl:pl-[100px] 2xl:items-end 2xl:justify-start md:pr-[100px]">
             <h2 className="text-[15px]">{`JOIN MY NEWSLETTER`}</h2>
-            <h3 className={`${lora.className} text-[35px] mb-[40px]`}>{`BECOME A VIP`}</h3>
+            <h3 className={`${lora.className} text-[35px] mb-[20px]`}>{`BECOME A VIP`}</h3>
             <p className="font-thin leading-8 mb-[60px] text-wrap text-left 2xl:text-right">{`
 Join our email list and be the first to know about our special Tampa family photography offers, receive early access to family mini sessions + more. Get in the know so you don't miss a thing!`}</p>
           </div>
@@ -265,14 +265,14 @@ Join our email list and be the first to know about our special Tampa family phot
           </div>
           <div className="xl:flex xl:flex-col xl:flex-1 xl:align-center xl:pl-[100px] xl:justify-center xl:align-center">
             <h2
-              className={`${lora.className} text-[35px] mb-[50px]`}
+              className={`${lora.className} text-[35px] mb-[30px]`}
             >{`Family photography for you to treasure forever`}</h2>
             <p className="font-thin leading-8 mb-[60px]">
               {`Whether you want those dreamy beach photos or the cool city vibes of Tampa - I’m here for it! I would love to help you save those beautiful moments with your family + create cherished family photos that are destined for your walls!`}
             </p>
             <div>
               <Link href="/contact" legacyBehavior passHref>
-                <a className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
+                <a className="mb-[20px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
                   {`LET'S CONNECT`}
                 </a>
               </Link>
