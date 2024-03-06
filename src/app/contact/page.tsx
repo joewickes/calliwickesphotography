@@ -43,7 +43,7 @@ const ContactPage = () => {
         <h1 className={`${lora.className} text-[45px] leading-1 mb-[30px]`}>{`Let's chat!`}</h1>
         <p className="font-thin whitespace-pre-line">
           {`I can’t wait to hear from you + help capture your story.\n\n
-  I am so excited to get to know you + your family! Fill out the contact form and I will reach out withing 24-48 hours. If you prefer to reach out directly, you can email me at calliwickesphotography@gmail.com. While I respond to your inquiry, feel free to check out my socials:`}{' '}
+  I am so excited to get to know you + your family! Fill out the contact form and I will reach out within 24-48 hours. If you prefer to reach out directly, you can email me at calliwickesphotography@gmail.com. While I respond to your inquiry, feel free find me on socials:`}{' '}
           <Link passHref legacyBehavior href="https://www.facebook.com/CalliWickesPhotography/">
             <a aria-label="Facebook" className="font-semibold">
               {`Facebook`}

@@ -20,10 +20,10 @@ export const metadata: Metadata = {
 
 const AboutPage = () => {
   const facts = [
-    'My husband (Joe) and I were married in 2016. He is my best friend + biggest supporter. When I first started out in photography, he would often tag along for photo sessions to help bring out those smiles!',
-    'I have two beautiful + hilarious little girls, Mia (3) + Harper (1.5). They are obsessed with all things Bluey + Pokemon, and love seeing what trouble they can get into together.',
-    "I keep a calendar updated like it's an obsessive hobby - which it probably is! It's something my friends like to (and I can admit - justly) mock me about!",
-    "We moved to Tampa in 2020 and it is one of the best decisions we've ever made. We love all things Tampa. Our absolute favorite restaurant is a wing place downtown called Hattrick's.",
+    'My husband (Joe) and I were married in 2016. We have worked together or from home together since 2019 + we still love getting to spend every day together. He is my best friend + biggest supporter.',
+    'I’m an enneagram 1w9. If you have no idea what that is, it really just means I care a lot about every decision I make + want to continually better myself. It is why self-help books are a staple of my reading list on Goodreads.',
+    "In my freetime when I'm not reading or enjoying the weather, you'll find me playing games like Animal Crossing, Stardew Valley, a modern Pokemon game or Rocket League. Any other gamers out there?",
+    "We moved to Tampa in 2020 and it is one of the best decisions we've ever made. We love all things Tampa. Our absolute favorite restaurant is a wing place downtown called Hattrick's. If you haven't been - you need to!",
   ];
 
   return (
@@ -41,12 +41,11 @@ const AboutPage = () => {
             alt="Family photo of four for a photographer in Tampa"
           />
         </div>
-        <p className="font-thin leading-8 mb-[60px] mt-[50px] xl:mt-[50px] text-[25px] w-[60dvw] text-center xl:leading-[3rem]">
-          {`Catch those sweet moments with your favorite people -  
-          because this time with our little ones goes so fast.`}
+        <p className="font-thin leading-8 mb-[30px] mt-[50px] xl:mt-[50px] text-[25px] w-[60dvw] text-center xl:leading-[3rem]">
+          {`Giving family's photographs that they will cherish forever - makes every moment worth it`}
         </p>
-        <Link href="/contact" legacyBehavior passHref>
-          <a className=" border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">{`BOOK YOUR SESSION`}</a>
+        <Link href="/family-experience" legacyBehavior passHref>
+          <a className=" border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">{`FAMILY EXPERIENCE`}</a>
         </Link>
       </section>
 
@@ -63,12 +62,12 @@ const AboutPage = () => {
           </div>
         </div>
         <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pr-[100px] xl:pl-[50px]">
-          <h2 className="text-[35px] mb-[60px]">{`I’m Calli, a Florida family + senior photographer!`}</h2>
+          <h2 className="text-[35px] mb-[20px]">{`I’m Calli - wife, mom to two little girls + one little pup.`}</h2>
           <h3 className="text-[15px] mb-[60px]">
-            {`I CURRENTLY SERVE TAMPA, WESLEY CHAPEL AND THE SURROUNDING AREAS`}
+            {`I love capturing photos of families because as a mom - I get that we aren’t in the photos enough.`}
           </h3>
           <p className="font-thin leading-8 mb-[60px]">
-            {`I am a family + senior photographer specializing in natural + candid photos. In the past decade plus, I have loved getting to capture more and more family's special moments. I started primarily in senior photos and now focus on family + senior photos in Florida. I would love to capture the joyful moments for you and your family! Check out some of the fun facts below to get to know me more!`}
+            {`My life currently revolves around my hilarious + beautiful little girls. My oldest daughter Mia, just turned 3 and my youngest, Harper is going on 2 this summer. In 2023, my husband + I decided it was time to take the leap and I quit my full-time tech support job in order to have more time with our girls and for growing my photography business in a new area. It has been a big adjustment but I am so glad we made this leap! Check out some of the other fun facts below to learn a little bit more about me!`}
           </p>
           <div>
             <Link href="/contact" legacyBehavior passHref>
@@ -103,14 +102,14 @@ const AboutPage = () => {
             height={684}
             width={456}
             className="object-cover"
-            alt="Family bliss captured in the serene setting of Florida's nature with green grass and Spanish moss."
+            alt="Family of three bliss captured in the serene setting of Florida's nature with green grass and Spanish moss."
           />
         </div>
         <div className="flex justify-center xl:justify-normal mb-[15px] xl:flex-1 flex-col xl:items-left items-center xl:items-start">
-          <h2 className="text-[40px] leading-1 my-[30px] xl:text-[60px]">{`They are only little for a short while`}</h2>
-          <p className="font-thin mb-[15px]">{`Don't let another day pass you by without scheduling your family's photo session!`}</p>
+          <h2 className="text-[40px] leading-1 my-[50px] xl:text-[60px]">{`While they are still little...`}</h2>
+          <p className="font-thin mb-[15px]">{`Get ready to schedule your family's photo session + let's make some memories together!`}</p>
 
-          <div className="xl:mt-[100px] mt-[60px] mb-[150px]">
+          <div className="xl:mt-[100px] mt-[60px] mb-[60px]">
             <Link href="/contact" legacyBehavior passHref>
               <a className="border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">{`CONNECT WITH ME`}</a>
             </Link>
