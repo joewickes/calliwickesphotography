@@ -3,11 +3,13 @@ import { useState } from 'react';
 
 import { Plus, Minus } from '@phosphor-icons/react';
 
+import { BlocksRenderer } from '@strapi/blocks-react-renderer';
+
 type FAQsProps = {
   index: number;
   faq: {
-    question: string;
-    answer: string;
+    homeFaqQuestion: string;
+    homeFaqAnswer: any;
   };
 };
 
@@ -26,7 +28,7 @@ const FAQs = ({ index, faq }: FAQsProps) => {
           }
         }}
       >
-        <p className="text-[18px] pr-[30px] flex-4 xl:text-[25px]">{faq.question}</p>
+        <p className="text-[18px] pr-[30px] flex-4 xl:text-[25px]">{faq.homeFaqQuestion}</p>
         <div className=" flex justify-end">
           {openId === index ? (
             <div className="w-30px">
@@ -40,13 +42,13 @@ const FAQs = ({ index, faq }: FAQsProps) => {
         </div>
       </div>
 
-      <p
+      <span
         className={`xl:h-[200px] w-full text-[15px] pt-[20px] font-thin xl:w-full ${
           openId === index ? 'visible' : 'invisible h-0'
         }`}
       >
-        {faq.answer}
-      </p>
+        <BlocksRenderer content={faq.homeFaqAnswer} />
+      </span>
     </li>
   );
 };
