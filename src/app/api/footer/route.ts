@@ -30,7 +30,8 @@ export async function POST(req: Request) {
     }),
   });
 
-  return Response.json(data);
+  const json = await data.json();
+  return Response.json({ data: json.data.footer.data.attributes });
 }
 
 // NEED DIRECTORY LISTINGS
