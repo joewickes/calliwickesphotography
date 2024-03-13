@@ -115,3 +115,7 @@ html {
 #review-carousel .react-multiple-carousel__arrow--right::before {
   color: black !important;
 }
+
+.a-bold a {
+  font-weight: 500;
+}

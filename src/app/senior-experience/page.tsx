@@ -12,7 +12,18 @@ export const metadata: Metadata = {
   description: 'For adventurous seniors who want that perfect mix of candid and portrait.',
 };
 
-const SeniorGalleryPage = () => {
+async function getHeaderData() {
+  try {
+    const res = await fetch(`http://localhost:3000/api/header`, { method: 'POST' });
+    return res.json().then((data) => data.data);
+  } catch (error) {
+    console.log('error', error);
+  }
+}
+
+const SeniorGalleryPage = async () => {
+  const headerData = await getHeaderData();
+
   const packages = [
     {
       name: 'Senior Session',
@@ -32,7 +43,7 @@ const SeniorGalleryPage = () => {
     <main className="xl:flex xl:flex-col xl:items-center">
       <Share />
       <div className="xl:w-full">
-        <Header />
+        <Header headerData={headerData} />
       </div>
       <section
         className="mt-[10dvh] xl:mt-[20dvh] px-[30px] pb-[100px] mb-[50px] xl:h-[80dvh] top-0 xl:w-full xl:px-[100px]"
@@ -149,9 +160,7 @@ const SeniorGalleryPage = () => {
       </section>
 
       <section className="mt-[60px] px-[30px] xl:mt-[100px] w-full">
-        <h1 className="text-[40px] leading-1 flex flex-col mb-[50px] text-center xl:text-[70px]">
-          {`Session Info`}
-        </h1>
+        <h1 className="text-[40px] leading-1 flex flex-col mb-[50px] text-center xl:text-[70px]">{`Session Info`}</h1>
 
         <ul>
           {packages.map((pkg, idx) => {
@@ -196,7 +205,7 @@ const SeniorGalleryPage = () => {
             alt="Elegant senior girl in Tampa's scenic beauty, capturing timeless moments."
           />
         </div>
-          <div className="flex justify-center xl:justify-normal mb-[15px] xl:flex-1 flex-col xl:items-left items-start">
+        <div className="flex justify-center xl:justify-normal mb-[15px] xl:flex-1 flex-col xl:items-left items-start">
           <h2 className="text-[40px] leading-1 my-[30px] xl:text-[60px]">{`Senior Photography`}</h2>
           <p className="font-thin mb-[15px]">{`Natural photography for adventurous seniors who want that perfect mix of candid and portrait`}</p>
 

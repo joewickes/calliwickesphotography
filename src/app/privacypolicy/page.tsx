@@ -12,11 +12,22 @@ export const metadata: Metadata = {
     'Review the Privacy Policy that govern your engagement with Calli Wickes Photography. Our comprehensive Privacy Policy outlines the agreements and expectations for using our photography services. From usage rights to payment policies, understand the terms that ensure a clear and fair collaboration. By choosing Calli Wickes Photography, you are entering into a partnership committed to professionalism, creativity, and mutual respect.',
 };
 
+async function getHeaderData() {
+  try {
+    const res = await fetch(`http://localhost:3000/api/header`, { method: 'POST' });
+    return res.json().then((data) => data.data);
+  } catch (error) {
+    console.log('error', error);
+  }
+}
+
 const PrivacyPolicy = () => {
+  const headerData = await getHeaderData();
+
   return (
     <main>
       <Share />
-      <Header />
+      <Header headerData={headerData} />
       <section className="mt-[20dvh] px-[30px] xl:px-[100px]">
         <div className="mb-[50px]">
           <h1 className="font-bold mb-[10px]">{`Privacy Policy`}</h1>

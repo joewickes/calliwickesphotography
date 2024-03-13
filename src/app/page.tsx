@@ -114,6 +114,15 @@ type dataStructure = {
   homeContactPhotoSidebar: string;
 };
 
+async function getHeaderData() {
+  try {
+    const res = await fetch(`http://localhost:3000/api/header`, { method: 'POST' });
+    return res.json().then((data) => data.data);
+  } catch (error) {
+    console.log('error', error);
+  }
+}
+
 async function getData() {
   try {
     const res = await fetch(`http://localhost:3000/api/home-page`, { method: 'POST' });
@@ -124,15 +133,14 @@ async function getData() {
 }
 
 export default async function Home() {
+  const headerData = await getHeaderData();
   const data = await getData();
-
-  console.log('URL', data.home_faqs);
 
   return (
     <>
       <main>
         <Share />
-        <Header />
+        <Header headerData={headerData} />
 
         {/* Hero Section */}
         <section
@@ -372,11 +380,11 @@ export default async function Home() {
             <div className="w-full flex justify-center items-end xl:pr-[100px] ">
               <div className="max-w-[323px] max-h-[484px] w-full xl:max-h-[484px] xl:max-w-[323px] pr-[5px]">
                 <Image
-                  src={process.env.NEXT_PUBLIC_STRAPI_URL + data.homeContactPhoto.data.attributes.url}
-                  height={data.homeContactPhoto.data.attributes.height}
-                  width={data.homeContactPhoto.data.attributes.width}
+                  src={process.env.NEXT_PUBLIC_STRAPI_URL + data.homeContactPhoto.data[0].attributes.url}
+                  height={data.homeContactPhoto.data[0].attributes.height}
+                  width={data.homeContactPhoto.data[0].attributes.width}
                   className="object-cover "
-                  alt={data.homeContactPhoto.data.attributes.alternativeText}
+                  alt={data.homeContactPhoto.data[0].attributes.alternativeText}
                 />
               </div>
               <p className="vertical-rl xl:pl-[100px] xl:mb-[2px] xl:mt-0 justify-self-end text-[12px] font-thin">

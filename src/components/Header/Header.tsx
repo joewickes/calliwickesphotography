@@ -7,19 +7,10 @@ import { List, X } from '@phosphor-icons/react';
 
 type HeaderProps = {
   isHome?: boolean;
+  headerData: any;
 };
 
-async function getData() {
-  try {
-    const res = await fetch(`http://localhost:3000/api/header`, { method: 'POST' });
-    return res.json().then((data) => data.data);
-  } catch (error) {
-    console.log('error', error);
-  }
-}
-
-const Header = async ({ isHome = false }: HeaderProps) => {
-  const data = await getData();
+const Header = ({ isHome = false, headerData }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -34,8 +25,7 @@ const Header = async ({ isHome = false }: HeaderProps) => {
                   isMenuOpen || !isHome ? 'text-black' : 'text-white'
                 }`}
               >
-                {/* Need to wrap this on "PHOTOGRAPHY" */}
-                {data.logoText}
+                {headerData.logoText}
               </a>
             </Link>
           </div>
@@ -46,7 +36,7 @@ const Header = async ({ isHome = false }: HeaderProps) => {
                 <div className="flex items-center" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                   {!isMenuOpen ? (
                     <span className={`text-[16px] text-${isHome ? 'white' : 'black'} invisible xl:visible pr-[20px]`}>
-                      {data.menuTitle}
+                      {headerData.menuTitle}
                     </span>
                   ) : null}
                   <List size={40} color={isHome ? 'white' : 'black'} />
@@ -62,11 +52,9 @@ const Header = async ({ isHome = false }: HeaderProps) => {
             !isMenuOpen ? 'invisible overflow-y-auto' : 'visible overflow-y-hidden'
           }`}
         >
-          {/* NEED TO INSERT MENU ITEMS */}
           <ul className="flex flex-col items-center">
             {[
               { name: 'Home', link: '' },
-              { name: 'About Me', link: 'about' },
               { name: 'Family Experience', link: 'family-experience' },
               { name: 'Senior Experience', link: 'senior-experience' },
               { name: 'Contact', link: 'contact' },

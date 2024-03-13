@@ -2,7 +2,17 @@
 
 import { useState } from 'react';
 
-const ContactForm = () => {
+import { BlocksRenderer } from '@strapi/blocks-react-renderer';
+
+const ContactForm = ({
+  formButtonText,
+  responseTitle,
+  responseParagraph,
+}: {
+  formButtonText: string;
+  responseTitle: string;
+  responseParagraph: any;
+}) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -114,51 +124,17 @@ const ContactForm = () => {
           type="submit"
           className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]"
         >
-          {`SEND MESSAGE`}
+          {formButtonText}
         </button>
       </div>
     </form>
   ) : (
     <>
       <div className="flex-1 mt-[30px] flex flex-col justify-center mb-[100px]">
-        <h2 className="text-[35px] leading-1 mb-[30px] whitespace-pre-line">
-          {`Thank you so much for contacting me!`}
-        </h2>
-        <p className="mt-[50px]">{`I’m looking forward to chatting with you and will be in touch shortly!`}</p>
-        <p className="mt-[25px]">
-          {`While you wait… find me on`}
-          <a
-            target="_blank"
-            href="https://www.facebook.com/CalliWickesPhotography/"
-            className="font-semibold"
-            aria-label="Facebook"
-          >
-            {` `}
-            Facebook
-          </a>
-          {` `}
-          {`or `}
-          <a
-            target="_blank"
-            href="https://www.instagram.com/calliwickesphotography/"
-            className="font-semibold"
-            aria-label="Instagram"
-          >
-            Instagram
-          </a>
-        </p>
-        <p className="mt-[25px]">
-          {`You can also check out my`}{' '}
-          <a
-            target="_blank"
-            href="https://www.pinterest.com/calliwickes/"
-            className="font-semibold"
-            aria-label="Pinterest"
-          >
-            Pinterest
-          </a>{' '}
-          {`page for outfit inspiration for your upcoming session!`}
-        </p>
+        <h2 className="text-[35px] leading-1 mb-[30px] whitespace-pre-line">{responseTitle}</h2>
+        <span className="mt-[50px]">
+          <BlocksRenderer content={responseParagraph} />
+        </span>
       </div>
     </>
   );

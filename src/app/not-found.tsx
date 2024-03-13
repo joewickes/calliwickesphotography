@@ -3,10 +3,21 @@ import Link from 'next/link';
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
 import Header from '@/components/Header/Header';
 
-const NotFound = () => {
+async function getHeaderData() {
+  try {
+    const res = await fetch(`http://localhost:3000/api/header`, { method: 'POST' });
+    return res.json().then((data) => data.data);
+  } catch (error) {
+    console.log('error', error);
+  }
+}
+
+const NotFound = async () => {
+  const headerData = await getHeaderData();
+
   return (
     <main>
-      <Header />
+      <Header headerData={headerData} />
       <section className="mt-[20dvh] px-[30px] xl:px-[100px] h-[100dvh] flex flex-col items-center justify-start">
         <h1 className="mt-[50px] xl:mt-[100px] text-[40px] leading-1 mb-[30px]">{`Uh-oh! This page doesn't exist.`}</h1>
         <Link href="/" passHref legacyBehavior>

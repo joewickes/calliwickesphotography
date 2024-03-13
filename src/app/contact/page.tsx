@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 
 import { Lora } from 'next/font/google';
 const lora = Lora({ subsets: ['latin'] });
@@ -20,11 +20,66 @@ export const metadata: Metadata = {
     'Connect with Calli · calliwickesphotography@gmail.com · Tampa Family Photographer · Tampa Senior Photographer',
 };
 
-const ContactPage = () => {
+type dataStructure = {
+  heroImage: {
+    data: {
+      attributes: {
+        url: string;
+        alternativeText: string;
+        width: number;
+        height: number;
+      };
+    };
+  };
+  heroTitle: string;
+  heroSubtitle: string;
+  formTitle: string;
+  formParagraph: any;
+  formImage: {
+    data: {
+      attributes: {
+        url: string;
+        alternativeText: string;
+        width: number;
+        height: number;
+      };
+    };
+  };
+  formNamePlaceholder: string;
+  formEmailPlaceholder: string;
+  formPhoneNumberPlaceholder: string;
+  formMessagePlaceholder: string;
+  formButtonText: string;
+  responseTitle: string;
+  responseParagraph: any;
+};
+
+async function getHeaderData() {
+  try {
+    const res = await fetch(`http://localhost:3000/api/header`, { method: 'POST' });
+    return res.json().then((data) => data.data);
+  } catch (error) {
+    console.log('error', error);
+  }
+}
+
+async function getData() {
+  try {
+    const res = await fetch(`http://localhost:3000/api/contact-page`, { method: 'POST' });
+    return res.json().then((data) => data.data);
+  } catch (error) {
+    console.log('error', error);
+  }
+}
+
+const ContactPage = async () => {
+  const headerData = await getHeaderData();
+  const data = await getData();
+
   return (
     <main>
       <Share />
-      <Header isHome />
+      <Header isHome headerData={headerData} />
       <section
         id="kideatingfruit"
         className="pt-[15dvh] px-[30px] h-[100dvh] text-white mb-[30px] xl:flex xl:items-center"
@@ -32,32 +87,18 @@ const ContactPage = () => {
         <h2
           className={`${lora.className} text-[40px] leading-1 flex flex-col text-white pt-[60px] xl:text-[70px] xl:font-thin xl:pl-[100px] xl:flex-1 xl:pt-0 xl:pb-[60px]`}
         >
-          {`Connect with Calli`}
+          {data.heroTitle}
         </h2>
         <p className="font-thin text-right pt-[200px] pb-[250px] xl:pr-[100px] xl:flex-1 xl:pt-[250px] xl:pb-[10px]">
-          {`family + senior photographer`}
+          {data.heroSubtitle}
         </p>
       </section>
 
       <section className="px-[30px] mb-[60px] xl:pl-[100px] xl:pt-[100px]">
-        <h1 className={`${lora.className} text-[45px] leading-1 mb-[30px]`}>{`Let's chat!`}</h1>
-        <p className="font-thin whitespace-pre-line">
-          {`I can’t wait to hear from you + help capture your story.\n\n
-  I am so excited to get to know you + your family! Fill out the contact form and I will reach out within 24-48 hours. If you prefer to reach out directly, you can email me at calliwickesphotography@gmail.com. While I respond to your inquiry, feel free find me on socials:`}{' '}
-          <Link passHref legacyBehavior href="https://www.facebook.com/CalliWickesPhotography/">
-            <a aria-label="Facebook" className="font-semibold">
-              {`Facebook`}
-            </a>
-          </Link>{' '}
-          {`+`}{' '}
-          <Link passHref legacyBehavior href="https://www.instagram.com/calliwickesphotography/">
-            <a aria-label="Instagram" className="font-semibold">
-              {`Instagram`}
-            </a>
-          </Link>
-          {``}
-          {`\n\nI am based in Tampa, FL, and I proudly serve the Tampa Bay Area, including Clearwater + Wesley Chapel.`}
-        </p>
+        <h1 className={`${lora.className} text-[45px] leading-1 mb-[30px]`}>{data.formTitle}</h1>
+        <span className="font-thin whitespace-pre-line a-bold">
+          <BlocksRenderer content={data.formParagraph} />
+        </span>
       </section>
 
       <section className="px-[30px] text-black xl:pl-[100px] xl:flex">
@@ -72,7 +113,11 @@ const ContactPage = () => {
             />
           </div>
         </div>
-        <ContactForm />
+        <ContactForm
+          formButtonText={data.formButtonText}
+          responseTitle={data.responseTitle}
+          responseParagraph={data.responseParagraph}
+        />
       </section>
       <Footer />
     </main>

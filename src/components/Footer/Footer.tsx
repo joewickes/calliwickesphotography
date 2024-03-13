@@ -1,50 +1,37 @@
-'use client';
-
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 
 import { Lora } from 'next/font/google';
 const lora = Lora({ subsets: ['latin'] });
 
-import { ArrowUp, FacebookLogo, InstagramLogo, PinterestLogo, Phone, EnvelopeSimple } from '@phosphor-icons/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faYelp } from '@fortawesome/free-brands-svg-icons';
-
 import NewsletterForm from '@/components/Forms/NewsletterForm';
+import TopArrow from '../TopArrow/TopArrow';
+import FooterSocials from './FooterSocials';
+import FooterContact from './FooterContact';
 
-const Footer = () => {
-  const [path, setPath] = useState('#');
+async function getData() {
+  try {
+    const res = await fetch(`http://localhost:3000/api/footer`, { method: 'POST' });
+    return res.json().then((data) => data.data);
+  } catch (error) {
+    console.log('error', error);
+  }
+}
 
-  useEffect(() => {
-    if (window) {
-      setPath(window.location.pathname);
-    }
-  }, []);
+const Footer = async () => {
+  const data = await getData();
 
   return (
     <footer className="flex flex-col justify-center items-center mt-[60px] w-full ">
       <div className="my-[30px] px-[30px]">
-        <Link href={path} legacyBehavior passHref>
-          <ArrowUp size={30} className="cursor-pointer" />
-        </Link>
+        <TopArrow />
       </div>
       <div className="flex flex-col lg:flex-row w-full">
         <section className="border-[#faf9f7] border border-x-0 xl:border-r-1 py-[20px] px-[30px] lg:flex-1 lg:pl-[100px] flex flex-col justify-normal lg:justify-center">
           <div>
-            <p className="text-[25px] mb-[25px]">{`CALLI WICKES PHOTOGRAPHY`}</p>
+            <p className="text-[25px] mb-[25px]">{data.cwpTitle}</p>
           </div>
-          <p className="font-thin">{`Calli Wickes is a photographer in Tampa, Florida specializing in family and senior portraits.`}</p>
-          <div className="flex flex-col mt-[20px] lg:pl-[50px]">
-            <div className="flex items-center">
-              <EnvelopeSimple size={18} className="mr-[10px]" />
-
-              <a href="mailto:CalliWickesPhotography@gmail.com">{`CalliWickesPhotography@gmail.com`}</a>
-            </div>
-            <div className="flex items-center mt-[5px]">
-              <Phone size={18} className="mr-[10px]" />
-              <a href="tel:+18134060558">{`(813) 406-0558`}</a>
-            </div>
-          </div>
+          <p className="font-thin">{data.cwpParagraph}</p>
+          <FooterContact cwpEmail={data.cwpEmail} cwpPhoneNumber={data.cwpPhoneNumber} />
         </section>
 
         <section className="border-[#faf9f7] border border-x-0 border-t-0 py-[20px] bg-[#faf9f7] px-[30px] lg:flex-1">
@@ -56,24 +43,7 @@ const Footer = () => {
             <NewsletterForm />
           </div>
           <div className="flex flex-col">
-            <div className="flex justify-start">
-              <a target="_blank" aria-label="Facebook" href="https://www.facebook.com/CalliWickesPhotography/">
-                <FacebookLogo size={23} className="mr-[35px] cursor-pointer" />
-              </a>
-              <a target="_blank" aria-label="Instagram" href="https://www.instagram.com/calliwickesphotography/">
-                <InstagramLogo size={23} className="mr-[35px] cursor-pointer" />
-              </a>
-              <a target="_blank" aria-label="Pinterest" href="https://www.pinterest.com/calliwickes/">
-                <PinterestLogo size={23} className="mr-[35px] cursor-pointer" />
-              </a>
-              <a
-                target="_blank"
-                aria-label="Yelp"
-                href="https://www.yelp.com/biz/calli-wickes-photography-wesley-chapel"
-              >
-                <FontAwesomeIcon icon={faYelp} className="cursor-pointer" />
-              </a>
-            </div>
+            <FooterSocials />
             <div className="xl:flex-1 w-full flex-wrap font-thin flex mt-[20px] xl:mt-[50px] items-start text-center justify-start">
               <p className="text-left pr-[5px]">{`We are listed in -`}</p>
               <a

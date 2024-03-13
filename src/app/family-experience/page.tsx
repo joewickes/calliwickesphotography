@@ -12,7 +12,18 @@ export const metadata: Metadata = {
   description: 'For families that want that perfect blend of candid and portrait.',
 };
 
-const FamilyGalleryPage = () => {
+async function getHeaderData() {
+  try {
+    const res = await fetch(`http://localhost:3000/api/header`, { method: 'POST' });
+    return res.json().then((data) => data.data);
+  } catch (error) {
+    console.log('error', error);
+  }
+}
+
+const FamilyGalleryPage = async () => {
+  const headerData = await getHeaderData();
+
   const packages = [
     {
       name: 'Standard Session',
@@ -45,7 +56,7 @@ const FamilyGalleryPage = () => {
     <main className="xl:flex xl:flex-col xl:items-center">
       <Share />
       <div className="xl:w-full">
-        <Header />
+        <Header headerData={headerData} />
       </div>
 
       <section
@@ -208,9 +219,7 @@ const FamilyGalleryPage = () => {
       </section>
 
       <section className="mt-[100px] px-[30px] xl:mt-[100px] w-full">
-        <h1 className="text-[40px] leading-1 flex flex-col mb-[50px] text-center xl:text-[70px]">
-          {`Session Info`}
-        </h1>
+        <h1 className="text-[40px] leading-1 flex flex-col mb-[50px] text-center xl:text-[70px]">{`Session Info`}</h1>
 
         <ul>
           {packages.map((pkg, idx) => {
