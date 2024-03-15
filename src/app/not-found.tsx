@@ -5,7 +5,7 @@ import Header from '@/components/Header/Header';
 
 async function getHeaderData() {
   try {
-    const res = await fetch(`${process.env.VERCEL_URL}/apiheader`, { method: 'POST' });
+    const res = await fetch(`${process.env.VERCEL_URL}/api/header`, { method: 'POST' });
     return res.json().then((data) => data.data);
   } catch (error) {
     console.log('error', error);
