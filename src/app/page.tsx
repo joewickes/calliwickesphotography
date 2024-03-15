@@ -116,7 +116,7 @@ type dataStructure = {
 
 async function getHeaderData() {
   try {
-    const res = await fetch(`http://localhost:3000/api/header`, { method: 'POST' });
+    const res = await fetch(`${process.env.VERCEL_URL}/apiheader`, { method: 'POST' });
     return res.json().then((data) => data.data);
   } catch (error) {
     console.log('error', error);
@@ -125,7 +125,7 @@ async function getHeaderData() {
 
 async function getData() {
   try {
-    const res = await fetch(`http://localhost:3000/api/home-page`, { method: 'POST' });
+    const res = await fetch(`${process.env.VERCEL_URL}/apihome-page`, { method: 'POST' });
     return res.json().then((data) => data.data);
   } catch (error) {
     console.log('error', error);
