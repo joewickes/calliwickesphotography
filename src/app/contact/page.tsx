@@ -56,8 +56,36 @@ type dataStructure = {
 
 async function getHeaderData() {
   try {
-    const res = await fetch(`${process.env.URL}/api/header`, { method: 'POST' });
-    return res.json().then((data) => data.data);
+    const res = await fetch(`${process.env.STRAPI_URL}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
+      },
+      body: JSON.stringify({
+        query: `{
+          header {
+            data {
+              attributes {
+                logoText
+                logoImage {
+                  data {
+                    attributes {
+                      url
+                      alternativeText
+                      width
+                      height
+                    }
+                  }
+                }
+                menuTitle
+              }
+            }
+          }
+        }`,
+      }),
+    });
+    return res.json().then((data) => data.data.header.data.attributes);
   } catch (error) {
     console.log('error', error);
   }
@@ -65,8 +93,56 @@ async function getHeaderData() {
 
 async function getData() {
   try {
-    const res = await fetch(`${process.env.URL}/api/contact-page`, { method: 'POST' });
-    return res.json().then((data) => data.data);
+    const res = await fetch(`${process.env.STRAPI_URL}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
+      },
+      body: JSON.stringify({
+        query: `{
+          contactPage {
+            data {
+              attributes {
+                heroImage {
+                  data {
+                    attributes {
+                      url
+                      alternativeText
+                      width
+                      height
+                    }
+                  }
+                }
+                heroTitle
+                heroSubtitle
+                formTitle
+                formParagraph
+                formImage {
+                  data {
+                    attributes {
+                      url
+                      alternativeText
+                      width
+                      height
+                    }
+                  }
+                }
+                formNamePlaceholder
+                formEmailPlaceholder
+                formPhoneNumberPlaceholder
+                formMessagePlaceholder
+                formButtonText
+                responseTitle
+                responseParagraph
+              }
+            }
+          }
+        }
+        `,
+      }),
+    });
+    return res.json().then((data) => data.data.contactPage.data.attributes);
   } catch (error) {
     console.log('error', error);
   }

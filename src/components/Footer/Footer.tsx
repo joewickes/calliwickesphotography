@@ -10,8 +10,37 @@ import FooterContact from './FooterContact';
 
 async function getData() {
   try {
-    const res = await fetch(`${process.env.URL}/api/footer`, { method: 'POST' });
-    return res.json().then((data) => data.data);
+    const res = await fetch(`${process.env.STRAPI_URL}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
+      },
+      body: JSON.stringify({
+        query: `{
+          footer {
+            data {
+              attributes {
+                cwpTitle
+                cwpParagraph
+                cwpEmail
+                cwpPhoneNumber
+                newsletterTitle
+                newsletterParagraph
+                newsletterFormName
+                newsletterFormEmail
+                newsletterFacebookLink
+                newsletterInstagramLink
+                newsletterPinterestLink
+                newsletterYelpLink
+                directoryListingsPreamble
+              }
+            }
+          }
+        }`,
+      }),
+    });
+    return res.json().then((data) => data.data.footer.data.attributes);
   } catch (error) {
     console.log('error', error);
   }

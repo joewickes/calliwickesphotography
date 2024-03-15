@@ -14,8 +14,36 @@ export const metadata: Metadata = {
 
 async function getHeaderData() {
   try {
-    const res = await fetch(`${process.env.URL}/api/header`, { method: 'POST' });
-    return res.json().then((data) => data.data);
+    const res = await fetch(`${process.env.STRAPI_URL}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
+      },
+      body: JSON.stringify({
+        query: `{
+          header {
+            data {
+              attributes {
+                logoText
+                logoImage {
+                  data {
+                    attributes {
+                      url
+                      alternativeText
+                      width
+                      height
+                    }
+                  }
+                }
+                menuTitle
+              }
+            }
+          }
+        }`,
+      }),
+    });
+    return res.json().then((data) => data.data.header.data.attributes);
   } catch (error) {
     console.log('error', error);
   }

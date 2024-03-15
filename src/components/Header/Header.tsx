@@ -55,6 +55,7 @@ const Header = ({ isHome = false, headerData }: HeaderProps) => {
           <ul className="flex flex-col items-center">
             {[
               { name: 'Home', link: '' },
+              { name: 'About Me', link: 'about-me' },
               { name: 'Family Experience', link: 'family-experience' },
               { name: 'Senior Experience', link: 'senior-experience' },
               { name: 'Contact', link: 'contact' },

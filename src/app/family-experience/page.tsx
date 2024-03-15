@@ -14,7 +14,128 @@ export const metadata: Metadata = {
 
 async function getHeaderData() {
   try {
-    const res = await fetch(`${process.env.URL}/api/header`, { method: 'POST' });
+    const res = await fetch(`${process.env.STRAPI_URL}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
+      },
+      body: JSON.stringify({
+        query: `{
+          header {
+            data {
+              attributes {
+                logoText
+                logoImage {
+                  data {
+                    attributes {
+                      url
+                      alternativeText
+                      width
+                      height
+                    }
+                  }
+                }
+                menuTitle
+              }
+            }
+          }
+        }`,
+      }),
+    });
+    return res.json().then((data) => data.data.header.data.attributes);
+  } catch (error) {
+    console.log('error', error);
+  }
+}
+
+async function getData() {
+  try {
+    const res = await fetch(`${process.env.STRAPI_URL}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
+      },
+      body: JSON.stringify({
+        query: ` {
+          familyExperiencePage {
+            data {
+              attributes {
+                heroPhoto {
+                  data {
+                    attributes {
+                      url
+                      alternativeText
+                      width
+                      height
+                    }
+                  }
+                }
+                heroTitle
+                heroSubtitle
+                familyExperienceTitle
+                familyExperienceParagraph
+                sessionInfoTitle
+                fe_timeline_items {
+                  data {
+                    attributes {
+                      image {
+                        data {
+                          attributes {
+                            url
+                            alternativeText
+                            width
+                            height
+                          }
+                        }
+                      }
+                      title
+                      paragraph
+                    }
+                  }
+                }
+                session_infos {
+                  data {
+                    attributes {
+                      image {
+                        data {
+                          attributes {
+                            url
+                            alternativeText
+                            width
+                            height
+                          }
+                        }
+                      }
+                      title
+                      subtitle
+                      paragraph
+                    }
+                  }
+                }
+                contactTitle
+                contactSubtitle
+                contactButtonText
+                contactButtonLink
+                contactImage {
+                  data {
+                    attributes {
+                      url
+                      alternativeText
+                      width
+                      height
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        
+        `,
+      }),
+    });
     return res.json().then((data) => data.data);
   } catch (error) {
     console.log('error', error);
