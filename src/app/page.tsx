@@ -116,10 +116,7 @@ type dataStructure = {
 
 async function getHeaderData() {
   try {
-    const res = await fetch(
-      `${process?.env?.ENV === 'local' ? 'http://' + process.env.VERCEL_URL : 'https://' + process.env.VERCEL_URL}/api/header`,
-      { method: 'POST' },
-    );
+    const res = await fetch(`${process.env.URL}/api/header`, { method: 'POST' });
     return res.json().then((data) => data.data);
   } catch (error) {
     console.log('error', error);
@@ -128,10 +125,7 @@ async function getHeaderData() {
 
 async function getData() {
   try {
-    const res = await fetch(
-      `${process?.env?.ENV === 'local' ? 'http://' + process.env.VERCEL_URL : 'https://' + process.env.VERCEL_URL}/api/home-page`,
-      { method: 'POST' },
-    );
+    const res = await fetch(`${process.env.URL}/api/home-page`, { method: 'POST' });
     return res.json().then((data) => data.data);
   } catch (error) {
     console.log('error', error);

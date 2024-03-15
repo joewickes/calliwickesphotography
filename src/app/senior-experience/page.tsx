@@ -14,10 +14,7 @@ export const metadata: Metadata = {
 
 async function getHeaderData() {
   try {
-    const res = await fetch(
-      `${process?.env?.ENV === 'local' ? 'http://' + process.env.VERCEL_URL : 'https://' + process.env.VERCEL_URL}/api/header`,
-      { method: 'POST' },
-    );
+    const res = await fetch(`${process.env.URL}/api/header`, { method: 'POST' });
     return res.json().then((data) => data.data);
   } catch (error) {
     console.log('error', error);

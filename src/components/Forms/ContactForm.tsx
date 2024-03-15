@@ -53,7 +53,7 @@ const ContactForm = ({
       message,
     };
 
-    const res = await fetch('/api/email', {
+    const res = await fetch(`${process.env.URL}/api/email`, {
       method: 'POST',
       body: JSON.stringify(data),
     });
