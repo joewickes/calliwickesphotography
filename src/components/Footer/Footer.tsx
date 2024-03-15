@@ -10,7 +10,10 @@ import FooterContact from './FooterContact';
 
 async function getData() {
   try {
-    const res = await fetch(`${process.env.VERCEL_URL}/api/footer`, { method: 'POST' });
+    const res = await fetch(
+      `${process?.env?.ENV === 'local' ? 'http://' + process.env.VERCEL_URL : 'https://' + process.env.VERCEL_URL}/api/footer`,
+      { method: 'POST' },
+    );
     return res.json().then((data) => data.data);
   } catch (error) {
     console.log('error', error);
