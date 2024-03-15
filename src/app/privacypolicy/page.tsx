@@ -21,7 +21,7 @@ async function getHeaderData() {
   }
 }
 
-const PrivacyPolicy = () => {
+const PrivacyPolicy = async () => {
   const headerData = await getHeaderData();
 
   return (
