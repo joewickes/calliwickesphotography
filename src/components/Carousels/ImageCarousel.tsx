@@ -50,7 +50,7 @@ const CarouselComponent = ({ images }: any) => {
         {images.map((image: any, index: any) => (
           <Image
             key={index}
-            src={process.env.NEXT_PUBLIC_STRAPI_URL + image.attributes.homeCarouselImage.data[0].attributes.url}
+            src={image.attributes.homeCarouselImage.data[0].attributes.url}
             width={image.attributes.homeCarouselImage.data[0].attributes.width}
             height={image.attributes.homeCarouselImage.data[0].attributes.height}
             alt={image.attributes.homeCarouselImage.data[0].attributes.alternativeText}

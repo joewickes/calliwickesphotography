@@ -136,6 +136,8 @@ export default async function Home() {
   const headerData = await getHeaderData();
   const data = await getData();
 
+  console.log('data', data.aboutMeImage.data.attributes.url);
+
   return (
     <>
       <main>
@@ -184,7 +186,7 @@ export default async function Home() {
             <div className="mt-[40px] xl:mt-0 h-[90dvw] w-[90dvw] max-w-[560px] max-h-[840px] xl:h-auto xl:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
               <Image
                 priority
-                src={process.env.NEXT_PUBLIC_STRAPI_URL + data.aboutMeImage.data.attributes.url}
+                src={data.aboutMeImage.data.attributes.url}
                 alt={data.aboutMeImage.data.attributes.alternativeText}
                 height={data.aboutMeImage.data.attributes.height}
                 width={data.aboutMeImage.data.attributes.width}
@@ -227,7 +229,7 @@ export default async function Home() {
           <div className="flex mb-[60px] xl:flex-1 flex-col items-center">
             <div className="mt-[120px] xl:mt-0 h-[90dvw] w-[90dvw] max-w-[560px] max-h-[840px] xl:h-auto xl:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
               <Image
-                src={process.env.NEXT_PUBLIC_STRAPI_URL + data.preExperienceImage.data.attributes.url}
+                src={data.preExperienceImage.data.attributes.url}
                 alt={data.preExperienceImage.data.attributes.alternativeText}
                 height={data.preExperienceImage.data.attributes.height}
                 width={data.preExperienceImage.data.attributes.width}
@@ -263,7 +265,6 @@ export default async function Home() {
             <div className="flex flex-col justify-start sm:items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
               <Image
                 src={
-                  process.env.NEXT_PUBLIC_STRAPI_URL +
                   data.home_experience_timeline_items.data[0].attributes.homeExperienceTimelineImage.data.attributes.url
                 }
                 height={
@@ -380,7 +381,7 @@ export default async function Home() {
             <div className="w-full flex justify-center items-end xl:pr-[100px] ">
               <div className="max-w-[323px] max-h-[484px] w-full xl:max-h-[484px] xl:max-w-[323px] pr-[5px]">
                 <Image
-                  src={process.env.NEXT_PUBLIC_STRAPI_URL + data.homeContactPhoto.data[0].attributes.url}
+                  src={data.homeContactPhoto.data[0].attributes.url}
                   height={data.homeContactPhoto.data[0].attributes.height}
                   width={data.homeContactPhoto.data[0].attributes.width}
                   className="object-cover "
