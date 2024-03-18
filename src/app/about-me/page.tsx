@@ -11,6 +11,8 @@ const Footer = dynamic(() => import('@/components/Footer/Footer'));
 import Header from '@/components/Header/Header';
 import Share from '@/components/Share/Share';
 
+import { BlocksRenderer } from '@strapi/blocks-react-renderer';
+
 export const metadata: Metadata = {
   title: 'Meet Calli',
 
@@ -43,6 +45,21 @@ async function getHeaderData() {
                   }
                 }
                 menuTitle
+                social_networks {
+                  data {
+                    attributes {
+                      socialLink
+                    }
+                  }
+                }
+                menu_items {
+                  data {
+                    attributes {
+                      itemName
+                      link
+                    }
+                  }
+                }
               }
             }
           }
@@ -55,114 +72,132 @@ async function getHeaderData() {
   }
 }
 
-// async function getData() {
-//   try {
-//     const res = await fetch(`${process.env.STRAPI_URL}`, {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//         Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
-//       },
-//       body: JSON.stringify({
-//         query: `{
-//             aboutMePage {
-//               data {
-//                 attributes {
-//                   heroPhoto {
-//                     data {
-//                       attributes {
-//                         url
-//                         alternativeText
-//                         width
-//                         height
-//                       }
-//                     }
-//                   }
-//                   heroParagraph
-//                   heroButtonText
-//                   heroButtonLink
-//                   aboutMePhoto {
-//                     data {
-//                       attributes {
-//                         url
-//                         alternativeText
-//                         width
-//                         height
-//                       }
-//                     }
-//                   }
-//                   aboutMeTitle
-//                   aboutMeSubtitle
-//                   aboutMeParagraph
-//                   aboutMeButtonText
-//                   aboutMeButtonLink
-//                   contactTitle
-//                   contactButtonLink
-//                   contactImage
-//                 }
-//               }
-//             }
-//           }
-//         `,
-//       }),
-//     });
-//     return res.json().then((data) => data.data.aboutMePage.data.attributes);
-//   } catch (error) {
-//     console.log('error', error);
-//   }
-// }
+async function getData() {
+  try {
+    const res = await fetch(`${process.env.STRAPI_URL}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
+      },
+      body: JSON.stringify({
+        query: `{
+          aboutMePage {
+          data {
+            attributes {
+              heroPhoto {
+                data {
+                  attributes {
+                    height
+                    width
+                    url
+                    alternativeText
+                  }
+                }
+              }
+              heroParagraph
+              heroButtonLink
+              heroButtonText
+              aboutMePhoto {
+                data {
+                  attributes {
+                    height
+                    width
+                    url
+                    alternativeText
+                  }
+                }
+              }
+              aboutMeTitle
+              aboutMeSubtitle
+              aboutMeParagraph
+              aboutMeButtonLink
+              aboutMeButtonText
+              contactTitle
+              contactParagraph
+              contactButtonLink
+              contactButtonText
+              contactImage {
+                data {
+                  attributes {
+                    height
+                    width
+                    url
+                    alternativeText
+                  }
+                }
+              }
+              facts {
+                data {
+                  attributes {
+                    factParagraph
+                  }
+                }
+              }
+            }
+          }
+        }
+      }`,
+      }),
+    });
+    return res.json().then((data) => {
+      //
+      return data.data.aboutMePage.data.attributes;
+    });
+  } catch (error) {
+    console.log('error', error);
+  }
+}
 
 const AboutPage = async () => {
   const headerData = await getHeaderData();
-  // const data = await getData();
+  const data = await getData();
 
   return (
     <main>
       <Share />
       <Header headerData={headerData} />
 
-      <section className="px-[30px] pt-[40px] flex flex-col items-center bg-[#f2f2f2] pb-[50px] mt-[20dvh] xl:mt-[20dvh]">
+      <section className="px-[30px] pt-[40px] flex flex-col items-center bg-[#f2f2f2] pb-[50px] lg:mt-[18dvh] mt-[12dvh]">
         <div className="min-h-[225px] w-full overflow-hidden flex justify-center">
           <Image
-            src="/images/About/familyoffoursmiling.webp"
-            height={867}
-            width={1664}
+            src={data.heroPhoto.data.attributes.url}
+            height={data.heroPhoto.data.attributes.height}
+            width={data.heroPhoto.data.attributes.width}
             className="object-cover h-full"
-            alt="Family photo of four for a photographer in Tampa"
+            alt={data.heroPhoto.data.attributes.alternativeText}
           />
         </div>
-        <p className="font-thin leading-8 mb-[30px] mt-[50px] xl:mt-[50px] text-[25px] w-[60dvw] text-center xl:leading-[3rem]">
-          {`Giving family's photographs that they will cherish forever - makes every moment worth it`}
+        <p className="font-thin leading-8 mb-[30px] mt-0 xl:mt-[40px] text-[25px] w-[60dvw] text-center xl:leading-[3rem]">
+          {data.heroParagraph}
         </p>
-        <Link href="/family-experience" legacyBehavior passHref>
-          <a className=" border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">{`FAMILY EXPERIENCE`}</a>
+        <Link href={data.heroButtonLink} legacyBehavior passHref>
+          <a className=" border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">{data.heroButtonText}</a>
         </Link>
       </section>
 
-      <section id="about" className="px-[30px] xl:flex ">
+      <section id="about" className="px-[30px] xl:flex pt-[25px] s">
         <div className="flex justify-center mb-[60px] xl:flex-1">
           <div className="xl:mt-[120px] h-[90dvw] w-[90dvw] md:h-auto xl:w-auto overflow-hidden xl:pl-[100px]">
             <Image
-              src="/images/Home Updated/TampaPhotographerPortrait.webp"
-              alt="Tampa photographer in downtown portrait."
-              height={840}
-              width={560}
+              src={data.aboutMePhoto.data.attributes.url}
+              alt={data.aboutMePhoto.data.attributes.alternativeText}
+              height={data.aboutMePhoto.data.attributes.height}
+              width={data.aboutMePhoto.data.attributes.width}
               className="object-cover mt-[-10dvw] xl:mt-[-100px]"
             />
           </div>
         </div>
         <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pr-[100px] xl:pl-[50px]">
-          <h2 className="text-[35px] mb-[20px]">{`I’m Calli - wife, mom to two little girls + one little pup.`}</h2>
-          <h3 className="text-[15px] mb-[60px]">
-            {`I love capturing photos of families because as a mom - I get that we aren’t in the photos enough.`}
-          </h3>
-          <p className="font-thin leading-8 mb-[60px]">
-            {`My life currently revolves around my hilarious + beautiful little girls. My oldest daughter Mia, just turned 3 and my youngest, Harper is going on 2 this summer. In 2023, my husband + I decided it was time to take the leap and I quit my full-time tech support job in order to have more time with our girls and for growing my photography business in a new area. It has been a big adjustment but I am so glad we made this leap! Check out some of the other fun facts below to learn a little bit more about me!`}
-          </p>
+          <h2 className="text-[35px] mb-[20px]">{data.aboutMeTitle}</h2>
+          <h3 className="text-[15px] mb-[60px]">{data.aboutMeSubtitle}</h3>
+          <div className="font-thin leading-8 mb-[60px]">
+            <BlocksRenderer content={data.aboutMeParagraph} />
+          </div>
           <div>
-            <Link href="/contact" legacyBehavior passHref>
+            <Link href={data.aboutMeButtonLink} legacyBehavior passHref>
               <a className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
-                {`LET'S CHAT!`}
+                {data.aboutMeButtonText}
               </a>
             </Link>
           </div>
@@ -170,38 +205,40 @@ const AboutPage = async () => {
       </section>
 
       <section className="px-[30px] mt-[60px] xl:mt-0">
-        {/* <ol className="xl:flex">
-          {facts?.map((fact, index) => {
+        <ol className="xl:flex">
+          {data.facts.data.map((fact: any, index: number) => {
             return (
               <li key={index} className="xl:px-[50px]">
                 <p className="mb-[30px] font-thin">{`${
                   (index + 1).toString().length ? `0${index + 1}` : index + 1
                 }.`}</p>
                 <h2 className={`mb-[30px] text-[30px] ${lora.className}`}>{`Fact ${index + 1}`}</h2>
-                <p className="font-thin leading-8 mb-[60px]">{fact}</p>
+                <p className="font-thin leading-8 mb-[60px]">{fact.attributes.factParagraph}</p>
               </li>
             );
           })}
-        </ol> */}
+        </ol>
       </section>
 
       <section className="px-[30px] mt-[100px] mb-[60px] xl:w-full xl:px-[100px] xl:flex xl:flex-row-reverse xl:mt-[200px]">
         <div className="flex justify-center xl:flex-1">
           <Image
-            src="/images/Family Gallery/happylittlefamilyinflorida.webp"
-            height={684}
-            width={456}
+            src={data.contactImage.data.attributes.url}
+            height={data.contactImage.data.attributes.height}
+            width={data.contactImage.data.attributes.width}
             className="object-cover"
-            alt="Family of three bliss captured in the serene setting of Florida's nature with green grass and Spanish moss."
+            alt={data.contactImage.data.attributes.alternativeText}
           />
         </div>
         <div className="flex justify-center xl:justify-normal mb-[15px] xl:flex-1 flex-col xl:items-left items-center xl:items-start">
-          <h2 className="text-[40px] leading-1 my-[50px] xl:text-[60px]">{`While they are still little...`}</h2>
-          <p className="font-thin mb-[15px]">{`Get ready to schedule your family's photo session + let's make some memories together!`}</p>
+          <h2 className="text-[40px] leading-1 my-[50px] xl:text-[60px]">{data.contactTitle}</h2>
+          <p className="font-thin mb-[15px]">{data.contactParagraph}</p>
 
-          <div className="xl:mt-[100px] mt-[60px] mb-[60px]">
-            <Link href="/contact" legacyBehavior passHref>
-              <a className="border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">{`CONNECT WITH ME`}</a>
+          <div className="xl:mt-[100px] mt-[60px] mb-[60px] self-start">
+            <Link href={data.contactButtonLink} legacyBehavior passHref>
+              <a className="border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
+                {data.contactButtonText}
+              </a>
             </Link>
           </div>
         </div>

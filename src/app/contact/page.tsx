@@ -79,6 +79,21 @@ async function getHeaderData() {
                   }
                 }
                 menuTitle
+                social_networks {
+                  data {
+                    attributes {
+                      socialLink
+                    }
+                  }
+                }
+                menu_items {
+                  data {
+                    attributes {
+                      itemName
+                      link
+                    }
+                  }
+                }
               }
             }
           }
@@ -181,10 +196,10 @@ const ContactPage = async () => {
         <div className="flex justify-center mb-[60px] xl:flex-1 xl:justify-start md:pr-[50px]">
           <div className="mt-[30px] h-[90dvw] w-[90dvw] lg:h-auto lg:w-auto overflow-hidden">
             <Image
-              src="/images/Home Updated/TampaPhotographerPortrait.webp"
-              alt="Tampa photographer in downtown portrait."
-              height={840}
-              width={560}
+              src={data.formImage.data.attributes.url}
+              alt={data.formImage.data.attributes.alternativeText}
+              height={data.formImage.data.attributes.height}
+              width={data.formImage.data.attributes.width}
               className="object-cover mt-[-10dvw] xl:mt-[-100px]"
             />
           </div>

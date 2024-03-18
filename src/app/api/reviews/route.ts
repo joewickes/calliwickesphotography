@@ -4,7 +4,7 @@ export async function POST(req: Request) {
   let email = '';
 
   try {
-    if (data?.newsletter) {
+    if (data.newsletter) {
       email = `Name: ${data.name}\nEmail: ${data.email}`;
       // await signUpForNewsletter(data.email);
       return Response.json({ message: 'Email sent successfully' }, { status: 200 });

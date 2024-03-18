@@ -34,6 +34,14 @@ async function getData() {
                 newsletterPinterestLink
                 newsletterYelpLink
                 directoryListingsPreamble
+                directory_listings {
+                  data {
+                    attributes {
+                      directoryListingTitle
+                      directoryListingLink
+                    }
+                  }
+                }
               }
             }
           }
@@ -66,36 +74,34 @@ const Footer = async () => {
         <section className="border-[#faf9f7] border border-x-0 border-t-0 py-[20px] bg-[#faf9f7] px-[30px] lg:flex-1">
           <div>
             <div>
-              <h3 className={`${lora.className} text-[35px] mb-[5px]`}>{`BECOME A VIP`}</h3>
-              <p className="mb-[20px] font-thin">{`Sign up for our email newsletter`}</p>
+              <h3 className={`${lora.className} text-[35px] mb-[5px]`}>{data.newsletterTitle}</h3>
+              <p className="mb-[20px] font-thin">{data.newsletterParagraph}</p>
             </div>
             <NewsletterForm />
           </div>
           <div className="flex flex-col">
-            <FooterSocials />
+            <FooterSocials
+              facebookLink={data.newsletterFacebookLink}
+              instagramLink={data.newsletterInstagramLink}
+              pinterestLink={data.newsletterPinterestLink}
+              yelpLink={data.newsletterYelpLink}
+            />
             <div className="xl:flex-1 w-full flex-wrap font-thin flex mt-[20px] xl:mt-[50px] items-start text-center justify-start">
-              <p className="text-left pr-[5px]">{`We are listed in -`}</p>
-              <a
-                className="underline"
-                href="https://www.photographerlistings.org/United-States/Florida/C5-84-1-0.htm"
-              >{`Florida Photographer Listings`}</a>
-              <p className="px-[10px]">{`|`}</p>
-              <a
-                className="underline"
-                href="https://www.listyourservices.com/Design-related/Photography/C3-170-1-0.htm "
-              >{`List Your Services`}</a>
-              <p className="px-[10px]">{`|`}</p>
-              <a
-                className="underline"
-                href="https://www.b2blistings.org/Design-and-Print/Photography/C4-35-1-0.htm "
-              >{`B2B Listings`}</a>
-              <p className="px-[10px]">{`|`}</p>
-              <a
-                className="underline"
-                href="https://www.creativelistings.org/Photography/C42-1-0.htm "
-              >{`Creative Listings`}</a>
-              <p className="px-[10px]">{`|`}</p>
-              <a className="underline" href="https://www.uslistings.org/USA/Florida/C1-9-1-0.htm ">{`US Listings`}</a>
+              <div className="flex flex-col">
+                <p className="text-left pr-[5px] min-w-[75px] sm:min-w-auto">{data.directoryListingsPreamble}</p>
+                <ul className="flex flex-wrap">
+                  {data.directory_listings.data.map((listing: any, idx: number) => {
+                    return (
+                      <li className="flex flex-nowrap" key={idx}>
+                        <a className="underline text-nowrap" href={listing.attributes.directoryListingLink}>
+                          {listing.attributes.directoryListingTitle}
+                        </a>
+                        {idx === data.directory_listings.data.length - 1 ? '' : <p className="px-[10px]">{`|`}</p>}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </div>
           </div>
         </section>

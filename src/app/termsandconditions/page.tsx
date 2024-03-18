@@ -37,6 +37,21 @@ async function getHeaderData() {
                   }
                 }
                 menuTitle
+                social_networks {
+                  data {
+                    attributes {
+                      socialLink
+                    }
+                  }
+                }
+                menu_items {
+                  data {
+                    attributes {
+                      itemName
+                      link
+                    }
+                  }
+                }
               }
             }
           }

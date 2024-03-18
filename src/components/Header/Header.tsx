@@ -21,7 +21,7 @@ const Header = ({ isHome = false, headerData }: HeaderProps) => {
             <Link href="/" legacyBehavior passHref>
               <a
                 aria-label="Calli Wickes Photography Home Page"
-                className={`tracking-[.35em] text-[20px] w-full flex flex-col xl:text-[25px] cursor-pointer ${
+                className={`tracking-[.35em] text-[20px] flex flex-col xl:text-[25px] cursor-pointer md:w-[300px] w-full ${
                   isMenuOpen || !isHome ? 'text-black' : 'text-white'
                 }`}
               >
@@ -53,17 +53,11 @@ const Header = ({ isHome = false, headerData }: HeaderProps) => {
           }`}
         >
           <ul className="flex flex-col items-center">
-            {[
-              { name: 'Home', link: '' },
-              { name: 'About Me', link: 'about-me' },
-              { name: 'Family Experience', link: 'family-experience' },
-              { name: 'Senior Experience', link: 'senior-experience' },
-              { name: 'Contact', link: 'contact' },
-            ].map((item, idx) => {
+            {headerData.menu_items.data.map((item: any, idx: number) => {
               return (
                 <li key={idx} className="mb-[40px] cursor-pointer">
-                  <Link href={`/${item.link}`} legacyBehavior passHref>
-                    <a>{item.name}</a>
+                  <Link href={item.attributes.link} legacyBehavior passHref>
+                    <a>{item.attributes.itemName}</a>
                   </Link>
                 </li>
               );

@@ -4,19 +4,29 @@ import { FacebookLogo, InstagramLogo, PinterestLogo } from '@phosphor-icons/reac
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYelp } from '@fortawesome/free-brands-svg-icons';
 
-const FooterSocials = () => {
+const FooterSocials = ({
+  facebookLink,
+  instagramLink,
+  pinterestLink,
+  yelpLink,
+}: {
+  facebookLink: string;
+  instagramLink: string;
+  pinterestLink: string;
+  yelpLink: string;
+}) => {
   return (
     <div className="flex justify-start">
-      <a target="_blank" aria-label="Facebook" href="https://www.facebook.com/CalliWickesPhotography/">
+      <a target="_blank" aria-label="Facebook" href={facebookLink}>
         <FacebookLogo size={23} className="mr-[35px] cursor-pointer" />
       </a>
-      <a target="_blank" aria-label="Instagram" href="https://www.instagram.com/calliwickesphotography/">
+      <a target="_blank" aria-label="Instagram" href={instagramLink}>
         <InstagramLogo size={23} className="mr-[35px] cursor-pointer" />
       </a>
-      <a target="_blank" aria-label="Pinterest" href="https://www.pinterest.com/calliwickes/">
+      <a target="_blank" aria-label="Pinterest" href={pinterestLink}>
         <PinterestLogo size={23} className="mr-[35px] cursor-pointer" />
       </a>
-      <a target="_blank" aria-label="Yelp" href="https://www.yelp.com/biz/calli-wickes-photography-wesley-chapel">
+      <a target="_blank" aria-label="Yelp" href={yelpLink}>
         <FontAwesomeIcon icon={faYelp} className="cursor-pointer" />
       </a>
     </div>

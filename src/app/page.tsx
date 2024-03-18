@@ -139,6 +139,21 @@ async function getHeaderData() {
                   }
                 }
                 menuTitle
+                social_networks {
+                  data {
+                    attributes {
+                      socialLink
+                    }
+                  }
+                }
+                menu_items {
+                  data {
+                    attributes {
+                      itemName
+                      link
+                    }
+                  }
+                }
               }
             }
           }
@@ -279,8 +294,6 @@ export default async function Home() {
   const headerData = await getHeaderData();
   const data = await getData();
 
-  console.log('data', data.aboutMeImage.data.attributes.url);
-
   return (
     <>
       <main>
@@ -290,7 +303,7 @@ export default async function Home() {
         {/* Hero Section */}
         <section
           id="home"
-          className=" flex flex-col items-center justify-center sm:mt-[18dvh] mt-[12dvh] overflow-hidden"
+          className=" flex flex-col items-center justify-center lg:mt-[18dvh] mt-[12dvh] overflow-hidden"
         >
           <div className="sm:h-[500px] w-[140dvw] xl:w-full overflow-hidden flex justify-center items-start">
             <Image
@@ -349,7 +362,7 @@ export default async function Home() {
               <BlocksRenderer content={data.aboutMeParagraph} />
             </span>
 
-            <div className="pb-[80px] xl:pb-[0px]">
+            <div className="pb-[0px] pt-[50px]">
               <Link href={data.aboutMeButtonLink} legacyBehavior passHref>
                 <a className="mb-[100px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px] flex sm:inline justify-center text-center">
                   {data.aboutMeButtonText}
@@ -383,9 +396,9 @@ export default async function Home() {
               {data.preExperiencePhotoSidebar}
             </p>
           </div>
-          <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pr-[100px] xl:mb-[100px] md:px-[75px]">
+          <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pr-[100px] xl:mb-[100px] md:px-[75px] pb-[50px]">
             <h2 className={`${lora.className} text-[35px] text-right mb-[60px]`}>{data.preExperienceTitle}</h2>
-            <span className="font-thin leading-8 text-right mb-[30px]">
+            <span className="font-thin leading-8 text-right ">
               <BlocksRenderer content={data.preExperienceParagraph} />
             </span>
           </div>
@@ -489,7 +502,7 @@ export default async function Home() {
         {/* Newsletter Section */}
         <section
           id="newsletter"
-          className="xl:px-[50px] px-[30px] sm:flex sm:flex-col md:flex-row xl:justify-center sm:items-center mt-[100px] bg-[#faf9f7] pt-[100px] lg:px-[75px]"
+          className="xl:px-[50px] px-[30px] sm:flex sm:flex-col md:flex-row xl:justify-center sm:items-center xl:mt-[100px] bg-[#faf9f7] pt-[100px] lg:px-[75px]"
         >
           <div className="flex flex-col w-full flex-1 xl:pl-[100px] 2xl:items-end 2xl:justify-start md:pr-[100px]">
             <h2 className="text-[15px]">{data.newsletterSubtitle}</h2>
