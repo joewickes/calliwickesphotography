@@ -17,10 +17,10 @@ import {
   WhatsappIcon,
 } from 'next-share';
 
-const Share = () => {
+const Share = ({ urlPath = '/' }: { urlPath?: string }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const url = `https://calliwickesphotography.com${urlPath}`;
 
-  const url = 'https://www.calliwickesphotography.com/';
   const quote = 'Calli Wickes Photography | Family and Senior Photographer';
   const hashtag = '#calliwickesphotography';
 

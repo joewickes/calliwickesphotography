@@ -170,7 +170,7 @@ const SeniorGalleryPage = async () => {
 
   return (
     <main className="xl:flex xl:flex-col xl:items-center">
-      <Share />
+      <Share urlPath="senior-experience" />
       <div className="xl:w-full">
         <Header headerData={headerData} />
       </div>

@@ -168,7 +168,7 @@ const FamilyGalleryPage = async () => {
 
   return (
     <main className="xl:flex xl:flex-col xl:items-center">
-      <Share />
+      <Share urlPath="/family-experience" />
       <div className="xl:w-full">
         <Header headerData={headerData} />
       </div>
