@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 async function getHeaderData() {
   try {
     const res = await fetch(`${process.env.STRAPI_URL}`, {
+      next: { revalidate: 60 },
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -75,6 +76,7 @@ async function getHeaderData() {
 async function getData() {
   try {
     const res = await fetch(`${process.env.STRAPI_URL}`, {
+      next: { revalidate: 60 },
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

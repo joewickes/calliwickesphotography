@@ -58,6 +58,7 @@ async function getHeaderData() {
   try {
     const res = await fetch(`${process.env.STRAPI_URL}`, {
       method: 'POST',
+      next: { revalidate: 60 },
       headers: {
         'Content-Type': 'application/json',
         Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
@@ -110,6 +111,7 @@ async function getData() {
   try {
     const res = await fetch(`${process.env.STRAPI_URL}`, {
       method: 'POST',
+      next: { revalidate: 60 },
       headers: {
         'Content-Type': 'application/json',
         Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
