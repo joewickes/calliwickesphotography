@@ -136,6 +136,24 @@ async function getData() {
                   }
                 }
               }
+              am_timeline_items {
+                data {
+                  attributes {
+                    image {
+                      data {
+                        attributes {
+                          url
+                          alternativeText
+                          width
+                          height
+                        }
+                      }
+                    }
+                    title
+                    paragraph
+                  }
+                }
+              }
             }
           }
         }
@@ -173,9 +191,6 @@ const AboutPage = async () => {
         <p className="font-thin leading-8 mb-[30px] mt-0 xl:mt-[40px] text-[25px] w-[60dvw] text-center xl:leading-[3rem]">
           {data.heroParagraph}
         </p>
-        <Link href={data.heroButtonLink} legacyBehavior passHref>
-          <a className=" border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">{data.heroButtonText}</a>
-        </Link>
       </section>
 
       <section id="about" className="px-[30px] xl:flex pt-[25px] s">
@@ -220,6 +235,54 @@ const AboutPage = async () => {
             );
           })}
         </ol>
+      </section>
+
+      {/* Experience Process Section */}
+      <section className="xl:pt-[10px]">
+        <div
+          id="experience-process"
+          className="px-[30px] xl:px-[50px] xl:pr-[30px] flex flex-col xl:items-start items-center justify-center xl:flex-row  max-w-[100dw] xl:justify-evenly"
+        >
+          <div className="flex flex-col justify-start sm:items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
+            <Image
+              src={data.am_timeline_items.data[0].attributes.image.data.attributes.url}
+              height={data.am_timeline_items.data[0].attributes.image.data.attributes.height}
+              width={data.am_timeline_items.data[0].attributes.image.data.attributes.width}
+              alt={data.am_timeline_items.data[0].attributes.image.data.attributes.alternativeText}
+              className="object-cover"
+            />
+            <h3 className={`${lora.className} text-[35px] my-[40px]`}>
+              {data.am_timeline_items.data[0].attributes.title}
+            </h3>
+            <p className="font-thin">{data.am_timeline_items.data[0].attributes.paragraph}</p>
+          </div>
+          <div className="flex flex-col justify-start items-start flex-1 xl:mx-[30px] max-w-[456px] mb-[60px] xl:mb-0">
+            <Image
+              src={data.am_timeline_items.data[1].attributes.image.data.attributes.url}
+              height={data.am_timeline_items.data[1].attributes.image.data.attributes.height}
+              width={data.am_timeline_items.data[1].attributes.image.data.attributes.width}
+              alt={data.am_timeline_items.data[1].attributes.image.data.attributes.alternativeText}
+              className="object-cover"
+            />
+            <h3 className={`${lora.className} text-[35px] my-[40px]`}>
+              {data.am_timeline_items.data[1].attributes.title}
+            </h3>
+            <p className="font-thin">{data.am_timeline_items.data[1].attributes.paragraph}</p>
+          </div>
+          <div className="flex flex-col justify-start items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
+            <Image
+              src={data.am_timeline_items.data[2].attributes.image.data.attributes.url}
+              height={data.am_timeline_items.data[2].attributes.image.data.attributes.height}
+              width={data.am_timeline_items.data[2].attributes.image.data.attributes.width}
+              alt={data.am_timeline_items.data[2].attributes.image.data.attributes.alternativeText}
+              className="object-cover"
+            />
+            <h3 className={`${lora.className} text-[35px] my-[40px]`}>
+              {data.am_timeline_items.data[2].attributes.title}
+            </h3>
+            <p className="font-thin">{data.am_timeline_items.data[2].attributes.paragraph}</p>
+          </div>
+        </div>
       </section>
 
       <section className="px-[30px] mt-[100px] mb-[60px] xl:w-full xl:px-[100px] xl:flex xl:flex-row-reverse xl:mt-[200px]">
