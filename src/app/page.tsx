@@ -399,9 +399,26 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* Reviews */}
-        <section id="reviews" className="xl:px-[100px]  mt-[25px] bg-[#faf9f7]">
-          <Reviews />
+        {/* Blog Resources */}
+        <section id="blog-resources" className="xl:px-[100px]  mt-[25px] bg-[#faf9f7]">
+          <h2 className="text-[13px] font-bold tracking-wider my-[50px]">{data.blogResourceHeader}</h2>
+          {/* New blog resources here */}
+          <div>
+            {data.blog_resources.data.map((resource: any, index: number) => {
+              return (
+                <Link passHref legacyBehavior href={resource.attributes.link}>
+                  <div>
+                    <Image
+                      src={resource.attributes.image.data.attributes.url}
+                      alt={resource.attributes.image.data.attributes.alternativeText}
+                      width={resource.attributes.image.data.attributes.width}
+                      height={resource.attributes.image.data.attributes.height}
+                    />
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
         </section>
 
         {/* Experience Section */}
