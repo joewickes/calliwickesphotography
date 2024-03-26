@@ -96,6 +96,7 @@ async function getData(id: number) {
         `,
       }),
     });
+
     return res.json().then((data) => {
       if (data.data.blog.data === null) redirect('/404');
 
@@ -103,6 +104,7 @@ async function getData(id: number) {
     });
   } catch (error) {
     console.log('error', error);
+    redirect('/404');
   }
 }
 
@@ -170,7 +172,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: any) {
   const { slug } = params;
   const extraPostsData = await getBlogIds();
-  const title = extraPostsData?.data.find((post: any) => post.attributes.slug === slug).attributes.title;
+  const title = extraPostsData?.data?.find((post: any) => post.attributes.slug === slug)?.attributes?.title;
+
+  if (!title) redirect('/404');
 
   return {
     title,
