@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 import Share from '@/components/Share/Share';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
@@ -27,6 +29,7 @@ async function getBlogIds() {
               id
               attributes {
                 title
+                slug
               }
             }
           }
@@ -160,17 +163,28 @@ export async function generateStaticParams() {
   const data = await getBlogIds();
 
   return data?.data.map((blog: any) => ({
-    slug: blog.id,
+    slug: blog.attributes.slug,
   }));
+}
+
+export async function generateMetadata({ params }: any) {
+  const { slug } = params;
+  const extraPostsData = await getBlogIds();
+  const title = extraPostsData?.data.find((post: any) => post.attributes.slug === slug).attributes.title;
+
+  return {
+    title,
+  };
 }
 
 const BlogPage = async ({ params }: any) => {
   const { slug } = params;
-  const headerData = await getHeaderData();
-  const data = await getData(slug);
   const extraPostsData = await getBlogIds();
+  const headerData = await getHeaderData();
+  const data = await getData(extraPostsData?.data.find((post: any) => post.attributes.slug === slug).id);
+
   const extraPosts = extraPostsData?.data
-    .filter((post: any) => post.id !== slug)
+    .filter((post: any) => post.attributes.slug !== slug)
     .sort((a: any, b: any) => b.id - a.id)
     .slice(0, 2);
 
@@ -230,7 +244,7 @@ const BlogPage = async ({ params }: any) => {
                   return (
                     <a
                       key={idx}
-                      href={`${process.env.URL}/blogs/${post.id}`}
+                      href={`${process.env.URL}/blogs/${post.attributes.slug}`}
                       target="_blank"
                       className="mb-[10px] underline"
                     >
