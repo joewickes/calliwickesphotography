@@ -278,8 +278,28 @@ async function getData() {
                       }
                     }
                     homeContactPhotoSidebar
+                    blogResourceHeader
+                    blog_resources {
+                        data {
+                          attributes {
+                            link
+                            image {
+                              data {
+                                attributes {
+                                  url
+                                  alternativeText
+                                  width
+                                  height
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
+                
               }
             
       }
