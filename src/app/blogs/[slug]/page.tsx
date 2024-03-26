@@ -98,7 +98,7 @@ async function getData(id: number) {
     });
 
     return res.json().then((data) => {
-      if (data.data.blog.data === null) redirect('/404');
+      if (data?.data?.blog?.data === null) redirect('/404');
 
       return data?.data?.blog?.data?.attributes;
     });
@@ -170,9 +170,19 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: any) {
-  const { slug } = params;
+  let { slug } = params;
+  let title: string | null = null;
+
+  if (slug === '1') {
+    redirect('/blogs/family-photo-investment');
+  } else if (slug === '2') {
+    redirect('/blogs/what-to-wear');
+  } else if (slug === '3') {
+    redirect('/blogs/family-session-tips');
+  }
+
   const extraPostsData = await getBlogIds();
-  const title = extraPostsData?.data?.find((post: any) => post.attributes.slug === slug)?.attributes?.title;
+  title = extraPostsData?.data?.find((post: any) => post.attributes.slug === slug)?.attributes?.title;
 
   if (!title) redirect('/404');
 
@@ -185,7 +195,7 @@ const BlogPage = async ({ params }: any) => {
   const { slug } = params;
   const extraPostsData = await getBlogIds();
   const headerData = await getHeaderData();
-  const data = await getData(extraPostsData?.data.find((post: any) => post.attributes.slug === slug).id);
+  const data = await getData(extraPostsData?.data.find((post: any) => post.attributes.slug === slug)?.id);
 
   const extraPosts = extraPostsData?.data
     .filter((post: any) => post.attributes.slug !== slug)
@@ -194,74 +204,76 @@ const BlogPage = async ({ params }: any) => {
 
   return (
     <>
-      <main>
-        <Share urlPath={`/blogs/${slug}`} />
-        <Header headerData={headerData} />
-        <div className="flex flex-col xl:flex-row lg:mt-[18dvh] mt-[12dvh] px-[30px] sm:px-[75px] min-h-[90dvh]">
-          {/* Left/top with blog content */}
-          <section
-            id="blog-content"
-            className="flex xl:w-[66.6dvw] flex-col pr-0 xl:pr-[25px] xl:border-r-[1px] xl:border-[#333333]"
-          >
-            <h1 className="text-wrap text-left text-[12px] font-thin mt-[50px] mb-[20px] tracking-wide z-10 mt-30px] ">
-              {data.subtitle}
-            </h1>
-            <h1
-              className={`${lora.className} text-left text-[35px] xl:text-[55px] flex flex-col mb-[20px] z-10 tracking-wide `}
+      {data ? (
+        <main>
+          <Share urlPath={`/blogs/${slug}`} />
+          <Header headerData={headerData} />
+          <div className="flex flex-col xl:flex-row lg:mt-[18dvh] mt-[12dvh] px-[30px] sm:px-[75px] min-h-[90dvh]">
+            {/* Left/top with blog content */}
+            <section
+              id="blog-content"
+              className="flex xl:w-[66.6dvw] flex-col pr-0 xl:pr-[25px] xl:border-r-[1px] xl:border-[#333333]"
             >
-              {data.title}
-            </h1>
-            <div className="font-thin leading-8 mb-[50px] a-bold">
-              <BlocksRenderer content={data.contentParagraph} />
-            </div>
-          </section>
+              <h1 className="text-wrap text-left text-[12px] font-thin mt-[50px] mb-[20px] tracking-wide z-10 mt-30px] ">
+                {data.subtitle}
+              </h1>
+              <h1
+                className={`${lora.className} text-left text-[35px] xl:text-[55px] flex flex-col mb-[20px] z-10 tracking-wide `}
+              >
+                {data.title}
+              </h1>
+              <div className="font-thin leading-8 mb-[50px] a-bold">
+                <BlocksRenderer content={data.contentParagraph} />
+              </div>
+            </section>
 
-          {/* Right/bottom meta section */}
-          <section id="blog-meta" className="xl:w-[33.3dvw] pl-0 xl:pl-[25px] flex flex-col">
-            <div>
+            {/* Right/bottom meta section */}
+            <section id="blog-meta" className="xl:w-[33.3dvw] pl-0 xl:pl-[25px] flex flex-col">
               <div>
-                <Image
-                  src={data.metaImage.data.attributes.url}
-                  alt={data.metaImage.data.attributes.alternativeText}
-                  width={data.metaImage.data.attributes.width}
-                  height={data.metaImage.data.attributes.height}
-                />
+                <div>
+                  <Image
+                    src={data.metaImage.data.attributes.url}
+                    alt={data.metaImage.data.attributes.alternativeText}
+                    width={data.metaImage.data.attributes.width}
+                    height={data.metaImage.data.attributes.height}
+                  />
+                </div>
+                <h2 className="text-[25px] my-[25px] font-semibold">{data.metaTitle}</h2>
+                <h3 className="mb-[25px]">{data.metaSubtitle}</h3>
+                <div className="font-thin leading-8">
+                  <BlocksRenderer content={data.metaParagraph} />
+                </div>
               </div>
-              <h2 className="text-[25px] my-[25px] font-semibold">{data.metaTitle}</h2>
-              <h3 className="mb-[25px]">{data.metaSubtitle}</h3>
-              <div className="font-thin leading-8">
-                <BlocksRenderer content={data.metaParagraph} />
+              <div className="pb-[0px] pt-[50px]">
+                <Link href={data.metaButtonLink} legacyBehavior passHref>
+                  <a className="mb-[100px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px] flex sm:inline justify-center text-center">
+                    {data.metaButtonText}
+                  </a>
+                </Link>
               </div>
-            </div>
-            <div className="pb-[0px] pt-[50px]">
-              <Link href={data.metaButtonLink} legacyBehavior passHref>
-                <a className="mb-[100px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px] flex sm:inline justify-center text-center">
-                  {data.metaButtonText}
-                </a>
-              </Link>
-            </div>
-            <div className="sm:mt-[50px] sm:pt-[25px] xl:border-t-[1px] xl:border-[#333333]">
-              <h2 className="text-[25px] mb-[25px] font-semibold">{data.popularPostsTitle}</h2>
-              <div className="flex flex-col">
-                {/* Filter by most recent 2 that are not current (ref slug id) */}
-                {extraPosts?.map((post: any, idx: number) => {
-                  return (
-                    <a
-                      key={idx}
-                      href={`${process.env.URL}/blogs/${post.attributes.slug}`}
-                      target="_blank"
-                      className="mb-[10px] underline"
-                    >
-                      {post.attributes.title}
-                    </a>
-                  );
-                })}
+              <div className="sm:mt-[50px] sm:pt-[25px] xl:border-t-[1px] xl:border-[#333333]">
+                <h2 className="text-[25px] mb-[25px] font-semibold">{data.popularPostsTitle}</h2>
+                <div className="flex flex-col">
+                  {/* Filter by most recent 2 that are not current (ref slug id) */}
+                  {extraPosts?.map((post: any, idx: number) => {
+                    return (
+                      <a
+                        key={idx}
+                        href={`${process.env.URL}/blogs/${post.attributes.slug}`}
+                        target="_blank"
+                        className="mb-[10px] underline"
+                      >
+                        {post.attributes.title}
+                      </a>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          </section>
-        </div>
-        <Footer />
-      </main>
+            </section>
+          </div>
+          <Footer />
+        </main>
+      ) : null}
     </>
   );
 };
