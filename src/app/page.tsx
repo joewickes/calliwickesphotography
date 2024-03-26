@@ -280,17 +280,16 @@ async function getData() {
                     homeContactPhotoSidebar
                     blogResourceHeader
                     blog_resources {
-                        data {
-                          attributes {
-                            link
-                            image {
-                              data {
-                                attributes {
-                                  url
-                                  alternativeText
-                                  width
-                                  height
-                                }
+                      data {
+                        attributes {
+                          link
+                          image {
+                            data {
+                              attributes {
+                                url
+                                alternativeText
+                                width
+                                height
                               }
                             }
                           }
@@ -358,7 +357,7 @@ export default async function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="px-[30px] sm:px-[75px] xl:flex xl:pt-[50px]">
+        <section id="about" className="px-[30px] sm:px-[75px] xl:flex xl:pt-[100px]">
           <div className="flex justify-center xl:items-center 2xl:items-end mb-[60px] xl:flex-1">
             <div className="flex">
               <p className="vertical-rl  xl:pr-[100px] w-0 h-0 xl:w-auto xl:h-auto mt-[120px] xl:mt-0 self-end text-[12px] font-thin invisible xl:visible">
@@ -383,7 +382,7 @@ export default async function Home() {
             </div>
           </div>
           <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pl-[30px] xl:pr-[70px] xl:mb-[100px]">
-            <h2 className="text-[15px] mt-[20px]">{`FAMILY PHOTOGRAPHY IN TAMPA, FL`}</h2>
+            <h2 className="text-[15px] mt-[20px]">{data.aboutMeSubtitle}</h2>
             <h3 className={`${lora.className} text-[35px] mt-[40px] mb-[20px]`}>{data.aboutMeTitle}</h3>
             <span className="font-thin leading-8 mb-[30px]">
               <BlocksRenderer content={data.aboutMeParagraph} />
@@ -400,14 +399,23 @@ export default async function Home() {
         </section>
 
         {/* Blog Resources */}
-        <section id="blog-resources" className="xl:px-[100px]  mt-[25px] bg-[#faf9f7]">
-          <h2 className="text-[13px] font-bold tracking-wider my-[50px]">{data.blogResourceHeader}</h2>
+        <section
+          id="blog-resources"
+          className="px-[30px] xl:px-[100px]  mt-[25px] bg-[#faf9f7] pb-[50px] flex flex-col items-center"
+        >
+          <h2
+            className={`text-center text-[35px] flex flex-col mb-[20px] z-10 tracking-wide pt-[50px] sm:pb-[20px] ${lora.className}`}
+          >
+            {data.blogResourceHeader}
+          </h2>
           {/* New blog resources here */}
-          <div>
+          <div className="flex flex-col sm:flex-row w-[75%]">
             {data.blog_resources.data.map((resource: any, index: number) => {
               return (
-                <Link passHref legacyBehavior href={resource.attributes.link}>
-                  <div>
+                <Link key={index} passHref legacyBehavior href={resource.attributes.link}>
+                  <div
+                    className={`cursor-pointer sm:mt-0 mt-[30px]  ${index === Math.floor(data.blog_resources.data.length / 2) ? 'sm:mx-[30px]' : ''}`}
+                  >
                     <Image
                       src={resource.attributes.image.data.attributes.url}
                       alt={resource.attributes.image.data.attributes.alternativeText}
@@ -424,10 +432,10 @@ export default async function Home() {
         {/* Experience Section */}
         <section
           id="home-experience"
-          className="xl:pl-[100px] px-[30px] pr-[30px] xl:flex xl:flex-row-reverse xl:pt-[100px] max-w-[100dw]"
+          className="xl:pl-[100px] px-[30px] pr-[30px] xl:flex xl:flex-row-reverse xl:pt-[75px] max-w-[100dw]"
         >
           <div className="flex mb-[60px] xl:flex-1 flex-col items-center">
-            <div className="mt-[120px] xl:mt-0 h-[90dvw] w-[90dvw] max-w-[560px] max-h-[840px] xl:h-auto xl:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
+            <div className="mt-[50px] xl:mt-0 h-[90dvw] w-[90dvw] max-w-[560px] max-h-[840px] xl:h-auto xl:w-auto overflow-hidden xl:pl-[5px] pr-[5px]">
               <Image
                 src={data.preExperienceImage.data.attributes.url}
                 alt={data.preExperienceImage.data.attributes.alternativeText}

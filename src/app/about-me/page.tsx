@@ -188,7 +188,7 @@ const AboutPage = async () => {
             alt={data.heroPhoto.data.attributes.alternativeText}
           />
         </div>
-        <p className="font-thin leading-8 mb-[30px] mt-0 xl:mt-[40px] text-[25px] w-[60dvw] text-center xl:leading-[3rem]">
+        <p className="font-thin leading-8 mb-[30px] mt-[40px] text-[25px] w-[60dvw] text-center xl:leading-[3rem]">
           {data.heroParagraph}
         </p>
       </section>
