@@ -34,6 +34,10 @@ async function getData() {
                 newsletterInstagramLink
                 newsletterPinterestLink
                 newsletterYelpLink
+                newsletterLinkedInLink
+                newsletterYouTubeLink
+                newsletterSpotifyLink
+                newsletterApplePodcastsLink
                 directoryListingsPreamble
                 directory_listings {
                   data {
@@ -86,6 +90,10 @@ const Footer = async () => {
               instagramLink={data.newsletterInstagramLink}
               pinterestLink={data.newsletterPinterestLink}
               yelpLink={data.newsletterYelpLink}
+              linkedInLink={data.newsletterLinkedInLink}
+              youtubeLink={data.newsletterYouTubeLink}
+              spotifyLink={data.newsletterSpotifyLink}
+              applePodcastsLink={data.newsletterApplePodcastsLink}
             />
             <div className="xl:flex-1 w-full flex-wrap font-thin flex mt-[20px] xl:mt-[50px] items-start text-center justify-start">
               <div className="flex flex-col">
