@@ -332,6 +332,11 @@ export default async function Home() {
           </div>
         </section>
 
+        {/* Carousel Section */}
+        <section id="carousel" className="mt-[50px]">
+          <Carousel images={data.home_carousel_items.data} />
+        </section>
+
         {/* About Section */}
         <section id="about" className="px-[30px] sm:px-[75px] xl:flex xl:pt-[50px]">
           <div className="flex justify-center xl:items-center 2xl:items-end mb-[60px] xl:flex-1">
@@ -516,11 +521,6 @@ export default async function Home() {
           <div className="flex-1 flex justify-end 2xl:justify-center items-start w-full">
             <NewsletterForm />
           </div>
-        </section>
-
-        {/* Carousel Section */}
-        <section id="carousel" className="mt-[50px]">
-          <Carousel images={data.home_carousel_items.data} />
         </section>
 
         {/* FAQ Section */}
