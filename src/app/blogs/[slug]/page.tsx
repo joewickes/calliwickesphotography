@@ -1,5 +1,3 @@
-import type { Metadata } from 'next';
-
 import Share from '@/components/Share/Share';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
@@ -172,6 +170,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: any) {
   let { slug } = params;
   let title: string | null = null;
+  let description: string | null = null;
 
   if (slug === '1') {
     redirect('/blogs/family-photo-investment');
@@ -183,11 +182,13 @@ export async function generateMetadata({ params }: any) {
 
   const extraPostsData = await getBlogIds();
   title = extraPostsData?.data?.find((post: any) => post.attributes.slug === slug)?.attributes?.title;
+  description = extraPostsData?.data?.find((post: any) => post.attributes.slug === slug)?.attributes?.description;
 
   if (!title) redirect('/404');
 
   return {
     title,
+    description,
   };
 }
 

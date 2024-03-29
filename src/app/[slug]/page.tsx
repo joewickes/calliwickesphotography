@@ -1,117 +1,199 @@
+import Share from '@/components/Share/Share';
+import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import Carousel from '@/components/Carousels/ImageCarousel';
+import FAQs from '@/components/FAQs/FAQs';
+import NewsletterForm from '@/components/Forms/NewsletterForm';
 
 import { Lora } from 'next/font/google';
 const lora = Lora({ subsets: ['latin'] });
 
-import Share from '@/components/Share/Share';
-import Header from '@/components/Header/Header';
-import Carousel from '@/components/Carousels/ImageCarousel';
-import FAQs from '@/components/FAQs/FAQs';
-import NewsletterForm from '@/components/Forms/NewsletterForm';
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
+import { redirect } from 'next/navigation';
 
-const Footer = dynamic(() => import('@/components/Footer/Footer'));
+async function getPageIds() {
+  try {
+    const res = await fetch(`${process.env.STRAPI_URL}`, {
+      method: 'POST',
+      next: { revalidate: 60 },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
+      },
+      body: JSON.stringify({
+        query: `
+        {
+          locationHomePages {
+            data {
+              id
+              attributes {
+                urlSlug
+              }
+            }
+          }
+        }
+        `,
+      }),
+    });
+    return res.json().then((data) => {
+      return { data: data.data.locationHomePages.data };
+    });
+  } catch (error) {
+    console.log('error', error);
+  }
+}
 
-type dataStructure = {
-  heroSubtitle: string;
-  heroTitle: string;
-  heroSubHeading: string;
-  aboutMePhotoSidebar: string;
-  aboutMeSubtitle: string;
-  aboutMeTitle: string;
-  aboutMeParagraph: any;
-  aboutMeButtonText: string;
-  aboutMeButtonLink: string;
-  aboutMeImage: {
-    data: {
-      attributes: {
-        url: string;
-        alternativeText: string;
-        width: number;
-        height: number;
-      };
-    };
-  };
-  preExperienceTitle: string;
-  preExperienceParagraph: any;
-  preExperienceImage: {
-    data: {
-      attributes: {
-        url: string;
-        alternativeText: string;
-        width: number;
-        height: number;
-      };
-    };
-  };
-  preExperiencePhotoSidebar: string;
-  experienceTitle: string;
-  home_experience_timeline_items: {
-    data: {
-      attributes: {
-        homeExperienceTimelineImage: {
-          data: {
-            attributes: {
-              url: string;
-              alternativeText: string;
-              width: number;
-              height: number;
-            };
-          };
-        };
-        homeExperienceTimelineTitle: string;
-        homeExperienceTimelineParagraph: any;
-      };
-    };
-  };
-  newsletterSubtitle: string;
-  newsletterTitle: string;
-  newsletterParagraph: any;
-  newletterFormName: string;
-  newsletterFormEmail: string;
-  home_carousel_items: {
-    data: {
-      attributes: {
-        homeCarouselImage: {
-          data: {
-            attributes: {
-              url: string;
-              alternativeText: string;
-              width: number;
-              height: number;
-            };
-          };
-        };
-      };
-    };
-  };
-  homeFaqTitle: string;
-  home_faqs: {
-    data: {
-      attributes: {
-        homeFaqQuestion: string;
-        homeFaqAnswer: any;
-      };
-    };
-  };
-  homeContactTitle: string;
-  homeContactParagraph: any;
-  homeContactButtonText: string;
-  homeContactButtonLink: string;
-  homeContactPhoto: {
-    data: {
-      attributes: {
-        url: string;
-        alternativeText: string;
-        width: number;
-        height: number;
-      };
-    };
-  };
-  homeContactPhotoSidebar: string;
-};
+async function getData(id: number) {
+  try {
+    const res = await fetch(`${process.env.STRAPI_URL}`, {
+      method: 'POST',
+      next: { revalidate: 60 },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
+      },
+      body: JSON.stringify({
+        query: `{
+          locationHomePage(id: ${id}) {
+            data {
+              attributes {
+                heroSubtitle
+                heroTitle
+                heroSubHeading
+                aboutMePhotoSidebar
+                aboutMeSubtitle
+                aboutMeTitle
+                aboutMeParagraph
+                aboutMeButtonText
+                aboutMeButtonLink
+                aboutMeImage {
+                  data {
+                    attributes {
+                      url
+                      alternativeText
+                      width
+                      height
+                    }
+                  }
+                }
+                preExperienceTitle
+                preExperienceParagraph
+                preExperienceImage {
+                  data {
+                    attributes {
+                      url
+                      alternativeText
+                      width
+                      height
+                    }
+                  }
+                }
+                preExperiencePhotoSidebar
+                experienceTitle
+                home_experience_timeline_items {
+                  data {
+                    attributes {
+                      homeExperienceTimelineImage {
+                        data {
+                          attributes {
+                            url
+                            alternativeText
+                            width
+                            height
+                          }
+                        }
+                      }
+                      homeExperienceTimelineTitle
+                      homeExperienceTimelineParagraph
+                    }
+                  }
+                }
+                newsletterSubtitle
+                newsletterTitle
+                newsletterParagraph
+                newletterFormName
+                newsletterFormEmail
+                home_carousel_items {
+                  data {
+                    attributes {
+                      homeCarouselImage {
+                        data {
+                          attributes {
+                            url
+                            alternativeText
+                            width
+                            height
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                homeFaqTitle
+                home_faqs {
+                  data {
+                    attributes {
+                      homeFaqQuestion
+                      homeFaqAnswer
+                    }
+                  }
+                }
+                homeContactTitle
+                homeContactParagraph
+                homeContactButtonText
+                homeContactButtonLink
+                homeContactPhoto {
+                  data {
+                    attributes {
+                      url
+                      alternativeText
+                      width
+                      height
+                    }
+                  }
+                }
+                homeContactPhotoSidebar
+                blogResourceHeader
+                blog_resources {
+                  data {
+                    attributes {
+                      link
+                      image {
+                        data {
+                          attributes {
+                            url
+                            alternativeText
+                            width
+                            height
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            
+          }
+              
+        }
+          `,
+      }),
+    });
+
+    return res.json().then((data) => {
+      if (data?.data?.locationHomePage?.data === null) redirect('/404');
+
+      return data?.data?.locationHomePage?.data?.attributes;
+    });
+  } catch (error) {
+    console.log('error', error);
+    redirect('/404');
+  }
+}
 
 async function getHeaderData() {
   try {
@@ -166,155 +248,38 @@ async function getHeaderData() {
   }
 }
 
-async function getData() {
-  try {
-    const res = await fetch(`${process.env.STRAPI_URL}`, {
-      next: { revalidate: 60 },
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
-      },
-      body: JSON.stringify({
-        query: `
-        {
-              homePage {
-                data {
-                  attributes {
-                    heroSubtitle
-                    heroTitle
-                    heroSubHeading
-                    aboutMePhotoSidebar
-                    aboutMeSubtitle
-                    aboutMeTitle
-                    aboutMeParagraph
-                    aboutMeButtonText
-                    aboutMeButtonLink
-                    aboutMeImage {
-                      data {
-                        attributes {
-                          url
-                          alternativeText
-                          width
-                          height
-                        }
-                      }
-                    }
-                    preExperienceTitle
-                    preExperienceParagraph
-                    preExperienceImage {
-                      data {
-                        attributes {
-                          url
-                          alternativeText
-                          width
-                          height
-                        }
-                      }
-                    }
-                    preExperiencePhotoSidebar
-                    experienceTitle
-                    home_experience_timeline_items {
-                      data {
-                        attributes {
-                          homeExperienceTimelineImage {
-                            data {
-                              attributes {
-                                url
-                                alternativeText
-                                width
-                                height
-                              }
-                            }
-                          }
-                          homeExperienceTimelineTitle
-                          homeExperienceTimelineParagraph
-                        }
-                      }
-                    }
-                    newsletterSubtitle
-                    newsletterTitle
-                    newsletterParagraph
-                    newletterFormName
-                    newsletterFormEmail
-                    home_carousel_items {
-                      data {
-                        attributes {
-                          homeCarouselImage {
-                            data {
-                              attributes {
-                                url
-                                alternativeText
-                                width
-                                height
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                    homeFaqTitle
-                    home_faqs {
-                      data {
-                        attributes {
-                          homeFaqQuestion
-                          homeFaqAnswer
-                        }
-                      }
-                    }
-                    homeContactTitle
-                    homeContactParagraph
-                    homeContactButtonText
-                    homeContactButtonLink
-                    homeContactPhoto {
-                      data {
-                        attributes {
-                          url
-                          alternativeText
-                          width
-                          height
-                        }
-                      }
-                    }
-                    homeContactPhotoSidebar
-                    blogResourceHeader
-                    blog_resources {
-                      data {
-                        attributes {
-                          link
-                          image {
-                            data {
-                              attributes {
-                                url
-                                alternativeText
-                                width
-                                height
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-                
-              }
-            
-      }
-        `,
-      }),
-    });
-    return res.json().then((data) => data.data.homePage.data.attributes);
-  } catch (error) {
-    console.log('error', error);
-  }
+export async function generateMetadata({ params }: any) {
+  let { slug } = params;
+  let title: string | null = null;
+  let description: string | null = null;
+
+  const extraPagesData = await getPageIds();
+  title = extraPagesData?.data?.find((page: any) => page.attributes.urlSlug === slug)?.attributes?.title;
+  description = extraPagesData?.data?.find((page: any) => page.attributes.urlSlug === slug)?.attributes?.description;
+
+  if (!title) redirect('/404');
+
+  return {
+    title,
+    description,
+  };
 }
 
-export default async function Home() {
-  const headerData = await getHeaderData();
-  const data = await getData();
+export async function generateStaticParams() {
+  const data = await getPageIds();
 
-  return (
+  return data?.data.map((page: any) => ({
+    slug: page.attributes.urlSlug,
+  }));
+}
+
+export default async function Home({ params }: any) {
+  const { slug } = params;
+  const extraPagesData = await getPageIds();
+  const headerData = await getHeaderData();
+  const data = await getData(extraPagesData?.data.find((page: any) => page.attributes.urlSlug === slug)?.id);
+
+  return data ? (
     <>
       <main>
         <Share />
@@ -612,5 +577,5 @@ export default async function Home() {
         <Footer />
       </main>
     </>
-  );
+  ) : null;
 }
