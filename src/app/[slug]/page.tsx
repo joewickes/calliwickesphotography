@@ -256,12 +256,8 @@ export async function generateMetadata({ params }: any) {
   let description: string | null = null;
 
   const extraPagesData = await getPageIds();
-  console.log('extraPagesData', extraPagesData?.data?.find((page: any) => page.attributes.urlSlug === slug)?.att);
   title = extraPagesData?.data?.find((page: any) => page.attributes.urlSlug === slug)?.attributes?.title;
   description = extraPagesData?.data?.find((page: any) => page.attributes.urlSlug === slug)?.attributes?.description;
-
-  console.log('title', title);
-  console.log('description', description);
 
   if (!title) redirect('/404');
 
