@@ -27,6 +27,7 @@ async function getBlogIds() {
               id
               attributes {
                 title
+                description
                 slug
               }
             }
