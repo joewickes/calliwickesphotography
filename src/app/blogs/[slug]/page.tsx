@@ -216,9 +216,9 @@ const BlogPage = async ({ params }: any) => {
               id="blog-content"
               className="flex xl:w-[66.6dvw] flex-col pr-0 xl:pr-[25px] xl:border-r-[1px] xl:border-[#333333]"
             >
-              <h1 className="text-wrap text-left text-[12px] font-thin mt-[50px] mb-[20px] tracking-wide z-10 mt-30px] ">
+              <h2 className="text-wrap text-left text-[12px] font-thin mt-[50px] mb-[20px] tracking-wide z-10 mt-30px] ">
                 {data.subtitle}
-              </h1>
+              </h2>
               <h1
                 className={`${lora.className} text-left text-[35px] xl:text-[55px] flex flex-col mb-[20px] z-10 tracking-wide `}
               >
