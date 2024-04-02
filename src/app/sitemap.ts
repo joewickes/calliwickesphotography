@@ -122,5 +122,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.2,
     },
+    {
+      url: 'https://www.calliwickesphotography.com/dade-city-family-photographer',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.2,
+    },
   ];
 }
