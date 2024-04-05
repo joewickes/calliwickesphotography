@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
+    //main pages
     {
       url: 'https://www.calliwickesphotography.com',
       lastModified: new Date(),
@@ -44,6 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+    //information blogs
     {
       url: 'https://www.calliwickesphotography.com/blogs/what-to-wear',
       lastModified: new Date(),
@@ -62,6 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.1,
     },
+    //location blogs
     {
       url: 'https://www.calliwickesphotography.com/blogs/cypress-point-park-family-session',
       lastModified: new Date(),
@@ -74,6 +77,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.2,
     },
+    {
+      url: 'https://www.calliwickesphotography.com/blogs/davis-island-family-session',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    },
+    {
+      url: 'https://www.calliwickesphotography.com/blogs/darby-farms-family-session',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    },
+    //duplicated homepages
     {
       url: 'https://www.calliwickesphotography.com/wesley-chapel-family-photographer',
       lastModified: new Date(),
