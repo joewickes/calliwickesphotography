@@ -91,6 +91,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     //duplicated homepages
     {
+      url: 'https://www.calliwickesphotography.com/tampa-family-photographer',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.2,
+    },
+    {
       url: 'https://www.calliwickesphotography.com/wesley-chapel-family-photographer',
       lastModified: new Date(),
       changeFrequency: 'monthly',
@@ -140,6 +146,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.calliwickesphotography.com/dade-city-family-photographer',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.2,
+    },
+    {
+      url: 'https://www.calliwickesphotography.com/land-o-lakes-family-photographer',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.2,
+    },
+    {
+      url: 'https://www.calliwickesphotography.com/dunedin-family-photographer',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.2,

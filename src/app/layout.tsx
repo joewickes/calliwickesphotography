@@ -11,9 +11,9 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.calliwickesphotography.com'),
-  title: 'Calli Wickes Photography | Tampa Family Photographer',
+  title: 'Calli Wickes Photography | Florida Family Photographer',
   description:
-    'Calli Wickes is a Family Photographer located in Tampa, FL | Natural photography for authentic families seeking the perfect blend of candid and portrait photos',
+    'Calli Wickes is a Family Photographer located in central Florida | Natural photography for authentic families seeking the perfect blend of candid and portrait photos',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
