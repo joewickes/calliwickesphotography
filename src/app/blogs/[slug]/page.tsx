@@ -200,9 +200,8 @@ const BlogPage = async ({ params }: any) => {
   const data = await getData(extraPostsData?.data.find((post: any) => post.attributes.slug === slug)?.id);
 
   const extraPosts = extraPostsData?.data
-    .filter((post: any) => post.attributes.slug !== slug)
-    .sort((a: any, b: any) => b.id - a.id)
-    .slice(0, 2);
+    .filter((post: any) => post.attributes.slug !== slug && post.attributes.slug !== 'pricing')
+    .sort((a: any, b: any) => b.id - a.id);
 
   return (
     <>
