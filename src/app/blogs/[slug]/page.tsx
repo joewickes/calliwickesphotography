@@ -199,9 +199,15 @@ const BlogPage = async ({ params }: any) => {
   const headerData = await getHeaderData();
   const data = await getData(extraPostsData?.data.find((post: any) => post.attributes.slug === slug)?.id);
 
-  const extraPosts = extraPostsData?.data
-    .filter((post: any) => post.attributes.slug !== slug && post.attributes.slug !== 'pricing')
+  const extraPostsOrig = extraPostsData?.data
+    .filter((post: any) => {
+      const allOtherSlugsThanThisOne = post.attributes.slug !== slug;
+      const notPricingPage = post.attributes.slug !== 'pricing';
+      return allOtherSlugsThanThisOne && notPricingPage;
+    })
     .sort((a: any, b: any) => b.id - a.id);
+
+  const extraPosts = [...extraPostsOrig.reverse().slice(0, 2), ...extraPostsOrig.reverse().slice(0, 4)];
 
   return (
     <>
