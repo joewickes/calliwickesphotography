@@ -22,7 +22,7 @@ async function getBlogIds() {
       body: JSON.stringify({
         query: `
         {
-          blogs {
+          blogs (pagination: {limit:50}) {
             data {
               id
               attributes {
