@@ -272,7 +272,6 @@ export async function generateMetadata({ params }: any) {
 export async function generateStaticParams() {
   const data = await getPageIds();
 
-  console.log('data', data);
   return data?.data.map((page: any) => ({
     slug: page.attributes.urlSlug,
   }));

@@ -150,6 +150,20 @@ async function getData() {
                     }
                   }
                 }
+                aboutTitle
+                aboutSubtitle
+                aboutButtonText
+                aboutButtonLink
+                aboutImage {
+                  data {
+                    attributes {
+                      url
+                      alternativeText
+                      width
+                      height
+                    }
+                  }
+                }
               }
             }
           }
@@ -299,7 +313,35 @@ const FamilyGalleryPage = async () => {
         </ul>
       </section>
 
-      <section className="px-[30px] sm:px-[50px]  mt-[100px] mb-[60px] xl:w-full xl:px-[100px] xl:flex xl:flex-row-reverse xl:mt-[200px]">
+      <section className="px-[30px] sm:px-[50px]  mt-[100px] mb-[0px] xl:w-full xl:px-[100px] xl:flex xl:flex-row bg-[#faf9f7] xl:mt-[0px]">
+        <div className="flex justify-center lg:justify-end lg:pr-[50px] items-center xl:flex-1">
+          <div className="lg:w-[40%]">
+            <Image
+              src={data.aboutImage.data.attributes.url}
+              height={data.aboutImage.data.attributes.height}
+              width={data.aboutImage.data.attributes.width}
+              className="object-cover"
+              alt={data.aboutImage.data.attributes.alternativeText}
+            />
+          </div>
+        </div>
+        <div className="flex justify-center xl:justify-normal mb-[15px] xl:flex-1 flex-col xl:items-left items-start">
+          <div className="lg:w-[60%] lg:mt-[100px]">
+            <h2 className="text-[20px] leading-1 my-[30px] xl:text-[30px]">{data.aboutTitle}</h2>
+            <p className="font-thin mb-[15px]">{data.aboutSubtitle}</p>
+
+            <div className="xl:mt-[100px] mt-[60px] mb-[150px]">
+              <Link href={data.aboutButtonLink} legacyBehavior passHref>
+                <a className="border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
+                  {data.aboutButtonText}
+                </a>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-[30px] sm:px-[50px]  mt-[100px] mb-[60px] xl:w-full xl:px-[100px] xl:flex xl:flex-row-reverse xl:mt-[200px] ">
         <div className="flex justify-center xl:flex-1">
           <Image
             src={data.contactImage.data.attributes.url}

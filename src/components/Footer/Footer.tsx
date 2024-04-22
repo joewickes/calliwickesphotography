@@ -7,6 +7,7 @@ import NewsletterForm from '@/components/Forms/NewsletterForm';
 import TopArrow from '../TopArrow/TopArrow';
 import FooterSocials from './FooterSocials';
 import FooterContact from './FooterContact';
+import FooterDirectory from './FooterDirectory';
 
 async function getData() {
   try {
@@ -83,17 +84,17 @@ const Footer = async () => {
           <p className="font-thin">{data.cwpParagraph}</p>
           <FooterContact cwpEmail={data.cwpEmail} cwpPhoneNumber={data.cwpPhoneNumber} />
           {/* Locations served section */}
-          <div className="mt-[20px]">
-            <p className="text-left pr-[5px] min-w-[75px] sm:min-w-auto font-thin">{`Locations served - `}</p>
-            <ul>
+          <div className="mt-[50px]">
+            <p className="text-left pr-[5px] min-w-[75px] sm:min-w-auto font-thin">{`Services + Locations`}</p>
+            <ul className="w-full flex flex-wrap mt-[10px]">
               {data.location_home_pages.data.map((location: any, idx: number) => {
                 return (
-                  <li className="flex flex-wrap">
+                  <li className="flex flex-row font-thin text-[14px]">
                     <Link
                       key={idx}
                       href={`/${location.attributes.urlSlug}`}
                       className="underline text-nowrap"
-                    >{`${location.attributes.location}${idx < data.location_home_pages.data.length - 1 ? ', ' : ''}`}</Link>
+                    >{`${location.attributes.location}`}</Link>
                     {idx === data.location_home_pages.data.length - 1 ? '' : <p className="px-[10px]">{`|`}</p>}
                   </li>
                 );
@@ -121,23 +122,10 @@ const Footer = async () => {
               spotifyLink={data.newsletterSpotifyLink}
               applePodcastsLink={data.newsletterApplePodcastsLink}
             />
-            <div className="xl:flex-1 w-full flex-wrap font-thin flex mt-[20px] xl:mt-[50px] items-start text-center justify-start">
-              <div className="flex flex-col">
-                <p className="text-left pr-[5px] min-w-[75px] sm:min-w-auto">{data.directoryListingsPreamble}</p>
-                <ul className="flex flex-wrap">
-                  {data.directory_listings.data.map((listing: any, idx: number) => {
-                    return (
-                      <li className="flex flex-nowrap" key={idx}>
-                        <a className="underline text-nowrap" href={listing.attributes.directoryListingLink}>
-                          {listing.attributes.directoryListingTitle}
-                        </a>
-                        {idx === data.directory_listings.data.length - 1 ? '' : <p className="px-[10px]">{`|`}</p>}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </div>
+            <FooterDirectory
+              directoryListingsPreamble={data.directoryListingsPreamble}
+              directoryItems={data.directory_listings.data}
+            />
           </div>
         </section>
       </div>
