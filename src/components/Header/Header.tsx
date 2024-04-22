@@ -15,9 +15,9 @@ const Header = ({ isHome = false, headerData }: HeaderProps) => {
 
   return (
     <header>
-      <div className={`${isMenuOpen ? 'fixed top-0' : ''} z-30`}>
+      <div className={`${isMenuOpen ? 'fixed top-0' : ''} z-30 `}>
         <div className="w-dvw flex px-[20px] absolute top-0 left-0">
-          <div className={`flex-1 py-[10px] z-30 xl:ml-[100px] xl:mt-[50px]`}>
+          <div className={`flex-1 py-[10px] z-30 xl:mx-[100px] xl:mt-[50px] flex justify-between`}>
             <Link href="/" legacyBehavior passHref>
               <a
                 aria-label="Calli Wickes Photography Home Page"
@@ -28,9 +28,26 @@ const Header = ({ isHome = false, headerData }: HeaderProps) => {
                 {headerData.logoText}
               </a>
             </Link>
+            <nav className="flex invisible xl:visible">
+              <ul className="flex items-center justify-center">
+                {headerData.menu_items.data.map((item: any, idx: number) => {
+                  return (
+                    <li key={idx} className="cursor-pointer">
+                      <Link href={item.attributes.link} legacyBehavior passHref>
+                        <a
+                          className={`${idx !== headerData.menu_items.data.length - 1 ? 'mr-[40px]' : ''} hover:underline font-thin`}
+                        >
+                          {item.attributes.itemName}
+                        </a>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
           </div>
 
-          <div className="flex flex-1 justify-end items-center xl:mr-[100px] xl:mt-[50px]">
+          <div className="flex flex-1 justify-end items-center xl:mr-[100px] xl:mt-[50px] xl:hidden">
             <div className={`z-30 cursor-pointer`}>
               {!isMenuOpen ? (
                 <div className="flex items-center" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -47,8 +64,9 @@ const Header = ({ isHome = false, headerData }: HeaderProps) => {
             </div>
           </div>
         </div>
+
         <nav
-          className={`fixed h-full w-dvw bg-white z-20 flex justify-center pt-[15dvh] xl:pt-[35dvh] xl:text-[20px] ${
+          className={`xl:hidden fixed h-full w-dvw bg-white z-20 flex justify-center pt-[15dvh] xl:pt-[35dvh] xl:text-[20px] ${
             !isMenuOpen ? 'invisible overflow-y-auto' : 'visible overflow-y-hidden'
           }`}
         >

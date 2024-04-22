@@ -47,6 +47,14 @@ async function getData() {
                     }
                   }
                 }
+                location_home_pages {
+                  data {
+                    attributes {
+                      location
+                      urlSlug
+                    }
+                  }
+                }
               }
             }
           }
@@ -74,6 +82,24 @@ const Footer = async () => {
           </div>
           <p className="font-thin">{data.cwpParagraph}</p>
           <FooterContact cwpEmail={data.cwpEmail} cwpPhoneNumber={data.cwpPhoneNumber} />
+          {/* Locations served section */}
+          <div className="mt-[20px]">
+            <p className="text-left pr-[5px] min-w-[75px] sm:min-w-auto font-thin">{`Locations served - `}</p>
+            <ul>
+              {data.location_home_pages.data.map((location: any, idx: number) => {
+                return (
+                  <li className="flex flex-wrap">
+                    <Link
+                      key={idx}
+                      href={`/${location.attributes.urlSlug}`}
+                      className="underline text-nowrap"
+                    >{`${location.attributes.location}${idx < data.location_home_pages.data.length - 1 ? ', ' : ''}`}</Link>
+                    {idx === data.location_home_pages.data.length - 1 ? '' : <p className="px-[10px]">{`|`}</p>}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </section>
 
         <section className="border-[#faf9f7] border border-x-0 border-t-0 py-[20px] bg-[#faf9f7] px-[30px] lg:flex-1">
