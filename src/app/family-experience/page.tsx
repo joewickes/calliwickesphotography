@@ -314,7 +314,7 @@ const FamilyGalleryPage = async () => {
       </section>
 
       <section className="px-[30px] sm:px-[50px]  mt-[100px] mb-[0px] xl:w-full xl:px-[100px] xl:flex xl:flex-row bg-[#faf9f7] xl:mt-[0px]">
-        <div className="flex justify-center lg:justify-end lg:pr-[50px] items-center xl:flex-1">
+        <div className="flex justify-center lg:justify-end lg:pr-[50px] items-center xl:flex-1 pt-[50px] lg:pt-0">
           <div className="lg:w-[40%]">
             <Image
               src={data.aboutImage.data.attributes.url}
