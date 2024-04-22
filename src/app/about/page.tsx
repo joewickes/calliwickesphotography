@@ -227,8 +227,10 @@ const AboutPage = async () => {
           {data.facts.data.map((fact: any, index: number) => {
             return (
               <li key={index} className="xl:px-[50px]">
-                <p className="mb-[30px] font-thin">{fact.atttributes.factTitle}</p>
-                <h2 className={`mb-[30px] text-[30px] ${lora.className}`}>{`Fact ${index + 1}`}</h2>
+                <p className="mb-[30px] font-thin">{`${
+                  (index + 1).toString().length ? `0${index + 1}` : index + 1
+                }`}</p>
+                <h2 className={`mb-[30px] text-[30px] ${lora.className}`}>{fact.attributes.factTitle}</h2>
                 <p className="font-thin leading-8 mb-[60px]">{fact.attributes.factParagraph}</p>
               </li>
             );
