@@ -89,9 +89,8 @@ const Footer = async () => {
             <ul className="w-full flex flex-wrap mt-[10px]">
               {data.location_home_pages.data.map((location: any, idx: number) => {
                 return (
-                  <li className="flex flex-row font-thin text-[14px]">
+                  <li key={idx} className="flex flex-row font-thin text-[14px]">
                     <Link
-                      key={idx}
                       href={`/${location.attributes.urlSlug}`}
                       className="underline text-nowrap"
                     >{`${location.attributes.location}`}</Link>
