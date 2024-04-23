@@ -47,6 +47,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     //information blogs
     {
+      url: 'https://www.calliwickesphotography.com/blogs/pricing',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.1,
+    },
+    {
       url: 'https://www.calliwickesphotography.com/blogs/what-to-wear',
       lastModified: new Date(),
       changeFrequency: 'yearly',
@@ -85,6 +91,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.calliwickesphotography.com/blogs/darby-farms-family-session',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    },
+    {
+      url: 'https://www.calliwickesphotography.com/blogs/usf-senior-session',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.2,
@@ -158,6 +170,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.calliwickesphotography.com/dunedin-family-photographer',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.2,
+    },
+    {
+      url: 'https://www.calliwickesphotography.com/west-chase-family-photographer',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.2,
+    },
+    {
+      url: 'https://www.calliwickesphotography.com/largo-family-photographer',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.2,
