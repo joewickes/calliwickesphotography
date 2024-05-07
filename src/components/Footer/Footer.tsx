@@ -48,7 +48,7 @@ async function getData() {
                     }
                   }
                 }
-                location_home_pages {
+                location_home_pages (pagination: {limit:50}) {
                   data {
                     attributes {
                       location
