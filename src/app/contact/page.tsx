@@ -17,7 +17,7 @@ import Share from '@/components/Share/Share';
 export const metadata: Metadata = {
   title: 'Contact Calli Wickes Photography',
   description:
-    'Connect with Calli · calliwickesphotography@gmail.com · Tampa Family Photographer · Tampa Senior Photographer',
+    'Connect with Calli · 813-406-0558 · calliwickesphotography@gmail.com',
 };
 
 type dataStructure = {
@@ -174,7 +174,7 @@ const ContactPage = async () => {
       <Share />
       <Header isHome headerData={headerData} />
       <section
-        id="kideatingfruit"
+        id="familyoffivephotosittingonrocks"
         className="pt-[15dvh] px-[30px] h-[100dvh] text-white mb-[30px] xl:flex xl:items-center"
       >
         <h2
