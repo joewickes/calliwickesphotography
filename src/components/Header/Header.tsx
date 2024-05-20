@@ -28,7 +28,7 @@ const Header = ({ isHome = false, headerData }: HeaderProps) => {
                 {headerData.logoText}
               </a>
             </Link>
-            <nav className="flex invisible w-0 xl:visible xl:w-auto">
+            <nav className="xl:flex hidden w-0 xl:visible xl:w-auto">
               <ul className="flex items-center justify-center">
                 {headerData.menu_items.data.map((item: any, idx: number) => {
                   return (
