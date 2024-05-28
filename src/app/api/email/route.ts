@@ -1,14 +1,4 @@
 import { sendEmail, signUpForNewsletter } from '@/lib/sendgrid';
-// import sgMail from "@/lib/sendgrid";
-
-// export default async function handler(
-//   req: NextApiRequest,
-//   res: NextApiResponse
-// ) {
-//   await sgMail();
-
-//   return res.status(200).json({ message: "Email sent successfully" });
-// }
 
 export async function POST(req: Request) {
   const data = await req.json();
@@ -16,12 +6,13 @@ export async function POST(req: Request) {
   let email = '';
 
   try {
+    console.log('is newsletter?', data.newsletter);
     if (data.newsletter) {
       email = `Name: ${data.name}\nEmail: ${data.email}`;
       await signUpForNewsletter(data.email);
       return Response.json({ message: 'Email sent successfully' }, { status: 200 });
     } else {
-      email = `Name: ${data.name}\nEmail: ${data.email}\nMessage: ${data.message}`;
+      email = `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\nMessage: ${data.message}`;
       await sendEmail(email);
       return Response.json({ message: 'Email sent successfully' }, { status: 200 });
     }

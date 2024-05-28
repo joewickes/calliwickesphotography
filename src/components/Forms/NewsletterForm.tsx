@@ -20,7 +20,7 @@ const ContactForm = () => {
       newsletter: true,
     };
 
-    const res = await fetch(`${process.env.URL}/api/email`, {
+    const res = await fetch(`/api/email`, {
       method: 'POST',
       body: JSON.stringify(data),
     });

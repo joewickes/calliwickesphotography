@@ -51,6 +51,7 @@ const ContactForm = ({
       email,
       phone,
       message,
+      newsletter: false,
     };
 
     const res = await fetch(`/api/email`, {
