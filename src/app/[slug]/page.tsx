@@ -185,6 +185,8 @@ async function getData(id: number) {
               
         }
           `,
+        // preExperienceButtonText
+        // preExperienceButtonLink
       }),
     });
 

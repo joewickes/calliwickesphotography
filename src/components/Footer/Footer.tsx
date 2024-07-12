@@ -68,7 +68,7 @@ async function getData() {
   }
 }
 
-const Footer = async ({ showServices = true }: { showServices: boolean }) => {
+const Footer = async ({ showServices = true }: { showServices?: boolean }) => {
   const data = await getData();
 
   return (

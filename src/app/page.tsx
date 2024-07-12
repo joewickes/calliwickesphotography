@@ -302,6 +302,8 @@ async function getData() {
             
       }
         `,
+        // preExperienceButtonText
+        // preExperienceButtonLink
       }),
     });
     return res.json().then((data) => data.data.homePage.data.attributes);
