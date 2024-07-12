@@ -6,7 +6,6 @@ export async function POST(req: Request) {
   let email = '';
 
   try {
-    console.log('is newsletter?', data.newsletter);
     if (data.newsletter) {
       email = `Name: ${data.name}\nEmail: ${data.email}`;
       await signUpForNewsletter(email);
