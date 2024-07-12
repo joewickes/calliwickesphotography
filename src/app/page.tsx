@@ -454,7 +454,7 @@ export default async function Home() {
             <span className="font-thin leading-8 text-right ">
               <BlocksRenderer content={data.preExperienceParagraph} />
             </span>
-            <div className="pb-[0px] pt-[50px] mt-[60px] sm:flex sm:justify-end">
+            <div className="pb-[0px] pt-[50px] sm:flex sm:justify-end">
               <Link href={data.preExperienceButtonLink || '#'} legacyBehavior passHref>
                 <a className="mb-[100px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px] flex sm:inline justify-center text-center">
                   {data.preExperienceButtonText || 'test'}
