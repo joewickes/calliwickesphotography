@@ -278,7 +278,7 @@ const BlogPage = async ({ params }: any) => {
               </div>
             </section>
           </div>
-          <Footer services={false} />
+          <Footer showServices={false} />
         </main>
       ) : null}
     </>

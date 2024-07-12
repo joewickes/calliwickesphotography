@@ -68,7 +68,7 @@ async function getData() {
   }
 }
 
-const Footer = async ({ services = true }: { services: boolean }) => {
+const Footer = async ({ showServices = true }: { showServices: boolean }) => {
   const data = await getData();
 
   return (
@@ -85,7 +85,7 @@ const Footer = async ({ services = true }: { services: boolean }) => {
           <FooterContact cwpEmail={data.cwpEmail} cwpPhoneNumber={data.cwpPhoneNumber} />
 
           {/* Locations served section */}
-          {services ? (
+          {showServices ? (
             <div className="mt-[50px]">
               <p className="text-left pr-[5px] min-w-[75px] sm:min-w-auto font-thin">{`Services + Locations`}</p>
               <ul className="w-full flex flex-wrap mt-[10px]">
