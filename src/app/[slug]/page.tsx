@@ -85,6 +85,8 @@ async function getData(id: number) {
                 }
                 preExperienceTitle
                 preExperienceParagraph
+                preExperienceButtonText
+                preExperienceButtonLink
                 preExperienceImage {
                   data {
                     attributes {
@@ -185,8 +187,6 @@ async function getData(id: number) {
               
         }
           `,
-        // preExperienceButtonText
-        // preExperienceButtonLink
       }),
     });
 

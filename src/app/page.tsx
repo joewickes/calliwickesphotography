@@ -202,6 +202,8 @@ async function getData() {
                     }
                     preExperienceTitle
                     preExperienceParagraph
+                    preExperienceButtonText
+                    preExperienceButtonLink
                     preExperienceImage {
                       data {
                         attributes {
@@ -302,8 +304,6 @@ async function getData() {
             
       }
         `,
-        // preExperienceButtonText
-        // preExperienceButtonLink
       }),
     });
     return res.json().then((data) => data.data.homePage.data.attributes);
@@ -454,7 +454,7 @@ export default async function Home() {
             <div className="pb-[0px] pt-[50px] sm:flex sm:justify-end">
               <Link href={data.preExperienceButtonLink || '#'} legacyBehavior passHref>
                 <a className="mb-[100px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px] flex sm:inline justify-center text-center">
-                  {data.preExperienceButtonText || 'test'}
+                  {data.preExperienceButtonText}
                 </a>
               </Link>
             </div>
