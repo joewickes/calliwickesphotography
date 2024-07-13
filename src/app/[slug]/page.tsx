@@ -295,10 +295,7 @@ export default async function Home({ params }: any) {
         <Header headerData={headerData} />
 
         {/* Hero Section */}
-        <section
-          id="home"
-          className=" flex flex-col items-center justify-center lg:mt-[18dvh] mt-[12dvh] overflow-hidden"
-        >
+        <section id="home" className=" flex flex-col items-center justify-center overflow-hidden">
           <div className="sm:h-[500px] w-[140dvw] xl:w-full overflow-hidden flex justify-center items-start">
             <Image
               src="/images/Home Updated/familyofthree.webp"

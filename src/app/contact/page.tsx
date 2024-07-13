@@ -173,13 +173,7 @@ const ContactPage = async () => {
       <Share />
       <Header headerData={headerData} />
 
-      {/* <section
-        id="familyoffivephotosittingonrocks"
-        // className="pt-[15dvh] px-[30px] h-[100dvh] text-white mb-[30px] xl:flex xl:items-center"
-        className="flex flex-col items-center justify-center lg:mt-[18dvh] mt-[12dvh] overflow-hidden"
-      ></section> */}
-
-      <section className="flex flex-col items-center justify-center lg:mt-[18dvh] mt-[12dvh] overflow-hidden">
+      <section className="flex flex-col items-center justify-center overflow-hidden">
         <div className="sm:h-[500px] w-[140dvw] xl:w-full overflow-hidden flex justify-center items-start">
           <Image
             src="/images/Contact/Familyoffivephotosittingonrocks.webp"
