@@ -72,7 +72,7 @@ const TermsAndConditions = async () => {
     <main>
       <Share />
       <Header headerData={headerData} />
-      <section className="mt-[20dvh] px-[30px] xl:px-[100px] pb-[25px]">
+      <section className="px-[30px] xl:px-[100px] pb-[25px]">
         <div className="mb-[50px]">
           <h1 className="font-bold mb-[10px]">{`Terms & Conditions`}</h1>
           <p className="font-normal mt-[10px]">{`Last Updated: 1/25/2024`}</p>
