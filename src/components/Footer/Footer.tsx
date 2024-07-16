@@ -91,10 +91,10 @@ const Footer = async ({ showServices = true }: { showServices?: boolean }) => {
               <ul className="w-full flex flex-wrap mt-[10px]">
                 {data.location_home_pages.data.map((location: any, idx: number) => {
                   return (
-                    <li key={idx} className="flex flex-row font-thin text-[14px]">
+                    <li key={idx} className="flex flex-row font-thin text-[14px] ">
                       <Link
                         href={`/${location.attributes.urlSlug}`}
-                        className="underline text-nowrap"
+                        className="underline text-nowrap min-h-[24px] min-w-[24px]"
                       >{`${location.attributes.location}`}</Link>
                       {idx === data.location_home_pages.data.length - 1 ? '' : <p className="px-[10px]">{`|`}</p>}
                     </li>

@@ -20,7 +20,6 @@ export const signUpForNewsletter = async (text: string) => {
 };
 
 export const sendEmail = async (text: string) => {
-  console.log('can send email', !!process.env.SENDGRID_API_KEY);
   sgMail.setApiKey(process.env.SENDGRID_API_KEY || '');
 
   const date = new Date();

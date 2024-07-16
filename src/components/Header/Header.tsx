@@ -15,7 +15,7 @@ const Header = ({ isHome = false, headerData }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header>
+    <header className="min-h-[75px]">
       <div className={`${isMenuOpen ? 'fixed top-0' : ''} z-30 `}>
         <div className="w-dvw flex px-[20px] top-0 left-0">
           <div className={`flex-1 py-[10px] z-30 xl:mx-[100px] xl:my-[10px] flex justify-between`}>

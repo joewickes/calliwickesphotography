@@ -63,7 +63,12 @@ const ContactForm = () => {
         />
       </label>
       <div>
-        <button disabled={isDisabled} type="submit" className="mb-[25px] py-[15px] px-[30px]">
+        <button
+          disabled={isDisabled}
+          type="submit"
+          className="mb-[25px] py-[15px] px-[30px]"
+          aria-label="Newsletter Form Submit Button"
+        >
           <ArrowRight size={25} />
         </button>
       </div>

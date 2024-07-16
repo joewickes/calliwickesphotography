@@ -35,7 +35,10 @@ const FooterDirectory = ({
           {directoryItems.map((listing: any, idx: number) => {
             return (
               <li className="flex flex-nowrap" key={idx}>
-                <a className="underline text-nowrap" href={listing.attributes.directoryListingLink}>
+                <a
+                  className="underline text-nowrap min-h-[24px] min-w-[24px]"
+                  href={listing.attributes.directoryListingLink}
+                >
                   {listing.attributes.directoryListingTitle}
                 </a>
                 {idx === directoryItems.length - 1 ? '' : <p className="px-[10px]">{`|`}</p>}
