@@ -76,6 +76,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.1,
     },
+    {
+      url: 'https://www.calliwickesphotography.com/blogs/tips-for-genuine-smiles',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.1,
+    },
+    {
+      url: 'https://calliwickesphotography.com/blogs/family-session-game-ideas',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.1,
+    },
+    
     //location blogs
     {
       url: 'https://www.calliwickesphotography.com/blogs/cypress-point-park-family-session',
@@ -113,18 +126,61 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.2,
     },
-        {
+    {
       url: 'https://www.calliwickesphotography.com/blogs/riverwalk-family-session',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.2,
     },
-            {
+     {
       url: 'https://www.calliwickesphotography.com/blogs/hyde-park-village-family-session',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.2,
     },
+    {
+      url: 'https://calliwickesphotography.com/blogs/outdoor-milestone-session',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    },
+    {
+      url: 'https://www.calliwickesphotography.com/blogs/extended-family-photos',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    },
+    {
+      url: 'https://www.calliwickesphotography.com/blogs/newborn-session',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    },
+    {
+      url: 'https://www.calliwickesphotography.com/blogs/sunset-photo-session',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    },
+    {
+      url: 'https://www.calliwickesphotography.com/blogs/tampa-senior-photographer',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    },
+    {
+      url: 'https://www.calliwickesphotography.com/blogs/historic-hyde-park-family-session',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    },
+    {
+      url: 'https://www.calliwickesphotography.com/blogs/downtown-dade-city-session',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    },
+
     //duplicated homepages
     {
       url: 'https://www.calliwickesphotography.com/tampa-family-photographer',

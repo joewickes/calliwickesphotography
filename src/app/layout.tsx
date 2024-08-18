@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.calliwickesphotography.com'),
   title: 'Calli Wickes Photography | Florida Family Photographer',
   description:
-    'Calli Wickes is a Family Photographer located in central Florida | Natural photography for authentic families seeking the perfect blend of candid and portrait photos',
+    'Calli Wickes Photography is a family photographer based out of Tampa, FL. She is a natural light photographer for families seeking the perfect blend of candid and portrait photos. With over a decade of experience, she’s created an authentic family photography experience that will leave you at ease and having a blast with your crew. You will leave your family photo session having spent joyful and quality time with your favorite people and gain timeless family photos that you will cherish for years to come.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
