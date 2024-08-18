@@ -51,9 +51,10 @@ const ContactForm = ({
       email,
       phone,
       message,
+      newsletter: false,
     };
 
-    const res = await fetch(`${process.env.URL}/api/email`, {
+    const res = await fetch(`/api/email`, {
       method: 'POST',
       body: JSON.stringify(data),
     });
@@ -123,6 +124,7 @@ const ContactForm = ({
           disabled={isDisabled}
           type="submit"
           className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]"
+          aria-label="Contact Form Submit Button"
         >
           {formButtonText}
         </button>

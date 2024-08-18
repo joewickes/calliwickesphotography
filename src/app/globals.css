@@ -18,8 +18,9 @@ html {
 }
 
 #familyoffivephotosittingonrocks {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('/images/Contact/Familyoffivephotosittingonrocks.webp');
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('/images/Contact/Familyoffivephotosittingonrocks.webp'); */
+  background-image: url('/images/Contact/Familyoffivephotosittingonrocks.webp');
   background-size: cover;
   background-position: center;
   top: 0;

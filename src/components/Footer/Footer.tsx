@@ -68,7 +68,7 @@ async function getData() {
   }
 }
 
-const Footer = async () => {
+const Footer = async ({ showServices = true }: { showServices?: boolean }) => {
   const data = await getData();
 
   return (
@@ -83,23 +83,26 @@ const Footer = async () => {
           </div>
           <p className="font-thin">{data.cwpParagraph}</p>
           <FooterContact cwpEmail={data.cwpEmail} cwpPhoneNumber={data.cwpPhoneNumber} />
+
           {/* Locations served section */}
-          <div className="mt-[50px]">
-            <p className="text-left pr-[5px] min-w-[75px] sm:min-w-auto font-thin">{`Services + Locations`}</p>
-            <ul className="w-full flex flex-wrap mt-[10px]">
-              {data.location_home_pages.data.map((location: any, idx: number) => {
-                return (
-                  <li key={idx} className="flex flex-row font-thin text-[14px]">
-                    <Link
-                      href={`/${location.attributes.urlSlug}`}
-                      className="underline text-nowrap"
-                    >{`${location.attributes.location}`}</Link>
-                    {idx === data.location_home_pages.data.length - 1 ? '' : <p className="px-[10px]">{`|`}</p>}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+          {showServices ? (
+            <div className="mt-[50px]">
+              <p className="text-left pr-[5px] min-w-[75px] sm:min-w-auto font-thin">{`Services + Locations`}</p>
+              <ul className="w-full flex flex-wrap mt-[10px]">
+                {data.location_home_pages.data.map((location: any, idx: number) => {
+                  return (
+                    <li key={idx} className="flex flex-row font-thin text-[14px] ">
+                      <Link
+                        href={`/${location.attributes.urlSlug}`}
+                        className="underline text-nowrap min-h-[24px] min-w-[24px]"
+                      >{`${location.attributes.location}`}</Link>
+                      {idx === data.location_home_pages.data.length - 1 ? '' : <p className="px-[10px]">{`|`}</p>}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ) : null}
         </section>
 
         <section className="border-[#faf9f7] border border-x-0 border-t-0 py-[20px] bg-[#faf9f7] px-[30px] lg:flex-1">

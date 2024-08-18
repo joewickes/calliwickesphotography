@@ -215,7 +215,7 @@ const BlogPage = async ({ params }: any) => {
         <main>
           <Share urlPath={`/blogs/${slug}`} />
           <Header headerData={headerData} />
-          <div className="flex flex-col xl:flex-row lg:mt-[18dvh] mt-[12dvh] px-[30px] sm:px-[75px] min-h-[90dvh]">
+          <div className="flex flex-col xl:flex-row px-[30px] sm:px-[75px] min-h-[90dvh]">
             {/* Left/top with blog content */}
             <section
               id="blog-content"
@@ -278,7 +278,7 @@ const BlogPage = async ({ params }: any) => {
               </div>
             </section>
           </div>
-          <Footer />
+          <Footer showServices={false} />
         </main>
       ) : null}
     </>

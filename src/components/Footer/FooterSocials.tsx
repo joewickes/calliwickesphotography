@@ -34,30 +34,30 @@ const FooterSocials = ({
   return (
     <div className="flex flex-wrap justify-start">
       <a target="_blank" aria-label="Facebook" href={facebookLink}>
-        <FacebookLogo size={23} className="mr-[20px] cursor-pointer mt-[20px]" />
+        <FacebookLogo size={23} className="mr-[20px] cursor-pointer mt-[20px] min-h-[24px] min-w-[24px]" />
       </a>
       <a target="_blank" aria-label="Instagram" href={instagramLink}>
-        <InstagramLogo size={23} className="mr-[20px] cursor-pointer mt-[20px]" />
+        <InstagramLogo size={23} className="mr-[20px] cursor-pointer mt-[20px] min-h-[24px] min-w-[24px]" />
       </a>
       <a target="_blank" aria-label="Pinterest" href={pinterestLink}>
-        <PinterestLogo size={23} className="mr-[20px] cursor-pointer mt-[20px]" />
+        <PinterestLogo size={23} className="mr-[20px] cursor-pointer mt-[20px] min-h-[24px] min-w-[24px]" />
       </a>
       <a target="_blank" aria-label="Yelp" href={yelpLink}>
-        <FontAwesomeIcon icon={faYelp} className="mr-[20px] cursor-pointer mt-[20px]" />
+        <FontAwesomeIcon icon={faYelp} className="mr-[20px] cursor-pointer mt-[20px] min-h-[24px] min-w-[24px]" />
       </a>
       <a target="_blank" aria-label="LinkedIn" href={linkedInLink}>
-        <LinkedinLogo size={23} className="mr-[20px] cursor-pointer mt-[20px]" />
+        <LinkedinLogo size={23} className="mr-[20px] cursor-pointer mt-[20px] min-h-[24px] min-w-[24px]" />
       </a>
       <a target="_blank" aria-label="YouTube" href={youtubeLink}>
-        <YoutubeLogo size={23} className="mr-[20px] cursor-pointer mt-[20px]" />
+        <YoutubeLogo size={23} className="mr-[20px] cursor-pointer mt-[20px] min-h-[24px] min-w-[24px]" />
       </a>
 
       <a target="_blank" aria-label="Spotify" href={spotifyLink}>
-        <SpotifyLogo size={23} className=" mr-[20px] cursor-pointer mt-[20px]" />
+        <SpotifyLogo size={23} className=" mr-[20px] cursor-pointer mt-[20px] min-h-[24px] min-w-[24px]" />
       </a>
 
       <a target="_blank" aria-label="Apple Podcasts" href={applePodcastsLink}>
-        <ApplePodcastsLogo size={23} className="cursor-pointer mt-[20px]" />
+        <ApplePodcastsLogo size={23} className="cursor-pointer mt-[20px] min-h-[24px] min-w-[24px]" />
       </a>
     </div>
   );

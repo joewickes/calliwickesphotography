@@ -189,10 +189,7 @@ const FamilyGalleryPage = async () => {
         <Header headerData={headerData} />
       </div>
 
-      <section
-        className="mt-[10dvh] xl:mt-[20dvh] px-[30px] pb-[100px] mb-[50px] xl:h-[80dvh] top-0 xl:w-full"
-        id="familygallerytop"
-      >
+      <section className="px-[30px] pb-[100px] mb-[50px] xl:h-[80dvh] top-0 xl:w-full" id="familygallerytop">
         <h2 className="text-white text-[38px] font-thin leading-1 flex flex-col pt-[60px] xl:text-[70px] xl:pt-[20%]">{`Families + Couples`}</h2>
         <p className="text-white text-[15px] font-thin px-[40px] py-[150px]">{`Family photos made into timeless memories.`}</p>
       </section>

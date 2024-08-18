@@ -20,7 +20,7 @@ const ContactForm = () => {
       newsletter: true,
     };
 
-    const res = await fetch(`${process.env.URL}/api/email`, {
+    const res = await fetch(`/api/email`, {
       method: 'POST',
       body: JSON.stringify(data),
     });
@@ -63,7 +63,12 @@ const ContactForm = () => {
         />
       </label>
       <div>
-        <button disabled={isDisabled} type="submit" className="mb-[25px] py-[15px] px-[30px]">
+        <button
+          disabled={isDisabled}
+          type="submit"
+          className="mb-[25px] py-[15px] px-[30px]"
+          aria-label="Newsletter Form Submit Button"
+        >
           <ArrowRight size={25} />
         </button>
       </div>

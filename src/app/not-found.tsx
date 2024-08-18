@@ -62,7 +62,7 @@ const NotFound = async () => {
   return (
     <main>
       <Header headerData={headerData} />
-      <section className="mt-[20dvh] px-[30px] xl:px-[100px] h-[100dvh] flex flex-col items-center justify-start">
+      <section className="px-[30px] xl:px-[100px] h-[100dvh] flex flex-col items-center justify-start">
         <h1 className="mt-[50px] xl:mt-[100px] text-[40px] leading-1 mb-[30px]">{`Uh-oh! This page doesn't exist.`}</h1>
         <Link href="/" passHref legacyBehavior>
           <a
