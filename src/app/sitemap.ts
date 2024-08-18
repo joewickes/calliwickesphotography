@@ -70,6 +70,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.1,
     },
+        {
+      url: 'https://www.calliwickesphotography.com/blogs/things-to-do-in-tampa',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.1,
+    },
     //location blogs
     {
       url: 'https://www.calliwickesphotography.com/blogs/cypress-point-park-family-session',
@@ -103,6 +109,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.calliwickesphotography.com/blogs/curtis-hixon-family-session',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    },
+        {
+      url: 'https://www.calliwickesphotography.com/blogs/riverwalk-family-session',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    },
+            {
+      url: 'https://www.calliwickesphotography.com/blogs/hyde-park-village-family-session',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.2,
