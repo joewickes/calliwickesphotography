@@ -179,7 +179,7 @@ const AboutPage = async () => {
       <Share />
       <Header headerData={headerData} />
 
-      <section className="px-[30px] pt-[40px] flex flex-col items-center bg-[#f2f2f2] pb-[50px] lg:mt-[18dvh] mt-[12dvh]">
+      <section className="px-[30px] pt-[40px] flex flex-col items-center bg-[#f2f2f2] pb-[50px]">
         <div className="min-h-[225px] w-full overflow-hidden flex justify-center">
           <Image
             src={data.heroPhoto.data.attributes.url}

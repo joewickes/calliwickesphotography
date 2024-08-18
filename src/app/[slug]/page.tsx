@@ -85,6 +85,8 @@ async function getData(id: number) {
                 }
                 preExperienceTitle
                 preExperienceParagraph
+                preExperienceButtonText
+                preExperienceButtonLink
                 preExperienceImage {
                   data {
                     attributes {
@@ -293,10 +295,7 @@ export default async function Home({ params }: any) {
         <Header headerData={headerData} />
 
         {/* Hero Section */}
-        <section
-          id="home"
-          className=" flex flex-col items-center justify-center lg:mt-[18dvh] mt-[12dvh] overflow-hidden"
-        >
+        <section id="home" className=" flex flex-col items-center justify-center overflow-hidden">
           <div className="sm:h-[500px] w-[140dvw] xl:w-full overflow-hidden flex justify-center items-start">
             <Image
               src="/images/Home Updated/familyofthree.webp"
@@ -424,6 +423,13 @@ export default async function Home({ params }: any) {
             <span className="font-thin leading-8 text-right ">
               <BlocksRenderer content={data.preExperienceParagraph} />
             </span>
+            <div className="pb-[0px] pt-[50px] sm:flex sm:justify-end">
+              <Link href={data.preExperienceButtonLink || '#'} legacyBehavior passHref>
+                <a className="mb-[100px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px] flex sm:inline justify-center text-center">
+                  {data.preExperienceButtonText || 'test'}
+                </a>
+              </Link>
+            </div>
           </div>
         </section>
 
