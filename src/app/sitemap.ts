@@ -180,13 +180,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.2,
     },
+    {
+      url: 'https://www.calliwickesphotography.com/blogs/eg-simmons-park-session',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    },
+    {
+      url: 'https://www.calliwickesphotography.com/blogs/university-of-tampa-engagement-session',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    },
+    {
+      url: 'https://www.calliwickesphotography.com/blogs/mini-milestone-session',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    },
+    {
+      url: 'https://www.calliwickesphotography.com/blogs/maternity-session-philippe-park',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    },
+
 
     //duplicated homepages
     {
       url: 'https://www.calliwickesphotography.com/tampa-family-photographer',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.2,
+      priority: 0.6,
     },
     {
       url: 'https://www.calliwickesphotography.com/wesley-chapel-family-photographer',
@@ -198,7 +223,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://www.calliwickesphotography.com/clearwater-family-photographer',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.2,
+      priority: 0.6,
     },
     {
       url: 'https://www.calliwickesphotography.com/lakeland-family-photographer',
@@ -234,7 +259,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://www.calliwickesphotography.com/st-pete-beach-family-photographer',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.2,
+      priority: 0.6,
     },
     {
       url: 'https://www.calliwickesphotography.com/dade-city-family-photographer',
