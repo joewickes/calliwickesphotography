@@ -11,6 +11,7 @@ import Header from '@/components/Header/Header';
 import Share from '@/components/Share/Share';
 
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
+import ChatCTAForm from '@/components/ChatCTAForm/ChatCTAForm';
 
 export const metadata: Metadata = {
   title: 'Family Experience',
@@ -338,7 +339,7 @@ const FamilyGalleryPage = async () => {
         </div>
       </section>
 
-      <section className="px-[30px] sm:px-[50px]  mt-[100px] mb-[60px] xl:w-full xl:px-[100px] xl:flex xl:flex-row-reverse xl:mt-[200px] ">
+      <section className="px-[30px] sm:px-[50px] xl:px-[100px] mt-[100px] xl:w-full  xl:flex xl:flex-row-reverse xl:mt-[200px] ">
         <div className="flex justify-center xl:flex-1">
           <Image
             src={data.contactImage.data.attributes.url}
@@ -352,7 +353,7 @@ const FamilyGalleryPage = async () => {
           <h2 className="text-[40px] leading-1 my-[30px] xl:text-[60px]">{data.contactTitle}</h2>
           <p className="font-thin mb-[15px]">{data.contactSubtitle}</p>
 
-          <div className="xl:mt-[150px] mt-[60px] mb-[150px]">
+          <div className="xl:mt-[150px] mt-[60px] mb-[100px]">
             <Link href={data.contactButtonLink} legacyBehavior passHref>
               <a className="border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
                 {data.contactButtonText}
@@ -361,6 +362,8 @@ const FamilyGalleryPage = async () => {
           </div>
         </div>
       </section>
+
+      <ChatCTAForm />
       <Footer />
     </main>
   );
