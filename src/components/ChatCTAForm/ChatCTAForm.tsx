@@ -44,7 +44,7 @@ export default async function ChatCTAForm() {
   const data = await getData();
 
   return (
-    <section className="px-[30px] sm:px-[50px] xl:px-[100px] text-black xl:pl-[100px] xl:flex">
+    <section className="px-[30px] xl:px-[100px] text-black xl:pl-[100px] xl:flex">
       <div className="mb-[60px] xl:px-[100px] xl:pt-[100px] mt-[50px] xl:mt-0 w-full">
         <h1 className={`${lora.className} text-[45px] leading-1 mb-[30px]`}>{data.formTitle}</h1>
         <span className="font-thin whitespace-pre-line a-bold ">

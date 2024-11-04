@@ -12,6 +12,7 @@ import Header from '@/components/Header/Header';
 import Share from '@/components/Share/Share';
 
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
+import ChatCTAForm from '@/components/ChatCTAForm/ChatCTAForm';
 
 export const metadata: Metadata = {
   title: 'Meet Calli',
@@ -300,7 +301,7 @@ const AboutPage = async () => {
           <h2 className="text-[40px] leading-1 my-[50px] xl:text-[60px]">{data.contactTitle}</h2>
           <p className="font-thin mb-[15px]">{data.contactParagraph}</p>
 
-          <div className="xl:mt-[100px] mt-[60px] mb-[60px] self-start">
+          <div className="xl:mt-[100px] mt-[60px] mb-[60px] self-start sm:self-center xl:self-start">
             <Link href={data.contactButtonLink} legacyBehavior passHref>
               <a className="border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
                 {data.contactButtonText}
@@ -309,6 +310,9 @@ const AboutPage = async () => {
           </div>
         </div>
       </section>
+
+      <ChatCTAForm />
+
       <Footer />
     </main>
   );

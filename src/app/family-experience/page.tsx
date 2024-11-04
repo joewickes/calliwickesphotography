@@ -311,9 +311,9 @@ const FamilyGalleryPage = async () => {
         </ul>
       </section>
 
-      <section className="px-[30px] sm:px-[50px]  mt-[100px] mb-[0px] xl:w-full xl:px-[100px] xl:flex xl:flex-row bg-[#faf9f7] xl:mt-[0px]">
-        <div className="flex justify-center lg:justify-end lg:pr-[50px] items-center xl:flex-1 pt-[50px] lg:pt-0">
-          <div className="lg:w-[40%]">
+      <section className="px-[30px]  mt-[100px] mb-[0px] xl:w-full xl:px-[100px] xl:flex xl:flex-row bg-[#faf9f7] xl:mt-[0px]">
+        <div className="flex justify-center xl:justify-end xl:pr-[100px] items-center xl:flex-1 pt-[50px] lg:pt-0">
+          <div className="md:w-[60%] pt-[50px] xl:py-[50px]">
             <Image
               src={data.aboutImage.data.attributes.url}
               height={data.aboutImage.data.attributes.height}
@@ -323,9 +323,9 @@ const FamilyGalleryPage = async () => {
             />
           </div>
         </div>
-        <div className="flex justify-center xl:justify-normal mb-[15px] xl:flex-1 flex-col xl:items-left items-start">
-          <div className="lg:w-[60%] lg:mt-[100px]">
-            <h2 className="text-[20px] leading-1 my-[30px] xl:text-[30px]">{data.aboutTitle}</h2>
+        <div className="flex justify-center xl:justify-normal mb-[15px] xl:flex-1 flex-col xl:items-left items-center">
+          <div className="">
+            <h2 className="text-[20px] leading-1 my-[30px] pt-[20px] xl:text-[30px]">{data.aboutTitle}</h2>
             <p className="font-thin mb-[15px]">{data.aboutSubtitle}</p>
 
             <div className="xl:mt-[100px] mt-[60px] mb-[150px]">
@@ -339,8 +339,8 @@ const FamilyGalleryPage = async () => {
         </div>
       </section>
 
-      <section className="px-[30px] sm:px-[50px] xl:px-[100px] mt-[100px] xl:w-full  xl:flex xl:flex-row-reverse xl:mt-[200px] ">
-        <div className="flex justify-center xl:flex-1">
+      <section className="px-[30px] xl:px-[100px] mt-[100px] xl:w-full  xl:flex xl:flex-row-reverse xl:mt-[200px] ">
+        <div className="flex justify-center xl:flex-1 pb-[50px]">
           <Image
             src={data.contactImage.data.attributes.url}
             height={data.contactImage.data.attributes.height}
@@ -349,7 +349,7 @@ const FamilyGalleryPage = async () => {
             alt={data.contactImage.data.attributes.alternativeText}
           />
         </div>
-        <div className="flex justify-center xl:justify-normal mb-[15px] xl:flex-1 flex-col xl:items-left items-start">
+        <div className="flex justify-center xl:justify-normal mb-[15px] xl:flex-1 flex-col xl:items-left xl:pr-[100px] items-start">
           <h2 className="text-[40px] leading-1 my-[30px] xl:text-[60px]">{data.contactTitle}</h2>
           <p className="font-thin mb-[15px]">{data.contactSubtitle}</p>
 

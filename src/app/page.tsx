@@ -11,6 +11,7 @@ import Carousel from '@/components/Carousels/ImageCarousel';
 import FAQs from '@/components/FAQs/FAQs';
 import NewsletterForm from '@/components/Forms/NewsletterForm';
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
+import ChatCTAForm from '@/components/ChatCTAForm/ChatCTAForm';
 
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
 
@@ -584,7 +585,7 @@ export default async function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="px-[30px] xl:flex xl:flex-row-reverse xl:py-[100px]">
+        <section id="contact" className="px-[30px] xl:flex xl:flex-row-reverse xl:pt-[100px] pb-[50px]">
           <div className="w-full mb-[50px] xl:flex-1">
             <div className="w-full flex justify-center items-end xl:pr-[100px] ">
               <div className="max-w-[323px] max-h-[484px] w-full xl:max-h-[484px] xl:max-w-[323px] pr-[5px]">
@@ -613,6 +614,8 @@ export default async function Home() {
             </div>
           </div>
         </section>
+
+        <ChatCTAForm />
 
         {/* Footer */}
         <Footer />
