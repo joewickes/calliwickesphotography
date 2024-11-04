@@ -190,13 +190,13 @@ const FamilyGalleryPage = async () => {
         <Header headerData={headerData} />
       </div>
 
-      <section className="px-[30px] pb-[100px] mb-[50px] xl:h-[80dvh] top-0 xl:w-full" id="familygallerytop">
-        <h2 className="text-white text-[38px] font-thin leading-1 flex flex-col pt-[60px] xl:text-[70px] xl:pt-[20%]">{`Families + Couples`}</h2>
-        <p className="text-white text-[15px] font-thin px-[40px] py-[150px]">{`Family photos made into timeless memories.`}</p>
-      </section>
-      <section className="px-[30px] mb-[60px] xl:flex xl:items-center xl:px-[100px] xl:mb-[150px] xl:mt-[100px]">
-        <h1 className="text-[40px] leading-1 mb-[30px] xl:flex-1 xl:text-[50px]">{`The Family Experience`}</h1>
-        <p className="font-thin xl:flex-1">{`My clients love my relaxed posing and the bright warmth of my images. My sessions are laid-back, meant to capture your natural smiles + laughter with your crew. My families want a beautiful family portrait and also all the silly moments it took to capture that one. Because it’s about the journey. And as your forever photographer, I’d love to help you along your way.`}</p>
+      <section
+        className="px-[30px] pb-[100px] mb-[50px] h-[30dvh] lg:h-[50dvh] top-0 xl:w-full"
+        id="familygallerytop"
+      ></section>
+      <section className="px-[30px] mb-[60px] flex flex-col items-center justify-center xl:px-[100px] xl:mb-[100px] ">
+        <h1 className="text-[40px] leading-1 mb-[25px] xl:flex-1 xl:text-[50px]">{`The Family Experience`}</h1>
+        <p className="font-thin xl:flex-1 md:w-[60%]">{`My clients love my relaxed posing and the bright warmth of my images. My sessions are laid-back, meant to capture your natural smiles + laughter with your crew. My families want a beautiful family portrait and also all the silly moments it took to capture that one. Because it’s about the journey. And as your forever photographer, I’d love to help you along your way.`}</p>
       </section>
 
       {/* Experience Process Section */}

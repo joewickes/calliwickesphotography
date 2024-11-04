@@ -84,6 +84,69 @@ html {
   top: 0;
   cursor: pointer;
 }
+#familygallerytop {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('/images/Family Gallery/tampafamilyphoto.webp');
+  background-size: cover;
+  background-position: 0 -100px;
+  top: 0;
+  cursor: pointer;
+}
+
+@media all and (max-width: 2000px) {
+  #familygallerytop {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url('/images/Family Gallery/tampafamilyphoto.webp');
+    background-size: cover;
+    background-position: 0 -220px;
+    top: 0;
+    cursor: pointer;
+  }
+}
+
+@media all and (max-width: 1500px) {
+  #familygallerytop {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url('/images/Family Gallery/tampafamilyphoto.webp');
+    background-size: cover;
+    background-position: 0 -175px;
+    top: 0;
+    cursor: pointer;
+  }
+}
+
+@media all and (max-width: 1250px) {
+  #familygallerytop {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url('/images/Family Gallery/tampafamilyphoto.webp');
+    background-size: cover;
+    background-position: 0 -100px;
+    top: 0;
+    cursor: pointer;
+  }
+}
+
+@media all and (max-width: 800px) {
+  #familygallerytop {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url('/images/Family Gallery/tampafamilyphoto.webp');
+    background-size: cover;
+    background-position: 0 -50px;
+    top: 0;
+    cursor: pointer;
+  }
+}
+
+@media all and (max-width: 400px) {
+  #familygallerytop {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url('/images/Family Gallery/tampafamilyphoto.webp');
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    cursor: pointer;
+  }
+}
 
 #seniorgallerytop {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
