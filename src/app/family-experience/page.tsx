@@ -339,18 +339,18 @@ const FamilyGalleryPage = async () => {
         </div>
       </section>
 
-      <section className="px-[30px] xl:px-[100px] mt-[100px] xl:w-full  xl:flex xl:flex-row-reverse xl:mt-[200px] ">
-        <div className="flex justify-center xl:flex-1 pb-[50px]">
+      <section className="px-[30px] xl:px-[100px] mt-[100px] xl:w-full xl:flex xl:flex-row-reverse xl:mt-[200px]">
+        <div className="flex justify-center pb-[50px]">
           <Image
             src={data.contactImage.data.attributes.url}
             height={data.contactImage.data.attributes.height}
             width={data.contactImage.data.attributes.width}
-            className="object-cover"
+            className="object-cover xl:w-[50%]"
             alt={data.contactImage.data.attributes.alternativeText}
           />
         </div>
-        <div className="flex justify-center xl:justify-normal mb-[15px] xl:flex-1 flex-col xl:items-left xl:pr-[100px] items-start">
-          <h2 className="text-[40px] leading-1 my-[30px] xl:text-[60px]">{data.contactTitle}</h2>
+        <div className="flex justify-center xl:justify-normal mb-[15px] xl:flex-1 flex-col xl:items-left xl:pl-[100px] items-start">
+          <h2 className="text-[35px] leading-1 my-[30px] ">{data.contactTitle}</h2>
           <p className="font-thin mb-[15px]">{data.contactSubtitle}</p>
 
           <div className="xl:mt-[150px] mt-[60px] mb-[100px]">
