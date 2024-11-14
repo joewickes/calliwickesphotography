@@ -21,7 +21,7 @@ const Share = ({ urlPath = '/' }: { urlPath?: string }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const url = `https://calliwickesphotography.com${urlPath}`;
 
-  const quote = 'Calli Wickes Photography | Family and Senior Photographer';
+  const quote = 'Calli Wickes Photography | Family Photographer';
   const hashtag = '#calliwickesphotography';
 
   return (

@@ -28,12 +28,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: 'https://www.calliwickesphotography.com/senior-experience',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
       url: 'https://www.calliwickesphotography.com/privacypolicy',
       lastModified: new Date(),
       changeFrequency: 'yearly',
@@ -70,7 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.1,
     },
-        {
+    {
       url: 'https://www.calliwickesphotography.com/blogs/things-to-do-in-tampa',
       lastModified: new Date(),
       changeFrequency: 'yearly',
@@ -88,7 +82,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.1,
     },
-    
+
     //location blogs
     {
       url: 'https://www.calliwickesphotography.com/blogs/cypress-point-park-family-session',
@@ -132,7 +126,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.2,
     },
-     {
+    {
       url: 'https://www.calliwickesphotography.com/blogs/hyde-park-village-family-session',
       lastModified: new Date(),
       changeFrequency: 'yearly',
@@ -204,7 +198,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.2,
     },
-
 
     //duplicated homepages
     {

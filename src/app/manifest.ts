@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Calli Wickes Photography',
     short_name: 'Calli Wickes Photography',
-    description: 'Calli Wickes Photography - Family and Senior Photographer',
+    description: 'Calli Wickes Photography - Family Photographer',
     start_url: '/',
     display: 'standalone',
     background_color: '#fff',

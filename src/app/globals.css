@@ -42,34 +42,9 @@ html {
   top: 0;
 }
 
-#documentstorysenior {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url('/images/Experience/tampaportrait.webp');
-  background-size: cover;
-  background-position: center;
-  top: 0;
-}
-
-#portfoliomainsenior {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url('/images/Portfolio Main/seniorphotosoccer.webp');
-  background-size: cover;
-  background-position: center;
-  top: 0;
-}
-
 #familygallerylink {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url('/images/Portfolio Main/familyphoto.webp');
-  background-size: cover;
-  background-position: center;
-  top: 0;
-  cursor: pointer;
-}
-
-#seniorgallerylink {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('/images/Portfolio Main/seniorphoto.webp');
   background-size: cover;
   background-position: center;
   top: 0;
@@ -139,15 +114,6 @@ html {
     top: 0;
     cursor: pointer;
   }
-}
-
-#seniorgallerytop {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url('/images/Senior Gallery/seniorgirlportrait.webp');
-  background-size: cover;
-  background-position: center;
-  top: 0;
-  cursor: pointer;
 }
 
 #couplewithdaughter {

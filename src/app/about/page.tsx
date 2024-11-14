@@ -199,10 +199,10 @@ const AboutPage = async () => {
         <div className="flex justify-center mb-[60px] xl:flex-1">
           <div className="xl:mt-[120px] h-[90dvw] w-[90dvw] md:h-auto xl:w-auto overflow-hidden xl:pl-[100px]">
             <Image
-              src={data.aboutMePhoto.data.attributes.url}
-              alt={data.aboutMePhoto.data.attributes.alternativeText}
-              height={data.aboutMePhoto.data.attributes.height}
-              width={data.aboutMePhoto.data.attributes.width}
+              src={data.aboutMePhoto.data?.attributes.url}
+              alt={data.aboutMePhoto.data?.attributes.alternativeText}
+              height={data.aboutMePhoto.data?.attributes.height}
+              width={data.aboutMePhoto.data?.attributes.width}
               className="object-cover mt-[-10dvw] xl:mt-[-100px]"
             />
           </div>
