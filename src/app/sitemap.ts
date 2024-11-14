@@ -198,6 +198,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.2,
     },
+    {
+      url: 'https://www.calliwickesphotography.com/blogs/plant-park-engagement-session',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.2,
+    },
 
     //duplicated homepages
     {
