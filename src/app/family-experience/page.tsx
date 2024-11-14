@@ -340,7 +340,7 @@ const FamilyGalleryPage = async () => {
       </section>
 
       <section className="px-[30px] xl:px-[100px] mt-[100px] xl:w-full xl:flex xl:flex-row-reverse xl:mt-[200px]">
-        <div className="flex justify-center pb-[50px]">
+        <div className="flex justify-center pb-[50px] xl:w-[50%]">
           <Image
             src={data.contactImage.data.attributes.url}
             height={data.contactImage.data.attributes.height}
