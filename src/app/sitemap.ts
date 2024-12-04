@@ -83,6 +83,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.1,
     },
 
+        //senior info blogs
+        {
+          url: 'https://www.calliwickesphotography.com/blogs/senior-session-preparation',
+          lastModified: new Date(),
+          changeFrequency: 'yearly',
+          priority: 0.2,
+        },
+        {
+          url: 'https://www.calliwickesphotography.com/blogs/senior-style-guide',
+          lastModified: new Date(),
+          changeFrequency: 'yearly',
+          priority: 0.2,
+        },
+        {
+          url: 'https://www.calliwickesphotography.com/blogs/senior-year-prep',
+          lastModified: new Date(),
+          changeFrequency: 'yearly',
+          priority: 0.2,
+        },
+
     //location blogs
     {
       url: 'https://www.calliwickesphotography.com/blogs/cypress-point-park-family-session',
@@ -210,13 +230,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://www.calliwickesphotography.com/tampa-family-photographer',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.6,
+      priority: 0.9,
     },
     {
       url: 'https://www.calliwickesphotography.com/wesley-chapel-family-photographer',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.2,
+      priority: 0.6,
     },
     {
       url: 'https://www.calliwickesphotography.com/clearwater-family-photographer',
@@ -228,31 +248,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://www.calliwickesphotography.com/lakeland-family-photographer',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.2,
+      priority: 0.6,
     },
     {
       url: 'https://www.calliwickesphotography.com/brandon-family-photographer',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.2,
+      priority: 0.6,
     },
     {
       url: 'https://www.calliwickesphotography.com/riverview-family-photographer',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.2,
+      priority: 0.6,
     },
     {
       url: 'https://www.calliwickesphotography.com/spring-hill-family-photographer',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.2,
+      priority: 0.6,
     },
     {
       url: 'https://www.calliwickesphotography.com/orlando-family-photographer',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.2,
+      priority: 0.6,
     },
     {
       url: 'https://www.calliwickesphotography.com/st-pete-beach-family-photographer',
@@ -264,31 +284,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://www.calliwickesphotography.com/dade-city-family-photographer',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.2,
+      priority: 0.6,
     },
     {
       url: 'https://www.calliwickesphotography.com/land-o-lakes-family-photographer',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.2,
+      priority: 0.6,
     },
     {
       url: 'https://www.calliwickesphotography.com/dunedin-family-photographer',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.2,
+      priority: 0.6,
     },
     {
       url: 'https://www.calliwickesphotography.com/west-chase-family-photographer',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.2,
+      priority: 0.6,
     },
     {
       url: 'https://www.calliwickesphotography.com/largo-family-photographer',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.2,
+      priority: 0.6,
     },
   ];
 }
