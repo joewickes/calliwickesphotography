@@ -47,6 +47,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.1,
     },
     {
+      url: 'https://www.calliwickesphotography.com/blogs/proposal-information',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.1,
+    },
+    {
       url: 'https://www.calliwickesphotography.com/blogs/what-to-wear',
       lastModified: new Date(),
       changeFrequency: 'yearly',
