@@ -236,6 +236,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.4,
     },
+    {
+      url: 'https://www.calliwickesphotography.com/blogs/downtown-zephyrhills-family-session',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.4,
+    },
+    {
+      url: 'https://www.calliwickesphotography.com/blogs/surprise-proposal-indian-rocks-beach',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.4,
+    },
+    {
+      url: 'https://www.calliwickesphotography.com/blogs/lutz-extended-family-session',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.4,
+    },
 
     //duplicated homepages
     {
