@@ -123,7 +123,7 @@ const ContactForm = ({
         <button
           disabled={isDisabled}
           type="submit"
-          className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]"
+          className="mb-[60px] border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px]"
           aria-label="Contact Form Submit Button"
         >
           {formButtonText}

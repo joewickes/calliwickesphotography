@@ -108,7 +108,7 @@ const Footer = async ({ showServices = true }: { showServices?: boolean }) => {
         <section className="border-[#faf9f7] border border-x-0 border-t-0 py-[20px] bg-[#faf9f7] px-[30px] lg:flex-1">
           <div>
             <div>
-              <h3 className={`${lora.className} text-[35px] mb-[5px]`}>{data.newsletterTitle}</h3>
+              <p className={`${lora.className} text-[35px] mb-[5px]`}>{data.newsletterTitle}</p>
               <p className="mb-[20px] font-thin">{data.newsletterParagraph}</p>
             </div>
             <NewsletterForm />

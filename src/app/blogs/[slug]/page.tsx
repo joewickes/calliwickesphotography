@@ -203,7 +203,8 @@ const BlogPage = async ({ params }: any) => {
     .filter((post: any) => {
       const allOtherSlugsThanThisOne = post.attributes.slug !== slug;
       const notPricingPage = post.attributes.slug !== 'pricing';
-      return allOtherSlugsThanThisOne && notPricingPage;
+      const notProposalPricingPage = post.attributes.slug !== 'proposal-information';
+      return allOtherSlugsThanThisOne && notPricingPage && notProposalPricingPage;
     })
     .sort((a: any, b: any) => b.id - a.id);
 
@@ -221,7 +222,7 @@ const BlogPage = async ({ params }: any) => {
               id="blog-content"
               className="flex xl:w-[66.6dvw] flex-col pr-0 xl:pr-[25px] xl:border-r-[1px] xl:border-[#333333]"
             >
-              <h2 className="text-wrap text-left text-[12px] font-thin mt-[50px] mb-[20px] tracking-wide z-10 mt-30px] ">
+              <h2 className="text-wrap text-left text-[16px] font-thin mt-[50px] mb-[20px] tracking-wide z-10 mt-30px] ">
                 {data.subtitle}
               </h2>
               <h1
@@ -253,7 +254,7 @@ const BlogPage = async ({ params }: any) => {
               </div>
               <div className="pb-[0px] pt-[50px]">
                 <Link href={data.metaButtonLink} legacyBehavior passHref>
-                  <a className="mb-[100px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px] flex sm:inline justify-center text-center">
+                  <a className="mb-[100px] border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px] flex sm:inline justify-center text-center">
                     {data.metaButtonText}
                   </a>
                 </Link>

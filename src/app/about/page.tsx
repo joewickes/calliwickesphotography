@@ -215,7 +215,7 @@ const AboutPage = async () => {
           </div>
           <div>
             <Link href={data.aboutMeButtonLink} legacyBehavior passHref>
-              <a className="mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
+              <a className="mb-[60px] border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px]">
                 {data.aboutMeButtonText}
               </a>
             </Link>
@@ -303,7 +303,7 @@ const AboutPage = async () => {
 
           <div className="xl:mt-[100px] mt-[60px] mb-[60px] self-start sm:self-center xl:self-start">
             <Link href={data.contactButtonLink} legacyBehavior passHref>
-              <a className="border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
+              <a className="border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px]">
                 {data.contactButtonText}
               </a>
             </Link>
