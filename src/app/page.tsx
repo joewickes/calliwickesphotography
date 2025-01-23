@@ -563,8 +563,8 @@ export default async function Home() {
           className="xl:px-[50px] px-[30px] sm:flex sm:flex-col md:flex-row xl:justify-center sm:items-center xl:mt-[100px] bg-[#faf9f7] pt-[100px] lg:px-[75px]"
         >
           <div className="flex flex-col w-full flex-1 xl:pl-[100px] 2xl:items-end 2xl:justify-start md:pr-[100px]">
-            <h2 className="text-[15px]">{data.newsletterSubtitle}</h2>
-            <h3 className={`${lora.className} text-[35px] mb-[20px]`}>{data.newsletterTitle}</h3>
+            <p className="text-[15px]">{data.newsletterSubtitle}</p>
+            <h2 className={`${lora.className} text-[35px] mb-[20px]`}>{data.newsletterTitle}</h2>
             <p className="font-thin leading-8 mb-[60px] text-wrap text-left 2xl:text-right">
               {data.newsletterParagraph}
             </p>

@@ -76,7 +76,7 @@ const ContactForm = () => {
   ) : (
     <>
       <div className="flex-1 mt-[30px] flex flex-col justify-center mb-[100px] pl-[50px]">
-        <h2 className="text-[35px] leading-1 mb-[30px] whitespace-pre-line">{`Thank you so much for signing up!`}</h2>
+        <p className="text-[35px] leading-1 mb-[30px] whitespace-pre-line">{`Thank you so much for signing up!`}</p>
       </div>
     </>
   );
