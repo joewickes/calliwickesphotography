@@ -336,7 +336,7 @@ export default async function Home() {
             />
           </div>
           <div className="px-[30px]">
-            <h1 className="text-nowrap text-center text-[12px] font-thin mt-[50px] mb-[20px] tracking-wide z-10 mt-30px] ">
+            <h1 className="text-nowrap text-center text-[16px] font-thin mt-[50px] mb-[20px] tracking-wide z-10 mt-30px] ">
               {data.heroSubtitle}
             </h1>
             <p
@@ -359,7 +359,7 @@ export default async function Home() {
         <section id="about" className="px-[30px] sm:px-[75px] xl:flex xl:pt-[100px]">
           <div className="flex justify-center xl:items-center 2xl:items-end mb-[60px] xl:flex-1">
             <div className="flex">
-              <p className="vertical-rl  xl:pr-[100px] w-0 h-0 xl:w-auto xl:h-auto mt-[120px] xl:mt-0 self-end text-[12px] font-thin invisible xl:visible">
+              <p className="vertical-rl  xl:pr-[100px] w-0 h-0 xl:w-auto xl:h-auto mt-[120px] xl:mt-0 self-end text-[16px] font-thin invisible xl:visible">
                 {data.aboutMePhotoSidebar}
               </p>
             </div>
@@ -375,7 +375,7 @@ export default async function Home() {
               />
             </div>
             <div>
-              <p className="vertical-rl xl:pr-[100px] mt-[120px] xl:mt-0 text-[12px] font-thin xl:hidden visible">
+              <p className="vertical-rl xl:pr-[100px] mt-[120px] xl:mt-0 text-[16px] font-thin xl:hidden visible">
                 {data.aboutMePhotoSidebar}
               </p>
             </div>
@@ -389,7 +389,7 @@ export default async function Home() {
 
             <div className="pb-[0px] pt-[50px]">
               <Link href={data.aboutMeButtonLink} legacyBehavior passHref>
-                <a className="mb-[100px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px] flex sm:inline justify-center text-center">
+                <a className="mb-[100px] border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px] flex sm:inline justify-center text-center">
                   {data.aboutMeButtonText}
                 </a>
               </Link>
@@ -443,7 +443,7 @@ export default async function Home() {
                 className="object-cover  mt-[-30dvw] sm:mt-0"
               />
             </div>
-            <p className="w-0 h-0 xl:w-auto xl:h-auto xl:mb-[50px] mt-[10px] text-[12px] font-thin invisible xl:visible">
+            <p className="w-0 h-0 xl:w-auto xl:h-auto xl:mb-[50px] mt-[10px] text-[16px] font-thin invisible xl:visible">
               {data.preExperiencePhotoSidebar}
             </p>
           </div>
@@ -454,7 +454,7 @@ export default async function Home() {
             </span>
             <div className="pb-[0px] pt-[50px] sm:flex sm:justify-end">
               <Link href={data.preExperienceButtonLink || '#'} legacyBehavior passHref>
-                <a className="mb-[100px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px] flex sm:inline justify-center text-center">
+                <a className="mb-[100px] border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px] flex sm:inline justify-center text-center">
                   {data.preExperienceButtonText}
                 </a>
               </Link>
@@ -576,7 +576,7 @@ export default async function Home() {
 
         {/* FAQ Section */}
         <section id="home-faq" className="px-[30px] xl:px-[100px] mt-[100px]">
-          <h2 className="text-[13px] font-bold tracking-wider my-[50px]">{data.homeFaqTitle}</h2>
+          <h2 className="text-[16px] font-bold tracking-wider my-[50px]">{data.homeFaqTitle}</h2>
           <ul className=" xl:grid xl:grid-rows-2 xl:grid-flow-col pb-[60px] xl:pb-0">
             {data.home_faqs.data.map((faq: any, index: number) => {
               return <FAQs key={index} index={index} faq={faq.attributes} />;
@@ -597,7 +597,7 @@ export default async function Home() {
                   alt={data.homeContactPhoto.data[0].attributes.alternativeText}
                 />
               </div>
-              <p className="vertical-rl xl:pl-[100px] xl:mb-[2px] xl:mt-0 justify-self-end text-[12px] font-thin">
+              <p className="vertical-rl xl:pl-[100px] xl:mb-[2px] xl:mt-0 justify-self-end text-[16px] font-thin">
                 {data.homeContactPhotoSidebar}
               </p>
             </div>
@@ -607,7 +607,7 @@ export default async function Home() {
             <p className="font-thin leading-8 mb-[60px]">{data.homeContactParagraph}</p>
             <div>
               <Link href={data.homeContactButtonLink} legacyBehavior passHref>
-                <a className="mb-[20px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
+                <a className="mb-[20px] border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px]">
                   {data.homeContactButtonText}
                 </a>
               </Link>

@@ -330,7 +330,7 @@ const FamilyGalleryPage = async () => {
 
             <div className="xl:mt-[100px] mt-[60px] mb-[150px]">
               <Link href={data.aboutButtonLink} legacyBehavior passHref>
-                <a className="border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
+                <a className="border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px]">
                   {data.aboutButtonText}
                 </a>
               </Link>
@@ -355,7 +355,7 @@ const FamilyGalleryPage = async () => {
 
           <div className="xl:mt-[150px] mt-[60px] mb-[100px]">
             <Link href={data.contactButtonLink} legacyBehavior passHref>
-              <a className="border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px]">
+              <a className="border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px]">
                 {data.contactButtonText}
               </a>
             </Link>

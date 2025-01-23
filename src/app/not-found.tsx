@@ -67,7 +67,7 @@ const NotFound = async () => {
         <Link href="/" passHref legacyBehavior>
           <a
             aria-label="HomePage"
-            className="mt-[50px] z-10  mb-[60px] border border-black py-[15px] text-[13px] tracking-[.35em] px-[30px] text-black"
+            className="mt-[50px] z-10  mb-[60px] border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px] text-black"
           >
             {`Return to Site`}
           </a>
