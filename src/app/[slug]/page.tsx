@@ -287,9 +287,6 @@ export default async function Home({ params }: any) {
 
   return data ? (
     <>
-      <Script id={`mkup-hpr-${slug}`} type="application/ld+json">
-        {`{ "@context": "http://schema.org", "@type": "LocalBusiness", "name": "CALLI WICKES PHOTOGRAPHY", "image": "https://www.calliwickesphotography.com/_next/image?url=%2Fimages%2FHome%20Updated%2FTampaPhotographerPortrait.webp&w=3840&q=75", "telephone": "813-406-0558", "email": "calliwickesphotography@gmail.com", "address": { "@type": "PostalAddress", "addressLocality": "${slug.split('-family-photographer')[0].replace('-', ' ')}", "addressRegion": "Florida" }, "url": "https://www.calliwickesphotography.com/${slug}", "review": { "@type": "Review", "author": { "@type": "Person", "name": "Caitlin" }, "reviewBody": "Calli did our first family photo shoot in 2018. She captured such precious photos of us with our baby girl. I still look at these photos almost everyday. She made us feel very comfortable during the session. It was such a positive experience and I can’t wait to have Calli photograph us again next time we are in Florida." } }`}
-      </Script>
       <main>
         <Share />
         <Header headerData={headerData} />
