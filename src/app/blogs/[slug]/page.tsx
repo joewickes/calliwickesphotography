@@ -203,7 +203,8 @@ const BlogPage = async ({ params }: any) => {
     .filter((post: any) => {
       const allOtherSlugsThanThisOne = post.attributes.slug !== slug;
       const notPricingPage = post.attributes.slug !== 'pricing';
-      return allOtherSlugsThanThisOne && notPricingPage;
+      const notProposalPricingPage = post.attributes.slug !== 'proposal-information';
+      return allOtherSlugsThanThisOne && notPricingPage && notProposalPricingPage;
     })
     .sort((a: any, b: any) => b.id - a.id);
 

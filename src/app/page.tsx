@@ -376,7 +376,7 @@ export default async function Home() {
             </div>
             <div>
               <p className="vertical-rl xl:pr-[100px] mt-[120px] xl:mt-0 text-[12px] font-thin xl:hidden visible">
-                {data.aboutMeSubtitle}
+                {data.aboutMePhotoSidebar}
               </p>
             </div>
           </div>
