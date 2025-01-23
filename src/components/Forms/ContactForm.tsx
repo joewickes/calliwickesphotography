@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 
@@ -19,6 +19,23 @@ const ContactForm = ({
   const [message, setMessage] = useState('');
   const [isDisabled, setIsDisabled] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    // Select all anchor elements in the document
+    const anchorElements = document.querySelectorAll('a');
+
+    anchorElements.forEach((anchor) => {
+      // Check if aria-label doesn't exist (or is empty)
+      if (!anchor.hasAttribute('aria-label') || !anchor.getAttribute('aria-label')) {
+        const linkText = anchor.textContent?.trim() || anchor.getAttribute('href')?.split('.')[1];
+
+        // Only set the aria-label if there's some actual text
+        if (linkText) {
+          anchor.setAttribute('aria-label', linkText);
+        }
+      }
+    });
+  }, [submitted]);
 
   const formatPhoneNumber = (e: any) => {
     const currNum = e.target.value;
