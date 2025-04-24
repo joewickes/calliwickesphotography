@@ -29,7 +29,7 @@ async function getPageIds() {
       body: JSON.stringify({
         query: `
         {
-          locationHomePages (pagination: {limit:50}) {
+          locationHomePages (pagination: {limit:100}) {
             data {
               id
               attributes {
