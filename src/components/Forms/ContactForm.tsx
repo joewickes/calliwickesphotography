@@ -71,18 +71,33 @@ const ContactForm = ({
       newsletter: false,
     };
 
-    const res = await fetch(`/api/email`, {
-      method: 'POST',
-      body: JSON.stringify(data),
-    });
+    try {
+      const res = await fetch(`/api/email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
-    if (res.status === 200) {
-      setName('');
-      setEmail('');
-      setPhone('');
-      setMessage('');
+      const responseData = await res.json();
 
-      setSubmitted(true);
+      if (res.status === 200) {
+        console.log('Email sent successfully:', responseData.message);
+        setName('');
+        setEmail('');
+        setPhone('');
+        setMessage('');
+        setSubmitted(true);
+      } else {
+        console.error('Email sending failed:', responseData.message);
+        alert(`Failed to send message: ${responseData.message}`);
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+      alert('Network error. Please check your connection and try again.');
+    } finally {
+      setIsDisabled(false);
     }
   };
 
