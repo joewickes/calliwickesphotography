@@ -1,3 +1,5 @@
+'use client';
+
 import { Phone, EnvelopeSimple } from '@phosphor-icons/react';
 
 const PHONE_DIALING_PREFIX = '+1';

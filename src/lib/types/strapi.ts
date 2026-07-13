@@ -15,6 +15,11 @@ export type StrapiMedia = {
   } | null;
 };
 
+/** A multiple-media relation: `{ data: Array<{ attributes }> }` (Strapi returns an array). */
+export type StrapiMediaList = {
+  data: Array<{ attributes: StrapiImageAttributes }>;
+};
+
 /** A collection/repeatable relation: `{ data: Array<{ attributes }> }`. */
 export type StrapiCollection<T> = {
   data: Array<{ attributes: T }>;
@@ -73,7 +78,7 @@ export type HomePageData = {
   newsletterParagraph: string;
   newletterFormName: string;
   newsletterFormEmail: string;
-  home_carousel_items: StrapiCollection<{ homeCarouselImage: StrapiMedia }>;
+  home_carousel_items: StrapiCollection<{ homeCarouselImage: StrapiMediaList }>;
   homeFaqTitle: string;
   home_faqs: StrapiCollection<{ homeFaqQuestion: string; homeFaqAnswer: BlocksContent }>;
   homeContactTitle: string;
