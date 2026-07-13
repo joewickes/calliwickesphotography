@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import HomeLanding from '@/components/HomeLanding/HomeLanding';
 import { getHeaderData } from '@/lib/queries/header';
 import { getLocationPageData, getLocationPageIds } from '@/lib/queries/page-slug';
+import { SITE_URL } from '@/lib/constants';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -15,6 +16,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: page.attributes.title,
     description: page.attributes.description,
+    alternates: { canonical: `/${slug}` },
+    openGraph: {
+      title: page.attributes.title,
+      description: page.attributes.description,
+      url: `${SITE_URL}/${slug}`,
+    },
   };
 }
 

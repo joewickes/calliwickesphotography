@@ -8,7 +8,7 @@ const TopArrow = () => {
   const path = usePathname();
 
   return (
-    <Link href={path} legacyBehavior passHref>
+    <Link href={path}>
       <ArrowUp size={30} className="cursor-pointer" />
     </Link>
   );

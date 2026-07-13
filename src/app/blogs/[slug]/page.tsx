@@ -41,6 +41,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: blog.attributes.title,
     description: blog.attributes.description,
+    alternates: { canonical: `/blogs/${slug}` },
+    openGraph: {
+      title: blog.attributes.title,
+      description: blog.attributes.description,
+      url: `${SITE_URL}/blogs/${slug}`,
+    },
   };
 }
 
@@ -107,10 +113,11 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
             </div>
           </div>
           <div className="pb-[0px] pt-[50px]">
-            <Link href={data.metaButtonLink} legacyBehavior passHref>
-              <a className="mb-[100px] border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px] flex sm:inline justify-center text-center">
-                {data.metaButtonText}
-              </a>
+            <Link
+              href={data.metaButtonLink}
+              className="mb-[100px] border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px] flex sm:inline justify-center text-center"
+            >
+              {data.metaButtonText}
             </Link>
           </div>
           <div className="sm:mt-[50px] sm:pt-[25px] xl:border-t-[1px] xl:border-[#333333]">

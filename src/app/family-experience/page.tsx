@@ -18,6 +18,7 @@ import { getHeaderData } from '@/lib/queries/header';
 import { getFamilyExperienceData } from '@/lib/queries/family-experience';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/family-experience' },
   title: 'Family Experience',
   description: 'For families that want that perfect blend of candid and portrait.',
 };
@@ -123,10 +124,11 @@ const FamilyGalleryPage = async () => {
             <p className="font-thin mb-[15px]">{data.aboutSubtitle}</p>
 
             <div className="xl:mt-[100px] mt-[60px] mb-[150px]">
-              <Link href={data.aboutButtonLink} legacyBehavior passHref>
-                <a className="border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px]">
-                  {data.aboutButtonText}
-                </a>
+              <Link
+                href={data.aboutButtonLink}
+                className="border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px]"
+              >
+                {data.aboutButtonText}
               </Link>
             </div>
           </div>
@@ -148,10 +150,11 @@ const FamilyGalleryPage = async () => {
           <p className="font-thin mb-[15px]">{data.contactSubtitle}</p>
 
           <div className="xl:mt-[150px] mt-[60px] mb-[100px]">
-            <Link href={data.contactButtonLink} legacyBehavior passHref>
-              <a className="border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px]">
-                {data.contactButtonText}
-              </a>
+            <Link
+              href={data.contactButtonLink}
+              className="border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px]"
+            >
+              {data.contactButtonText}
             </Link>
           </div>
         </div>

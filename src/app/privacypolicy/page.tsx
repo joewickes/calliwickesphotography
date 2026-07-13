@@ -8,6 +8,7 @@ import Share from '@/components/Share/Share';
 import { getHeaderData } from '@/lib/queries/header';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/privacypolicy' },
   title: 'Privacy Policy',
   description:
     'Review the Privacy Policy that govern your engagement with Calli Wickes Photography. Our comprehensive Privacy Policy outlines the agreements and expectations for using our photography services. From usage rights to payment policies, understand the terms that ensure a clear and fair collaboration. By choosing Calli Wickes Photography, you are entering into a partnership committed to professionalism, creativity, and mutual respect.',

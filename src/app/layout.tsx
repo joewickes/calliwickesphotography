@@ -4,16 +4,33 @@ import { MarkupHelper } from './MarkupHelper';
 
 import type { Metadata } from 'next';
 import { Raleway } from 'next/font/google';
+import { SITE_URL } from '@/lib/constants';
 
 const raleway = Raleway({ subsets: ['latin'] });
 
 import './globals.css';
 
+const SITE_TITLE = 'Calli Wickes Photography | Florida Family Photographer';
+const SITE_DESCRIPTION =
+  'Calli Wickes Photography is a family photographer based out of Tampa, FL. She is a natural light photographer for families seeking the perfect blend of candid and portrait photos. With over a decade of experience, she’s created an authentic family photography experience that will leave you at ease and having a blast with your crew. You will leave your family photo session having spent joyful and quality time with your favorite people and gain timeless family photos that you will cherish for years to come.';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.calliwickesphotography.com'),
-  title: 'Calli Wickes Photography | Florida Family Photographer',
-  description:
-    'Calli Wickes Photography is a family photographer based out of Tampa, FL. She is a natural light photographer for families seeking the perfect blend of candid and portrait photos. With over a decade of experience, she’s created an authentic family photography experience that will leave you at ease and having a blast with your crew. You will leave your family photo session having spent joyful and quality time with your favorite people and gain timeless family photos that you will cherish for years to come.',
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: 'Calli Wickes Photography',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

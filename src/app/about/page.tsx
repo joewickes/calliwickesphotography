@@ -19,6 +19,7 @@ import { getHeaderData } from '@/lib/queries/header';
 import { getAboutData } from '@/lib/queries/about';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/about' },
   title: 'Meet Calli',
 
   description:
@@ -76,10 +77,11 @@ const AboutPage = async () => {
             <BlocksRenderer content={data.aboutMeParagraph} />
           </div>
           <div>
-            <Link href={data.aboutMeButtonLink} legacyBehavior passHref>
-              <a className="mb-[60px] border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px]">
-                {data.aboutMeButtonText}
-              </a>
+            <Link
+              href={data.aboutMeButtonLink}
+              className="mb-[60px] border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px]"
+            >
+              {data.aboutMeButtonText}
             </Link>
           </div>
         </div>
@@ -119,10 +121,11 @@ const AboutPage = async () => {
           <p className="font-thin mb-[15px]">{data.contactParagraph}</p>
 
           <div className="xl:mt-[100px] mt-[60px] mb-[60px] self-start sm:self-center xl:self-start">
-            <Link href={data.contactButtonLink} legacyBehavior passHref>
-              <a className="border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px]">
-                {data.contactButtonText}
-              </a>
+            <Link
+              href={data.contactButtonLink}
+              className="border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px]"
+            >
+              {data.contactButtonText}
             </Link>
           </div>
         </div>

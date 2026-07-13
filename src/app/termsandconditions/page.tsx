@@ -8,6 +8,7 @@ import Share from '@/components/Share/Share';
 import { getHeaderData } from '@/lib/queries/header';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/termsandconditions' },
   title: 'Terms and Conditions',
   description:
     'Review the terms and conditions that govern your engagement with Calli Wickes Photography. Our comprehensive Terms and Conditions outline the agreements and expectations for using our photography services. From usage rights to payment policies, understand the terms that ensure a clear and fair collaboration. By choosing Calli Wickes Photography, you are entering into a partnership committed to professionalism, creativity, and mutual respect.',

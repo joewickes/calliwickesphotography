@@ -83,11 +83,11 @@ const Footer = async ({ showServices = true }: { showServices?: boolean }) => {
         <div className="flex flex-col justify-center items-center w-full">
           <div className="flex flex-col xl:flex-row items-center justify-center w-full">
             <div className="xl:ml-[100px] xl:flex-1 w-full flex flex-col xl:flex-row xl:justify-start border-[#faf9f7] items-start text-center justify-center border border-x-0 border-t-0 xl:border-none py-[20px] px-[30px]">
-              <Link passHref legacyBehavior href="/privacypolicy">
-                <a className="underline font-thin mr-[35px]">{`Privacy Policy`}</a>
+              <Link href="/privacypolicy" className="underline font-thin mr-[35px]">
+                {`Privacy Policy`}
               </Link>
-              <Link passHref legacyBehavior href="/termsandconditions">
-                <a className="underline font-thin ">{`Terms and Conditions`}</a>
+              <Link href="/termsandconditions" className="underline font-thin ">
+                {`Terms and Conditions`}
               </Link>
             </div>
             <div className="xl:flex-1 xl:justify-end py-[20px] w-full xl:mr-[100px] px-[30px]">

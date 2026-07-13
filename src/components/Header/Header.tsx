@@ -19,38 +19,34 @@ const Header = ({ isHome = false, headerData }: HeaderProps) => {
       <div className={`${isMenuOpen ? 'fixed top-0' : ''} z-30 `}>
         <div className="w-dvw flex px-[20px] top-0 left-0">
           <div className={`flex-1 py-[10px] z-30 xl:mx-[100px] xl:my-[10px] flex justify-between`}>
-            <Link href="/" legacyBehavior passHref>
-              <a
-                aria-label="Calli Wickes Photography Home Page"
-                className={`tracking-[.35em] text-[20px] flex flex-col xl:text-[25px] cursor-pointer md:w-[300px] w-full ${
-                  isMenuOpen || !isHome ? 'text-black' : 'text-white'
-                }`}
-              >
-                <div className="pointer">
-                  <Link href="/" passHref legacyBehavior>
-                    <Image
-                      priority
-                      src={headerData.logoImage.data.attributes.url}
-                      height={headerData.logoImage.data.attributes.height} // 2000 × 784
-                      width={headerData.logoImage.data.attributes.width}
-                      alt={headerData.logoImage.data.attributes.alternativeText}
-                      className="object-cover"
-                    />
-                  </Link>
-                </div>
-              </a>
+            <Link
+              href="/"
+              aria-label="Calli Wickes Photography Home Page"
+              className={`tracking-[.35em] text-[20px] flex flex-col xl:text-[25px] cursor-pointer md:w-[300px] w-full ${
+                isMenuOpen || !isHome ? 'text-black' : 'text-white'
+              }`}
+            >
+              <div className="pointer">
+                <Image
+                  priority
+                  src={headerData.logoImage.data.attributes.url}
+                  height={headerData.logoImage.data.attributes.height} // 2000 x 784
+                  width={headerData.logoImage.data.attributes.width}
+                  alt={headerData.logoImage.data.attributes.alternativeText}
+                  className="object-cover"
+                />
+              </div>
             </Link>
             <nav className="xl:flex hidden w-0 xl:visible xl:w-auto">
               <ul className="flex items-center justify-center">
                 {headerData.menu_items.data.map((item: any, idx: number) => {
                   return (
                     <li key={idx} className="cursor-pointer">
-                      <Link href={item.attributes.link} legacyBehavior passHref>
-                        <a
-                          className={`${idx !== headerData.menu_items.data.length - 1 ? 'mr-[40px]' : ''} hover:underline font-thin`}
-                        >
-                          {item.attributes.itemName}
-                        </a>
+                      <Link
+                        href={item.attributes.link}
+                        className={`${idx !== headerData.menu_items.data.length - 1 ? 'mr-[40px]' : ''} hover:underline font-thin`}
+                      >
+                        {item.attributes.itemName}
                       </Link>
                     </li>
                   );
@@ -90,9 +86,7 @@ const Header = ({ isHome = false, headerData }: HeaderProps) => {
             {headerData.menu_items.data.map((item: any, idx: number) => {
               return (
                 <li key={idx} className="mb-[40px] cursor-pointer">
-                  <Link href={item.attributes.link} legacyBehavior passHref>
-                    <a>{item.attributes.itemName}</a>
-                  </Link>
+                  <Link href={item.attributes.link}>{item.attributes.itemName}</Link>
                 </li>
               );
             })}

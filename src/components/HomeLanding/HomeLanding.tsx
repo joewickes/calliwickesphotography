@@ -103,10 +103,11 @@ export default function HomeLanding({ data, headerData }: { data: HomePageData; 
           </span>
 
           <div className="pb-[0px] pt-[50px]">
-            <Link href={data.aboutMeButtonLink} legacyBehavior passHref>
-              <a className="mb-[100px] border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px] flex sm:inline justify-center text-center">
-                {data.aboutMeButtonText}
-              </a>
+            <Link
+              href={data.aboutMeButtonLink}
+              className="mb-[100px] border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px] flex sm:inline justify-center text-center"
+            >
+              {data.aboutMeButtonText}
             </Link>
           </div>
         </div>
@@ -126,7 +127,7 @@ export default function HomeLanding({ data, headerData }: { data: HomePageData; 
         <div className="flex flex-col sm:flex-row w-[75%]">
           {data.blog_resources.data.map((resource, index) => {
             return (
-              <Link key={index} passHref legacyBehavior href={resource.attributes.link}>
+              <Link key={index} href={resource.attributes.link}>
                 <div
                   className={`cursor-pointer sm:mt-0 mt-[30px]  ${index === Math.floor(data.blog_resources.data.length / 2) ? 'sm:mx-[30px]' : ''}`}
                 >
@@ -168,10 +169,11 @@ export default function HomeLanding({ data, headerData }: { data: HomePageData; 
             <BlocksRenderer content={data.preExperienceParagraph} />
           </span>
           <div className="pb-[0px] pt-[50px] sm:flex sm:justify-end">
-            <Link href={data.preExperienceButtonLink || '#'} legacyBehavior passHref>
-              <a className="mb-[100px] border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px] flex sm:inline justify-center text-center">
-                {data.preExperienceButtonText}
-              </a>
+            <Link
+              href={data.preExperienceButtonLink || '#'}
+              className="mb-[100px] border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px] flex sm:inline justify-center text-center"
+            >
+              {data.preExperienceButtonText}
             </Link>
           </div>
         </div>
@@ -237,10 +239,11 @@ export default function HomeLanding({ data, headerData }: { data: HomePageData; 
           <h2 className={`${lora.className} text-[35px] mb-[30px]`}>{data.homeContactTitle}</h2>
           <p className="font-thin leading-8 mb-[60px]">{data.homeContactParagraph}</p>
           <div>
-            <Link href={data.homeContactButtonLink} legacyBehavior passHref>
-              <a className="mb-[20px] border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px]">
-                {data.homeContactButtonText}
-              </a>
+            <Link
+              href={data.homeContactButtonLink}
+              className="mb-[20px] border border-black py-[15px] text-[16px] tracking-[.35em] px-[30px]"
+            >
+              {data.homeContactButtonText}
             </Link>
           </div>
         </div>

@@ -17,6 +17,7 @@ import { getHeaderData } from '@/lib/queries/header';
 import { getContactData } from '@/lib/queries/contact';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/contact' },
   title: 'Contact Calli Wickes Photography',
   description: 'Connect with Calli · 813-406-0558 · calliwickesphotography@gmail.com',
 };
