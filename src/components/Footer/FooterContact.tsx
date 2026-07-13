@@ -1,5 +1,6 @@
-'use client';
 import { Phone, EnvelopeSimple } from '@phosphor-icons/react';
+
+const PHONE_DIALING_PREFIX = '+1';
 
 const FooterContact = ({ cwpEmail, cwpPhoneNumber }: { cwpEmail: string; cwpPhoneNumber: string }) => {
   return (
@@ -11,7 +12,7 @@ const FooterContact = ({ cwpEmail, cwpPhoneNumber }: { cwpEmail: string; cwpPhon
       </div>
       <div className="flex items-center mt-[5px]">
         <Phone size={18} className="mr-[10px]" />
-        <a href={`tel:+1${cwpPhoneNumber.replace(/[\(\)\-\s]/g, '')}`}>{cwpPhoneNumber}</a>
+        <a href={`tel:${PHONE_DIALING_PREFIX}${cwpPhoneNumber.replace(/[\(\)\-\s]/g, '')}`}>{cwpPhoneNumber}</a>
       </div>
     </div>
   );

@@ -5,9 +5,22 @@ import Image from 'next/image';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
-// import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+type CarouselImage = {
+  attributes: {
+    homeCarouselImage: {
+      data: {
+        attributes: {
+          url: string;
+          width: number;
+          height: number;
+          alternativeText: string;
+        };
+      }[];
+    };
+  };
+};
 
-const CarouselComponent = ({ images }: any) => {
+const CarouselComponent = ({ images }: { images: CarouselImage[] }) => {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -34,20 +47,15 @@ const CarouselComponent = ({ images }: any) => {
         showDots={false}
         slidesToSlide={1}
         centerMode={true}
-        // partialVisible={true}
         responsive={responsive}
-        // ssr={true} // means to render carousel on server-side.
         infinite={true}
         autoPlay={false}
         keyBoardControl={true}
         transitionDuration={1000}
         containerClass=""
-        // removeArrowOnDeviceType={['tablet', 'mobile', 'desktop']}
-        // deviceType={this.props.deviceType}
-        // className="h-[350px]"
         itemClass="flex justify-center px-[10px] w-auto"
       >
-        {images.map((image: any, index: any) => (
+        {images.map((image: CarouselImage, index: number) => (
           <Image
             key={index}
             src={image.attributes.homeCarouselImage.data[0].attributes.url}

@@ -31,7 +31,7 @@ const Header = ({ isHome = false, headerData }: HeaderProps) => {
                     <Image
                       priority
                       src={headerData.logoImage.data.attributes.url}
-                      height={headerData.logoImage.data.attributes.width} // 2000 × 784
+                      height={headerData.logoImage.data.attributes.height} // 2000 × 784
                       width={headerData.logoImage.data.attributes.width}
                       alt={headerData.logoImage.data.attributes.alternativeText}
                       className="object-cover"
@@ -60,20 +60,24 @@ const Header = ({ isHome = false, headerData }: HeaderProps) => {
           </div>
 
           <div className="flex flex-1 justify-end items-center xl:mr-[100px] xl:mt-[50px] xl:hidden">
-            <div className={`z-30 cursor-pointer`}>
+            <button
+              type="button"
+              aria-expanded={isMenuOpen}
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              className={`z-30 cursor-pointer`}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
               {!isMenuOpen ? (
-                <div className="flex items-center" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                  {!isMenuOpen ? (
-                    <span className={`text-[16px] text-${isHome ? 'white' : 'black'} invisible xl:visible pr-[20px]`}>
-                      {headerData.menuTitle}
-                    </span>
-                  ) : null}
+                <div className="flex items-center">
+                  <span className={`text-[16px] text-${isHome ? 'white' : 'black'} invisible xl:visible pr-[20px]`}>
+                    {headerData.menuTitle}
+                  </span>
                   <List size={40} color={isHome ? 'white' : 'black'} />
                 </div>
               ) : (
-                <X onClick={() => setIsMenuOpen(!isMenuOpen)} size={40} color={'black'} className="z-100" />
+                <X size={40} color={'black'} className="z-100" />
               )}
-            </div>
+            </button>
           </div>
         </div>
 
