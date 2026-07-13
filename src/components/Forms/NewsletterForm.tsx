@@ -4,44 +4,19 @@ import { FormEvent, useState } from 'react';
 
 import { ArrowRight } from '@phosphor-icons/react';
 
+import { useContactSubmit } from './useContactSubmit';
+
 const NewsletterForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [isDisabled, setIsDisabled] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState('');
+  const { isDisabled, submitted, error, submit } = useContactSubmit();
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsDisabled(true);
-    setError('');
-
-    const data = {
-      name,
-      email,
-      newsletter: true,
-    };
-
-    try {
-      const res = await fetch(`/api/email`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (res.status === 200) {
-        setName('');
-        setEmail('');
-        setSubmitted(true);
-      } else {
-        setError('Something went wrong. Please try again.');
-      }
-    } catch {
-      setError('Network error. Please check your connection and try again.');
-    } finally {
-      setIsDisabled(false);
+    const ok = await submit({ name, email, newsletter: true });
+    if (ok) {
+      setName('');
+      setEmail('');
     }
   };
 

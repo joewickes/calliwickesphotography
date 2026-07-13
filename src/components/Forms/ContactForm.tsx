@@ -4,6 +4,8 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 
 import { BlocksRenderer, type BlocksContent } from '@strapi/blocks-react-renderer';
 
+import { useContactSubmit } from './useContactSubmit';
+
 const ContactForm = ({
   formButtonText,
   responseTitle,
@@ -17,9 +19,7 @@ const ContactForm = ({
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
-  const [isDisabled, setIsDisabled] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState('');
+  const { isDisabled, submitted, error, submit } = useContactSubmit();
 
   const formatPhoneNumber = (e: ChangeEvent<HTMLInputElement>) => {
     const currNum = e.target.value;
@@ -45,41 +45,12 @@ const ContactForm = ({
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsDisabled(true);
-    setError('');
-
-    const data = {
-      name,
-      email,
-      phone,
-      message,
-      newsletter: false,
-    };
-
-    try {
-      const res = await fetch(`/api/email`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      const responseData = await res.json();
-
-      if (res.status === 200) {
-        setName('');
-        setEmail('');
-        setPhone('');
-        setMessage('');
-        setSubmitted(true);
-      } else {
-        setError(`Failed to send message: ${responseData.message}`);
-      }
-    } catch {
-      setError('Network error. Please check your connection and try again.');
-    } finally {
-      setIsDisabled(false);
+    const ok = await submit({ name, email, phone, message, newsletter: false });
+    if (ok) {
+      setName('');
+      setEmail('');
+      setPhone('');
+      setMessage('');
     }
   };
 
