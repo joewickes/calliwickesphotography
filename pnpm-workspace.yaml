@@ -6,3 +6,10 @@ allowBuilds:
   sharp: true
   unrs-resolver: true
   core-js: false
+# Force patched transitive versions to clear security advisories.
+# axios/form-data arrive via @sendgrid/mail > @sendgrid/client > axios.
+# postcss arrives via next; >=8.5.10 fixes a CSS-stringify XSS advisory.
+overrides:
+  axios: '>=1.16.0'
+  form-data: '>=4.0.6'
+  postcss: '>=8.5.10'
