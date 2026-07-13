@@ -9,67 +9,10 @@ import FooterSocials from './FooterSocials';
 import FooterContact from './FooterContact';
 import FooterDirectory from './FooterDirectory';
 
-async function getData() {
-  try {
-    const res = await fetch(`${process.env.STRAPI_URL}`, {
-      method: 'POST',
-      next: { revalidate: 60 },
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
-      },
-      body: JSON.stringify({
-        query: `{
-          footer {
-            data {
-              attributes {
-                cwpTitle
-                cwpParagraph
-                cwpEmail
-                cwpPhoneNumber
-                newsletterTitle
-                newsletterParagraph
-                newsletterFormName
-                newsletterFormEmail
-                newsletterFacebookLink
-                newsletterInstagramLink
-                newsletterPinterestLink
-                newsletterYelpLink
-                newsletterLinkedInLink
-                newsletterYouTubeLink
-                newsletterSpotifyLink
-                newsletterApplePodcastsLink
-                directoryListingsPreamble
-                directory_listings {
-                  data {
-                    attributes {
-                      directoryListingTitle
-                      directoryListingLink
-                    }
-                  }
-                }
-                location_home_pages (pagination: {limit:50}) {
-                  data {
-                    attributes {
-                      location
-                      urlSlug
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }`,
-      }),
-    });
-    return res.json().then((data) => data.data.footer.data.attributes);
-  } catch (error) {
-    console.log('error', error);
-  }
-}
+import { getFooterData } from '@/lib/queries/footer';
 
 const Footer = async ({ showServices = true }: { showServices?: boolean }) => {
-  const data = await getData();
+  const data = await getFooterData();
 
   return (
     <footer className="flex flex-col justify-center items-center mt-[60px] w-full ">
@@ -89,7 +32,7 @@ const Footer = async ({ showServices = true }: { showServices?: boolean }) => {
             <div className="mt-[50px]">
               <p className="text-left pr-[5px] min-w-[75px] sm:min-w-auto font-thin">{`Services + Locations`}</p>
               <ul className="w-full flex flex-wrap mt-[10px]">
-                {data.location_home_pages.data.map((location: any, idx: number) => {
+                {data.location_home_pages.data.map((location, idx) => {
                   return (
                     <li key={idx} className="flex flex-row font-thin text-[14px] ">
                       <Link
@@ -126,7 +69,9 @@ const Footer = async ({ showServices = true }: { showServices?: boolean }) => {
             />
             <FooterDirectory
               directoryListingsPreamble={data.directoryListingsPreamble}
-              directoryItems={data.directory_listings.data}
+              directoryItems={
+                data.directory_listings.data as [{ attributes: { directoryListingTitle: string; directoryListingLink: string } }]
+              }
             />
           </div>
         </section>

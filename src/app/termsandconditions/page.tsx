@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import type { Metadata } from 'next';
 
 import dynamic from 'next/dynamic';
@@ -6,64 +5,13 @@ const Footer = dynamic(() => import('@/components/Footer/Footer'));
 import Header from '@/components/Header/Header';
 import Share from '@/components/Share/Share';
 
+import { getHeaderData } from '@/lib/queries/header';
+
 export const metadata: Metadata = {
   title: 'Terms and Conditions',
   description:
     'Review the terms and conditions that govern your engagement with Calli Wickes Photography. Our comprehensive Terms and Conditions outline the agreements and expectations for using our photography services. From usage rights to payment policies, understand the terms that ensure a clear and fair collaboration. By choosing Calli Wickes Photography, you are entering into a partnership committed to professionalism, creativity, and mutual respect.',
 };
-
-async function getHeaderData() {
-  try {
-    const res = await fetch(`${process.env.STRAPI_URL}`, {
-      method: 'POST',
-      next: { revalidate: 60 },
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
-      },
-      body: JSON.stringify({
-        query: `{
-          header {
-            data {
-              attributes {
-                logoText
-                logoImage {
-                  data {
-                    attributes {
-                      url
-                      alternativeText
-                      width
-                      height
-                    }
-                  }
-                }
-                menuTitle
-                social_networks {
-                  data {
-                    attributes {
-                      socialLink
-                    }
-                  }
-                }
-                menu_items {
-                  data {
-                    attributes {
-                      itemName
-                      link
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }`,
-      }),
-    });
-    return res.json().then((data) => data.data.header.data.attributes);
-  } catch (error) {
-    console.log('error', error);
-  }
-}
 
 const TermsAndConditions = async () => {
   const headerData = await getHeaderData();

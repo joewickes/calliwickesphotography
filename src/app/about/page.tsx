@@ -13,6 +13,10 @@ import Share from '@/components/Share/Share';
 
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 import ChatCTAForm from '@/components/ChatCTAForm/ChatCTAForm';
+import ExperienceTimeline from '@/components/ExperienceTimeline/ExperienceTimeline';
+
+import { getHeaderData } from '@/lib/queries/header';
+import { getAboutData } from '@/lib/queries/about';
 
 export const metadata: Metadata = {
   title: 'Meet Calli',
@@ -21,159 +25,17 @@ export const metadata: Metadata = {
     'Hey there, meet Calli! A photographer who loves catching those sweet moments with you + your favorite people!',
 };
 
-async function getHeaderData() {
-  try {
-    const res = await fetch(`${process.env.STRAPI_URL}`, {
-      next: { revalidate: 60 },
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
-      },
-      body: JSON.stringify({
-        query: `{
-          header {
-            data {
-              attributes {
-                logoText
-                logoImage {
-                  data {
-                    attributes {
-                      url
-                      alternativeText
-                      width
-                      height
-                    }
-                  }
-                }
-                menuTitle
-                social_networks {
-                  data {
-                    attributes {
-                      socialLink
-                    }
-                  }
-                }
-                menu_items {
-                  data {
-                    attributes {
-                      itemName
-                      link
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }`,
-      }),
-    });
-    return res.json().then((data) => data.data.header.data.attributes);
-  } catch (error) {
-    console.log('error', error);
-  }
-}
-
-async function getData() {
-  try {
-    const res = await fetch(`${process.env.STRAPI_URL}`, {
-      next: { revalidate: 60 },
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
-      },
-      body: JSON.stringify({
-        query: `{
-          aboutMePage {
-          data {
-            attributes {
-              heroPhoto {
-                data {
-                  attributes {
-                    height
-                    width
-                    url
-                    alternativeText
-                  }
-                }
-              }
-              heroParagraph
-              heroButtonLink
-              heroButtonText
-              aboutMePhoto {
-                data {
-                  attributes {
-                    height
-                    width
-                    url
-                    alternativeText
-                  }
-                }
-              }
-              aboutMeTitle
-              aboutMeSubtitle
-              aboutMeParagraph
-              aboutMeButtonLink
-              aboutMeButtonText
-              contactTitle
-              contactParagraph
-              contactButtonLink
-              contactButtonText
-              contactImage {
-                data {
-                  attributes {
-                    height
-                    width
-                    url
-                    alternativeText
-                  }
-                }
-              }
-              facts {
-                data {
-                  attributes {
-                    factTitle
-                    factParagraph
-                  }
-                }
-              }
-              am_timeline_items {
-                data {
-                  attributes {
-                    image {
-                      data {
-                        attributes {
-                          url
-                          alternativeText
-                          width
-                          height
-                        }
-                      }
-                    }
-                    title
-                    paragraph
-                  }
-                }
-              }
-            }
-          }
-        }
-      }`,
-      }),
-    });
-    return res.json().then((data) => {
-      //
-      return data.data.aboutMePage.data.attributes;
-    });
-  } catch (error) {
-    console.log('error', error);
-  }
-}
-
 const AboutPage = async () => {
-  const headerData = await getHeaderData();
-  const data = await getData();
+  const [headerData, data] = await Promise.all([getHeaderData(), getAboutData()]);
+
+  const timelineItems = data.am_timeline_items.data.map((item) => ({
+    imageUrl: item.attributes.image.data!.attributes.url,
+    imageAlt: item.attributes.image.data!.attributes.alternativeText,
+    imageWidth: item.attributes.image.data!.attributes.width,
+    imageHeight: item.attributes.image.data!.attributes.height,
+    title: item.attributes.title,
+    paragraph: item.attributes.paragraph,
+  }));
 
   return (
     <main>
@@ -183,11 +45,11 @@ const AboutPage = async () => {
       <section className="px-[30px] pt-[40px] flex flex-col items-center bg-[#f2f2f2] pb-[50px]">
         <div className="min-h-[225px] w-full overflow-hidden flex justify-center">
           <Image
-            src={data.heroPhoto.data.attributes.url}
-            height={data.heroPhoto.data.attributes.height}
-            width={data.heroPhoto.data.attributes.width}
+            src={data.heroPhoto.data!.attributes.url}
+            height={data.heroPhoto.data!.attributes.height}
+            width={data.heroPhoto.data!.attributes.width}
             className="object-cover h-full"
-            alt={data.heroPhoto.data.attributes.alternativeText}
+            alt={data.heroPhoto.data!.attributes.alternativeText}
           />
         </div>
         <p className="font-thin leading-8 mb-[30px] mt-[40px] text-[25px] w-[60dvw] text-center xl:leading-[3rem]">
@@ -199,8 +61,8 @@ const AboutPage = async () => {
         <div className="flex justify-center mb-[60px] xl:flex-1">
           <div className="xl:mt-[120px] h-[90dvw] w-[90dvw] md:h-auto xl:w-auto overflow-hidden xl:pl-[100px]">
             <Image
-              src={data.aboutMePhoto.data?.attributes.url}
-              alt={data.aboutMePhoto.data?.attributes.alternativeText}
+              src={data.aboutMePhoto.data?.attributes.url ?? ''}
+              alt={data.aboutMePhoto.data?.attributes.alternativeText ?? ''}
               height={data.aboutMePhoto.data?.attributes.height}
               width={data.aboutMePhoto.data?.attributes.width}
               className="object-cover mt-[-10dvw] xl:mt-[-100px]"
@@ -225,12 +87,10 @@ const AboutPage = async () => {
 
       <section className="px-[30px] mt-[60px] xl:mt-0">
         <ol className="xl:flex">
-          {data.facts.data.map((fact: any, index: number) => {
+          {data.facts.data.map((fact, index) => {
             return (
               <li key={index} className="xl:px-[50px]">
-                <p className="mb-[30px] font-thin">{`${
-                  (index + 1).toString().length ? `0${index + 1}` : index + 1
-                }`}</p>
+                <p className="mb-[30px] font-thin">{String(index + 1).padStart(2, '0')}</p>
                 <h2 className={`mb-[30px] text-[30px] ${lora.className}`}>{fact.attributes.factTitle}</h2>
                 <p className="font-thin leading-8 mb-[60px]">{fact.attributes.factParagraph}</p>
               </li>
@@ -241,60 +101,17 @@ const AboutPage = async () => {
 
       {/* Experience Process Section */}
       <section className="xl:pt-[10px]">
-        <div
-          id="experience-process"
-          className="px-[30px] xl:px-[50px] xl:pr-[30px] flex flex-col xl:items-start items-center justify-center xl:flex-row  max-w-[100dw] xl:justify-evenly"
-        >
-          <div className="flex flex-col justify-start sm:items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
-            <Image
-              src={data.am_timeline_items.data[0].attributes.image.data.attributes.url}
-              height={data.am_timeline_items.data[0].attributes.image.data.attributes.height}
-              width={data.am_timeline_items.data[0].attributes.image.data.attributes.width}
-              alt={data.am_timeline_items.data[0].attributes.image.data.attributes.alternativeText}
-              className="object-cover"
-            />
-            <h3 className={`${lora.className} text-[35px] my-[40px]`}>
-              {data.am_timeline_items.data[0].attributes.title}
-            </h3>
-            <p className="font-thin">{data.am_timeline_items.data[0].attributes.paragraph}</p>
-          </div>
-          <div className="flex flex-col justify-start items-start flex-1 xl:mx-[30px] max-w-[456px] mb-[60px] xl:mb-0">
-            <Image
-              src={data.am_timeline_items.data[1].attributes.image.data.attributes.url}
-              height={data.am_timeline_items.data[1].attributes.image.data.attributes.height}
-              width={data.am_timeline_items.data[1].attributes.image.data.attributes.width}
-              alt={data.am_timeline_items.data[1].attributes.image.data.attributes.alternativeText}
-              className="object-cover"
-            />
-            <h3 className={`${lora.className} text-[35px] my-[40px]`}>
-              {data.am_timeline_items.data[1].attributes.title}
-            </h3>
-            <p className="font-thin">{data.am_timeline_items.data[1].attributes.paragraph}</p>
-          </div>
-          <div className="flex flex-col justify-start items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
-            <Image
-              src={data.am_timeline_items.data[2].attributes.image.data.attributes.url}
-              height={data.am_timeline_items.data[2].attributes.image.data.attributes.height}
-              width={data.am_timeline_items.data[2].attributes.image.data.attributes.width}
-              alt={data.am_timeline_items.data[2].attributes.image.data.attributes.alternativeText}
-              className="object-cover"
-            />
-            <h3 className={`${lora.className} text-[35px] my-[40px]`}>
-              {data.am_timeline_items.data[2].attributes.title}
-            </h3>
-            <p className="font-thin">{data.am_timeline_items.data[2].attributes.paragraph}</p>
-          </div>
-        </div>
+        <ExperienceTimeline items={timelineItems} />
       </section>
 
       <section className="px-[30px] mt-[100px] mb-[60px] xl:w-full xl:px-[100px] xl:flex xl:flex-row-reverse xl:mt-[200px]">
         <div className="flex justify-center xl:flex-1">
           <Image
-            src={data.contactImage.data.attributes.url}
-            height={data.contactImage.data.attributes.height}
-            width={data.contactImage.data.attributes.width}
+            src={data.contactImage.data!.attributes.url}
+            height={data.contactImage.data!.attributes.height}
+            width={data.contactImage.data!.attributes.width}
             className="object-cover"
-            alt={data.contactImage.data.attributes.alternativeText}
+            alt={data.contactImage.data!.attributes.alternativeText}
           />
         </div>
         <div className="flex justify-center xl:justify-normal mb-[15px] xl:flex-1 flex-col xl:items-left items-center xl:items-start">

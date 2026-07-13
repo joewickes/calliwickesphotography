@@ -19,10 +19,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${raleway.className}`}>{children}</body>
-      <GoogleAnalytics gaId="G-DR6QE7KKZ3" />
-      <FullStoryInit />
-      <MarkupHelper />
+      <body className={`${raleway.className}`}>
+        {children}
+        <GoogleAnalytics gaId="G-DR6QE7KKZ3" />
+        <FullStoryInit />
+        <MarkupHelper />
+      </body>
     </html>
   );
 }

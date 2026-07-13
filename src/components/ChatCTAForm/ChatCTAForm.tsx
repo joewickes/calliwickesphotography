@@ -4,44 +4,10 @@ import ContactForm from '@/components/Forms/ContactForm';
 import { Lora } from 'next/font/google';
 const lora = Lora({ subsets: ['latin'] });
 
-async function getData() {
-  try {
-    const res = await fetch(`${process.env.STRAPI_URL}`, {
-      method: 'POST',
-      next: { revalidate: 60 },
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
-      },
-      body: JSON.stringify({
-        query: `{
-          contactPage {
-            data {
-              attributes {
-                formTitle
-                formParagraph
-                formNamePlaceholder
-                formEmailPlaceholder
-                formPhoneNumberPlaceholder
-                formMessagePlaceholder
-                formButtonText
-                responseTitle
-                responseParagraph
-              }
-            }
-          }
-        }
-        `,
-      }),
-    });
-    return res.json().then((data) => data.data.contactPage.data.attributes);
-  } catch (error) {
-    console.log('error', error);
-  }
-}
+import { getChatCTAData } from '@/lib/queries/contact';
 
 export default async function ChatCTAForm() {
-  const data = await getData();
+  const data = await getChatCTAData();
 
   return (
     <section className="px-[30px] xl:px-[100px] text-black xl:pl-[100px] xl:flex">

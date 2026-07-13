@@ -12,176 +12,27 @@ import Share from '@/components/Share/Share';
 
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 import ChatCTAForm from '@/components/ChatCTAForm/ChatCTAForm';
+import ExperienceTimeline from '@/components/ExperienceTimeline/ExperienceTimeline';
+
+import { getHeaderData } from '@/lib/queries/header';
+import { getFamilyExperienceData } from '@/lib/queries/family-experience';
 
 export const metadata: Metadata = {
   title: 'Family Experience',
   description: 'For families that want that perfect blend of candid and portrait.',
 };
 
-async function getHeaderData() {
-  try {
-    const res = await fetch(`${process.env.STRAPI_URL}`, {
-      method: 'POST',
-      next: { revalidate: 60 },
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
-      },
-      body: JSON.stringify({
-        query: `{
-          header {
-            data {
-              attributes {
-                logoText
-                logoImage {
-                  data {
-                    attributes {
-                      url
-                      alternativeText
-                      width
-                      height
-                    }
-                  }
-                }
-                menuTitle
-                social_networks {
-                  data {
-                    attributes {
-                      socialLink
-                    }
-                  }
-                }
-                menu_items {
-                  data {
-                    attributes {
-                      itemName
-                      link
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }`,
-      }),
-    });
-    return res.json().then((data) => data.data.header.data.attributes);
-  } catch (error) {
-    console.log('error', error);
-  }
-}
-
-async function getData() {
-  try {
-    const res = await fetch(`${process.env.STRAPI_URL}`, {
-      method: 'POST',
-      next: { revalidate: 60 },
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
-      },
-      body: JSON.stringify({
-        query: ` {
-          familyExperiencePage {
-            data {
-              attributes {
-                heroPhoto {
-                  data {
-                    attributes {
-                      url
-                      alternativeText
-                      width
-                      height
-                    }
-                  }
-                }
-                heroTitle
-                heroSubtitle
-                familyExperienceTitle
-                familyExperienceParagraph
-                sessionInfoTitle
-                fe_timeline_items {
-                  data {
-                    attributes {
-                      image {
-                        data {
-                          attributes {
-                            url
-                            alternativeText
-                            width
-                            height
-                          }
-                        }
-                      }
-                      title
-                      paragraph
-                    }
-                  }
-                }
-                session_infos {
-                  data {
-                    attributes {
-                      image {
-                        data {
-                          attributes {
-                            url
-                            alternativeText
-                            width
-                            height
-                          }
-                        }
-                      }
-                      title
-                      subtitle
-                      paragraph
-                    }
-                  }
-                }
-                contactTitle
-                contactSubtitle
-                contactButtonText
-                contactButtonLink
-                contactImage {
-                  data {
-                    attributes {
-                      url
-                      alternativeText
-                      width
-                      height
-                    }
-                  }
-                }
-                aboutTitle
-                aboutSubtitle
-                aboutButtonText
-                aboutButtonLink
-                aboutImage {
-                  data {
-                    attributes {
-                      url
-                      alternativeText
-                      width
-                      height
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        
-        `,
-      }),
-    });
-    return res.json().then((data) => data.data.familyExperiencePage.data.attributes);
-  } catch (error) {
-    console.log('error', error);
-  }
-}
-
 const FamilyGalleryPage = async () => {
-  const headerData = await getHeaderData();
-  const data = await getData();
+  const [headerData, data] = await Promise.all([getHeaderData(), getFamilyExperienceData()]);
+
+  const timelineItems = data.fe_timeline_items.data.map((item) => ({
+    imageUrl: item.attributes.image.data!.attributes.url,
+    imageAlt: item.attributes.image.data!.attributes.alternativeText,
+    imageWidth: item.attributes.image.data!.attributes.width,
+    imageHeight: item.attributes.image.data!.attributes.height,
+    title: item.attributes.title,
+    paragraph: item.attributes.paragraph,
+  }));
 
   return (
     <main className="xl:flex xl:flex-col xl:items-center">
@@ -201,50 +52,7 @@ const FamilyGalleryPage = async () => {
 
       {/* Experience Process Section */}
       <section className="xl:pt-[10px]">
-        <div
-          id="experience-process"
-          className="px-[30px] xl:px-[50px] xl:pr-[30px] flex flex-col xl:items-start items-center justify-center xl:flex-row  max-w-[100dw] xl:justify-evenly"
-        >
-          <div className="flex flex-col justify-start sm:items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
-            <Image
-              src={data.fe_timeline_items.data[0].attributes.image.data.attributes.url}
-              height={data.fe_timeline_items.data[0].attributes.image.data.attributes.height}
-              width={data.fe_timeline_items.data[0].attributes.image.data.attributes.width}
-              alt={data.fe_timeline_items.data[0].attributes.image.data.attributes.alternativeText}
-              className="object-cover"
-            />
-            <h3 className={`${lora.className} text-[35px] my-[40px]`}>
-              {data.fe_timeline_items.data[0].attributes.title}
-            </h3>
-            <p className="font-thin">{data.fe_timeline_items.data[0].attributes.paragraph}</p>
-          </div>
-          <div className="flex flex-col justify-start items-start flex-1 xl:mx-[30px] max-w-[456px] mb-[60px] xl:mb-0">
-            <Image
-              src={data.fe_timeline_items.data[1].attributes.image.data.attributes.url}
-              height={data.fe_timeline_items.data[1].attributes.image.data.attributes.height}
-              width={data.fe_timeline_items.data[1].attributes.image.data.attributes.width}
-              alt={data.fe_timeline_items.data[1].attributes.image.data.attributes.alternativeText}
-              className="object-cover"
-            />
-            <h3 className={`${lora.className} text-[35px] my-[40px]`}>
-              {data.fe_timeline_items.data[1].attributes.title}
-            </h3>
-            <p className="font-thin">{data.fe_timeline_items.data[1].attributes.paragraph}</p>
-          </div>
-          <div className="flex flex-col justify-start items-start flex-1 max-w-[456px] mb-[60px] xl:mb-0">
-            <Image
-              src={data.fe_timeline_items.data[2].attributes.image.data.attributes.url}
-              height={data.fe_timeline_items.data[2].attributes.image.data.attributes.height}
-              width={data.fe_timeline_items.data[2].attributes.image.data.attributes.width}
-              alt={data.fe_timeline_items.data[2].attributes.image.data.attributes.alternativeText}
-              className="object-cover"
-            />
-            <h3 className={`${lora.className} text-[35px] my-[40px]`}>
-              {data.fe_timeline_items.data[2].attributes.title}
-            </h3>
-            <p className="font-thin">{data.fe_timeline_items.data[2].attributes.paragraph}</p>
-          </div>
-        </div>
+        <ExperienceTimeline items={timelineItems} />
       </section>
 
       <section className="mt-[50px] px-[30px] xl:mt-[100px] w-full">
@@ -253,61 +61,47 @@ const FamilyGalleryPage = async () => {
         </h1>
 
         <ul>
-          {data.session_infos.data.map(
-            (
-              session_info: {
-                attributes: {
-                  image: {
-                    data: { attributes: { url: string; height: number; width: number; alternativeText: string } };
-                  };
-                  title: string;
-                  subtitle: string;
-                  paragraph: any;
-                };
-              },
-              idx: number,
-            ) => {
-              return (
-                <li
-                  key={idx}
-                  className={`xl:py-[50px] ${
-                    idx === 1 ? 'xl:border xl:border-x-0 xl:border-b-0 xl:border-t-1 xl:border-[#f2f2f2]' : ''
-                  } xl:flex ${idx % 2 === 0 ? '' : ' xl:flex-row-reverse'}`}
-                >
-                  <div className="xl:flex-1 flex items-center justify-center">
-                    <Image
-                      src={session_info.attributes.image.data.attributes.url}
-                      height={session_info.attributes.image.data.attributes.height}
-                      width={session_info.attributes.image.data.attributes.width}
-                      alt={session_info.attributes.image.data.attributes.alternativeText}
-                      className="mb-[30px] xl:max-w-[457px]"
-                    />
-                  </div>
-                  <div className="xl:flex-1 xl:flex xl:flex-col xl:items-center xl:justify-center pt-[25px] pb-[50px]">
-                    <h2
-                      className={`text-[40px] leading-1 flex flex-col mb-[20px] text-left xl:self-start ${
-                        idx % 2 !== 0 ? 'xl:self-end' : ''
-                      }`}
-                    >
-                      {session_info.attributes.title}
-                    </h2>
+          {data.session_infos.data.map((session_info, idx) => {
+            return (
+              <li
+                key={idx}
+                className={`xl:py-[50px] ${
+                  idx === 1 ? 'xl:border xl:border-x-0 xl:border-b-0 xl:border-t-1 xl:border-[#f2f2f2]' : ''
+                } xl:flex ${idx % 2 === 0 ? '' : ' xl:flex-row-reverse'}`}
+              >
+                <div className="xl:flex-1 flex items-center justify-center">
+                  <Image
+                    src={session_info.attributes.image.data!.attributes.url}
+                    height={session_info.attributes.image.data!.attributes.height}
+                    width={session_info.attributes.image.data!.attributes.width}
+                    alt={session_info.attributes.image.data!.attributes.alternativeText}
+                    className="mb-[30px] xl:max-w-[457px]"
+                  />
+                </div>
+                <div className="xl:flex-1 xl:flex xl:flex-col xl:items-center xl:justify-center pt-[25px] pb-[50px]">
+                  <h2
+                    className={`text-[40px] leading-1 flex flex-col mb-[20px] text-left xl:self-start ${
+                      idx % 2 !== 0 ? 'xl:self-end' : ''
+                    }`}
+                  >
+                    {session_info.attributes.title}
+                  </h2>
 
-                    <p
-                      className={`font-bold mb-[30px] xl:self-start ${idx % 2 !== 0 ? 'xl:self-end' : ''} xl:flex xl:flex-col`}
-                    >
-                      {session_info.attributes.subtitle}
-                    </p>
+                  <p
+                    className={`font-bold mb-[30px] xl:self-start ${idx % 2 !== 0 ? 'xl:self-end' : ''} xl:flex xl:flex-col`}
+                  >
+                    {session_info.attributes.subtitle}
+                  </p>
 
-                    <span
-                      className={`text-left mb-[30px] font-thin xl:self-start ${idx % 2 !== 0 ? 'xl:self-end xl:text-right' : ''}`}
-                    >
-                      <BlocksRenderer content={session_info.attributes.paragraph} />
-                    </span>
-                  </div>
-                </li>
-              );
-            },
-          )}
+                  <span
+                    className={`text-left mb-[30px] font-thin xl:self-start ${idx % 2 !== 0 ? 'xl:self-end xl:text-right' : ''}`}
+                  >
+                    <BlocksRenderer content={session_info.attributes.paragraph} />
+                  </span>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </section>
 
@@ -315,11 +109,11 @@ const FamilyGalleryPage = async () => {
         <div className="flex justify-center xl:justify-end xl:pr-[100px] items-center xl:flex-1 pt-[50px] lg:pt-0">
           <div className="md:w-[60%] pt-[50px] xl:py-[50px]">
             <Image
-              src={data.aboutImage.data.attributes.url}
-              height={data.aboutImage.data.attributes.height}
-              width={data.aboutImage.data.attributes.width}
+              src={data.aboutImage.data!.attributes.url}
+              height={data.aboutImage.data!.attributes.height}
+              width={data.aboutImage.data!.attributes.width}
               className="object-cover"
-              alt={data.aboutImage.data.attributes.alternativeText}
+              alt={data.aboutImage.data!.attributes.alternativeText}
             />
           </div>
         </div>
@@ -342,11 +136,11 @@ const FamilyGalleryPage = async () => {
       <section className="px-[30px] xl:px-[100px] mt-[100px] xl:w-full xl:flex xl:flex-row-reverse xl:mt-[200px]">
         <div className="flex justify-center pb-[50px] xl:w-[50%]">
           <Image
-            src={data.contactImage.data.attributes.url}
-            height={data.contactImage.data.attributes.height}
-            width={data.contactImage.data.attributes.width}
+            src={data.contactImage.data!.attributes.url}
+            height={data.contactImage.data!.attributes.height}
+            width={data.contactImage.data!.attributes.width}
             className="object-cover xl:w-[50%]"
-            alt={data.contactImage.data.attributes.alternativeText}
+            alt={data.contactImage.data!.attributes.alternativeText}
           />
         </div>
         <div className="flex justify-center xl:justify-normal mb-[15px] xl:flex-1 flex-col xl:items-left xl:pl-[100px] items-start">
