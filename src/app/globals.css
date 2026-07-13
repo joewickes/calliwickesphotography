@@ -23,24 +23,24 @@ html {
 }
 
 #storyholdinghands {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url('/images/Pricing/holdinghandstampafl.webp');
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/images/Pricing/holdinghandstampafl.webp');
   background-size: cover;
   background-position: center;
   top: 0;
 }
 
 #portfoliocouple {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('/images/Experience/happytampacouple.webp');
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/Experience/happytampacouple.webp');
   background-size: cover;
   background-position: center;
   top: 0;
 }
 
 #familygallerylink {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('/images/Portfolio Main/familyphoto.webp');
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/Portfolio Main/familyphoto.webp');
   background-size: cover;
   background-position: center;
   top: 0;
@@ -106,8 +106,8 @@ html {
 }
 
 #couplewithdaughter {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('/images/Pricing/couplekissingtheirdaughter.webp');
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/Pricing/couplekissingtheirdaughter.webp');
   background-size: cover;
   background-position: center;
   top: 0;

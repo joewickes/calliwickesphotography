@@ -1,0 +1,7 @@
+# Generated / vendored — not ours to format
+pnpm-lock.yaml
+package-lock.json
+.next/
+node_modules/
+public/
+next-env.d.ts

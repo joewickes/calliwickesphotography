@@ -30,14 +30,14 @@ This project uses [pnpm](https://pnpm.io/) (pinned via `packageManager` in `pack
 
 Create a `.env.local` file at the project root. See `.env.example` for a template.
 
-| Variable | Description |
-| --- | --- |
-| `STRAPI_URL` | Base URL of the Strapi CMS instance that serves site content. |
-| `STRAPI_API_TOKEN` | API token used to authenticate requests to Strapi. |
-| `SENDGRID_API_KEY` | SendGrid API key used to send contact/email messages. |
-| `GMAIL_EMAIL` | Gmail address used as a backup SMTP sender. |
-| `GMAIL_APP_PASSWORD` | Gmail app password for the backup SMTP sender. |
-| `URL` | Public base URL of the deployed site. |
+| Variable             | Description                                                   |
+| -------------------- | ------------------------------------------------------------- |
+| `STRAPI_URL`         | Base URL of the Strapi CMS instance that serves site content. |
+| `STRAPI_API_TOKEN`   | API token used to authenticate requests to Strapi.            |
+| `SENDGRID_API_KEY`   | SendGrid API key used to send contact/email messages.         |
+| `GMAIL_EMAIL`        | Gmail address used as a backup SMTP sender.                   |
+| `GMAIL_APP_PASSWORD` | Gmail app password for the backup SMTP sender.                |
+| `URL`                | Public base URL of the deployed site.                         |
 
 ### Currently unused
 

@@ -198,9 +198,7 @@ export default function HomeLanding({ data, headerData }: { data: HomePageData; 
         <div className="flex flex-col w-full flex-1 xl:pl-[100px] 2xl:items-end 2xl:justify-start md:pr-[100px]">
           <p className="text-[15px]">{data.newsletterSubtitle}</p>
           <h2 className={`${lora.className} text-[35px] mb-[20px]`}>{data.newsletterTitle}</h2>
-          <p className="font-thin leading-8 mb-[60px] text-wrap text-left 2xl:text-right">
-            {data.newsletterParagraph}
-          </p>
+          <p className="font-thin leading-8 mb-[60px] text-wrap text-left 2xl:text-right">{data.newsletterParagraph}</p>
         </div>
         <div className="flex-1 flex justify-end 2xl:justify-center items-start w-full">
           <NewsletterForm />

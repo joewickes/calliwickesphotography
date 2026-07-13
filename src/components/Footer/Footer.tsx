@@ -70,7 +70,9 @@ const Footer = async ({ showServices = true }: { showServices?: boolean }) => {
             <FooterDirectory
               directoryListingsPreamble={data.directoryListingsPreamble}
               directoryItems={
-                data.directory_listings.data as [{ attributes: { directoryListingTitle: string; directoryListingLink: string } }]
+                data.directory_listings.data as [
+                  { attributes: { directoryListingTitle: string; directoryListingLink: string } },
+                ]
               }
             />
           </div>

@@ -19,9 +19,7 @@ export const LOCATION_PAGE_IDS_QUERY = `{
 
 /** Fetches the id/slug/title/description summary for every location home page. */
 export async function getLocationPageIds(): Promise<LocationPageSummary[]> {
-  const data = await strapiFetch<{ locationHomePages: { data: LocationPageSummary[] } }>(
-    LOCATION_PAGE_IDS_QUERY,
-  );
+  const data = await strapiFetch<{ locationHomePages: { data: LocationPageSummary[] } }>(LOCATION_PAGE_IDS_QUERY);
   return data.locationHomePages.data;
 }
 
