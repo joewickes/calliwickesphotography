@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 
-import { BlocksRenderer } from '@strapi/blocks-react-renderer';
+import { BlocksRenderer, type BlocksContent } from '@strapi/blocks-react-renderer';
 
 const ContactForm = ({
   formButtonText,
@@ -11,7 +11,7 @@ const ContactForm = ({
 }: {
   formButtonText: string;
   responseTitle: string;
-  responseParagraph: any;
+  responseParagraph: BlocksContent;
 }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -19,25 +19,9 @@ const ContactForm = ({
   const [message, setMessage] = useState('');
   const [isDisabled, setIsDisabled] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
-  useEffect(() => {
-    // Select all anchor elements in the document
-    const anchorElements = document.querySelectorAll('a');
-
-    anchorElements.forEach((anchor) => {
-      // Check if aria-label doesn't exist (or is empty)
-      if (!anchor.hasAttribute('aria-label') || !anchor.getAttribute('aria-label')) {
-        const linkText = anchor.textContent?.trim() || anchor.getAttribute('href')?.split('.')[1];
-
-        // Only set the aria-label if there's some actual text
-        if (linkText) {
-          anchor.setAttribute('aria-label', linkText);
-        }
-      }
-    });
-  }, [submitted]);
-
-  const formatPhoneNumber = (e: any) => {
+  const formatPhoneNumber = (e: ChangeEvent<HTMLInputElement>) => {
     const currNum = e.target.value;
     const len = currNum.length;
     const lastLen = phone.length;
@@ -59,9 +43,10 @@ const ContactForm = ({
     }
   };
 
-  const onSubmit = async (e: any) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsDisabled(true);
+    setError('');
 
     const data = {
       name,
@@ -83,19 +68,16 @@ const ContactForm = ({
       const responseData = await res.json();
 
       if (res.status === 200) {
-        console.log('Email sent successfully:', responseData.message);
         setName('');
         setEmail('');
         setPhone('');
         setMessage('');
         setSubmitted(true);
       } else {
-        console.error('Email sending failed:', responseData.message);
-        alert(`Failed to send message: ${responseData.message}`);
+        setError(`Failed to send message: ${responseData.message}`);
       }
-    } catch (error) {
-      console.error('Network error:', error);
-      alert('Network error. Please check your connection and try again.');
+    } catch {
+      setError('Network error. Please check your connection and try again.');
     } finally {
       setIsDisabled(false);
     }
@@ -103,7 +85,8 @@ const ContactForm = ({
 
   return !submitted ? (
     <form className="xl:flex-1 xl:mr-[100px] xl:mt-[50px]" onSubmit={onSubmit}>
-      <label className="flex flex-col">
+      <label className="flex flex-col" htmlFor="name">
+        <span className="sr-only">Name</span>
         <input
           disabled={isDisabled}
           value={name}
@@ -115,7 +98,8 @@ const ContactForm = ({
           id="name"
         />
       </label>
-      <label className="flex flex-col">
+      <label className="flex flex-col" htmlFor="email">
+        <span className="sr-only">Email Address</span>
         <input
           placeholder="Email Address "
           disabled={isDisabled}
@@ -127,7 +111,8 @@ const ContactForm = ({
           id="email"
         />
       </label>
-      <label className="flex flex-col">
+      <label className="flex flex-col" htmlFor="phone">
+        <span className="sr-only">Phone Number</span>
         <input
           disabled={isDisabled}
           value={phone}
@@ -140,7 +125,8 @@ const ContactForm = ({
           required
         />
       </label>
-      <label className="flex flex-col">
+      <label className="flex flex-col" htmlFor="message">
+        <span className="sr-only">Message</span>
         <textarea
           disabled={isDisabled}
           placeholder="Message"
@@ -151,6 +137,11 @@ const ContactForm = ({
           className="border border-[#cdcdcd] px-[16px] py-[14px] mt-[10px] mb-[50px]"
         />
       </label>
+      {error && (
+        <p role="alert" className="text-red-600 text-[14px] mb-[25px]">
+          {error}
+        </p>
+      )}
       <div>
         <button
           disabled={isDisabled}

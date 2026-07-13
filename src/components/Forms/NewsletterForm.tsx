@@ -1,18 +1,20 @@
 'use client';
 
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 
 import { ArrowRight } from '@phosphor-icons/react';
 
-const ContactForm = () => {
+const NewsletterForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [isDisabled, setIsDisabled] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
-  const onSubmit = async (e: any) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsDisabled(true);
+    setError('');
 
     const data = {
       name,
@@ -20,16 +22,26 @@ const ContactForm = () => {
       newsletter: true,
     };
 
-    const res = await fetch(`/api/email`, {
-      method: 'POST',
-      body: JSON.stringify(data),
-    });
+    try {
+      const res = await fetch(`/api/email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
-    if (res.status === 200) {
-      setName('');
-      setEmail('');
-
-      setSubmitted(true);
+      if (res.status === 200) {
+        setName('');
+        setEmail('');
+        setSubmitted(true);
+      } else {
+        setError('Something went wrong. Please try again.');
+      }
+    } catch {
+      setError('Network error. Please check your connection and try again.');
+    } finally {
+      setIsDisabled(false);
     }
   };
 
@@ -38,7 +50,8 @@ const ContactForm = () => {
       className="xl:flex-1 xl:mr-[50px] xl:pl-[50px] flex flex-col justify-end items-end max-w-[500px] w-full"
       onSubmit={onSubmit}
     >
-      <label className="flex flex-col w-full">
+      <label className="flex flex-col w-full" htmlFor="newsletter-name">
+        <span className="sr-only">Name</span>
         <input
           disabled={isDisabled}
           value={name}
@@ -47,10 +60,11 @@ const ContactForm = () => {
           onChange={(e) => setName(e.target.value)}
           className="border w-full border-[#cdcdcd] px-[16px] py-[14px] mt-[10px] mb-[25px] h-[40px]"
           type="text"
-          id="name"
+          id="newsletter-name"
         />
       </label>
-      <label className="flex flex-col w-full">
+      <label className="flex flex-col w-full" htmlFor="newsletter-email">
+        <span className="sr-only">Email Address</span>
         <input
           disabled={isDisabled}
           value={email}
@@ -59,9 +73,14 @@ const ContactForm = () => {
           onChange={(e) => setEmail(e.target.value)}
           className="border border-[#cdcdcd] px-[16px] py-[14px] mt-[10px] mb-[25px] h-[40px] w-full"
           type="email"
-          id="email"
+          id="newsletter-email"
         />
       </label>
+      {error && (
+        <p role="alert" className="text-red-600 text-[14px] mb-[15px] w-full">
+          {error}
+        </p>
+      )}
       <div>
         <button
           disabled={isDisabled}
@@ -81,4 +100,4 @@ const ContactForm = () => {
     </>
   );
 };
-export default ContactForm;
+export default NewsletterForm;
