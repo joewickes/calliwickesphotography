@@ -1,18 +1,18 @@
-// Alternative using Nodemailer with Gmail SMTP
-// This approach uses Gmail's SMTP which has higher free limits
+// Fallback sender using Nodemailer over Gmail SMTP.
+// Used when the primary SendGrid send fails (Gmail SMTP has higher free limits).
 
 import nodemailer from 'nodemailer';
+
+const RECIPIENT = 'calliwickesphotography@gmail.com';
 
 export const sendEmailViaGmail = async (text: string) => {
   const gmailEmail = process.env.GMAIL_EMAIL;
   const gmailPassword = process.env.GMAIL_APP_PASSWORD;
 
   if (!gmailEmail || !gmailPassword) {
-    console.error('Gmail SMTP not configured. Please set GMAIL_EMAIL and GMAIL_APP_PASSWORD environment variables.');
-    throw new Error('Gmail backup service not configured');
+    throw new Error('Gmail backup service not configured: set GMAIL_EMAIL and GMAIL_APP_PASSWORD');
   }
 
-  // Create transporter using Gmail SMTP
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -21,22 +21,12 @@ export const sendEmailViaGmail = async (text: string) => {
     },
   });
 
-  const date = new Date();
-
   const mailOptions = {
     from: gmailEmail,
-    to: 'calliwickesphotography@gmail.com',
-    subject: `Message from CalliWickesPhotography.com (${date.toLocaleString()}) - Via Backup`,
+    to: RECIPIENT,
+    subject: `Message from CalliWickesPhotography.com (${new Date().toLocaleString()}) - Via Backup`,
     text,
   };
 
-  try {
-    console.log('Attempting to send email via Gmail SMTP...');
-    const result = await transporter.sendMail(mailOptions);
-    console.log('Email sent successfully via Gmail:', result.messageId);
-    return result;
-  } catch (error) {
-    console.error('Gmail SMTP error:', error);
-    throw error;
-  }
+  return transporter.sendMail(mailOptions);
 };
