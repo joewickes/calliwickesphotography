@@ -22,8 +22,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
 
   if (slug === '1') {
     redirect('/blogs/family-photo-investment');
@@ -44,8 +44,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-const BlogPage = async ({ params }: { params: { slug: string } }) => {
-  const { slug } = params;
+const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug } = await params;
   const [blogs, headerData] = await Promise.all([getBlogIds(), getHeaderData()]);
   const id = blogs.find((post) => post.attributes.slug === slug)?.id;
 

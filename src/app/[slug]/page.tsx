@@ -4,8 +4,8 @@ import HomeLanding from '@/components/HomeLanding/HomeLanding';
 import { getHeaderData } from '@/lib/queries/header';
 import { getLocationPageData, getLocationPageIds } from '@/lib/queries/page-slug';
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
 
   const pages = await getLocationPageIds();
   const page = pages.find((p) => p.attributes.urlSlug === slug);
@@ -26,8 +26,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Home({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function Home({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const [pages, headerData] = await Promise.all([getLocationPageIds(), getHeaderData()]);
   const id = pages.find((page) => page.attributes.urlSlug === slug)?.id;
 

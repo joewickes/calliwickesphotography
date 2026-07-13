@@ -1,0 +1,8 @@
+# pnpm 11 build-script approvals (moved out of package.json).
+# sharp: native image binary used by Next.js image optimization.
+# unrs-resolver: native resolver used by the ESLint import plugin.
+# core-js: postinstall only prints a donation banner — not needed.
+allowBuilds:
+  sharp: true
+  unrs-resolver: true
+  core-js: false
