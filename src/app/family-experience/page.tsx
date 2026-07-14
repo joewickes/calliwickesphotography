@@ -57,9 +57,9 @@ const FamilyGalleryPage = async () => {
       </section>
 
       <section className="mt-[50px] px-[30px] xl:mt-[100px] w-full">
-        <h1 className="text-[40px] leading-1 flex flex-col mb-[50px] text-center xl:text-[70px]">
+        <h2 className="text-[40px] leading-1 flex flex-col mb-[50px] text-center xl:text-[70px]">
           {data.sessionInfoTitle}
-        </h1>
+        </h2>
 
         <ul>
           {data.session_infos.data.map((session_info, idx) => {

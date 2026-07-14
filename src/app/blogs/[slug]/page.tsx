@@ -1,6 +1,7 @@
 import Share from '@/components/Share/Share';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
+import JsonLd from '@/components/JsonLd/JsonLd';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -12,7 +13,8 @@ import { notFound, redirect } from 'next/navigation';
 
 import { getHeaderData } from '@/lib/queries/header';
 import { getBlogData, getBlogIds } from '@/lib/queries/blog';
-import { SITE_URL } from '@/lib/constants';
+import { blogPostingSchema, breadcrumbSchema } from '@/lib/schema';
+import { PHOTOGRAPHER_NAME, SITE_URL } from '@/lib/constants';
 
 export async function generateStaticParams() {
   const blogs = await getBlogIds();
@@ -38,6 +40,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   if (!blog?.attributes.title) notFound();
 
+  const image = blog.attributes.metaImage.data?.attributes;
+
   return {
     title: blog.attributes.title,
     description: blog.attributes.description,
@@ -46,6 +50,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: blog.attributes.title,
       description: blog.attributes.description,
       url: `${SITE_URL}/blogs/${slug}`,
+      type: 'article',
+      publishedTime: blog.attributes.publishedAt,
+      modifiedTime: blog.attributes.updatedAt,
+      authors: [PHOTOGRAPHER_NAME],
+      images: image
+        ? [
+            {
+              url: image.url,
+              width: image.width,
+              height: image.height,
+              alt: image.alternativeText || blog.attributes.title,
+            },
+          ]
+        : undefined,
     },
   };
 }
@@ -53,47 +71,73 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
   const [blogs, headerData] = await Promise.all([getBlogIds(), getHeaderData()]);
-  const id = blogs.find((post) => post.attributes.slug === slug)?.id;
+  const blog = blogs.find((post) => post.attributes.slug === slug);
 
-  if (id == null) notFound();
+  if (blog == null) notFound();
 
-  const data = await getBlogData(id);
+  const data = await getBlogData(blog.id);
 
-  const extraPostsOrig = blogs
-    .filter((post) => {
-      const allOtherSlugsThanThisOne = post.attributes.slug !== slug;
-      const notPricingPage = post.attributes.slug !== 'pricing';
-      const notProposalPricingPage = post.attributes.slug !== 'proposal-information';
-      return allOtherSlugsThanThisOne && notPricingPage && notProposalPricingPage;
-    })
-    .sort((a, b) => Number(b.id) - Number(a.id));
+  // Most-recent other posts for the "popular posts" list (excludes the current
+  // post and the sales pages, which have their own entry points).
+  const extraPosts = blogs
+    .filter(
+      (post) =>
+        post.attributes.slug !== slug &&
+        post.attributes.slug !== 'pricing' &&
+        post.attributes.slug !== 'proposal-information',
+    )
+    .sort((a, b) => Number(b.id) - Number(a.id))
+    .slice(0, 4);
 
-  const extraPosts = [...extraPostsOrig.reverse().slice(0, 2), ...extraPostsOrig.reverse().slice(0, 4)];
-
-  const baseUrl = process.env.URL || SITE_URL;
+  const publishedDate = new Date(blog.attributes.publishedAt).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+  const metaImage = blog.attributes.metaImage.data?.attributes;
 
   return (
     <main>
+      <JsonLd
+        data={blogPostingSchema({
+          title: blog.attributes.title,
+          description: blog.attributes.description,
+          slug,
+          image: metaImage?.url,
+          publishedAt: blog.attributes.publishedAt,
+          updatedAt: blog.attributes.updatedAt,
+        })}
+      />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'Blog', path: '/blogs' },
+          { name: blog.attributes.title, path: `/blogs/${slug}` },
+        ])}
+      />
       <Share urlPath={`/blogs/${slug}`} />
       <Header headerData={headerData} />
       <div className="flex flex-col xl:flex-row px-[30px] sm:px-[75px] min-h-[90dvh]">
         {/* Left/top with blog content */}
-        <section
+        <article
           id="blog-content"
           className="flex xl:w-[66.6dvw] flex-col pr-0 xl:pr-[25px] xl:border-r-[1px] xl:border-[#333333]"
         >
-          <h2 className="text-wrap text-left text-[16px] font-thin mt-[50px] mb-[20px] tracking-wide z-10 mt-30px] ">
+          <p className="text-wrap text-left text-[16px] font-thin mt-[50px] mb-[20px] tracking-wide z-10 mt-30px] ">
             {data.subtitle}
-          </h2>
+          </p>
           <h1
             className={`${lora.className} text-left text-[35px] xl:text-[55px] flex flex-col mb-[20px] z-10 tracking-wide `}
           >
             {data.title}
           </h1>
+          <p className="text-left text-[14px] font-thin mb-[20px] tracking-wide">
+            By {PHOTOGRAPHER_NAME} · <time dateTime={blog.attributes.publishedAt}>{publishedDate}</time>
+          </p>
           <div className="font-thin leading-8 mb-[50px] a-bold">
             <BlocksRenderer content={data.contentParagraph} />
           </div>
-        </section>
+        </article>
 
         {/* Right/bottom meta section */}
         <section id="blog-meta" className="xl:w-[33.3dvw] pl-0 xl:pl-[25px] flex flex-col">
@@ -101,7 +145,7 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
             <div>
               <Image
                 src={data.metaImage.data!.attributes.url}
-                alt={data.metaImage.data!.attributes.alternativeText}
+                alt={data.metaImage.data!.attributes.alternativeText || data.title}
                 width={data.metaImage.data!.attributes.width}
                 height={data.metaImage.data!.attributes.height}
               />
@@ -123,24 +167,19 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
           <div className="sm:mt-[50px] sm:pt-[25px] xl:border-t-[1px] xl:border-[#333333]">
             <h2 className="text-[25px] mb-[25px] font-semibold">{data.popularPostsTitle}</h2>
             <div className="flex flex-col">
-              {/* Filter by most recent 2 that are not current (ref slug id) */}
-              {extraPosts.map((post, idx) => {
-                return (
-                  <a
-                    key={idx}
-                    href={`${baseUrl}/blogs/${post.attributes.slug}`}
-                    target="_blank"
-                    className="mb-[10px] underline"
-                  >
-                    {post.attributes.title}
-                  </a>
-                );
-              })}
+              {extraPosts.map((post) => (
+                <Link key={post.id} href={`/blogs/${post.attributes.slug}`} className="mb-[10px] underline">
+                  {post.attributes.title}
+                </Link>
+              ))}
+              <Link href="/blogs" className="mt-[10px] underline font-semibold">
+                View all posts
+              </Link>
             </div>
           </div>
         </section>
       </div>
-      <Footer showServices={false} />
+      <Footer />
     </main>
   );
 };

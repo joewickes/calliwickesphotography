@@ -1,9 +1,15 @@
+import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
 import Header from '@/components/Header/Header';
 
 import { getHeaderData } from '@/lib/queries/header';
+
+export const metadata: Metadata = {
+  title: 'Page Not Found',
+  robots: { index: false },
+};
 
 const NotFound = async () => {
   const headerData = await getHeaderData();

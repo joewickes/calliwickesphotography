@@ -63,7 +63,7 @@ const AboutPage = async () => {
           <div className="xl:mt-[120px] h-[90dvw] w-[90dvw] md:h-auto xl:w-auto overflow-hidden xl:pl-[100px]">
             <Image
               src={data.aboutMePhoto.data?.attributes.url ?? ''}
-              alt={data.aboutMePhoto.data?.attributes.alternativeText ?? ''}
+              alt={data.aboutMePhoto.data?.attributes.alternativeText || 'Calli Wickes, Tampa family photographer'}
               height={data.aboutMePhoto.data?.attributes.height}
               width={data.aboutMePhoto.data?.attributes.width}
               className="object-cover mt-[-10dvw] xl:mt-[-100px]"
@@ -71,8 +71,8 @@ const AboutPage = async () => {
           </div>
         </div>
         <div className="xl:flex-1 xl:flex xl:flex-col xl:justify-center xl:pr-[100px] xl:pl-[50px]">
-          <h2 className="text-[35px] mb-[20px]">{data.aboutMeTitle}</h2>
-          <h3 className="text-[15px] mb-[60px]">{data.aboutMeSubtitle}</h3>
+          <h1 className="text-[35px] mb-[20px]">{data.aboutMeTitle}</h1>
+          <h2 className="text-[15px] mb-[60px]">{data.aboutMeSubtitle}</h2>
           <div className="font-thin leading-8 mb-[60px]">
             <BlocksRenderer content={data.aboutMeParagraph} />
           </div>

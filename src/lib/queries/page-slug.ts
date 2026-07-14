@@ -12,6 +12,8 @@ export const LOCATION_PAGE_IDS_QUERY = `{
         urlSlug
         title
         description
+        publishedAt
+        updatedAt
       }
     }
   }

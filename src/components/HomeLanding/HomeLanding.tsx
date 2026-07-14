@@ -9,11 +9,14 @@ import Share from '@/components/Share/Share';
 import Header from '@/components/Header/Header';
 import Carousel from '@/components/Carousels/ImageCarousel';
 import FAQs from '@/components/FAQs/FAQs';
+import JsonLd from '@/components/JsonLd/JsonLd';
 import NewsletterForm from '@/components/Forms/NewsletterForm';
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 import ChatCTAForm from '@/components/ChatCTAForm/ChatCTAForm';
 import ExperienceTimeline from '@/components/ExperienceTimeline/ExperienceTimeline';
 
+import { blocksToText } from '@/lib/blocks-to-text';
+import { faqSchema } from '@/lib/schema';
 import type { HeaderData, HomePageData } from '@/lib/types/strapi';
 
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
@@ -33,8 +36,14 @@ export default function HomeLanding({ data, headerData }: { data: HomePageData; 
     paragraph: item.attributes.homeExperienceTimelineParagraph,
   }));
 
+  const faqs = data.home_faqs.data.map((faq) => ({
+    question: faq.attributes.homeFaqQuestion,
+    answer: blocksToText(faq.attributes.homeFaqAnswer),
+  }));
+
   return (
     <main>
+      {faqs.length > 0 && <JsonLd data={faqSchema(faqs)} />}
       <Share />
       <Header headerData={headerData} />
 
@@ -51,14 +60,14 @@ export default function HomeLanding({ data, headerData }: { data: HomePageData; 
           />
         </div>
         <div className="px-[30px]">
-          <h1 className="text-nowrap text-center text-[16px] font-thin mt-[50px] mb-[20px] tracking-wide z-10 mt-30px] ">
+          <p className="text-nowrap text-center text-[16px] font-thin mt-[50px] mb-[20px] tracking-wide z-10 mt-30px] ">
             {data.heroSubtitle}
-          </h1>
-          <p
+          </p>
+          <h1
             className={`${lora.className} text-center text-[35px] xl:text-[55px] flex flex-col mb-[20px] z-10 tracking-wide `}
           >
             <span>{data.heroTitle}</span> <span>{``}</span>
-          </p>
+          </h1>
           <p className="text-center text-[20px] my-[20px] font-thin tracking-wide z-10 mt-[30px] ">
             {data.heroSubHeading}
           </p>

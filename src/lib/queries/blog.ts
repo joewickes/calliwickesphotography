@@ -11,6 +11,18 @@ export const BLOG_IDS_QUERY = `{
         title
         description
         slug
+        publishedAt
+        updatedAt
+        metaImage {
+          data {
+            attributes {
+              url
+              alternativeText
+              width
+              height
+            }
+          }
+        }
       }
     }
   }

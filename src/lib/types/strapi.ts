@@ -97,6 +97,8 @@ export type LocationPageSummary = {
     urlSlug: string;
     title: string;
     description: string;
+    publishedAt: string;
+    updatedAt: string;
   };
 };
 
@@ -110,6 +112,9 @@ export type BlogSummary = {
     title: string;
     description: string;
     slug: string;
+    publishedAt: string;
+    updatedAt: string;
+    metaImage: StrapiMedia;
   };
 };
 

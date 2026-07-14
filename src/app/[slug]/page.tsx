@@ -1,8 +1,10 @@
 import { notFound } from 'next/navigation';
 
 import HomeLanding from '@/components/HomeLanding/HomeLanding';
+import JsonLd from '@/components/JsonLd/JsonLd';
 import { getHeaderData } from '@/lib/queries/header';
 import { getLocationPageData, getLocationPageIds } from '@/lib/queries/page-slug';
+import { breadcrumbSchema } from '@/lib/schema';
 import { SITE_URL } from '@/lib/constants';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -36,11 +38,21 @@ export async function generateStaticParams() {
 export default async function Home({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const [pages, headerData] = await Promise.all([getLocationPageIds(), getHeaderData()]);
-  const id = pages.find((page) => page.attributes.urlSlug === slug)?.id;
+  const page = pages.find((page) => page.attributes.urlSlug === slug);
 
-  if (id == null) notFound();
+  if (page == null) notFound();
 
-  const data = await getLocationPageData(id);
+  const data = await getLocationPageData(page.id);
 
-  return <HomeLanding data={data} headerData={headerData} />;
+  return (
+    <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: page.attributes.title, path: `/${slug}` },
+        ])}
+      />
+      <HomeLanding data={data} headerData={headerData} />
+    </>
+  );
 }
