@@ -179,7 +179,7 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
           </div>
         </section>
       </div>
-      <Footer />
+      <Footer showServices={false} />
     </main>
   );
 };

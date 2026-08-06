@@ -1,5 +1,5 @@
 import { strapiFetch } from '@/lib/strapi';
-import type { FooterData } from '@/lib/types/strapi';
+import type { FooterData, StrapiSingle } from '@/lib/types/strapi';
 
 export const FOOTER_QUERY = `{
   footer {
@@ -45,6 +45,11 @@ export const FOOTER_QUERY = `{
 
 /** Fetches the footer content. */
 export async function getFooterData(): Promise<FooterData> {
-  const data = await strapiFetch<{ footer: { data: { attributes: FooterData } } }>(FOOTER_QUERY);
+  const data = await strapiFetch<{ footer: StrapiSingle<FooterData> }>(FOOTER_QUERY);
+
+  if (data?.footer?.data == null) {
+    throw new Error('Strapi returned no data for the Footer single type — is it published?');
+  }
+
   return data.footer.data.attributes;
 }

@@ -1,5 +1,5 @@
 import { strapiFetch } from '@/lib/strapi';
-import type { HomePageData } from '@/lib/types/strapi';
+import type { HomePageData, StrapiSingle } from '@/lib/types/strapi';
 
 /**
  * The full set of attributes rendered by the home landing layout. Shared by the
@@ -137,6 +137,11 @@ export const HOME_QUERY = `{
 
 /** Fetches the root home page content. */
 export async function getHomeData(): Promise<HomePageData> {
-  const data = await strapiFetch<{ homePage: { data: { attributes: HomePageData } } }>(HOME_QUERY);
+  const data = await strapiFetch<{ homePage: StrapiSingle<HomePageData> }>(HOME_QUERY);
+
+  if (data?.homePage?.data == null) {
+    throw new Error('Strapi returned no data for the Home Page single type — is it published?');
+  }
+
   return data.homePage.data.attributes;
 }

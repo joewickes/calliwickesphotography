@@ -1,5 +1,5 @@
 import { strapiFetch } from '@/lib/strapi';
-import type { FamilyExperiencePageData } from '@/lib/types/strapi';
+import type { FamilyExperiencePageData, StrapiSingle } from '@/lib/types/strapi';
 
 export const FAMILY_EXPERIENCE_QUERY = `{
   familyExperiencePage {
@@ -92,8 +92,13 @@ export const FAMILY_EXPERIENCE_QUERY = `{
 
 /** Fetches the Family Experience page content. */
 export async function getFamilyExperienceData(): Promise<FamilyExperiencePageData> {
-  const data = await strapiFetch<{ familyExperiencePage: { data: { attributes: FamilyExperiencePageData } } }>(
+  const data = await strapiFetch<{ familyExperiencePage: StrapiSingle<FamilyExperiencePageData> }>(
     FAMILY_EXPERIENCE_QUERY,
   );
+
+  if (data?.familyExperiencePage?.data == null) {
+    throw new Error('Strapi returned no data for the Family Experience Page single type — is it published?');
+  }
+
   return data.familyExperiencePage.data.attributes;
 }

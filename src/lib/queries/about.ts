@@ -1,5 +1,5 @@
 import { strapiFetch } from '@/lib/strapi';
-import type { AboutPageData } from '@/lib/types/strapi';
+import type { AboutPageData, StrapiSingle } from '@/lib/types/strapi';
 
 export const ABOUT_QUERY = `{
   aboutMePage {
@@ -80,6 +80,11 @@ export const ABOUT_QUERY = `{
 
 /** Fetches the About / Meet Calli page content. */
 export async function getAboutData(): Promise<AboutPageData> {
-  const data = await strapiFetch<{ aboutMePage: { data: { attributes: AboutPageData } } }>(ABOUT_QUERY);
+  const data = await strapiFetch<{ aboutMePage: StrapiSingle<AboutPageData> }>(ABOUT_QUERY);
+
+  if (data?.aboutMePage?.data == null) {
+    throw new Error('Strapi returned no data for the About Me Page single type — is it published?');
+  }
+
   return data.aboutMePage.data.attributes;
 }

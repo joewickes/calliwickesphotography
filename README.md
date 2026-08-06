@@ -45,3 +45,14 @@ The following variables may appear in `.env.local` but are **not currently refer
 
 - `GOOGLE_MAPS_API_KEY`
 - `NEXT_PUBLIC_URL`
+
+## CI
+
+`.github/workflows/ci.yml` runs on every pull request and push to `main`/`develop`. The build step statically prerenders all pages, which fetch content from Strapi at build time, so it requires these repo secrets to be configured under **Settings → Secrets and variables → Actions**:
+
+| Secret             | Description                                                   |
+| ------------------ | ------------------------------------------------------------- |
+| `STRAPI_URL`       | Base URL of the Strapi CMS instance that serves site content. |
+| `STRAPI_API_TOKEN` | API token used to authenticate requests to Strapi.            |
+
+`SENDGRID_API_KEY`, `GMAIL_EMAIL`, and `GMAIL_APP_PASSWORD` are only read at runtime inside the `/api/email` route handler, so they are not needed by CI.

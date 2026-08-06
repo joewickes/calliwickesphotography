@@ -8,6 +8,15 @@ function clientKey(req: Request): string {
 }
 
 export async function POST(req: Request) {
+  // Reject anything that isn't a genuine JSON request before it can consume rate-limit
+  // budget. HTML forms (enctype="text/plain") cannot set this header, which is what
+  // makes them a no-preflight cross-site vector for spamming this endpoint — see
+  // https://fetch.spec.whatwg.org/#simple-request for why such requests skip CORS preflight.
+  const contentType = req.headers.get('content-type') ?? '';
+  if (!contentType.toLowerCase().startsWith('application/json')) {
+    return Response.json({ message: 'Unsupported Media Type' }, { status: 415 });
+  }
+
   if (isRateLimited(clientKey(req))) {
     return Response.json({ message: 'Too many requests. Please try again later.' }, { status: 429 });
   }

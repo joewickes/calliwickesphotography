@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useState } from 'react';
+import { FormEvent, useId, useState } from 'react';
 
 import { ArrowRight } from '@phosphor-icons/react';
 
@@ -10,6 +10,9 @@ const NewsletterForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const { isDisabled, submitted, error, submit } = useContactSubmit();
+  const id = useId();
+  const nameId = `${id}-newsletter-name`;
+  const emailId = `${id}-newsletter-email`;
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -25,7 +28,7 @@ const NewsletterForm = () => {
       className="xl:flex-1 xl:mr-[50px] xl:pl-[50px] flex flex-col justify-end items-end max-w-[500px] w-full"
       onSubmit={onSubmit}
     >
-      <label className="flex flex-col w-full" htmlFor="newsletter-name">
+      <label className="flex flex-col w-full" htmlFor={nameId}>
         <span className="sr-only">Name</span>
         <input
           disabled={isDisabled}
@@ -35,10 +38,10 @@ const NewsletterForm = () => {
           onChange={(e) => setName(e.target.value)}
           className="border w-full border-[#cdcdcd] px-[16px] py-[14px] mt-[10px] mb-[25px] h-[40px]"
           type="text"
-          id="newsletter-name"
+          id={nameId}
         />
       </label>
-      <label className="flex flex-col w-full" htmlFor="newsletter-email">
+      <label className="flex flex-col w-full" htmlFor={emailId}>
         <span className="sr-only">Email Address</span>
         <input
           disabled={isDisabled}
@@ -48,7 +51,7 @@ const NewsletterForm = () => {
           onChange={(e) => setEmail(e.target.value)}
           className="border border-[#cdcdcd] px-[16px] py-[14px] mt-[10px] mb-[25px] h-[40px] w-full"
           type="email"
-          id="newsletter-email"
+          id={emailId}
         />
       </label>
       {error && (

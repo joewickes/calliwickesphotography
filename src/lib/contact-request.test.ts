@@ -1,5 +1,10 @@
-import { describe, it, expect } from 'vitest';
-import { validateContactRequest, isRateLimited, FIELD_LIMITS } from './contact-request';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+import {
+  validateContactRequest,
+  isRateLimited,
+  FIELD_LIMITS,
+  __getRateLimitTrackedKeyCountForTests,
+} from './contact-request';
 
 describe('validateContactRequest', () => {
   const validContact = { name: 'Jane Doe', email: 'jane@example.com', message: 'Hello, I have a question.' };
@@ -73,5 +78,51 @@ describe('isRateLimited', () => {
     const fresh = `test-fresh-${process.hrtime.bigint()}`;
     for (let i = 0; i < 6; i++) isRateLimited(busy);
     expect(isRateLimited(fresh)).toBe(false);
+  });
+
+  describe('window expiry', () => {
+    afterEach(() => {
+      vi.useRealTimers();
+    });
+
+    it('allows requests again once the window has fully elapsed', () => {
+      vi.useFakeTimers();
+      const key = `test-window-expiry-${process.hrtime.bigint()}`;
+
+      for (let i = 0; i < 5; i++) isRateLimited(key);
+      expect(isRateLimited(key)).toBe(true); // 6th request within the window is blocked.
+
+      vi.advanceTimersByTime(60_001); // Past the 60s window.
+
+      expect(isRateLimited(key)).toBe(false); // Old hits have aged out; this one is fresh.
+    });
+  });
+});
+
+describe('rate limiter memory pruning', () => {
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it('sweeps out keys whose hits have fully aged out of the window', async () => {
+    // Isolate this test's module state so the shared prune-call counter and hits map
+    // aren't polluted by (or don't pollute) the other tests in this file.
+    vi.resetModules();
+    vi.useFakeTimers();
+    const freshModule = await import('./contact-request');
+
+    freshModule.isRateLimited('prune-seed');
+    expect(freshModule.__getRateLimitTrackedKeyCountForTests()).toBe(1);
+
+    vi.advanceTimersByTime(60_001); // The seed key's only hit is now fully expired.
+
+    // Drive the opportunistic sweep (every 100th call) with fresh, still-live keys.
+    for (let i = 0; i < 100; i++) {
+      freshModule.isRateLimited(`prune-fresh-${i}`);
+    }
+
+    // Only the 100 fresh (unexpired) keys remain — if the seed key hadn't been
+    // pruned, the map would hold 101 entries instead.
+    expect(freshModule.__getRateLimitTrackedKeyCountForTests()).toBe(100);
   });
 });

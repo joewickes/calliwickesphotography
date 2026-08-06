@@ -76,10 +76,36 @@ const WINDOW_MS = 60_000;
 const MAX_REQUESTS_PER_WINDOW = 5;
 const hits = new Map<string, number[]>();
 
+// Opportunistic pruning so a long-lived warm serverless instance doesn't leak memory:
+// every Nth call sweeps out keys whose hits have all aged out of the window. Cheap,
+// allocation-light, and deterministic (no timer, no extra dependency).
+const PRUNE_INTERVAL = 100;
+let callsSincePrune = 0;
+
+function pruneExpiredKeys(now: number): void {
+  for (const [key, timestamps] of hits) {
+    if (timestamps.every((ts) => now - ts >= WINDOW_MS)) {
+      hits.delete(key);
+    }
+  }
+}
+
 export function isRateLimited(key: string): boolean {
   const now = Date.now();
+
+  callsSincePrune += 1;
+  if (callsSincePrune >= PRUNE_INTERVAL) {
+    callsSincePrune = 0;
+    pruneExpiredKeys(now);
+  }
+
   const recent = (hits.get(key) ?? []).filter((ts) => now - ts < WINDOW_MS);
   recent.push(now);
   hits.set(key, recent);
   return recent.length > MAX_REQUESTS_PER_WINDOW;
+}
+
+// Test-only hook into the rate limiter's internal state; not used by production code.
+export function __getRateLimitTrackedKeyCountForTests(): number {
+  return hits.size;
 }

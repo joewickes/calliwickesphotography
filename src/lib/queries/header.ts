@@ -1,5 +1,5 @@
 import { strapiFetch } from '@/lib/strapi';
-import type { HeaderData } from '@/lib/types/strapi';
+import type { HeaderData, StrapiSingle } from '@/lib/types/strapi';
 
 export const HEADER_QUERY = `{
   header {
@@ -39,6 +39,11 @@ export const HEADER_QUERY = `{
 
 /** Shared header data fetch used across every page, the footer, and CTAs. */
 export async function getHeaderData(): Promise<HeaderData> {
-  const data = await strapiFetch<{ header: { data: { attributes: HeaderData } } }>(HEADER_QUERY);
+  const data = await strapiFetch<{ header: StrapiSingle<HeaderData> }>(HEADER_QUERY);
+
+  if (data?.header?.data == null) {
+    throw new Error('Strapi returned no data for the Header single type — is it published?');
+  }
+
   return data.header.data.attributes;
 }
