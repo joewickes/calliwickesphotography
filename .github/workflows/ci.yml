@@ -23,7 +23,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          # pnpm 11 (pinned via packageManager) requires Node >= 22.13, and
+          # Node 20 is deprecated on GitHub runners. 24 matches local dev.
+          node-version: 24
           cache: pnpm
 
       - name: Install dependencies
