@@ -9,6 +9,8 @@ on:
     branches:
       - main
       - develop
+  # Lets CI be re-run from the Actions tab without pushing a commit.
+  workflow_dispatch:
 
 jobs:
   build:
