@@ -44,7 +44,10 @@ const BlogIndexPage = async () => {
 
         <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-[40px]">
           {posts.map((post) => {
-            const image = post.attributes.metaImage.data?.attributes;
+            // Listing cards prefer the dedicated thumbnail; posts predating that
+            // field fall back to metaImage, which still drives the post page,
+            // the social preview and the BlogPosting schema.
+            const image = (post.attributes.blogThumbnail?.data ?? post.attributes.metaImage.data)?.attributes;
             return (
               <li key={post.id}>
                 <Link href={`/blogs/${post.attributes.slug}`} className="flex flex-col group">

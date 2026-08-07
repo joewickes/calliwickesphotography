@@ -23,6 +23,16 @@ export const BLOG_IDS_QUERY = `{
             }
           }
         }
+        blogThumbnail {
+          data {
+            attributes {
+              url
+              alternativeText
+              width
+              height
+            }
+          }
+        }
       }
     }
   }

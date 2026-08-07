@@ -115,6 +115,12 @@ export type BlogSummary = {
     publishedAt: string;
     updatedAt: string;
     metaImage: StrapiMedia;
+    /**
+     * Optional listing-card image, separate from `metaImage` so the /blogs grid
+     * can use a crop-friendly photo. Posts created before this field existed
+     * leave it null, so callers fall back to `metaImage`.
+     */
+    blogThumbnail: StrapiMedia;
   };
 };
 
