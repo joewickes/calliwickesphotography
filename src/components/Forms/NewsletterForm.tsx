@@ -1,35 +1,25 @@
 'use client';
 
-import { useState } from 'react';
+import { FormEvent, useId, useState } from 'react';
 
 import { ArrowRight } from '@phosphor-icons/react';
 
-const ContactForm = () => {
+import { useContactSubmit } from './useContactSubmit';
+
+const NewsletterForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [isDisabled, setIsDisabled] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const { isDisabled, submitted, error, submit } = useContactSubmit();
+  const id = useId();
+  const nameId = `${id}-newsletter-name`;
+  const emailId = `${id}-newsletter-email`;
 
-  const onSubmit = async (e: any) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsDisabled(true);
-
-    const data = {
-      name,
-      email,
-      newsletter: true,
-    };
-
-    const res = await fetch(`/api/email`, {
-      method: 'POST',
-      body: JSON.stringify(data),
-    });
-
-    if (res.status === 200) {
+    const ok = await submit({ name, email, newsletter: true });
+    if (ok) {
       setName('');
       setEmail('');
-
-      setSubmitted(true);
     }
   };
 
@@ -38,7 +28,8 @@ const ContactForm = () => {
       className="xl:flex-1 xl:mr-[50px] xl:pl-[50px] flex flex-col justify-end items-end max-w-[500px] w-full"
       onSubmit={onSubmit}
     >
-      <label className="flex flex-col w-full">
+      <label className="flex flex-col w-full" htmlFor={nameId}>
+        <span className="sr-only">Name</span>
         <input
           disabled={isDisabled}
           value={name}
@@ -47,10 +38,11 @@ const ContactForm = () => {
           onChange={(e) => setName(e.target.value)}
           className="border w-full border-[#cdcdcd] px-[16px] py-[14px] mt-[10px] mb-[25px] h-[40px]"
           type="text"
-          id="name"
+          id={nameId}
         />
       </label>
-      <label className="flex flex-col w-full">
+      <label className="flex flex-col w-full" htmlFor={emailId}>
+        <span className="sr-only">Email Address</span>
         <input
           disabled={isDisabled}
           value={email}
@@ -59,9 +51,14 @@ const ContactForm = () => {
           onChange={(e) => setEmail(e.target.value)}
           className="border border-[#cdcdcd] px-[16px] py-[14px] mt-[10px] mb-[25px] h-[40px] w-full"
           type="email"
-          id="email"
+          id={emailId}
         />
       </label>
+      {error && (
+        <p role="alert" className="text-red-600 text-[14px] mb-[15px] w-full">
+          {error}
+        </p>
+      )}
       <div>
         <button
           disabled={isDisabled}
@@ -81,4 +78,4 @@ const ContactForm = () => {
     </>
   );
 };
-export default ContactForm;
+export default NewsletterForm;

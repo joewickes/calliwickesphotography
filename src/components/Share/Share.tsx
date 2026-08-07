@@ -17,9 +17,11 @@ import {
   WhatsappIcon,
 } from 'next-share';
 
+import { SITE_URL } from '@/lib/constants';
+
 const Share = ({ urlPath = '/' }: { urlPath?: string }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const url = `https://calliwickesphotography.com${urlPath}`;
+  const url = `${SITE_URL}${urlPath}`;
 
   const quote = 'Calli Wickes Photography | Family Photographer';
   const hashtag = '#calliwickesphotography';

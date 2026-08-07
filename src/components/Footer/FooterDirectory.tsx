@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 const FooterDirectory = ({
   directoryListingsPreamble,
@@ -16,16 +16,7 @@ const FooterDirectory = ({
     },
   ];
 }) => {
-  const [isHomePage, isHomePageSet] = useState(false);
-
-  // check url slug for home page
-  useEffect(() => {
-    const url = window.location.href;
-    const urlSlug = url.split('/')[3];
-    if (urlSlug === '') {
-      isHomePageSet(true);
-    }
-  }, []);
+  const isHomePage = usePathname() === '/';
 
   return isHomePage ? (
     <div className="xl:flex-1 w-full flex-wrap font-thin flex mt-[20px] xl:mt-[50px] items-start text-center justify-start">
