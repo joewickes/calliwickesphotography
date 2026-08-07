@@ -9,8 +9,6 @@ html {
 }
 
 #familyofthree {
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url('/images/Home Updated/familyofthree.webp'); */
   background-image: url('/images/Home Updated/familyofthree.webp');
   background-size: cover;
   background-position: center;
@@ -18,8 +16,6 @@ html {
 }
 
 #familyoffivephotosittingonrocks {
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('/images/Contact/Familyoffivephotosittingonrocks.webp'); */
   background-image: url('/images/Contact/Familyoffivephotosittingonrocks.webp');
   background-size: cover;
   background-position: center;
@@ -27,37 +23,30 @@ html {
 }
 
 #storyholdinghands {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url('/images/Pricing/holdinghandstampafl.webp');
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/images/Pricing/holdinghandstampafl.webp');
   background-size: cover;
   background-position: center;
   top: 0;
 }
 
 #portfoliocouple {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('/images/Experience/happytampacouple.webp');
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/Experience/happytampacouple.webp');
   background-size: cover;
   background-position: center;
   top: 0;
 }
 
 #familygallerylink {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('/images/Portfolio Main/familyphoto.webp');
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/Portfolio Main/familyphoto.webp');
   background-size: cover;
   background-position: center;
   top: 0;
   cursor: pointer;
 }
 
-#familygallerytop {
-  background-image: url('/images/Family Gallery/tampafamilyphoto.webp');
-  background-size: cover;
-  background-position: center;
-  top: 0;
-  cursor: pointer;
-}
 #familygallerytop {
   background-image: url('/images/Family Gallery/tampafamilyphoto.webp');
   background-size: cover;
@@ -117,8 +106,8 @@ html {
 }
 
 #couplewithdaughter {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('/images/Pricing/couplekissingtheirdaughter.webp');
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/Pricing/couplekissingtheirdaughter.webp');
   background-size: cover;
   background-position: center;
   top: 0;
@@ -128,15 +117,6 @@ html {
 .vertical-rl {
   writing-mode: vertical-rl;
   transform: scale(-1);
-}
-
-#review-carousel .react-multiple-carousel__arrow {
-  background: transparent !important;
-}
-
-#review-carousel .react-multiple-carousel__arrow--left::before,
-#review-carousel .react-multiple-carousel__arrow--right::before {
-  color: black !important;
 }
 
 .a-bold a {

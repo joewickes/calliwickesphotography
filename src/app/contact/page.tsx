@@ -11,162 +11,19 @@ import Header from '@/components/Header/Header';
 
 import ContactForm from '@/components/Forms/ContactForm';
 
-import 'react-toastify/dist/ReactToastify.css';
 import Share from '@/components/Share/Share';
 
+import { getHeaderData } from '@/lib/queries/header';
+import { getContactData } from '@/lib/queries/contact';
+
 export const metadata: Metadata = {
+  alternates: { canonical: '/contact' },
   title: 'Contact Calli Wickes Photography',
   description: 'Connect with Calli · 813-406-0558 · calliwickesphotography@gmail.com',
 };
 
-type dataStructure = {
-  heroImage: {
-    data: {
-      attributes: {
-        url: string;
-        alternativeText: string;
-        width: number;
-        height: number;
-      };
-    };
-  };
-  heroTitle: string;
-  heroSubtitle: string;
-  formTitle: string;
-  formParagraph: any;
-  formImage: {
-    data: {
-      attributes: {
-        url: string;
-        alternativeText: string;
-        width: number;
-        height: number;
-      };
-    };
-  };
-  formNamePlaceholder: string;
-  formEmailPlaceholder: string;
-  formPhoneNumberPlaceholder: string;
-  formMessagePlaceholder: string;
-  formButtonText: string;
-  responseTitle: string;
-  responseParagraph: any;
-};
-
-async function getHeaderData() {
-  try {
-    const res = await fetch(`${process.env.STRAPI_URL}`, {
-      method: 'POST',
-      next: { revalidate: 60 },
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
-      },
-      body: JSON.stringify({
-        query: `{
-          header {
-            data {
-              attributes {
-                logoText
-                logoImage {
-                  data {
-                    attributes {
-                      url
-                      alternativeText
-                      width
-                      height
-                    }
-                  }
-                }
-                menuTitle
-                social_networks {
-                  data {
-                    attributes {
-                      socialLink
-                    }
-                  }
-                }
-                menu_items {
-                  data {
-                    attributes {
-                      itemName
-                      link
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }`,
-      }),
-    });
-    return res.json().then((data) => data.data.header.data.attributes);
-  } catch (error) {
-    console.log('error', error);
-  }
-}
-
-async function getData() {
-  try {
-    const res = await fetch(`${process.env.STRAPI_URL}`, {
-      method: 'POST',
-      next: { revalidate: 60 },
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `bearer ${process.env.STRAPI_API_TOKEN}`,
-      },
-      body: JSON.stringify({
-        query: `{
-          contactPage {
-            data {
-              attributes {
-                heroImage {
-                  data {
-                    attributes {
-                      url
-                      alternativeText
-                      width
-                      height
-                    }
-                  }
-                }
-                heroTitle
-                heroSubtitle
-                formTitle
-                formParagraph
-                formImage {
-                  data {
-                    attributes {
-                      url
-                      alternativeText
-                      width
-                      height
-                    }
-                  }
-                }
-                formNamePlaceholder
-                formEmailPlaceholder
-                formPhoneNumberPlaceholder
-                formMessagePlaceholder
-                formButtonText
-                responseTitle
-                responseParagraph
-              }
-            }
-          }
-        }
-        `,
-      }),
-    });
-    return res.json().then((data) => data.data.contactPage.data.attributes);
-  } catch (error) {
-    console.log('error', error);
-  }
-}
-
 const ContactPage = async () => {
-  const headerData = await getHeaderData();
-  const data = await getData();
+  const [headerData, data] = await Promise.all([getHeaderData(), getContactData()]);
 
   return (
     <main>
@@ -196,10 +53,10 @@ const ContactPage = async () => {
         <div className="flex justify-center mb-[60px] xl:flex-1 xl:justify-start md:pr-[50px]">
           <div className="mt-[30px] h-[90dvw] w-[90dvw] sm:h-[50dvw] sm:w-[50dvw] sm: xl:h-auto xl:w-auto overflow-hidden">
             <Image
-              src={data.formImage.data.attributes.url}
-              alt={data.formImage.data.attributes.alternativeText}
-              height={data.formImage.data.attributes.height}
-              width={data.formImage.data.attributes.width}
+              src={data.formImage.data!.attributes.url}
+              alt={data.formImage.data!.attributes.alternativeText}
+              height={data.formImage.data!.attributes.height}
+              width={data.formImage.data!.attributes.width}
               className="object-cover mt-[-10dvw] xl:mt-[-100px]"
             />
           </div>

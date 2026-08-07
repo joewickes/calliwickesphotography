@@ -2,19 +2,13 @@
 
 import Link from 'next/link';
 import { ArrowUp } from '@phosphor-icons/react';
-import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 const TopArrow = () => {
-  const [path, setPath] = useState('#');
-
-  useEffect(() => {
-    if (window) {
-      setPath(window.location.pathname);
-    }
-  }, []);
+  const path = usePathname();
 
   return (
-    <Link href={path} legacyBehavior passHref>
+    <Link href={path}>
       <ArrowUp size={30} className="cursor-pointer" />
     </Link>
   );
