@@ -14,7 +14,7 @@ import { notFound, redirect } from 'next/navigation';
 import { getHeaderData } from '@/lib/queries/header';
 import { getBlogData, getBlogIds } from '@/lib/queries/blog';
 import { blogPostingSchema, breadcrumbSchema } from '@/lib/schema';
-import { PHOTOGRAPHER_NAME, SITE_URL } from '@/lib/constants';
+import { isUnlistedBlog, PHOTOGRAPHER_NAME, SITE_URL } from '@/lib/constants';
 
 export async function generateStaticParams() {
   const blogs = await getBlogIds();
@@ -42,10 +42,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   const image = blog.attributes.metaImage.data?.attributes;
 
+  // Share-only sales pages: still fully readable by anyone with the link, but
+  // `noindex` keeps them out of search results. `follow` is left on so the
+  // links out of the page still pass through to the rest of the site.
+  const unlisted = isUnlistedBlog(slug);
+
   return {
     title: blog.attributes.title,
     description: blog.attributes.description,
     alternates: { canonical: `/blogs/${slug}` },
+    robots: unlisted ? { index: false, follow: true, googleBot: { index: false, follow: true } } : undefined,
     openGraph: {
       title: blog.attributes.title,
       description: blog.attributes.description,
@@ -78,14 +84,9 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const data = await getBlogData(blog.id);
 
   // Most-recent other posts for the "popular posts" list (excludes the current
-  // post and the sales pages, which have their own entry points).
+  // post and the share-only sales pages, which have their own entry points).
   const extraPosts = blogs
-    .filter(
-      (post) =>
-        post.attributes.slug !== slug &&
-        post.attributes.slug !== 'pricing' &&
-        post.attributes.slug !== 'proposal-information',
-    )
+    .filter((post) => post.attributes.slug !== slug && !isUnlistedBlog(post.attributes.slug))
     .sort((a, b) => Number(b.id) - Number(a.id))
     .slice(0, 4);
 
@@ -96,25 +97,33 @@ const BlogPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   });
   const metaImage = blog.attributes.metaImage.data?.attributes;
 
+  // Structured data is skipped on the share-only sales pages — it exists to
+  // earn rich results, which a `noindex` page cannot have anyway.
+  const unlisted = isUnlistedBlog(slug);
+
   return (
     <main>
-      <JsonLd
-        data={blogPostingSchema({
-          title: blog.attributes.title,
-          description: blog.attributes.description,
-          slug,
-          image: metaImage?.url,
-          publishedAt: blog.attributes.publishedAt,
-          updatedAt: blog.attributes.updatedAt,
-        })}
-      />
-      <JsonLd
-        data={breadcrumbSchema([
-          { name: 'Home', path: '/' },
-          { name: 'Blog', path: '/blogs' },
-          { name: blog.attributes.title, path: `/blogs/${slug}` },
-        ])}
-      />
+      {!unlisted && (
+        <>
+          <JsonLd
+            data={blogPostingSchema({
+              title: blog.attributes.title,
+              description: blog.attributes.description,
+              slug,
+              image: metaImage?.url,
+              publishedAt: blog.attributes.publishedAt,
+              updatedAt: blog.attributes.updatedAt,
+            })}
+          />
+          <JsonLd
+            data={breadcrumbSchema([
+              { name: 'Home', path: '/' },
+              { name: 'Blog', path: '/blogs' },
+              { name: blog.attributes.title, path: `/blogs/${slug}` },
+            ])}
+          />
+        </>
+      )}
       <Share urlPath={`/blogs/${slug}`} />
       <Header headerData={headerData} />
       <div className="flex flex-col xl:flex-row px-[30px] sm:px-[75px] min-h-[90dvh]">

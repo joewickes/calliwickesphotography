@@ -8,6 +8,18 @@ export const SITE_NAME = 'Calli Wickes Photography';
 export const PHOTOGRAPHER_NAME = 'Calli Wickes';
 
 /**
+ * Blog slugs that exist only to be shared directly with an enquiring client.
+ * They stay publicly reachable by URL, but are kept out of the /blogs index,
+ * the sitemap, llms.txt and the popular-posts list, and are served with
+ * `noindex` so search engines drop them.
+ */
+export const UNLISTED_BLOG_SLUGS = ['pricing', 'proposal-information'] as const;
+
+/** True when a blog slug should be hidden from listings and search engines. */
+export const isUnlistedBlog = (slug: string): boolean =>
+  (UNLISTED_BLOG_SLUGS as readonly string[]).includes(slug);
+
+/**
  * Core business facts reused by JSON-LD (src/lib/schema.ts) and the llms.txt
  * route. Contact fields mirror the Strapi footer values; social links and the
  * served-area list are sourced dynamically from Strapi footer data at render
