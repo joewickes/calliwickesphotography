@@ -16,8 +16,7 @@ export const PHOTOGRAPHER_NAME = 'Calli Wickes';
 export const UNLISTED_BLOG_SLUGS = ['pricing', 'proposal-information'] as const;
 
 /** True when a blog slug should be hidden from listings and search engines. */
-export const isUnlistedBlog = (slug: string): boolean =>
-  (UNLISTED_BLOG_SLUGS as readonly string[]).includes(slug);
+export const isUnlistedBlog = (slug: string): boolean => (UNLISTED_BLOG_SLUGS as readonly string[]).includes(slug);
 
 /**
  * Core business facts reused by JSON-LD (src/lib/schema.ts) and the llms.txt

@@ -57,13 +57,7 @@ const CarouselComponent = ({ images }: { images: CarouselImage[] }) => {
         itemClass="flex justify-center px-[10px] w-auto"
       >
         {slides.map((slide, index: number) => (
-          <Image
-            key={index}
-            src={slide.url}
-            width={slide.width}
-            height={slide.height}
-            alt={slide.alternativeText}
-          />
+          <Image key={index} src={slide.url} width={slide.width} height={slide.height} alt={slide.alternativeText} />
         ))}
       </Carousel>
     </div>
