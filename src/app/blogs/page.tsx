@@ -12,6 +12,7 @@ import Share from '@/components/Share/Share';
 
 import { getHeaderData } from '@/lib/queries/header';
 import { getBlogIds } from '@/lib/queries/blog';
+import { isUnlistedBlog } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -30,9 +31,10 @@ export const metadata: Metadata = {
 const BlogIndexPage = async () => {
   const [headerData, blogs] = await Promise.all([getHeaderData(), getBlogIds()]);
 
-  const posts = [...blogs].sort(
-    (a, b) => new Date(b.attributes.publishedAt).getTime() - new Date(a.attributes.publishedAt).getTime(),
-  );
+  // Share-only sales pages stay reachable by direct link but are not listed here.
+  const posts = blogs
+    .filter((post) => !isUnlistedBlog(post.attributes.slug))
+    .sort((a, b) => new Date(b.attributes.publishedAt).getTime() - new Date(a.attributes.publishedAt).getTime());
 
   return (
     <main>

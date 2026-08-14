@@ -36,6 +36,10 @@ export default function HomeLanding({ data, headerData }: { data: HomePageData; 
     paragraph: item.attributes.homeExperienceTimelineParagraph,
   }));
 
+  // Also a multiple-media field: guard the [0] index so an unset contact photo
+  // degrades to a missing image rather than throwing during render.
+  const contactPhoto = data.homeContactPhoto.data[0]?.attributes;
+
   const faqs = data.home_faqs.data.map((faq) => ({
     question: faq.attributes.homeFaqQuestion,
     answer: blocksToText(faq.attributes.homeFaqAnswer),
@@ -230,15 +234,17 @@ export default function HomeLanding({ data, headerData }: { data: HomePageData; 
       <section id="contact" className="px-[30px] xl:flex xl:flex-row-reverse xl:pt-[100px] pb-[50px]">
         <div className="w-full mb-[50px] xl:flex-1">
           <div className="w-full flex justify-center items-end xl:pr-[100px] ">
-            <div className="max-w-[323px] max-h-[484px] w-full xl:max-h-[484px] xl:max-w-[323px] pr-[5px]">
-              <Image
-                src={data.homeContactPhoto.data[0].attributes.url}
-                height={data.homeContactPhoto.data[0].attributes.height}
-                width={data.homeContactPhoto.data[0].attributes.width}
-                className="object-cover "
-                alt={data.homeContactPhoto.data[0].attributes.alternativeText}
-              />
-            </div>
+            {contactPhoto && (
+              <div className="max-w-[323px] max-h-[484px] w-full xl:max-h-[484px] xl:max-w-[323px] pr-[5px]">
+                <Image
+                  src={contactPhoto.url}
+                  height={contactPhoto.height}
+                  width={contactPhoto.width}
+                  className="object-cover "
+                  alt={contactPhoto.alternativeText}
+                />
+              </div>
+            )}
             <p className="vertical-rl xl:pl-[100px] xl:mb-[2px] xl:mt-0 justify-self-end text-[16px] font-thin">
               {data.homeContactPhotoSidebar}
             </p>

@@ -1,4 +1,4 @@
-import { BUSINESS, SITE_NAME, SITE_URL } from '@/lib/constants';
+import { BUSINESS, isUnlistedBlog, SITE_NAME, SITE_URL } from '@/lib/constants';
 import { getBlogIds } from '@/lib/queries/blog';
 import { getLocationPageIds } from '@/lib/queries/page-slug';
 
@@ -41,9 +41,13 @@ export async function GET() {
     }
   }
 
-  if (blogs.length > 0) {
+  // Share-only sales pages are withheld from LLMs for the same reason they are
+  // withheld from the sitemap: they are sent to a client directly, not found.
+  const listableBlogs = blogs.filter((blog) => !isUnlistedBlog(blog.attributes.slug));
+
+  if (listableBlogs.length > 0) {
     lines.push('', '## Blog posts', '');
-    for (const blog of blogs) {
+    for (const blog of listableBlogs) {
       lines.push(
         `- [${blog.attributes.title}](${SITE_URL}/blogs/${blog.attributes.slug}): ${blog.attributes.description}`,
       );

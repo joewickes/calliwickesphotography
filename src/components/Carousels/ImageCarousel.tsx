@@ -5,22 +5,23 @@ import Image from 'next/image';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
+import type { StrapiImageAttributes, StrapiMediaList } from '@/lib/types/strapi';
+
 type CarouselImage = {
   attributes: {
-    homeCarouselImage: {
-      data: {
-        attributes: {
-          url: string;
-          width: number;
-          height: number;
-          alternativeText: string;
-        };
-      }[];
-    };
+    homeCarouselImage: StrapiMediaList;
   };
 };
 
 const CarouselComponent = ({ images }: { images: CarouselImage[] }) => {
+  // homeCarouselImage is a multiple-media field, so an item whose image was
+  // never attached in the CMS arrives as an empty `data` array. Indexing [0]
+  // blindly threw and took down every page that renders the carousel — the
+  // home page and all of the location pages — so unattached items are skipped.
+  const slides = images
+    .map((image) => image.attributes.homeCarouselImage.data[0]?.attributes)
+    .filter((slide): slide is StrapiImageAttributes => slide != null);
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -55,14 +56,8 @@ const CarouselComponent = ({ images }: { images: CarouselImage[] }) => {
         containerClass=""
         itemClass="flex justify-center px-[10px] w-auto"
       >
-        {images.map((image: CarouselImage, index: number) => (
-          <Image
-            key={index}
-            src={image.attributes.homeCarouselImage.data[0].attributes.url}
-            width={image.attributes.homeCarouselImage.data[0].attributes.width}
-            height={image.attributes.homeCarouselImage.data[0].attributes.height}
-            alt={image.attributes.homeCarouselImage.data[0].attributes.alternativeText}
-          />
+        {slides.map((slide, index: number) => (
+          <Image key={index} src={slide.url} width={slide.width} height={slide.height} alt={slide.alternativeText} />
         ))}
       </Carousel>
     </div>
